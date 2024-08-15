@@ -1,6 +1,6 @@
 # Turn
 
-**Turn** es una herramienta de línea de comandos (CLI) para gestionar paquetes con Homebrew en macOS. Esta herramienta permite instalar, desinstalar y actualizar paquetes de manera sencilla y rápida. Además, soporta la selección de idioma entre inglés y español.
+**Turn** es una herramienta de línea de comandos (CLI) para gestionar paquetes con Homebrew en macOS. Esta herramienta permite instalar, desinstalar y actualizar paquetes de manera sencilla y rápida.
 
 ## Instalación
 
