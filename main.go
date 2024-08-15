@@ -1,9 +1,7 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 	"os/exec"
 	"time"
 
@@ -11,91 +9,19 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var messages = map[string]string{
+	"installing":   "Installing",
+	"uninstalling": "Uninstalling",
+	"upgrading":    "Upgrading",
+	"patience":     "This operation is taking longer than expected. Please be patient...",
+	"error":        "Error",
+	"success":      "Installation successful! You can now use 'turn' from anywhere.",
+	"failed":       "Installation failed.",
+	"enterPackage": "Enter the package name:",
+}
+
 func main() {
-	var err error
-	var lang string
-
-	// Intentar cargar la preferencia de idioma
-	lang, err = loadLanguagePreference()
-	if err != nil || (lang != "en" && lang != "es") {
-		// Preguntar el idioma si no está guardado o es inválido
-		reader := bufio.NewReader(os.Stdin)
-		fmt.Print(messages["chooseLang"] + " ")
-		lang, _ = reader.ReadString('\n')
-		lang = lang[:len(lang)-1]
-
-		if lang != "en" && lang != "es" {
-			fmt.Println("Invalid language choice. Defaulting to English.")
-			lang = "en"
-		}
-
-		// Guardar la preferencia de idioma
-		err = saveLanguagePreference(lang)
-		if err != nil {
-			fmt.Println("Error saving language preference:", err)
-			return
-		}
-	}
-
-	// Cargar los mensajes del idioma seleccionado
-	if lang == "es" {
-		messages = loadMessagesES()
-	} else {
-		messages = loadMessagesEN()
-	}
-
 	Command()
-}
-
-func loadMessagesEN() map[string]string {
-	return map[string]string{
-		"installing":   "Installing",
-		"uninstalling": "Uninstalling",
-		"upgrading":    "Upgrading",
-		"patience":     "This operation is taking longer than expected. Please be patient...",
-		"error":        "Error",
-		"success":      "Installation successful! You can now use 'turn' from anywhere.",
-		"failed":       "Installation failed.",
-		"enterPackage": "Enter the package name:",
-		"chooseLang":   "Choose language (en/es):",
-	}
-}
-
-func loadMessagesES() map[string]string {
-	return map[string]string{
-		"installing":   "Instalando",
-		"uninstalling": "Desinstalando",
-		"upgrading":    "Actualizando",
-		"patience":     "Esta operación está tardando más de lo esperado. Por favor, tenga paciencia...",
-		"error":        "Error",
-		"success":      "¡Instalación exitosa! Ahora puede usar 'turn' desde cualquier lugar.",
-		"failed":       "La instalación falló.",
-		"enterPackage": "Ingrese el nombre del paquete:",
-		"chooseLang":   "Elija idioma (en/es):",
-	}
-}
-
-func saveLanguagePreference(lang string) error {
-	file, err := os.Create("language.txt")
-	if err != nil {
-		return err
-	}
-	defer file.Close()
-
-	_, err = file.WriteString(lang)
-	return err
-}
-
-func loadLanguagePreference() (string, error) {
-	file, err := os.Open("language.txt")
-	if err != nil {
-		return "", err
-	}
-	defer file.Close()
-
-	var lang string
-	_, err = fmt.Fscanf(file, "%s", &lang)
-	return lang, err
 }
 
 func Command() {
@@ -134,9 +60,9 @@ func Command() {
 	rootCmd.SetHelpFunc(func(cmd *cobra.Command, args []string) {
 		color.Cyan.Println("Usage: turn [command] [flags]")
 		color.Yellow.Println("Commands:")
-		color.Green.Println("  install   Install a formula")
-		color.Green.Println("  uninstall Uninstall a formula")
-		color.Green.Println("  upgrade   Upgrade a formula")
+		color.Green.Println("  install   Install a package")
+		color.Green.Println("  uninstall Uninstall a package")
+		color.Green.Println("  upgrade   Upgrade a package")
 		color.Red.Println("Flags:")
 		color.Magenta.Println("  --help    Show this help message")
 	})
@@ -149,7 +75,7 @@ func executeCommand(cmd *exec.Cmd) (string, error) {
 	cmd.Stderr = nil
 	output, err := cmd.CombinedOutput()
 	if err != nil {
-		return "", err
+		return "", fmt.Errorf("error executing command: %s", err)
 	}
 	return string(output), nil
 }
