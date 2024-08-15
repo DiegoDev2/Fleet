@@ -6,6 +6,8 @@ BIN_NAME="turn"
 INSTALL_DIR="/usr/local/bin"
 BREW_URL="https://brew.sh/"
 
+
+
 # Función para comprobar si Homebrew está instalado
 check_brew() {
   if command -v brew &> /dev/null; then

@@ -10,14 +10,17 @@ import (
 )
 
 var messages = map[string]string{
-	"installing":   "Installing",
-	"uninstalling": "Uninstalling",
-	"upgrading":    "Upgrading",
-	"patience":     "This operation is taking longer than expected. Please be patient...",
-	"error":        "Error",
-	"success":      "Installation successful! You can now use 'turn' from anywhere.",
-	"failed":       "Installation failed.",
-	"enterPackage": "Enter the package name:",
+	"installing":         "Installing",
+	"uninstalling":       "Uninstalling",
+	"upgrading":          "Upgrading",
+	"patience":           "This operation is taking longer than expected. Please be patient...",
+	"error":              "Error",
+	"success":            "Installation successful! You can now use 'turn' from anywhere.",
+	"failed":             "Installation failed.",
+	"enterPackage":       "Enter the package name:",
+	"checkUpdate":        "Checking for updates...",
+	"updateAvailable":    "Update available! Downloading the latest version...",
+	"updateNotAvailable": "No updates available. You're using the latest version.",
 }
 
 func main() {
@@ -27,7 +30,7 @@ func main() {
 func Command() {
 	var rootCmd = &cobra.Command{
 		Use:   "turn",
-		Short: "A CLI tool for managing packages with Homebrew",
+		Short: "A CLI tool for managing packages",
 	}
 
 	rootCmd.AddCommand(
@@ -63,6 +66,7 @@ func Command() {
 		color.Green.Println("  install   Install a package")
 		color.Green.Println("  uninstall Uninstall a package")
 		color.Green.Println("  upgrade   Upgrade a package")
+		color.Green.Println("  self-update  Update the tool itself")
 		color.Red.Println("Flags:")
 		color.Magenta.Println("  --help    Show this help message")
 	})
