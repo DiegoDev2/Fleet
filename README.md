@@ -7,9 +7,10 @@
 Para instalar **Turn**, clona el repositorio y compílalo:
 
 ```bash
-git clone 
+git clone github.com/CodeDiego15/Turn
 cd turn
 chmod +x install.sh
+./install.sh
 ```
 
 ## Uso
