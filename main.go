@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"net"
 	"os/exec"
 	"time"
 
@@ -59,14 +58,6 @@ func Command() {
 				Update(args[0])
 			},
 		},
-		&cobra.Command{
-			Use:   "ip",
-			Short: "View IP Address",
-			Args:  cobra.NoArgs,
-			Run: func(cmd *cobra.Command, args []string) {
-				Interface()
-			},
-		},
 	)
 
 	rootCmd.SetHelpFunc(func(cmd *cobra.Command, args []string) {
@@ -75,7 +66,6 @@ func Command() {
 		color.Green.Println("  install   Install a package")
 		color.Green.Println("  uninstall Uninstall a package")
 		color.Green.Println("  upgrade   Upgrade a package")
-		color.Green.Println("  ip        View IP Address")
 		color.Red.Println("Flags:")
 		color.Magenta.Println("  --help    Show this help message")
 	})
@@ -112,7 +102,7 @@ func Install(pkg string) {
 
 	select {
 	case <-done:
-		// Command finished within 30 seconds
+
 	case <-time.After(30 * time.Second):
 		color.Yellow.Println(messages["patience"])
 	}
@@ -137,7 +127,7 @@ func Uninstall(pkg string) {
 
 	select {
 	case <-done:
-		// Command finished within 30 seconds
+
 	case <-time.After(30 * time.Second):
 		color.Yellow.Println(messages["patience"])
 	}
@@ -162,18 +152,8 @@ func Update(pkg string) {
 
 	select {
 	case <-done:
-		// Command finished within 30 seconds
+
 	case <-time.After(30 * time.Second):
 		color.Yellow.Println(messages["patience"])
-	}
-}
-
-func Interface() {
-	ip, err := net.InterfaceAddrs()
-	if err != nil {
-		color.BgRed.Println(err)
-	}
-	for _, address := range ip {
-		color.Greenln(address.String())
 	}
 }
