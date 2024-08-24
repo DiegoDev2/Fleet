@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os/exec"
-	"time"
 
 	"github.com/gookit/color"
 	"github.com/spf13/cobra"
@@ -81,7 +80,7 @@ func Command() {
 		color.Green.Println("  uninstall Uninstall a package")
 		color.Green.Println("  upgrade   Upgrade a package")
 		color.Green.Println("  version   Show the version of LattePkg")
-		color.Green.Println("  version   Search your packages")
+		color.Green.Println("  search    Search your packages")
 		color.Red.Println("Flags:")
 		color.Magenta.Println("  --help    Show this help message")
 	})
@@ -101,76 +100,40 @@ func executeCommand(cmd *exec.Cmd) (string, error) {
 
 func Install(pkg string) {
 	cmd := exec.Command("brew", "install", pkg)
-	done := make(chan bool)
-
-	go func() {
-		color.Green.Println(messages["installing"] + " " + pkg + "...")
-		output, err := executeCommand(cmd)
-		if err != nil {
-			color.Red.Println(messages["error"]+":", err)
-		} else {
-			if output != "" {
-				color.Green.Println(output)
-			}
+	color.Green.Println(messages["installing"] + " " + pkg + "...")
+	output, err := executeCommand(cmd)
+	if err != nil {
+		color.Red.Println(messages["error"]+":", err)
+	} else {
+		if output != "" {
+			color.Green.Println(output)
 		}
-		done <- true
-	}()
-
-	select {
-	case <-done:
-
-	case <-time.After(3600 * time.Second):
-		color.Yellow.Println(messages["patience"])
 	}
 }
 
 func Uninstall(pkg string) {
 	cmd := exec.Command("brew", "uninstall", pkg)
-	done := make(chan bool)
-
-	go func() {
-		color.Green.Println(messages["uninstalling"] + " " + pkg + "...")
-		output, err := executeCommand(cmd)
-		if err != nil {
-			color.Red.Println(messages["error"]+":", err)
-		} else {
-			if output != "" {
-				color.Green.Println(output)
-			}
+	color.Green.Println(messages["uninstalling"] + " " + pkg + "...")
+	output, err := executeCommand(cmd)
+	if err != nil {
+		color.Red.Println(messages["error"]+":", err)
+	} else {
+		if output != "" {
+			color.Green.Println(output)
 		}
-		done <- true
-	}()
-
-	select {
-	case <-done:
-
-	case <-time.After(3600 * time.Second):
-		color.Yellow.Println(messages["patience"])
 	}
 }
 
 func Update(pkg string) {
 	cmd := exec.Command("brew", "upgrade", pkg)
-	done := make(chan bool)
-
-	go func() {
-		color.Green.Println(messages["upgrading"] + " " + pkg + "...")
-		output, err := executeCommand(cmd)
-		if err != nil {
-			color.Red.Println(messages["error"]+":", err)
-		} else {
-			if output != "" {
-				color.Green.Println(output)
-			}
+	color.Green.Println(messages["upgrading"] + " " + pkg + "...")
+	output, err := executeCommand(cmd)
+	if err != nil {
+		color.Red.Println(messages["error"]+":", err)
+	} else {
+		if output != "" {
+			color.Green.Println(output)
 		}
-		done <- true
-	}()
-
-	select {
-	case <-done:
-
-	case <-time.After(3600 * time.Second):
-		color.Yellow.Println(messages["patience"])
 	}
 }
 
