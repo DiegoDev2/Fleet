@@ -1,58 +1,40 @@
-# Turn
+![_-removebg-preview (1)](https://github.com/user-attachments/assets/9a6a8269-4efb-494c-a052-e37fea7019f7)
 
-**Turn** es una herramienta de línea de comandos (CLI) para gestionar paquetes con Homebrew en macOS. Esta herramienta permite instalar, desinstalar y actualizar paquetes de manera sencilla y rápida.
 
-## Instalación
 
-Para instalar **Turn**, clona el repositorio y compílalo:
 
-```bash
-git clone https://github.com/CodeDiego15/Turn
-cd turn
-chmod +x install.sh
-./install.sh
-```
+# LattePkg
 
-## Uso
+  <!-- Replace with the actual URL of your logo -->
 
-**Turn** ofrece los siguientes comandos:
+**LattePkg** is a command-line interface (CLI) tool for managing packages with Homebrew on macOS. This tool allows you to install, uninstall, and upgrade packages easily and quickly.
 
-- `install [paquete]`: Instala un paquete utilizando Homebrew.
-- `uninstall [paquete]`: Desinstala un paquete utilizando Homebrew.
-- `upgrade [paquete]`: Actualiza un paquete utilizando Homebrew.
+## Installation
 
-### Ejemplos
+To install **LattePkg**, download the latest release from the [Download Page](https://github.com/CodeDiego15/LattePkg/releases/tag/CLI).
 
-Instalar un paquete:
+## Usage
 
-```bash
-turn install <nombre_del_paquete>
-```
+**Latte** provides the following commands:
 
-Desinstalar un paquete:
+- `install [package]`: Installs a package using Homebrew.
+- `uninstall [package]`: Uninstalls a package using Homebrew.
+- `upgrade [package]`: Upgrades a package using Homebrew.
+- `version`: Shows the version of LattePkg.
+- `search [term]`: Searches for a package using Homebrew.
+
+### Examples
+
+Install a package:
 
 ```bash
-turn uninstall <nombre_del_paquete>
+latte install <package_name>
+latte uninstall <package_name>
+latte upgrade <package_name>
+latte search <search_term>
 ```
+## Acknowledgments
+We would like to express our gratitude to Homebrew for providing an excellent package management platform for macOS. Without Homebrew, **LattePkg** would not be possible.
 
-Actualizar un paquete:
-
-```bash
-turn upgrade <nombre_del_paquete>
-```
-
-### Selección de Idioma
-
-La primera vez que ejecutes **Turn**, se te pedirá que selecciones un idioma entre inglés (`en`) y español (`es`). La preferencia de idioma se guardará para futuras ejecuciones.
-
-## Agradecimientos
-
-Queremos expresar nuestro agradecimiento a **Homebrew** por proporcionar una excelente plataforma de gestión de paquetes para macOS. Sin Homebrew, **Turn** no sería posible.
-
-## Contribuciones
-
-¡Las contribuciones son bienvenidas! Si encuentras errores o tienes sugerencias, por favor, abre un **issue** o envía un **pull request**.
-
----
-
-**Turn** es un proyecto independiente y no está asociado oficialmente con Homebrew.
+## Contributions
+Contributions are welcome! If you find any issues or have suggestions, please open an issue or submit a pull request.
