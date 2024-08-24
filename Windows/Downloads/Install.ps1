@@ -3,6 +3,7 @@ $BUILD_DIR = ".\bin"
 $BIN_NAME = "Latte.exe"
 $INSTALL_DIR = "C:\ProgramData\chocolatey\bin"
 $CHOCOLATEY_URL = "https://chocolatey.org/install.ps1"
+$GO_FILE = ".\windowsLatte.go"
 
 # Función para comprobar si Chocolatey está instalado
 function Check-Chocolatey {
@@ -33,9 +34,21 @@ if (-not (Check-Chocolatey)) {
     Install-Chocolatey
 }
 
+# Verificar si el archivo Go existe
+if (-not (Test-Path -Path $GO_FILE)) {
+    Write-Host "El archivo $GO_FILE no existe. Abortando la instalación."
+    exit 1
+}
+
 # Compilar el programa
 Write-Host "Compiling the Go program..."
-go build -o "$BUILD_DIR\$BIN_NAME"
+go build -o "$BUILD_DIR\$BIN_NAME" "$GO_FILE"
+
+# Verificar si la compilación fue exitosa
+if (-not (Test-Path "$BUILD_DIR\$BIN_NAME")) {
+    Write-Host "La compilación falló. Abortando la instalación."
+    exit 1
+}
 
 # Instalar el binario
 Write-Host "Installing the binary to $INSTALL_DIR..."

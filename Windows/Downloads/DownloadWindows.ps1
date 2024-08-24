@@ -15,7 +15,7 @@ if (Test-Path $CLONE_DIR) {
 }
 
 # Navegar a la carpeta del repositorio
-Set-Location $CLONE_DIR
+Set-Location $CLONE_DIR/Windows/Downloads/
 
 # Comprobar si el script de instalación existe
 if (Test-Path "Install.ps1") {
