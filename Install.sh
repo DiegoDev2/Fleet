@@ -2,7 +2,7 @@
 
 # Definir variables
 BUILD_DIR="./bin"
-BIN_NAME="turn"
+BIN_NAME="Latte"
 INSTALL_DIR="/usr/local/bin"
 BREW_URL="https://brew.sh/"
 
