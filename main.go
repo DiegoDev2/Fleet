@@ -81,6 +81,7 @@ func Command() {
 		color.Green.Println("  uninstall Uninstall a package")
 		color.Green.Println("  upgrade   Upgrade a package")
 		color.Green.Println("  version   Show the version of LattePkg")
+		color.Green.Println("  version   Search your packages")
 		color.Red.Println("Flags:")
 		color.Magenta.Println("  --help    Show this help message")
 	})
@@ -118,7 +119,7 @@ func Install(pkg string) {
 	select {
 	case <-done:
 
-	case <-time.After(30 * time.Second):
+	case <-time.After(3600 * time.Second):
 		color.Yellow.Println(messages["patience"])
 	}
 }
@@ -143,7 +144,7 @@ func Uninstall(pkg string) {
 	select {
 	case <-done:
 
-	case <-time.After(30 * time.Second):
+	case <-time.After(3600 * time.Second):
 		color.Yellow.Println(messages["patience"])
 	}
 }
@@ -168,7 +169,7 @@ func Update(pkg string) {
 	select {
 	case <-done:
 
-	case <-time.After(30 * time.Second):
+	case <-time.After(3600 * time.Second):
 		color.Yellow.Println(messages["patience"])
 	}
 }
