@@ -8,7 +8,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// Mensajes que se mostrarán al usuario
 var messages = map[string]string{
 	"installing":         "Installing",
 	"uninstalling":       "Uninstalling",
@@ -23,19 +22,16 @@ var messages = map[string]string{
 	"updateNotAvailable": "No updates available. You're using the latest version.",
 }
 
-// Punto de entrada de la aplicación
 func main() {
 	Command()
 }
 
-// Configura y ejecuta los comandos de la CLI
 func Command() {
 	var rootCmd = &cobra.Command{
 		Use:   "Latte",
 		Short: "A CLI tool for managing packages with Chocolatey",
 	}
 
-	// Agregar los subcomandos
 	rootCmd.AddCommand(
 		createCommand("install", "Install a package", Install),
 		createCommand("uninstall", "Uninstall a package", Uninstall),
@@ -44,7 +40,6 @@ func Command() {
 		createCommand("search", "Search for a package", Search),
 	)
 
-	// Configura la función de ayuda personalizada
 	rootCmd.SetHelpFunc(func(cmd *cobra.Command, args []string) {
 		color.Cyan.Println("Usage: Latte [command] [flags]")
 		color.Yellow.Println("Commands:")
@@ -57,13 +52,11 @@ func Command() {
 		color.Magenta.Println("  --help    Show this help message")
 	})
 
-	// Ejecutar el comando principal
 	if err := rootCmd.Execute(); err != nil {
 		color.Red.Println(messages["error"] + ": " + err.Error())
 	}
 }
 
-// Crea un nuevo comando cobra
 func createCommand(use, short string, handler func(string)) *cobra.Command {
 	return &cobra.Command{
 		Use:   use + " [package]",
@@ -75,7 +68,6 @@ func createCommand(use, short string, handler func(string)) *cobra.Command {
 	}
 }
 
-// Ejecuta un comando de sistema y devuelve el resultado o un error
 func executeCommand(name string, args ...string) (string, error) {
 	cmd := exec.Command(name, args...)
 	output, err := cmd.CombinedOutput()
@@ -85,33 +77,27 @@ func executeCommand(name string, args ...string) (string, error) {
 	return string(output), nil
 }
 
-// Maneja la instalación de un paquete con Chocolatey
 func Install(pkg string) {
 	runChocoCommand("install", pkg, messages["installing"])
 }
 
-// Maneja la desinstalación de un paquete con Chocolatey
 func Uninstall(pkg string) {
 	runChocoCommand("uninstall", pkg, messages["uninstalling"])
 }
 
-// Maneja la actualización de un paquete con Chocolatey
 func Update(pkg string) {
 	runChocoCommand("upgrade", pkg, messages["upgrading"])
 }
 
-// Maneja la búsqueda de un paquete con Chocolatey
 func Search(pkg string) {
 	runChocoCommand("search", pkg, messages["searching"])
 }
 
-// Muestra la versión del programa
 func ShowVersion(pkg string) {
 	version := "LattePkg Version 1.0.2"
 	color.Green.Println(version)
 }
 
-// Ejecuta un comando de Chocolatey con los argumentos proporcionados
 func runChocoCommand(action, pkg, actionMsg string) {
 	color.Green.Println(actionMsg + " " + pkg + "...")
 	output, err := executeCommand("choco", action, pkg)

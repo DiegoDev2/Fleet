@@ -6,7 +6,7 @@ $CLONE_DIR = "LattePkg"
 Write-Host "Clonando el repositorio desde $REPO_URL..."
 git clone $REPO_URL
 
-# Comprobar si el repositorio se ha clonado con éxito
+
 if (Test-Path $CLONE_DIR) {
     Write-Host "Repositorio clonado con éxito en $CLONE_DIR"
 } else {
@@ -14,12 +14,11 @@ if (Test-Path $CLONE_DIR) {
     exit 1
 }
 
-# Navegar a la carpeta del repositorio
 Set-Location $CLONE_DIR/Windows/Downloads/
 
-# Comprobar si el script de instalación existe
+
 if (Test-Path "Install.ps1") {
-    # Ejecutar el script de instalación
+
     Write-Host "Ejecutando el script de instalación..."
     .\Install.ps1
 
