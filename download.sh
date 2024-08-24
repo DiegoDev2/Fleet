@@ -2,7 +2,7 @@
 
 # Variables
 REPO_URL="https://github.com/CodeDiego15/Turn/"
-CLONE_DIR="Turn"
+CLONE_DIR="LattePkg"
 
 # Clonar el repositorio de GitHub
 echo "Clonando el repositorio desde $REPO_URL..."
@@ -27,6 +27,9 @@ if [ -f "Install.sh" ]; then
     # Ejecutar el script de instalación
     echo "Ejecutando el script de instalación..."
     ./Install.sh
+
+    cd ..
+    rm -rm $CLONE_DIR
 else
     echo "No se encontró el script de instalación 'install.sh'."
     exit 1

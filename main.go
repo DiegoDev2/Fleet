@@ -29,7 +29,7 @@ func main() {
 
 func Command() {
 	var rootCmd = &cobra.Command{
-		Use:   "turn",
+		Use:   "Latte",
 		Short: "A CLI tool for managing packages",
 	}
 
@@ -58,6 +58,20 @@ func Command() {
 				Update(args[0])
 			},
 		},
+		&cobra.Command{
+			Use:   "version",
+			Short: "Show the version of LattePkg",
+			Run: func(cmd *cobra.Command, args []string) {
+				version()
+			},
+		},
+		&cobra.Command{
+			Use:   "search [package]",
+			Short: "Search the package",
+			Run: func(cmd *cobra.Command, args []string) {
+				Search(args[0])
+			},
+		},
 	)
 
 	rootCmd.SetHelpFunc(func(cmd *cobra.Command, args []string) {
@@ -66,6 +80,7 @@ func Command() {
 		color.Green.Println("  install   Install a package")
 		color.Green.Println("  uninstall Uninstall a package")
 		color.Green.Println("  upgrade   Upgrade a package")
+		color.Green.Println("  version   Show the version of LattePkg")
 		color.Red.Println("Flags:")
 		color.Magenta.Println("  --help    Show this help message")
 	})
@@ -155,5 +170,22 @@ func Update(pkg string) {
 
 	case <-time.After(30 * time.Second):
 		color.Yellow.Println(messages["patience"])
+	}
+}
+
+func version() {
+	com := "LattePkg Version"
+	ver := com + " 1.0.2"
+	color.Greenln(ver)
+}
+
+func Search(search string) {
+	cmd := exec.Command("brew", "search", search)
+	color.Green.Println("Search", search, "....")
+	output, err := cmd.CombinedOutput() // Capture the output and error
+	if err != nil {
+		color.Red.Println("Error:", err)
+	} else {
+		color.Green.Println(string(output))
 	}
 }
