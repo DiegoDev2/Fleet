@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-REPO_URL="https://github.com/CodeDiego15/Turn/"
+REPO_URL="https://github.com/CodeDiego15/LattePkg"
 CLONE_DIR="LattePkg"
 
 # Clonar el repositorio de GitHub
