@@ -11,7 +11,7 @@
 
 ## Installation
 
-To install **LattePkg**, download the latest release from the [Download Page](https://github.com/CodeDiego15/LattePkg/releases/tag/CLI).
+We are still developing the tool, patience
 
 ## Usage
 
