@@ -1,55 +1,44 @@
 #!/bin/bash
 
-
 BUILD_DIR="./bin"
 BIN_NAME="Latte"
 INSTALL_DIR="/usr/local/bin"
-BREW_URL="https://brew.sh/"
+GO_VERSION="1.22.6"
+GO_TAR="go$GO_VERSION.darwin-amd64.tar.gz"
+GO_URL="https://golang.org/dl/$GO_TAR"
 
-
-
-
-check_brew() {
-  if command -v brew &> /dev/null; then
-    echo "Homebrew ya está instalado."
+check_go() {
+  if command -v go &> /dev/null; then
+    echo "Go ya está instalado."
     return 0
   else
-    echo "Homebrew no encontrado. Procediendo con la instalación..."
+    echo "Go no encontrado. Procediendo con la instalación de Go $GO_VERSION..."
     return 1
   fi
 }
 
-
-install_brew() {
-  
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  
-
-  if [ -f /usr/local/bin/brew ]; then
-    echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.zshrc
-    source ~/.zshrc
-  fi
+install_go() {
+  curl -LO $GO_URL
+  sudo tar -C /usr/local -xzf $GO_TAR
+  echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.zshrc
+  source ~/.zshrc
+  rm $GO_TAR
 }
-
 
 mkdir -p $BUILD_DIR
 
-
-if ! check_brew; then
-  install_brew
+if ! check_go; then
+  install_go
 fi
 
-
-echo "Compiling the Go program..."
+echo "Compilando el programa Go..."
 go build -o $BUILD_DIR/$BIN_NAME
 
-
-echo "Installing the binary to $INSTALL_DIR..."
+echo "Instalando el binario en $INSTALL_DIR..."
 sudo cp $BUILD_DIR/$BIN_NAME $INSTALL_DIR/
 
-
 if [ -f "$INSTALL_DIR/$BIN_NAME" ]; then
-    echo "Installation successful! You can now use '$BIN_NAME' from anywhere."
+    echo "¡Instalación exitosa! Ahora puedes usar '$BIN_NAME' desde cualquier lugar."
 else
-    echo "Installation failed."
+    echo "La instalación falló."
 fi
