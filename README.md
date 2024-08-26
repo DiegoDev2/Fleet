@@ -1,4 +1,4 @@
-![_-removebg-preview (1)](https://github.com/user-attachments/assets/9a6a8269-4efb-494c-a052-e37fea7019f7)
+<img src="https://github.com/user-attachments/assets/74bd1229-034a-4c59-8487-b33c607ec5aa" width="200" heigth="150">
 
 
 
