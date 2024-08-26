@@ -20,6 +20,7 @@ func installEtcd() {
 func installEtcdForMac() {
 	url := "https://github.com/etcd-io/etcd/releases/download/v3.5.1/etcd-v3.5.1-darwin-amd64.zip"
 	downloadAndInstall(url, "etcd.zip", "unzip", "etcd.zip", "&&", "sudo", "mv", "etcd-v3.5.1-darwin-amd64/etcdctl", "/usr/local/bin/")
+
 }
 
 func installEtcdForLinux() {
