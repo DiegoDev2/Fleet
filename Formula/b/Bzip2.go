@@ -34,28 +34,36 @@ func (f *Formula) TestPackage() error {
 	return nil
 }
 
-var kubernetes = &Formula{
-	Name:        "kubernetes",
-	Description: "Kubernetes container orchestration platform",
-	Homepage:    "https://kubernetes.io/",
-	URL:         "https://dl.k8s.io/v1.26.0/kubernetes-client-linux-amd64.tar.gz",
-	Sha256:      "b8ffbb97e0c8a7a0d2c1f0ff3c6a6d97b5768a0c3f1d12d51ac1f55aeb1c5a8d",
-	License:     "Apache-2.0",
+var bzip2 = &Formula{
+	Name:        "bzip2",
+	Description: "A high-quality data compressor",
+	Homepage:    "https://www.sourceware.org/bzip2/",
+	URL:         "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz",
+	Sha256:      "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269",
+	License:     "BSD-4-Clause",
 	Install: func() error {
-		fmt.Println("Downloading Kubernetes client...")
-		cmd := exec.Command("curl", "-LO", "https://dl.k8s.io/v1.26.0/kubernetes-client-linux-amd64.tar.gz")
+		fmt.Println("Downloading bzip2...")
+		cmd := exec.Command("curl", "-LO", "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Extracting Kubernetes client...")
-		cmd = exec.Command("tar", "-xzf", "kubernetes-client-linux-amd64.tar.gz")
+		fmt.Println("Extracting bzip2...")
+		cmd = exec.Command("tar", "-xzf", "bzip2-1.0.8.tar.gz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Installing Kubernetes client...")
-		cmd = exec.Command("mv", "kubernetes/client/bin/kubectl", "/usr/local/bin/kubectl")
+		fmt.Println("Building bzip2...")
+		cmd = exec.Command("make")
+		cmd.Dir = "bzip2-1.0.8"
+		if err := cmd.Run(); err != nil {
+			return err
+		}
+
+		fmt.Println("Installing bzip2...")
+		cmd = exec.Command("make", "install")
+		cmd.Dir = "bzip2-1.0.8"
 		if err := cmd.Run(); err != nil {
 			return err
 		}
@@ -63,8 +71,8 @@ var kubernetes = &Formula{
 		return nil
 	},
 	Test: func() error {
-		fmt.Println("Testing Kubernetes client...")
-		cmd := exec.Command("kubectl", "version", "--client")
+		fmt.Println("Testing bzip2...")
+		cmd := exec.Command("bzip2", "--version")
 		output, err := cmd.CombinedOutput()
 		if err != nil {
 			return err
@@ -75,15 +83,15 @@ var kubernetes = &Formula{
 }
 
 func main() {
-	if err := kubernetes.InstallPackage(); err != nil {
+	if err := bzip2.InstallPackage(); err != nil {
 		fmt.Println("Installation failed:", err)
 		os.Exit(1)
 	}
 
-	if err := kubernetes.TestPackage(); err != nil {
+	if err := bzip2.TestPackage(); err != nil {
 		fmt.Println("Testing failed:", err)
 		os.Exit(1)
 	}
 
-	fmt.Println("Kubernetes client installed and tested successfully!")
+	fmt.Println("bzip2 installed and tested successfully!")
 }

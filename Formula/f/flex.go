@@ -34,41 +34,41 @@ func (f *Formula) TestPackage() error {
 	return nil
 }
 
-var cmake = &Formula{
-	Name:        "cmake",
-	Description: "Cross-platform make",
-	Homepage:    "https://cmake.org/",
-	URL:         "https://github.com/Kitware/CMake/releases/download/v3.27.0-rc1/cmake-3.27.0-rc1.tar.gz",
-	Sha256:      "a85d1d8b59f50a3ea57b197ec0df2a0e0c6c6bfa0c17cbb6c243ab5c601dbda4",
-	License:     "BSD-3-Clause",
+var flex = &Formula{
+	Name:        "flex",
+	Description: "Fast Lexical Analyzer",
+	Homepage:    "https://github.com/westes/flex",
+	URL:         "https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz",
+	Sha256:      "e87cacd4da12ad5b7f2dbb4177bcb24ffdcdfb55587b3a0c93097a1f7d5b4dcb",
+	License:     "BSD-2-Clause",
 	Install: func() error {
-		fmt.Println("Downloading cmake...")
-		cmd := exec.Command("curl", "-LO", "https://github.com/Kitware/CMake/releases/download/v3.27.0-rc1/cmake-3.27.0-rc1.tar.gz")
+		fmt.Println("Downloading flex...")
+		cmd := exec.Command("curl", "-LO", "https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Extracting cmake...")
-		cmd = exec.Command("tar", "-xzf", "cmake-3.27.0-rc1.tar.gz")
+		fmt.Println("Extracting flex...")
+		cmd = exec.Command("tar", "-xzf", "flex-2.6.4.tar.gz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Configuring cmake...")
-		cmd = exec.Command("./bootstrap")
-		cmd.Dir = "cmake-3.27.0-rc1"
+		fmt.Println("Configuring flex...")
+		cmd = exec.Command("./configure", "--prefix=/usr/local")
+		cmd.Dir = "flex-2.6.4"
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Building and installing cmake...")
+		fmt.Println("Building and installing flex...")
 		cmd = exec.Command("make")
-		cmd.Dir = "cmake-3.27.0-rc1"
+		cmd.Dir = "flex-2.6.4"
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 		cmd = exec.Command("make", "install")
-		cmd.Dir = "cmake-3.27.0-rc1"
+		cmd.Dir = "flex-2.6.4"
 		if err := cmd.Run(); err != nil {
 			return err
 		}
@@ -76,8 +76,8 @@ var cmake = &Formula{
 		return nil
 	},
 	Test: func() error {
-		fmt.Println("Testing cmake...")
-		cmd := exec.Command("cmake", "--version")
+		fmt.Println("Testing flex...")
+		cmd := exec.Command("flex", "--version")
 		output, err := cmd.CombinedOutput()
 		if err != nil {
 			return err
@@ -88,15 +88,15 @@ var cmake = &Formula{
 }
 
 func main() {
-	if err := cmake.InstallPackage(); err != nil {
+	if err := flex.InstallPackage(); err != nil {
 		fmt.Println("Installation failed:", err)
 		os.Exit(1)
 	}
 
-	if err := cmake.TestPackage(); err != nil {
+	if err := flex.TestPackage(); err != nil {
 		fmt.Println("Testing failed:", err)
 		os.Exit(1)
 	}
 
-	fmt.Println("cmake installed and tested successfully!")
+	fmt.Println("flex installed and tested successfully!")
 }

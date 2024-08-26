@@ -6,7 +6,6 @@ import (
 	"os/exec"
 )
 
-// Definición de la estructura Formula
 type Formula struct {
 	Name        string
 	Description string
@@ -34,41 +33,41 @@ func (f *Formula) TestPackage() error {
 	return nil
 }
 
-var cmake = &Formula{
-	Name:        "cmake",
-	Description: "Cross-platform make",
-	Homepage:    "https://cmake.org/",
-	URL:         "https://github.com/Kitware/CMake/releases/download/v3.27.0-rc1/cmake-3.27.0-rc1.tar.gz",
-	Sha256:      "a85d1d8b59f50a3ea57b197ec0df2a0e0c6c6bfa0c17cbb6c243ab5c601dbda4",
-	License:     "BSD-3-Clause",
+var emacs = &Formula{
+	Name:        "emacs",
+	Description: "GNU Emacs text editor",
+	Homepage:    "https://www.gnu.org/software/emacs/",
+	URL:         "https://ftp.gnu.org/gnu/emacs/emacs-28.1.tar.xz",
+	Sha256:      "ce6240e6b8d98f41ddc4ad3e74cc856b61e8a3722a3aa9af5e9ae1f0fcf90e56",
+	License:     "GPL-3.0-or-later",
 	Install: func() error {
-		fmt.Println("Downloading cmake...")
-		cmd := exec.Command("curl", "-LO", "https://github.com/Kitware/CMake/releases/download/v3.27.0-rc1/cmake-3.27.0-rc1.tar.gz")
+		fmt.Println("Downloading emacs...")
+		cmd := exec.Command("curl", "-LO", "https://ftp.gnu.org/gnu/emacs/emacs-28.1.tar.xz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Extracting cmake...")
-		cmd = exec.Command("tar", "-xzf", "cmake-3.27.0-rc1.tar.gz")
+		fmt.Println("Extracting emacs...")
+		cmd = exec.Command("tar", "-xf", "emacs-28.1.tar.xz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Configuring cmake...")
-		cmd = exec.Command("./bootstrap")
-		cmd.Dir = "cmake-3.27.0-rc1"
+		fmt.Println("Configuring emacs...")
+		cmd = exec.Command("./configure", "--prefix=/usr/local")
+		cmd.Dir = "emacs-28.1"
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Building and installing cmake...")
+		fmt.Println("Building and installing emacs...")
 		cmd = exec.Command("make")
-		cmd.Dir = "cmake-3.27.0-rc1"
+		cmd.Dir = "emacs-28.1"
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 		cmd = exec.Command("make", "install")
-		cmd.Dir = "cmake-3.27.0-rc1"
+		cmd.Dir = "emacs-28.1"
 		if err := cmd.Run(); err != nil {
 			return err
 		}
@@ -76,8 +75,8 @@ var cmake = &Formula{
 		return nil
 	},
 	Test: func() error {
-		fmt.Println("Testing cmake...")
-		cmd := exec.Command("cmake", "--version")
+		fmt.Println("Testing emacs...")
+		cmd := exec.Command("emacs", "--version")
 		output, err := cmd.CombinedOutput()
 		if err != nil {
 			return err
@@ -88,15 +87,15 @@ var cmake = &Formula{
 }
 
 func main() {
-	if err := cmake.InstallPackage(); err != nil {
+	if err := emacs.InstallPackage(); err != nil {
 		fmt.Println("Installation failed:", err)
 		os.Exit(1)
 	}
 
-	if err := cmake.TestPackage(); err != nil {
+	if err := emacs.TestPackage(); err != nil {
 		fmt.Println("Testing failed:", err)
 		os.Exit(1)
 	}
 
-	fmt.Println("cmake installed and tested successfully!")
+	fmt.Println("emacs installed and tested successfully!")
 }

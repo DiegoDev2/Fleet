@@ -1,48 +1,101 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"os/exec"
-	"runtime"
 )
 
-func installGit() {
-	switch os := runtime.GOOS; os {
-	case "darwin":
-		installGitForMac()
-	case "linux":
-		installGitForLinux()
-	case "windows":
-		installGitForWindows()
+type Formula struct {
+	Name        string
+	Description string
+	Homepage    string
+	URL         string
+	Sha256      string
+	License     string
+	Install     func() error
+	Test        func() error
+}
+
+func (f *Formula) InstallPackage() error {
+	fmt.Printf("Installing %s...\n", f.Name)
+	if err := f.Install(); err != nil {
+		return fmt.Errorf("installation failed: %v", err)
 	}
+	return nil
 }
 
-func installGitForMac() {
-	url := "https://sourceforge.net/projects/git-osx-installer/files/git-2.33.0-intel-universal-mavericks.dmg"
-	downloadAndInstall(url, "git.dmg", "sudo", "hdiutil", "attach", "git.dmg", "&&", "sudo", "installer", "-pkg", "/Volumes/Git 2.33.0 Intel Universal/git-2.33.0-intel-universal-mavericks.pkg", "-target", "/")
+func (f *Formula) TestPackage() error {
+	fmt.Printf("Testing %s...\n", f.Name)
+	if err := f.Test(); err != nil {
+		return fmt.Errorf("testing failed: %v", err)
+	}
+	return nil
 }
 
-func installGitForLinux() {
-	runCommand(exec.Command("sudo", "apt-get", "install", "-y", "git"))
-}
+var git = &Formula{
+	Name:        "git",
+	Description: "Distributed version control system",
+	Homepage:    "https://git-scm.com/",
+	URL:         "https://www.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz",
+	Sha256:      "c0c64a2e1124d4b3a3e9fa159eef8570ed5b058ff4c2be3bb10343b86f0219c1",
+	License:     "GPL-2.0-or-later",
+	Install: func() error {
+		fmt.Println("Downloading git...")
+		cmd := exec.Command("curl", "-LO", "https://www.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz")
+		if err := cmd.Run(); err != nil {
+			return err
+		}
 
-func installGitForWindows() {
-	url := "https://github.com/git-for-windows/git/releases/download/v2.33.0.windows.1/Git-2.33.0-64-bit.exe"
-	downloadAndInstall(url, "git.exe", "start", "/wait", "git.exe", "/SILENT")
-}
+		fmt.Println("Extracting git...")
+		cmd = exec.Command("tar", "-xf", "git-2.41.0.tar.xz")
+		if err := cmd.Run(); err != nil {
+			return err
+		}
 
-func downloadAndInstall(url, filename string, installCommand ...string) {
-	downloadCmd := exec.Command("curl", "-o", filename, url)
-	runCommand(downloadCmd)
-	runCommand(exec.Command(installCommand[0], installCommand[1:]...))
-}
+		fmt.Println("Configuring git...")
+		cmd = exec.Command("./configure", "--prefix=/usr/local")
+		cmd.Dir = "git-2.41.0"
+		if err := cmd.Run(); err != nil {
+			return err
+		}
 
-func runCommand(cmd *exec.Cmd) {
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	cmd.Run()
+		fmt.Println("Building and installing git...")
+		cmd = exec.Command("make")
+		cmd.Dir = "git-2.41.0"
+		if err := cmd.Run(); err != nil {
+			return err
+		}
+		cmd = exec.Command("make", "install")
+		cmd.Dir = "git-2.41.0"
+		if err := cmd.Run(); err != nil {
+			return err
+		}
+
+		return nil
+	},
+	Test: func() error {
+		fmt.Println("Testing git...")
+		cmd := exec.Command("git", "--version")
+		output, err := cmd.CombinedOutput()
+		if err != nil {
+			return err
+		}
+		fmt.Println(string(output))
+		return nil
+	},
 }
 
 func main() {
-	installGit()
+	if err := git.InstallPackage(); err != nil {
+		fmt.Println("Installation failed:", err)
+		os.Exit(1)
+	}
+
+	if err := git.TestPackage(); err != nil {
+		fmt.Println("Testing failed:", err)
+		os.Exit(1)
+	}
+
+	fmt.Println("git installed and tested successfully!")
 }
