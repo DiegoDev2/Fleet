@@ -1,28 +1,49 @@
 package main
 
 import (
-	"fmt"
+	"os"
 	"os/exec"
+	"runtime"
 )
 
-func installOpenSSL() {
-	url := "https://www.openssl.org/source/openssl-3.0.7.tar.gz"
-	fileName := "openssl-3.0.7.tar.gz"
-	extractDir := "openssl-3.0.7"
+func installOpenssl() {
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		installOpensslForMac()
+	case "linux":
+		installOpensslForLinux()
+	case "windows":
+		installOpensslForWindows()
+	}
+}
 
-	fmt.Println("Downloading OpenSSL...")
-	exec.Command("curl", "-LO", url).Run()
-	fmt.Println(extractDir)
+func installOpensslForMac() {
+	url := "https://www.openssl.org/source/openssl-1.1.1l.tar.gz"
+	downloadAndInstall(url, "openssl.tar.gz", "tar", "-xvzf", "openssl.tar.gz", "&&", "cd", "openssl-1.1.1l", "&&", "./config", "&&", "make", "&&", "sudo", "make", "install")
+}
 
-	fmt.Println("Extracting OpenSSL...")
-	exec.Command("tar", "-xzf", fileName).Run()
+func installOpensslForLinux() {
+	url := "https://www.openssl.org/source/openssl-1.1.1l.tar.gz"
+	downloadAndInstall(url, "openssl.tar.gz", "tar", "-xvzf", "openssl.tar.gz", "&&", "cd", "openssl-1.1.1l", "&&", "./config", "&&", "make", "&&", "sudo", "make", "install")
+}
 
-	fmt.Println("Configuring OpenSSL...")
-	exec.Command("sh", "configure", "--prefix=/usr/local").Run()
+func installOpensslForWindows() {
+	url := "https://slproweb.com/download/Win64OpenSSL-1_1_1l.exe"
+	downloadAndInstall(url, "Win64OpenSSL.exe", "start", "/wait", "Win64OpenSSL.exe", "/SILENT")
+}
 
-	fmt.Println("Compiling OpenSSL...")
-	exec.Command("make").Run()
+func downloadAndInstall(url, filename string, installCommand ...string) {
+	downloadCmd := exec.Command("curl", "-o", filename, url)
+	runCommand(downloadCmd)
+	runCommand(exec.Command(installCommand[0], installCommand[1:]...))
+}
 
-	fmt.Println("Installing OpenSSL...")
-	exec.Command("make", "install").Run()
+func runCommand(cmd *exec.Cmd) {
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.Run()
+}
+
+func main() {
+	installOpenssl()
 }

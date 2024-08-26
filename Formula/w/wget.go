@@ -1,28 +1,47 @@
 package main
 
 import (
-	"fmt"
+	"os"
 	"os/exec"
+	"runtime"
 )
 
 func installWget() {
-	url := "https://ftp.gnu.org/gnu/wget/wget-1.21.3.tar.gz"
-	fileName := "wget-1.21.3.tar.gz"
-	extractDir := "wget-1.21.3"
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		installWgetForMac()
+	case "linux":
+		installWgetForLinux()
+	case "windows":
+		installWgetForWindows()
+	}
+}
 
-	fmt.Println("Downloading wget...")
-	exec.Command("curl", "-LO", url).Run()
-	fmt.Println(extractDir)
+func installWgetForMac() {
+	runCommand(exec.Command("brew", "install", "wget"))
+}
 
-	fmt.Println("Extracting wget...")
-	exec.Command("tar", "-xzf", fileName).Run()
+func installWgetForLinux() {
+	runCommand(exec.Command("sudo", "apt-get", "install", "-y", "wget"))
+}
 
-	fmt.Println("Configuring wget...")
-	exec.Command("sh", "configure", "--prefix=/usr/local").Run()
+func installWgetForWindows() {
+	url := "https://eternallybored.org/misc/wget/releases/wget-1.21.1-win64.zip"
+	downloadAndInstall(url, "wget.zip", "unzip", "wget.zip", "-d", "C:\\wget", "&&", "set", "PATH=%PATH%;C:\\wget")
+}
 
-	fmt.Println("Compiling wget...")
-	exec.Command("make").Run()
+func downloadAndInstall(url, filename string, installCommand ...string) {
+	downloadCmd := exec.Command("curl", "-o", filename, url)
+	runCommand(downloadCmd)
+	runCommand(exec.Command(installCommand[0], installCommand[1:]...))
+}
 
-	fmt.Println("Installing wget...")
-	exec.Command("make", "install").Run()
+func runCommand(cmd *exec.Cmd) {
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.Run()
+}
+
+func main() {
+	installWget()
 }
