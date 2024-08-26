@@ -68,6 +68,14 @@ func Command() {
 				version()
 			},
 		},
+		&cobra.Command{
+			Use:   "search [package]",
+			Short: "Search the package",
+			Args:  cobra.ExactArgs(1),
+			Run: func(cmd *cobra.Command, args []string) {
+				Search(args[0])
+			},
+		},
 	)
 
 	rootCmd.SetHelpFunc(func(cmd *cobra.Command, args []string) {
@@ -77,6 +85,7 @@ func Command() {
 		color.Green.Println("  uninstall Uninstall a package")
 		color.Green.Println("  upgrade   Upgrade a package")
 		color.Green.Println("  version   Show the version of LattePkg")
+		color.Green.Println("  search    Search your packages")
 		color.Red.Println("Flags:")
 		color.Magenta.Println("  --help    Show this help message")
 	})
@@ -157,9 +166,20 @@ func version() {
 	color.Greenln(ver)
 }
 
+func Search(search string) {
+	cmd := exec.Command("go", "run", "LattePkg/Formulas/"+string(search[0])+"/"+search+"/"+search+".go")
+	color.Green.Println("Search", search, "....")
+	output, err := cmd.CombinedOutput()
+	if err != nil {
+		color.Red.Println("Error:", err)
+	} else {
+		color.Green.Println(string(output))
+	}
+}
+
 func downloadFormula(pkg string) (string, error) {
 	baseURL := "https://raw.githubusercontent.com/CodeDiego15/LattePkg/main/Formula"
-	formulaURL := fmt.Sprintf("%s/%s/%s/%s.go", baseURL, string(pkg[0]), pkg, pkg)
+	formulaURL := fmt.Sprintf("%s/%s/%s.go", baseURL, string(pkg[0]), pkg)
 	color.Green.Println("Downloading", formulaURL, "...")
 
 	resp, err := http.Get(formulaURL)
@@ -193,8 +213,10 @@ func downloadFormula(pkg string) (string, error) {
 }
 
 func getOrDownloadFormula(pkg string) (string, error) {
+
 	localPath := getFormulaPath(pkg)
 	if _, err := os.Stat(localPath); os.IsNotExist(err) {
+
 		return downloadFormula(pkg)
 	}
 	return localPath, nil
