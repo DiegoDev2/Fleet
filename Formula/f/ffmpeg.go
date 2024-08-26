@@ -1,28 +1,49 @@
 package main
 
 import (
-	"fmt"
+	"os"
 	"os/exec"
+	"runtime"
 )
 
-func installFfmpeg() {
-	url := "https://ffmpeg.org/releases/ffmpeg-5.0.tar.gz"
-	fileName := "ffmpeg-5.0.tar.gz"
-	extractDir := "ffmpeg-5.0"
+func installFFmpeg() {
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		installFFmpegForMac()
+	case "linux":
+		installFFmpegForLinux()
+	case "windows":
+		installFFmpegForWindows()
+	}
+}
 
-	fmt.Println("Downloading ffmpeg...")
-	exec.Command("curl", "-LO", url).Run()
-	fmt.Println(extractDir)
+func installFFmpegForMac() {
+	url := "https://evermeet.cx/ffmpeg/ffmpeg-4.3.2.zip"
+	downloadAndInstall(url, "ffmpeg.zip", "unzip", "ffmpeg.zip", "&&", "sudo", "mv", "ffmpeg", "/usr/local/bin/")
+}
 
-	fmt.Println("Extracting ffmpeg...")
-	exec.Command("tar", "-xzf", fileName).Run()
+func installFFmpegForLinux() {
+	url := "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz"
+	downloadAndInstall(url, "ffmpeg.tar.xz", "tar", "-xvJf", "ffmpeg.tar.xz", "&&", "sudo", "mv", "ffmpeg-*/ffmpeg", "/usr/local/bin/")
+}
 
-	fmt.Println("Configuring ffmpeg...")
-	exec.Command("sh", "configure", "--prefix=/usr/local").Run()
+func installFFmpegForWindows() {
+	url := "https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20200831-4a11a6f-win64-static.zip"
+	downloadAndInstall(url, "ffmpeg.zip", "unzip", "ffmpeg.zip", "-d", "C:\\ffmpeg", "&&", "set", "PATH=%PATH%;C:\\ffmpeg\\bin")
+}
 
-	fmt.Println("Compiling ffmpeg...")
-	exec.Command("make").Run()
+func downloadAndInstall(url, filename string, installCommand ...string) {
+	downloadCmd := exec.Command("curl", "-o", filename, url)
+	runCommand(downloadCmd)
+	runCommand(exec.Command(installCommand[0], installCommand[1:]...))
+}
 
-	fmt.Println("Installing ffmpeg...")
-	exec.Command("make", "install").Run()
+func runCommand(cmd *exec.Cmd) {
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.Run()
+}
+
+func main() {
+	installFFmpeg()
 }

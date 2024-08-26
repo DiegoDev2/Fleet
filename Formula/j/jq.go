@@ -1,28 +1,49 @@
 package main
 
 import (
-	"fmt"
+	"os"
 	"os/exec"
+	"runtime"
 )
 
 func installJq() {
-	url := "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-1.6.tar.gz"
-	fileName := "jq-1.6.tar.gz"
-	extractDir := "jq-1.6"
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		installJqForMac()
+	case "linux":
+		installJqForLinux()
+	case "windows":
+		installJqForWindows()
+	}
+}
 
-	fmt.Println("Downloading jq...")
-	exec.Command("curl", "-LO", url).Run()
-	fmt.Println(extractDir)
+func installJqForMac() {
+	url := "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-osx-amd64"
+	downloadAndInstall(url, "jq", "chmod", "+x", "jq", "&&", "sudo", "mv", "jq", "/usr/local/bin/")
+}
 
-	fmt.Println("Extracting jq...")
-	exec.Command("tar", "-xzf", fileName).Run()
+func installJqForLinux() {
+	url := "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64"
+	downloadAndInstall(url, "jq", "chmod", "+x", "jq", "&&", "sudo", "mv", "jq", "/usr/local/bin/")
+}
 
-	fmt.Println("Configuring jq...")
-	exec.Command("sh", "configure", "--prefix=/usr/local").Run()
+func installJqForWindows() {
+	url := "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-win64.exe"
+	downloadAndInstall(url, "jq.exe", "mv", "jq.exe", "C:\\Windows\\System32")
+}
 
-	fmt.Println("Compiling jq...")
-	exec.Command("make").Run()
+func downloadAndInstall(url, filename string, installCommand ...string) {
+	downloadCmd := exec.Command("curl", "-o", filename, url)
+	runCommand(downloadCmd)
+	runCommand(exec.Command(installCommand[0], installCommand[1:]...))
+}
 
-	fmt.Println("Installing jq...")
-	exec.Command("make", "install").Run()
+func runCommand(cmd *exec.Cmd) {
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.Run()
+}
+
+func main() {
+	installJq()
 }
