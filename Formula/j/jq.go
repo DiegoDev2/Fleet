@@ -6,7 +6,6 @@ import (
 	"os/exec"
 )
 
-// Definición de la estructura Formula
 type Formula struct {
 	Name        string
 	Description string

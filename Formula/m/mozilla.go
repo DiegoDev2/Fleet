@@ -34,28 +34,32 @@ func (f *Formula) TestPackage() error {
 	return nil
 }
 
-var terraform = &Formula{
-	Name:        "Terraform",
-	Description: "Terraform Infrastructure as Code Tool",
-	Homepage:    "https://www.terraform.io/",
-	URL:         "https://releases.hashicorp.com/terraform/1.6.2/terraform_1.6.2_linux_amd64.zip",
-	Sha256:      "fa83d76815e3b28e58e64f6d0689e4c53e6f33e7b0b61e9fa99b8c7d6c4a7c2b",
+var firefox = &Formula{
+	Name:        "Mozilla Firefox",
+	Description: "Mozilla Firefox Web Browser",
+	Homepage:    "https://www.mozilla.org/firefox/",
+	URL:         "https://ftp.mozilla.org/pub/firefox/releases/117.0.1/linux-x86_64/en-US/firefox-117.0.1.tar.bz2",
+	Sha256:      "d6b9b0cb6e63a9e0c61ea18d8e1ed013b6eeb0f30b5a7dc5f7459fc8a94900f7",
 	License:     "MPL-2.0",
 	Install: func() error {
-		fmt.Println("Downloading Terraform...")
-		cmd := exec.Command("curl", "-LO", "https://releases.hashicorp.com/terraform/1.6.2/terraform_1.6.2_linux_amd64.zip")
+		fmt.Println("Downloading Mozilla Firefox...")
+		cmd := exec.Command("curl", "-LO", "https://ftp.mozilla.org/pub/firefox/releases/117.0.1/linux-x86_64/en-US/firefox-117.0.1.tar.bz2")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Extracting Terraform...")
-		cmd = exec.Command("unzip", "terraform_1.6.2_linux_amd64.zip")
+		fmt.Println("Extracting Mozilla Firefox...")
+		cmd = exec.Command("tar", "-xjf", "firefox-117.0.1.tar.bz2")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Installing Terraform...")
-		cmd = exec.Command("mv", "terraform", "/usr/local/bin/terraform")
+		fmt.Println("Installing Mozilla Firefox...")
+		cmd = exec.Command("mv", "firefox", "/opt/firefox")
+		if err := cmd.Run(); err != nil {
+			return err
+		}
+		cmd = exec.Command("ln", "-s", "/opt/firefox/firefox", "/usr/local/bin/firefox")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
@@ -63,8 +67,8 @@ var terraform = &Formula{
 		return nil
 	},
 	Test: func() error {
-		fmt.Println("Testing Terraform...")
-		cmd := exec.Command("terraform", "--version")
+		fmt.Println("Testing Mozilla Firefox...")
+		cmd := exec.Command("firefox", "--version")
 		output, err := cmd.CombinedOutput()
 		if err != nil {
 			return err
@@ -75,15 +79,15 @@ var terraform = &Formula{
 }
 
 func main() {
-	if err := terraform.InstallPackage(); err != nil {
+	if err := firefox.InstallPackage(); err != nil {
 		fmt.Println("Installation failed:", err)
 		os.Exit(1)
 	}
 
-	if err := terraform.TestPackage(); err != nil {
+	if err := firefox.TestPackage(); err != nil {
 		fmt.Println("Testing failed:", err)
 		os.Exit(1)
 	}
 
-	fmt.Println("Terraform installed and tested successfully!")
+	fmt.Println("Mozilla Firefox installed and tested successfully!")
 }

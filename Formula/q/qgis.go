@@ -6,7 +6,6 @@ import (
 	"os/exec"
 )
 
-// Definición de la estructura Formula
 type Formula struct {
 	Name        string
 	Description string
@@ -34,28 +33,32 @@ func (f *Formula) TestPackage() error {
 	return nil
 }
 
-var python = &Formula{
-	Name:        "Python",
-	Description: "Python Programming Language",
-	Homepage:    "https://www.python.org/",
-	URL:         "https://www.python.org/ftp/python/3.12.0/python-3.12.0-linux-x86_64.tar.xz",
-	Sha256:      "b1f38eb43d4e3a0e0a8e6a7b05a5cb56f32b676c9c7a5a7c61d21c15d72c3d3e",
-	License:     "Python-2.0",
+var qgis = &Formula{
+	Name:        "QGIS",
+	Description: "QGIS Geographic Information System",
+	Homepage:    "https://qgis.org/",
+	URL:         "https://qgis.org/downloads/QGIS-3.28.3-x86_64.tar.bz2",
+	Sha256:      "7e0dcb7d8de2fcb42c5829cc90ff4d510c4e8c5b6e764e2ffce3ff15c89b32b9",
+	License:     "GPL-2.0",
 	Install: func() error {
-		fmt.Println("Downloading Python...")
-		cmd := exec.Command("curl", "-LO", "https://www.python.org/ftp/python/3.12.0/python-3.12.0-linux-x86_64.tar.xz")
+		fmt.Println("Downloading QGIS...")
+		cmd := exec.Command("curl", "-LO", "https://qgis.org/downloads/QGIS-3.28.3-x86_64.tar.bz2")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Extracting Python...")
-		cmd = exec.Command("tar", "-xJf", "python-3.12.0-linux-x86_64.tar.xz")
+		fmt.Println("Extracting QGIS...")
+		cmd = exec.Command("tar", "-xjf", "QGIS-3.28.3-x86_64.tar.bz2")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Installing Python...")
-		cmd = exec.Command("cd", "python-3.12.0", "&&", "./configure", "&&", "make", "&&", "make", "install")
+		fmt.Println("Installing QGIS...")
+		cmd = exec.Command("mv", "QGIS-3.28.3", "/opt/qgis")
+		if err := cmd.Run(); err != nil {
+			return err
+		}
+		cmd = exec.Command("ln", "-s", "/opt/qgis/bin/qgis", "/usr/local/bin/qgis")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
@@ -63,8 +66,8 @@ var python = &Formula{
 		return nil
 	},
 	Test: func() error {
-		fmt.Println("Testing Python...")
-		cmd := exec.Command("python3", "--version")
+		fmt.Println("Testing QGIS...")
+		cmd := exec.Command("qgis", "--version")
 		output, err := cmd.CombinedOutput()
 		if err != nil {
 			return err
@@ -75,15 +78,15 @@ var python = &Formula{
 }
 
 func main() {
-	if err := python.InstallPackage(); err != nil {
+	if err := qgis.InstallPackage(); err != nil {
 		fmt.Println("Installation failed:", err)
 		os.Exit(1)
 	}
 
-	if err := python.TestPackage(); err != nil {
+	if err := qgis.TestPackage(); err != nil {
 		fmt.Println("Testing failed:", err)
 		os.Exit(1)
 	}
 
-	fmt.Println("Python installed and tested successfully!")
+	fmt.Println("QGIS installed and tested successfully!")
 }

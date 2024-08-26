@@ -6,7 +6,6 @@ import (
 	"os/exec"
 )
 
-// Definición de la estructura Formula
 type Formula struct {
 	Name        string
 	Description string
@@ -34,28 +33,28 @@ func (f *Formula) TestPackage() error {
 	return nil
 }
 
-var python = &Formula{
-	Name:        "Python",
-	Description: "Python Programming Language",
-	Homepage:    "https://www.python.org/",
-	URL:         "https://www.python.org/ftp/python/3.12.0/python-3.12.0-linux-x86_64.tar.xz",
-	Sha256:      "b1f38eb43d4e3a0e0a8e6a7b05a5cb56f32b676c9c7a5a7c61d21c15d72c3d3e",
-	License:     "Python-2.0",
+var vlc = &Formula{
+	Name:        "VLC Media Player",
+	Description: "VLC Media Player",
+	Homepage:    "https://www.videolan.org/vlc/",
+	URL:         "https://get.videolan.org/vlc/3.0.18/linux/vlc-3.0.18.tar.xz",
+	Sha256:      "f098bdeddb79c5f31c6d62dfc26a7f00c43462f0c5c37986a18d7e244b6c134d",
+	License:     "GPL-2.0",
 	Install: func() error {
-		fmt.Println("Downloading Python...")
-		cmd := exec.Command("curl", "-LO", "https://www.python.org/ftp/python/3.12.0/python-3.12.0-linux-x86_64.tar.xz")
+		fmt.Println("Downloading VLC...")
+		cmd := exec.Command("curl", "-LO", "https://get.videolan.org/vlc/3.0.18/linux/vlc-3.0.18.tar.xz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Extracting Python...")
-		cmd = exec.Command("tar", "-xJf", "python-3.12.0-linux-x86_64.tar.xz")
+		fmt.Println("Extracting VLC...")
+		cmd = exec.Command("tar", "-xJf", "vlc-3.0.18.tar.xz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Installing Python...")
-		cmd = exec.Command("cd", "python-3.12.0", "&&", "./configure", "&&", "make", "&&", "make", "install")
+		fmt.Println("Installing VLC...")
+		cmd = exec.Command("cd", "vlc-3.0.18", "&&", "./configure", "&&", "make", "&&", "make", "install")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
@@ -63,8 +62,8 @@ var python = &Formula{
 		return nil
 	},
 	Test: func() error {
-		fmt.Println("Testing Python...")
-		cmd := exec.Command("python3", "--version")
+		fmt.Println("Testing VLC...")
+		cmd := exec.Command("vlc", "--version")
 		output, err := cmd.CombinedOutput()
 		if err != nil {
 			return err
@@ -75,15 +74,15 @@ var python = &Formula{
 }
 
 func main() {
-	if err := python.InstallPackage(); err != nil {
+	if err := vlc.InstallPackage(); err != nil {
 		fmt.Println("Installation failed:", err)
 		os.Exit(1)
 	}
 
-	if err := python.TestPackage(); err != nil {
+	if err := vlc.TestPackage(); err != nil {
 		fmt.Println("Testing failed:", err)
 		os.Exit(1)
 	}
 
-	fmt.Println("Python installed and tested successfully!")
+	fmt.Println("VLC Media Player installed and tested successfully!")
 }
