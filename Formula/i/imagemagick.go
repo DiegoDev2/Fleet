@@ -34,41 +34,41 @@ func (f *Formula) TestPackage() error {
 	return nil
 }
 
-var cmake = &Formula{
-	Name:        "cmake",
-	Description: "Cross-platform make",
-	Homepage:    "https://cmake.org/",
-	URL:         "https://github.com/Kitware/CMake/releases/download/v3.27.0-rc1/cmake-3.27.0-rc1.tar.gz",
-	Sha256:      "a85d1d8b59f50a3ea57b197ec0df2a0e0c6c6bfa0c17cbb6c243ab5c601dbda4",
-	License:     "BSD-3-Clause",
+var imagemagick = &Formula{
+	Name:        "imagemagick",
+	Description: "Image processing tools",
+	Homepage:    "https://imagemagick.org/",
+	URL:         "https://download.imagemagick.org/ImageMagick/download/releases/ImageMagick-7.1.0-32.tar.xz",
+	Sha256:      "36d0b9cfb709a2594a3be300e3d1de2192df7b19b59b72ef6f55f1afdd19454e",
+	License:     "Apache-2.0",
 	Install: func() error {
-		fmt.Println("Downloading cmake...")
-		cmd := exec.Command("curl", "-LO", "https://github.com/Kitware/CMake/releases/download/v3.27.0-rc1/cmake-3.27.0-rc1.tar.gz")
+		fmt.Println("Downloading ImageMagick...")
+		cmd := exec.Command("curl", "-LO", "https://download.imagemagick.org/ImageMagick/download/releases/ImageMagick-7.1.0-32.tar.xz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Extracting cmake...")
-		cmd = exec.Command("tar", "-xzf", "cmake-3.27.0-rc1.tar.gz")
+		fmt.Println("Extracting ImageMagick...")
+		cmd = exec.Command("tar", "-xf", "ImageMagick-7.1.0-32.tar.xz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Configuring cmake...")
-		cmd = exec.Command("./bootstrap")
-		cmd.Dir = "cmake-3.27.0-rc1"
+		fmt.Println("Configuring ImageMagick...")
+		cmd = exec.Command("./configure", "--prefix=/usr/local")
+		cmd.Dir = "ImageMagick-7.1.0-32"
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Building and installing cmake...")
+		fmt.Println("Building and installing ImageMagick...")
 		cmd = exec.Command("make")
-		cmd.Dir = "cmake-3.27.0-rc1"
+		cmd.Dir = "ImageMagick-7.1.0-32"
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 		cmd = exec.Command("make", "install")
-		cmd.Dir = "cmake-3.27.0-rc1"
+		cmd.Dir = "ImageMagick-7.1.0-32"
 		if err := cmd.Run(); err != nil {
 			return err
 		}
@@ -76,8 +76,8 @@ var cmake = &Formula{
 		return nil
 	},
 	Test: func() error {
-		fmt.Println("Testing cmake...")
-		cmd := exec.Command("cmake", "--version")
+		fmt.Println("Testing ImageMagick...")
+		cmd := exec.Command("magick", "--version")
 		output, err := cmd.CombinedOutput()
 		if err != nil {
 			return err
@@ -88,15 +88,15 @@ var cmake = &Formula{
 }
 
 func main() {
-	if err := cmake.InstallPackage(); err != nil {
+	if err := imagemagick.InstallPackage(); err != nil {
 		fmt.Println("Installation failed:", err)
 		os.Exit(1)
 	}
 
-	if err := cmake.TestPackage(); err != nil {
+	if err := imagemagick.TestPackage(); err != nil {
 		fmt.Println("Testing failed:", err)
 		os.Exit(1)
 	}
 
-	fmt.Println("cmake installed and tested successfully!")
+	fmt.Println("ImageMagick installed and tested successfully!")
 }

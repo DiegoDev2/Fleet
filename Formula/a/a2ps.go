@@ -6,7 +6,6 @@ import (
 	"os/exec"
 )
 
-// Definición de la estructura Formula
 type Formula struct {
 	Name        string
 	Description string
@@ -34,41 +33,42 @@ func (f *Formula) TestPackage() error {
 	return nil
 }
 
-var cmake = &Formula{
-	Name:        "cmake",
-	Description: "Cross-platform make",
-	Homepage:    "https://cmake.org/",
-	URL:         "https://github.com/Kitware/CMake/releases/download/v3.27.0-rc1/cmake-3.27.0-rc1.tar.gz",
-	Sha256:      "a85d1d8b59f50a3ea57b197ec0df2a0e0c6c6bfa0c17cbb6c243ab5c601dbda4",
-	License:     "BSD-3-Clause",
+// Definición del paquete a2ps como una fórmula
+var a2ps = &Formula{
+	Name:        "a2ps",
+	Description: "Any-to-PostScript filter",
+	Homepage:    "https://www.gnu.org/software/a2ps/",
+	URL:         "https://ftp.gnu.org/gnu/a2ps/a2ps-4.15.6.tar.gz",
+	Sha256:      "87ff9d801cb11969181d5b8cf8b65e65e5b24bb0c76a1b825e8098f2906fbdf4",
+	License:     "GPL-3.0-or-later",
 	Install: func() error {
-		fmt.Println("Downloading cmake...")
-		cmd := exec.Command("curl", "-LO", "https://github.com/Kitware/CMake/releases/download/v3.27.0-rc1/cmake-3.27.0-rc1.tar.gz")
+		fmt.Println("Downloading a2ps...")
+		cmd := exec.Command("curl", "-LO", "https://ftp.gnu.org/gnu/a2ps/a2ps-4.15.6.tar.gz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Extracting cmake...")
-		cmd = exec.Command("tar", "-xzf", "cmake-3.27.0-rc1.tar.gz")
+		fmt.Println("Extracting a2ps...")
+		cmd = exec.Command("tar", "-xzf", "a2ps-4.15.6.tar.gz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Configuring cmake...")
-		cmd = exec.Command("./bootstrap")
-		cmd.Dir = "cmake-3.27.0-rc1"
+		fmt.Println("Configuring a2ps...")
+		cmd = exec.Command("./configure", "--prefix=/usr/local")
+		cmd.Dir = "a2ps-4.15.6"
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Building and installing cmake...")
+		fmt.Println("Building and installing a2ps...")
 		cmd = exec.Command("make")
-		cmd.Dir = "cmake-3.27.0-rc1"
+		cmd.Dir = "a2ps-4.15.6"
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 		cmd = exec.Command("make", "install")
-		cmd.Dir = "cmake-3.27.0-rc1"
+		cmd.Dir = "a2ps-4.15.6"
 		if err := cmd.Run(); err != nil {
 			return err
 		}
@@ -76,8 +76,8 @@ var cmake = &Formula{
 		return nil
 	},
 	Test: func() error {
-		fmt.Println("Testing cmake...")
-		cmd := exec.Command("cmake", "--version")
+		fmt.Println("Testing a2ps...")
+		cmd := exec.Command("a2ps", "--version")
 		output, err := cmd.CombinedOutput()
 		if err != nil {
 			return err
@@ -88,15 +88,15 @@ var cmake = &Formula{
 }
 
 func main() {
-	if err := cmake.InstallPackage(); err != nil {
+	if err := a2ps.InstallPackage(); err != nil {
 		fmt.Println("Installation failed:", err)
 		os.Exit(1)
 	}
 
-	if err := cmake.TestPackage(); err != nil {
+	if err := a2ps.TestPackage(); err != nil {
 		fmt.Println("Testing failed:", err)
 		os.Exit(1)
 	}
 
-	fmt.Println("cmake installed and tested successfully!")
+	fmt.Println("a2ps installed and tested successfully!")
 }
