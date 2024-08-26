@@ -6,7 +6,6 @@ import (
 	"os/exec"
 )
 
-// Definición de la estructura Formula
 type Formula struct {
 	Name        string
 	Description string
@@ -34,28 +33,28 @@ func (f *Formula) TestPackage() error {
 	return nil
 }
 
-var python = &Formula{
-	Name:        "Python",
-	Description: "Python Programming Language",
-	Homepage:    "https://www.python.org/",
-	URL:         "https://www.python.org/ftp/python/3.12.0/python-3.12.0-linux-x86_64.tar.xz",
-	Sha256:      "b1f38eb43d4e3a0e0a8e6a7b05a5cb56f32b676c9c7a5a7c61d21c15d72c3d3e",
-	License:     "Python-2.0",
+var libreOffice = &Formula{
+	Name:        "LibreOffice",
+	Description: "LibreOffice Suite",
+	Homepage:    "https://www.libreoffice.org/",
+	URL:         "https://download.documentfoundation.org/libreoffice/stable/7.6.0/rpm/x86_64/LibreOffice_7.6.0.3_Linux_x86-64_rpm.tar.gz",
+	Sha256:      "6c1e63d46c348d7df5b5b3a7d6c2f95389f8f5d1f4c5e87e1b5684bfe5a3398a",
+	License:     "MPL-2.0",
 	Install: func() error {
-		fmt.Println("Downloading Python...")
-		cmd := exec.Command("curl", "-LO", "https://www.python.org/ftp/python/3.12.0/python-3.12.0-linux-x86_64.tar.xz")
+		fmt.Println("Downloading LibreOffice...")
+		cmd := exec.Command("curl", "-LO", "https://download.documentfoundation.org/libreoffice/stable/7.6.0/rpm/x86_64/LibreOffice_7.6.0.3_Linux_x86-64_rpm.tar.gz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Extracting Python...")
-		cmd = exec.Command("tar", "-xJf", "python-3.12.0-linux-x86_64.tar.xz")
+		fmt.Println("Extracting LibreOffice...")
+		cmd = exec.Command("tar", "-xzf", "LibreOffice_7.6.0.3_Linux_x86-64_rpm.tar.gz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Installing Python...")
-		cmd = exec.Command("cd", "python-3.12.0", "&&", "./configure", "&&", "make", "&&", "make", "install")
+		fmt.Println("Installing LibreOffice...")
+		cmd = exec.Command("rpm", "-i", "LibreOffice_7.6.0.3_Linux_x86-64_rpm/*.rpm")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
@@ -63,8 +62,8 @@ var python = &Formula{
 		return nil
 	},
 	Test: func() error {
-		fmt.Println("Testing Python...")
-		cmd := exec.Command("python3", "--version")
+		fmt.Println("Testing LibreOffice...")
+		cmd := exec.Command("libreoffice", "--version")
 		output, err := cmd.CombinedOutput()
 		if err != nil {
 			return err
@@ -75,15 +74,15 @@ var python = &Formula{
 }
 
 func main() {
-	if err := python.InstallPackage(); err != nil {
+	if err := libreOffice.InstallPackage(); err != nil {
 		fmt.Println("Installation failed:", err)
 		os.Exit(1)
 	}
 
-	if err := python.TestPackage(); err != nil {
+	if err := libreOffice.TestPackage(); err != nil {
 		fmt.Println("Testing failed:", err)
 		os.Exit(1)
 	}
 
-	fmt.Println("Python installed and tested successfully!")
+	fmt.Println("LibreOffice installed and tested successfully!")
 }

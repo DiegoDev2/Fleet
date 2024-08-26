@@ -34,28 +34,28 @@ func (f *Formula) TestPackage() error {
 	return nil
 }
 
-var python = &Formula{
-	Name:        "Python",
-	Description: "Python Programming Language",
-	Homepage:    "https://www.python.org/",
-	URL:         "https://www.python.org/ftp/python/3.12.0/python-3.12.0-linux-x86_64.tar.xz",
-	Sha256:      "b1f38eb43d4e3a0e0a8e6a7b05a5cb56f32b676c9c7a5a7c61d21c15d72c3d3e",
-	License:     "Python-2.0",
+var youtubeDL = &Formula{
+	Name:        "YouTube-DL",
+	Description: "YouTube-DL Download Tool",
+	Homepage:    "https://github.com/ytdl-org/youtube-dl",
+	URL:         "https://github.com/ytdl-org/youtube-dl/releases/download/2024.08.25/youtube-dl",
+	Sha256:      "a3cfb5e748bcfbf5c7563c6e72f35baf5566b2f6211c4de0a4288ecf9c5e6a16",
+	License:     "Unlicense",
 	Install: func() error {
-		fmt.Println("Downloading Python...")
-		cmd := exec.Command("curl", "-LO", "https://www.python.org/ftp/python/3.12.0/python-3.12.0-linux-x86_64.tar.xz")
+		fmt.Println("Downloading YouTube-DL...")
+		cmd := exec.Command("curl", "-LO", "https://github.com/ytdl-org/youtube-dl/releases/download/2024.08.25/youtube-dl")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Extracting Python...")
-		cmd = exec.Command("tar", "-xJf", "python-3.12.0-linux-x86_64.tar.xz")
+		fmt.Println("Making YouTube-DL executable...")
+		cmd = exec.Command("chmod", "+x", "youtube-dl")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Installing Python...")
-		cmd = exec.Command("cd", "python-3.12.0", "&&", "./configure", "&&", "make", "&&", "make", "install")
+		fmt.Println("Moving YouTube-DL to /usr/local/bin...")
+		cmd = exec.Command("mv", "youtube-dl", "/usr/local/bin/youtube-dl")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
@@ -63,8 +63,8 @@ var python = &Formula{
 		return nil
 	},
 	Test: func() error {
-		fmt.Println("Testing Python...")
-		cmd := exec.Command("python3", "--version")
+		fmt.Println("Testing YouTube-DL...")
+		cmd := exec.Command("youtube-dl", "--version")
 		output, err := cmd.CombinedOutput()
 		if err != nil {
 			return err
@@ -75,15 +75,15 @@ var python = &Formula{
 }
 
 func main() {
-	if err := python.InstallPackage(); err != nil {
+	if err := youtubeDL.InstallPackage(); err != nil {
 		fmt.Println("Installation failed:", err)
 		os.Exit(1)
 	}
 
-	if err := python.TestPackage(); err != nil {
+	if err := youtubeDL.TestPackage(); err != nil {
 		fmt.Println("Testing failed:", err)
 		os.Exit(1)
 	}
 
-	fmt.Println("Python installed and tested successfully!")
+	fmt.Println("YouTube-DL installed and tested successfully!")
 }

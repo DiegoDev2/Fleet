@@ -34,28 +34,32 @@ func (f *Formula) TestPackage() error {
 	return nil
 }
 
-var python = &Formula{
-	Name:        "Python",
-	Description: "Python Programming Language",
-	Homepage:    "https://www.python.org/",
-	URL:         "https://www.python.org/ftp/python/3.12.0/python-3.12.0-linux-x86_64.tar.xz",
-	Sha256:      "b1f38eb43d4e3a0e0a8e6a7b05a5cb56f32b676c9c7a5a7c61d21c15d72c3d3e",
-	License:     "Python-2.0",
+var sublimeText = &Formula{
+	Name:        "Sublime Text",
+	Description: "Sublime Text Editor",
+	Homepage:    "https://www.sublimetext.com/",
+	URL:         "https://download.sublimetext.com/sublime_text_4_build_4143_x64.tar.gz",
+	Sha256:      "b7b9d95c8677a82d7aee47d4d1469b5fc7c1d0b4b807b91ef8e2e3e2bbf90323",
+	License:     "Proprietary",
 	Install: func() error {
-		fmt.Println("Downloading Python...")
-		cmd := exec.Command("curl", "-LO", "https://www.python.org/ftp/python/3.12.0/python-3.12.0-linux-x86_64.tar.xz")
+		fmt.Println("Downloading Sublime Text...")
+		cmd := exec.Command("curl", "-LO", "https://download.sublimetext.com/sublime_text_4_build_4143_x64.tar.gz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Extracting Python...")
-		cmd = exec.Command("tar", "-xJf", "python-3.12.0-linux-x86_64.tar.xz")
+		fmt.Println("Extracting Sublime Text...")
+		cmd = exec.Command("tar", "-xzf", "sublime_text_4_build_4143_x64.tar.gz")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
 
-		fmt.Println("Installing Python...")
-		cmd = exec.Command("cd", "python-3.12.0", "&&", "./configure", "&&", "make", "&&", "make", "install")
+		fmt.Println("Installing Sublime Text...")
+		cmd = exec.Command("mv", "sublime_text", "/opt/sublime_text")
+		if err := cmd.Run(); err != nil {
+			return err
+		}
+		cmd = exec.Command("ln", "-s", "/opt/sublime_text/sublime_text", "/usr/local/bin/sublime_text")
 		if err := cmd.Run(); err != nil {
 			return err
 		}
@@ -63,8 +67,8 @@ var python = &Formula{
 		return nil
 	},
 	Test: func() error {
-		fmt.Println("Testing Python...")
-		cmd := exec.Command("python3", "--version")
+		fmt.Println("Testing Sublime Text...")
+		cmd := exec.Command("sublime_text", "--version")
 		output, err := cmd.CombinedOutput()
 		if err != nil {
 			return err
@@ -75,15 +79,15 @@ var python = &Formula{
 }
 
 func main() {
-	if err := python.InstallPackage(); err != nil {
+	if err := sublimeText.InstallPackage(); err != nil {
 		fmt.Println("Installation failed:", err)
 		os.Exit(1)
 	}
 
-	if err := python.TestPackage(); err != nil {
+	if err := sublimeText.TestPackage(); err != nil {
 		fmt.Println("Testing failed:", err)
 		os.Exit(1)
 	}
 
-	fmt.Println("Python installed and tested successfully!")
+	fmt.Println("Sublime Text installed and tested successfully!")
 }
