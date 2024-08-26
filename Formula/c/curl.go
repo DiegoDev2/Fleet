@@ -1,28 +1,49 @@
 package main
 
 import (
-	"fmt"
+	"os"
 	"os/exec"
+	"runtime"
 )
 
 func installCurl() {
-	url := "https://curl.se/download/curl-7.79.1.tar.xz"
-	fileName := "curl-7.79.1.tar.xz"
-	extractDir := "curl-7.79.1"
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		installCurlForMac()
+	case "linux":
+		installCurlForLinux()
+	case "windows":
+		installCurlForWindows()
+	}
+}
 
-	fmt.Println("Downloading curl...")
-	exec.Command("curl", "-LO", url).Run()
-	fmt.Println(extractDir)
+func installCurlForMac() {
+	url := "https://curl.se/download/curl-7.80.0.tar.gz"
+	downloadAndInstall(url, "curl.tar.gz", "tar", "-xvzf", "curl.tar.gz", "&&", "cd", "curl-7.80.0", "&&", "./configure", "&&", "make", "&&", "sudo", "make", "install")
+}
 
-	fmt.Println("Extracting curl...")
-	exec.Command("tar", "-xf", fileName).Run()
+func installCurlForLinux() {
+	url := "https://curl.se/download/curl-7.80.0.tar.gz"
+	downloadAndInstall(url, "curl.tar.gz", "tar", "-xvzf", "curl.tar.gz", "&&", "cd", "curl-7.80.0", "&&", "./configure", "&&", "make", "&&", "sudo", "make", "install")
+}
 
-	fmt.Println("Configuring curl...")
-	exec.Command("sh", "configure", "--prefix=/usr/local").Run()
+func installCurlForWindows() {
+	url := "https://curl.se/windows/dl-7.80.0_1/curl-7.80.0-win64-mingw.zip"
+	downloadAndInstall(url, "curl.zip", "unzip", "curl.zip", "-d", "C:\\curl", "&&", "set", "PATH=%PATH%;C:\\curl")
+}
 
-	fmt.Println("Compiling curl...")
-	exec.Command("make").Run()
+func downloadAndInstall(url, filename string, installCommand ...string) {
+	downloadCmd := exec.Command("curl", "-o", filename, url)
+	runCommand(downloadCmd)
+	runCommand(exec.Command(installCommand[0], installCommand[1:]...))
+}
 
-	fmt.Println("Installing curl...")
-	exec.Command("make", "install").Run()
+func runCommand(cmd *exec.Cmd) {
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.Run()
+}
+
+func main() {
+	installCurl()
 }

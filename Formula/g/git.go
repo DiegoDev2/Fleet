@@ -1,27 +1,48 @@
 package main
 
 import (
-	"fmt"
+	"os"
 	"os/exec"
+	"runtime"
 )
 
 func installGit() {
-	url := "https://www.kernel.org/pub/software/scm/git/git-2.34.1.tar.gz"
-	fileName := "git-2.34.1.tar.gz"
-	extractDir := "git-2.34.1"
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		installGitForMac()
+	case "linux":
+		installGitForLinux()
+	case "windows":
+		installGitForWindows()
+	}
+}
 
-	fmt.Println("Downloading git...")
-	exec.Command("curl", "-LO", url).Run()
-	fmt.Println(extractDir)
-	fmt.Println("Extracting git...")
-	exec.Command("tar", "-xzf", fileName).Run()
+func installGitForMac() {
+	url := "https://sourceforge.net/projects/git-osx-installer/files/git-2.33.0-intel-universal-mavericks.dmg"
+	downloadAndInstall(url, "git.dmg", "sudo", "hdiutil", "attach", "git.dmg", "&&", "sudo", "installer", "-pkg", "/Volumes/Git 2.33.0 Intel Universal/git-2.33.0-intel-universal-mavericks.pkg", "-target", "/")
+}
 
-	fmt.Println("Configuring git...")
-	exec.Command("sh", "configure", "--prefix=/usr/local").Run()
+func installGitForLinux() {
+	runCommand(exec.Command("sudo", "apt-get", "install", "-y", "git"))
+}
 
-	fmt.Println("Compiling git...")
-	exec.Command("make").Run()
+func installGitForWindows() {
+	url := "https://github.com/git-for-windows/git/releases/download/v2.33.0.windows.1/Git-2.33.0-64-bit.exe"
+	downloadAndInstall(url, "git.exe", "start", "/wait", "git.exe", "/SILENT")
+}
 
-	fmt.Println("Installing git...")
-	exec.Command("make", "install").Run()
+func downloadAndInstall(url, filename string, installCommand ...string) {
+	downloadCmd := exec.Command("curl", "-o", filename, url)
+	runCommand(downloadCmd)
+	runCommand(exec.Command(installCommand[0], installCommand[1:]...))
+}
+
+func runCommand(cmd *exec.Cmd) {
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.Run()
+}
+
+func main() {
+	installGit()
 }
