@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bit representa una fórmula en Go.
-type Bit struct {
+// BitFormulaFormula representa una fórmula en Go.
+type BitFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bit struct {
 	Dependencies []string
 }
 
-func (pkg Bit) Print() {
-	fmt.Printf("Name: Bit\\n", "Bit")
-	fmt.Printf("Description: Bit\\n", pkg.Description)
-	fmt.Printf("Homepage: Bit\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BitFormulaFormula) Print() {
+	fmt.Printf("Name: Bit\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BitFormulaFormula
+	pkg := BitFormulaFormula{
+		Description:  "Descripción de Bit",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

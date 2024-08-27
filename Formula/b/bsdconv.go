@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bsdconv representa una fórmula en Go.
-type Bsdconv struct {
+// BsdconvFormulaFormula representa una fórmula en Go.
+type BsdconvFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bsdconv struct {
 	Dependencies []string
 }
 
-func (pkg Bsdconv) Print() {
-	fmt.Printf("Name: Bsdconv\\n", "Bsdconv")
-	fmt.Printf("Description: Bsdconv\\n", pkg.Description)
-	fmt.Printf("Homepage: Bsdconv\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BsdconvFormulaFormula) Print() {
+	fmt.Printf("Name: Bsdconv\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BsdconvFormulaFormula
+	pkg := BsdconvFormulaFormula{
+		Description:  "Descripción de Bsdconv",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Blake3 representa una fórmula en Go.
-type Blake3 struct {
+// Blake3FormulaFormula representa una fórmula en Go.
+type Blake3FormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Blake3 struct {
 	Dependencies []string
 }
 
-func (pkg Blake3) Print() {
-	fmt.Printf("Name: Blake3\\n", "Blake3")
-	fmt.Printf("Description: Blake3\\n", pkg.Description)
-	fmt.Printf("Homepage: Blake3\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Blake3FormulaFormula) Print() {
+	fmt.Printf("Name: Blake3\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Blake3FormulaFormula
+	pkg := Blake3FormulaFormula{
+		Description:  "Descripción de Blake3",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

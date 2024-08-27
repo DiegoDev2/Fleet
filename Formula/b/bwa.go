@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bwa representa una fórmula en Go.
-type Bwa struct {
+// BwaFormulaFormula representa una fórmula en Go.
+type BwaFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bwa struct {
 	Dependencies []string
 }
 
-func (pkg Bwa) Print() {
-	fmt.Printf("Name: Bwa\\n", "Bwa")
-	fmt.Printf("Description: Bwa\\n", pkg.Description)
-	fmt.Printf("Homepage: Bwa\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BwaFormulaFormula) Print() {
+	fmt.Printf("Name: Bwa\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BwaFormulaFormula
+	pkg := BwaFormulaFormula{
+		Description:  "Descripción de Bwa",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

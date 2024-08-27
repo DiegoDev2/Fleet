@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bgrep representa una fórmula en Go.
-type Bgrep struct {
+// BgrepFormulaFormula representa una fórmula en Go.
+type BgrepFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bgrep struct {
 	Dependencies []string
 }
 
-func (pkg Bgrep) Print() {
-	fmt.Printf("Name: Bgrep\\n", "Bgrep")
-	fmt.Printf("Description: Bgrep\\n", pkg.Description)
-	fmt.Printf("Homepage: Bgrep\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BgrepFormulaFormula) Print() {
+	fmt.Printf("Name: Bgrep\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BgrepFormulaFormula
+	pkg := BgrepFormulaFormula{
+		Description:  "Descripción de Bgrep",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

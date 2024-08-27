@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Blackbox representa una fórmula en Go.
-type Blackbox struct {
+// BlackboxFormulaFormula representa una fórmula en Go.
+type BlackboxFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Blackbox struct {
 	Dependencies []string
 }
 
-func (pkg Blackbox) Print() {
-	fmt.Printf("Name: Blackbox\\n", "Blackbox")
-	fmt.Printf("Description: Blackbox\\n", pkg.Description)
-	fmt.Printf("Homepage: Blackbox\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BlackboxFormulaFormula) Print() {
+	fmt.Printf("Name: Blackbox\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BlackboxFormulaFormula
+	pkg := BlackboxFormulaFormula{
+		Description:  "Descripción de Blackbox",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Batt representa una fórmula en Go.
-type Batt struct {
+// BattFormulaFormula representa una fórmula en Go.
+type BattFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Batt struct {
 	Dependencies []string
 }
 
-func (pkg Batt) Print() {
-	fmt.Printf("Name: Batt\\n", "Batt")
-	fmt.Printf("Description: Batt\\n", pkg.Description)
-	fmt.Printf("Homepage: Batt\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BattFormulaFormula) Print() {
+	fmt.Printf("Name: Batt\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BattFormulaFormula
+	pkg := BattFormulaFormula{
+		Description:  "Descripción de Batt",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

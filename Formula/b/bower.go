@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bower representa una fórmula en Go.
-type Bower struct {
+// BowerFormulaFormula representa una fórmula en Go.
+type BowerFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bower struct {
 	Dependencies []string
 }
 
-func (pkg Bower) Print() {
-	fmt.Printf("Name: Bower\\n", "Bower")
-	fmt.Printf("Description: Bower\\n", pkg.Description)
-	fmt.Printf("Homepage: Bower\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BowerFormulaFormula) Print() {
+	fmt.Printf("Name: Bower\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BowerFormulaFormula
+	pkg := BowerFormulaFormula{
+		Description:  "Descripción de Bower",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Box2d representa una fórmula en Go.
-type Box2d struct {
+// Box2dFormulaFormula representa una fórmula en Go.
+type Box2dFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Box2d struct {
 	Dependencies []string
 }
 
-func (pkg Box2d) Print() {
-	fmt.Printf("Name: Box2d\\n", "Box2d")
-	fmt.Printf("Description: Box2d\\n", pkg.Description)
-	fmt.Printf("Homepage: Box2d\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Box2dFormulaFormula) Print() {
+	fmt.Printf("Name: Box2d\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Box2dFormulaFormula
+	pkg := Box2dFormulaFormula{
+		Description:  "Descripción de Box2d",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

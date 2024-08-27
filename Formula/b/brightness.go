@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Brightness representa una fórmula en Go.
-type Brightness struct {
+// BrightnessFormulaFormula representa una fórmula en Go.
+type BrightnessFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Brightness struct {
 	Dependencies []string
 }
 
-func (pkg Brightness) Print() {
-	fmt.Printf("Name: Brightness\\n", "Brightness")
-	fmt.Printf("Description: Brightness\\n", pkg.Description)
-	fmt.Printf("Homepage: Brightness\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BrightnessFormulaFormula) Print() {
+	fmt.Printf("Name: Brightness\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BrightnessFormulaFormula
+	pkg := BrightnessFormulaFormula{
+		Description:  "Descripción de Brightness",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

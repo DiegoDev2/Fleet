@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bloaty representa una fórmula en Go.
-type Bloaty struct {
+// BloatyFormulaFormula representa una fórmula en Go.
+type BloatyFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bloaty struct {
 	Dependencies []string
 }
 
-func (pkg Bloaty) Print() {
-	fmt.Printf("Name: Bloaty\\n", "Bloaty")
-	fmt.Printf("Description: Bloaty\\n", pkg.Description)
-	fmt.Printf("Homepage: Bloaty\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BloatyFormulaFormula) Print() {
+	fmt.Printf("Name: Bloaty\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BloatyFormulaFormula
+	pkg := BloatyFormulaFormula{
+		Description:  "Descripción de Bloaty",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

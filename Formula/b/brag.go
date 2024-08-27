@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Brag representa una fórmula en Go.
-type Brag struct {
+// BragFormulaFormula representa una fórmula en Go.
+type BragFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Brag struct {
 	Dependencies []string
 }
 
-func (pkg Brag) Print() {
-	fmt.Printf("Name: Brag\\n", "Brag")
-	fmt.Printf("Description: Brag\\n", pkg.Description)
-	fmt.Printf("Homepage: Brag\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BragFormulaFormula) Print() {
+	fmt.Printf("Name: Brag\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BragFormulaFormula
+	pkg := BragFormulaFormula{
+		Description:  "Descripción de Brag",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

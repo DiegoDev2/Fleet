@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bond representa una fórmula en Go.
-type Bond struct {
+// BondFormulaFormula representa una fórmula en Go.
+type BondFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bond struct {
 	Dependencies []string
 }
 
-func (pkg Bond) Print() {
-	fmt.Printf("Name: Bond\\n", "Bond")
-	fmt.Printf("Description: Bond\\n", pkg.Description)
-	fmt.Printf("Homepage: Bond\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BondFormulaFormula) Print() {
+	fmt.Printf("Name: Bond\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BondFormulaFormula
+	pkg := BondFormulaFormula{
+		Description:  "Descripción de Bond",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

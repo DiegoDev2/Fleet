@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// BrigadeCli representa una fórmula en Go.
-type BrigadeCli struct {
+// BrigadeCliFormulaFormula representa una fórmula en Go.
+type BrigadeCliFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type BrigadeCli struct {
 	Dependencies []string
 }
 
-func (pkg BrigadeCli) Print() {
-	fmt.Printf("Name: BrigadeCli\\n", "BrigadeCli")
-	fmt.Printf("Description: BrigadeCli\\n", pkg.Description)
-	fmt.Printf("Homepage: BrigadeCli\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BrigadeCliFormulaFormula) Print() {
+	fmt.Printf("Name: BrigadeCli\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BrigadeCliFormulaFormula
+	pkg := BrigadeCliFormulaFormula{
+		Description:  "Descripción de BrigadeCli",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

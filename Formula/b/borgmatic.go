@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Borgmatic representa una fórmula en Go.
-type Borgmatic struct {
+// BorgmaticFormulaFormula representa una fórmula en Go.
+type BorgmaticFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Borgmatic struct {
 	Dependencies []string
 }
 
-func (pkg Borgmatic) Print() {
-	fmt.Printf("Name: Borgmatic\\n", "Borgmatic")
-	fmt.Printf("Description: Borgmatic\\n", pkg.Description)
-	fmt.Printf("Homepage: Borgmatic\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BorgmaticFormulaFormula) Print() {
+	fmt.Printf("Name: Borgmatic\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BorgmaticFormulaFormula
+	pkg := BorgmaticFormulaFormula{
+		Description:  "Descripción de Borgmatic",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

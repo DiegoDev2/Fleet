@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bookloupe representa una fórmula en Go.
-type Bookloupe struct {
+// BookloupeFormulaFormula representa una fórmula en Go.
+type BookloupeFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bookloupe struct {
 	Dependencies []string
 }
 
-func (pkg Bookloupe) Print() {
-	fmt.Printf("Name: Bookloupe\\n", "Bookloupe")
-	fmt.Printf("Description: Bookloupe\\n", pkg.Description)
-	fmt.Printf("Homepage: Bookloupe\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BookloupeFormulaFormula) Print() {
+	fmt.Printf("Name: Bookloupe\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BookloupeFormulaFormula
+	pkg := BookloupeFormulaFormula{
+		Description:  "Descripción de Bookloupe",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
