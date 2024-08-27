@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bison representa una fórmula en Go.
-type Bison struct {
+// BitGit representa una fórmula en Go.
+type BitGit struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,10 +11,10 @@ type Bison struct {
 	Dependencies []string
 }
 
-func (pkg Bison) Print() {
-	fmt.Printf("Name: Bison\\n", "Bison")
-	fmt.Printf("Description: Bison\\n", pkg.Description)
-	fmt.Printf("Homepage: Bison\\n", pkg.Homepage)
+func (pkg BitGit) Print() {
+	fmt.Printf("Name: BitGit\\n", "BitGit")
+	fmt.Printf("Description: BitGit\\n", pkg.Description)
+	fmt.Printf("Homepage: BitGit\\n", pkg.Homepage)
 	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
 	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
 	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)

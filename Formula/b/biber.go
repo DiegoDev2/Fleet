@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bison representa una fórmula en Go.
-type Bison struct {
+// Biber representa una fórmula en Go.
+type Biber struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,10 +11,10 @@ type Bison struct {
 	Dependencies []string
 }
 
-func (pkg Bison) Print() {
-	fmt.Printf("Name: Bison\\n", "Bison")
-	fmt.Printf("Description: Bison\\n", pkg.Description)
-	fmt.Printf("Homepage: Bison\\n", pkg.Homepage)
+func (pkg Biber) Print() {
+	fmt.Printf("Name: Biber\\n", "Biber")
+	fmt.Printf("Description: Biber\\n", pkg.Description)
+	fmt.Printf("Homepage: Biber\\n", pkg.Homepage)
 	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
 	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
 	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)

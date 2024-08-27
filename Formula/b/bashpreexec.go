@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bison representa una fórmula en Go.
-type Bison struct {
+// BashPreexec representa una fórmula en Go.
+type BashPreexec struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,10 +11,10 @@ type Bison struct {
 	Dependencies []string
 }
 
-func (pkg Bison) Print() {
-	fmt.Printf("Name: Bison\\n", "Bison")
-	fmt.Printf("Description: Bison\\n", pkg.Description)
-	fmt.Printf("Homepage: Bison\\n", pkg.Homepage)
+func (pkg BashPreexec) Print() {
+	fmt.Printf("Name: BashPreexec\\n", "BashPreexec")
+	fmt.Printf("Description: BashPreexec\\n", pkg.Description)
+	fmt.Printf("Homepage: BashPreexec\\n", pkg.Homepage)
 	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
 	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
 	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
