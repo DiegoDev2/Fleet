@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Certsync representa una fórmula en Go.
-type Certsync struct {
+// CertsyncFormulaFormula representa una fórmula en Go.
+type CertsyncFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Certsync struct {
 	Dependencies []string
 }
 
-func (pkg Certsync) Print() {
-	fmt.Printf("Name: Certsync\\n", "Certsync")
-	fmt.Printf("Description: Certsync\\n", pkg.Description)
-	fmt.Printf("Homepage: Certsync\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CertsyncFormulaFormula) Print() {
+	fmt.Printf("Name: Certsync\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CertsyncFormulaFormula
+	pkg := CertsyncFormulaFormula{
+		Description:  "Descripción de Certsync",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

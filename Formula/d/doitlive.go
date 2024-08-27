@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Doitlive representa una fórmula en Go.
-type Doitlive struct {
+// DoitliveFormulaFormula representa una fórmula en Go.
+type DoitliveFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Doitlive struct {
 	Dependencies []string
 }
 
-func (pkg Doitlive) Print() {
-	fmt.Printf("Name: Doitlive\\n", "Doitlive")
-	fmt.Printf("Description: Doitlive\\n", pkg.Description)
-	fmt.Printf("Homepage: Doitlive\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DoitliveFormulaFormula) Print() {
+	fmt.Printf("Name: Doitlive\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DoitliveFormulaFormula
+	pkg := DoitliveFormulaFormula{
+		Description:  "Descripción de Doitlive",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

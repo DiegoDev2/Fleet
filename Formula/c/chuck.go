@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Chuck representa una fórmula en Go.
-type Chuck struct {
+// ChuckFormulaFormula representa una fórmula en Go.
+type ChuckFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Chuck struct {
 	Dependencies []string
 }
 
-func (pkg Chuck) Print() {
-	fmt.Printf("Name: Chuck\\n", "Chuck")
-	fmt.Printf("Description: Chuck\\n", pkg.Description)
-	fmt.Printf("Homepage: Chuck\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ChuckFormulaFormula) Print() {
+	fmt.Printf("Name: Chuck\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ChuckFormulaFormula
+	pkg := ChuckFormulaFormula{
+		Description:  "Descripción de Chuck",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

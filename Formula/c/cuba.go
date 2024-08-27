@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cuba representa una fórmula en Go.
-type Cuba struct {
+// CubaFormulaFormula representa una fórmula en Go.
+type CubaFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cuba struct {
 	Dependencies []string
 }
 
-func (pkg Cuba) Print() {
-	fmt.Printf("Name: Cuba\\n", "Cuba")
-	fmt.Printf("Description: Cuba\\n", pkg.Description)
-	fmt.Printf("Homepage: Cuba\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CubaFormulaFormula) Print() {
+	fmt.Printf("Name: Cuba\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CubaFormulaFormula
+	pkg := CubaFormulaFormula{
+		Description:  "Descripción de Cuba",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

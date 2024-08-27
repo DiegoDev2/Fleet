@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Capnp representa una fórmula en Go.
-type Capnp struct {
+// CapnpFormulaFormula representa una fórmula en Go.
+type CapnpFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Capnp struct {
 	Dependencies []string
 }
 
-func (pkg Capnp) Print() {
-	fmt.Printf("Name: Capnp\\n", "Capnp")
-	fmt.Printf("Description: Capnp\\n", pkg.Description)
-	fmt.Printf("Homepage: Capnp\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CapnpFormulaFormula) Print() {
+	fmt.Printf("Name: Capnp\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CapnpFormulaFormula
+	pkg := CapnpFormulaFormula{
+		Description:  "Descripción de Capnp",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dcm2niix representa una fórmula en Go.
-type Dcm2niix struct {
+// Dcm2niixFormulaFormula representa una fórmula en Go.
+type Dcm2niixFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dcm2niix struct {
 	Dependencies []string
 }
 
-func (pkg Dcm2niix) Print() {
-	fmt.Printf("Name: Dcm2niix\\n", "Dcm2niix")
-	fmt.Printf("Description: Dcm2niix\\n", pkg.Description)
-	fmt.Printf("Homepage: Dcm2niix\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Dcm2niixFormulaFormula) Print() {
+	fmt.Printf("Name: Dcm2niix\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Dcm2niixFormulaFormula
+	pkg := Dcm2niixFormulaFormula{
+		Description:  "Descripción de Dcm2niix",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

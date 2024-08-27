@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dotdrop representa una fórmula en Go.
-type Dotdrop struct {
+// DotdropFormulaFormula representa una fórmula en Go.
+type DotdropFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dotdrop struct {
 	Dependencies []string
 }
 
-func (pkg Dotdrop) Print() {
-	fmt.Printf("Name: Dotdrop\\n", "Dotdrop")
-	fmt.Printf("Description: Dotdrop\\n", pkg.Description)
-	fmt.Printf("Homepage: Dotdrop\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DotdropFormulaFormula) Print() {
+	fmt.Printf("Name: Dotdrop\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DotdropFormulaFormula
+	pkg := DotdropFormulaFormula{
+		Description:  "Descripción de Dotdrop",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

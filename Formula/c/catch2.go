@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Catch2 representa una fórmula en Go.
-type Catch2 struct {
+// Catch2FormulaFormula representa una fórmula en Go.
+type Catch2FormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Catch2 struct {
 	Dependencies []string
 }
 
-func (pkg Catch2) Print() {
-	fmt.Printf("Name: Catch2\\n", "Catch2")
-	fmt.Printf("Description: Catch2\\n", pkg.Description)
-	fmt.Printf("Homepage: Catch2\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Catch2FormulaFormula) Print() {
+	fmt.Printf("Name: Catch2\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Catch2FormulaFormula
+	pkg := Catch2FormulaFormula{
+		Description:  "Descripción de Catch2",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

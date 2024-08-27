@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dasm representa una fórmula en Go.
-type Dasm struct {
+// DasmFormulaFormula representa una fórmula en Go.
+type DasmFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dasm struct {
 	Dependencies []string
 }
 
-func (pkg Dasm) Print() {
-	fmt.Printf("Name: Dasm\\n", "Dasm")
-	fmt.Printf("Description: Dasm\\n", pkg.Description)
-	fmt.Printf("Homepage: Dasm\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DasmFormulaFormula) Print() {
+	fmt.Printf("Name: Dasm\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DasmFormulaFormula
+	pkg := DasmFormulaFormula{
+		Description:  "Descripción de Dasm",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

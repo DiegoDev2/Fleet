@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CondaLock representa una fórmula en Go.
-type CondaLock struct {
+// CondaLockFormulaFormula representa una fórmula en Go.
+type CondaLockFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CondaLock struct {
 	Dependencies []string
 }
 
-func (pkg CondaLock) Print() {
-	fmt.Printf("Name: CondaLock\\n", "CondaLock")
-	fmt.Printf("Description: CondaLock\\n", pkg.Description)
-	fmt.Printf("Homepage: CondaLock\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CondaLockFormulaFormula) Print() {
+	fmt.Printf("Name: CondaLock\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CondaLockFormulaFormula
+	pkg := CondaLockFormulaFormula{
+		Description:  "Descripción de CondaLock",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

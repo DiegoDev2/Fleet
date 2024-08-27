@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dhex representa una fórmula en Go.
-type Dhex struct {
+// DhexFormulaFormula representa una fórmula en Go.
+type DhexFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dhex struct {
 	Dependencies []string
 }
 
-func (pkg Dhex) Print() {
-	fmt.Printf("Name: Dhex\\n", "Dhex")
-	fmt.Printf("Description: Dhex\\n", pkg.Description)
-	fmt.Printf("Homepage: Dhex\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DhexFormulaFormula) Print() {
+	fmt.Printf("Name: Dhex\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DhexFormulaFormula
+	pkg := DhexFormulaFormula{
+		Description:  "Descripción de Dhex",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

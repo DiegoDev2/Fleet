@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CucumberCpp representa una fórmula en Go.
-type CucumberCpp struct {
+// CucumberCppFormulaFormula representa una fórmula en Go.
+type CucumberCppFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CucumberCpp struct {
 	Dependencies []string
 }
 
-func (pkg CucumberCpp) Print() {
-	fmt.Printf("Name: CucumberCpp\\n", "CucumberCpp")
-	fmt.Printf("Description: CucumberCpp\\n", pkg.Description)
-	fmt.Printf("Homepage: CucumberCpp\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CucumberCppFormulaFormula) Print() {
+	fmt.Printf("Name: CucumberCpp\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CucumberCppFormulaFormula
+	pkg := CucumberCppFormulaFormula{
+		Description:  "Descripción de CucumberCpp",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

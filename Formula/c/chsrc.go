@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Chsrc representa una fórmula en Go.
-type Chsrc struct {
+// ChsrcFormulaFormula representa una fórmula en Go.
+type ChsrcFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Chsrc struct {
 	Dependencies []string
 }
 
-func (pkg Chsrc) Print() {
-	fmt.Printf("Name: Chsrc\\n", "Chsrc")
-	fmt.Printf("Description: Chsrc\\n", pkg.Description)
-	fmt.Printf("Homepage: Chsrc\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ChsrcFormulaFormula) Print() {
+	fmt.Printf("Name: Chsrc\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ChsrcFormulaFormula
+	pkg := ChsrcFormulaFormula{
+		Description:  "Descripción de Chsrc",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

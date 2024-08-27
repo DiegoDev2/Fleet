@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Castget representa una fórmula en Go.
-type Castget struct {
+// CastgetFormulaFormula representa una fórmula en Go.
+type CastgetFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Castget struct {
 	Dependencies []string
 }
 
-func (pkg Castget) Print() {
-	fmt.Printf("Name: Castget\\n", "Castget")
-	fmt.Printf("Description: Castget\\n", pkg.Description)
-	fmt.Printf("Homepage: Castget\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CastgetFormulaFormula) Print() {
+	fmt.Printf("Name: Castget\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CastgetFormulaFormula
+	pkg := CastgetFormulaFormula{
+		Description:  "Descripción de Castget",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

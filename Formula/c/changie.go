@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Changie representa una fórmula en Go.
-type Changie struct {
+// ChangieFormulaFormula representa una fórmula en Go.
+type ChangieFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Changie struct {
 	Dependencies []string
 }
 
-func (pkg Changie) Print() {
-	fmt.Printf("Name: Changie\\n", "Changie")
-	fmt.Printf("Description: Changie\\n", pkg.Description)
-	fmt.Printf("Homepage: Changie\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ChangieFormulaFormula) Print() {
+	fmt.Printf("Name: Changie\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ChangieFormulaFormula
+	pkg := ChangieFormulaFormula{
+		Description:  "Descripción de Changie",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dnscontrol representa una fórmula en Go.
-type Dnscontrol struct {
+// DnscontrolFormulaFormula representa una fórmula en Go.
+type DnscontrolFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dnscontrol struct {
 	Dependencies []string
 }
 
-func (pkg Dnscontrol) Print() {
-	fmt.Printf("Name: Dnscontrol\\n", "Dnscontrol")
-	fmt.Printf("Description: Dnscontrol\\n", pkg.Description)
-	fmt.Printf("Homepage: Dnscontrol\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DnscontrolFormulaFormula) Print() {
+	fmt.Printf("Name: Dnscontrol\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DnscontrolFormulaFormula
+	pkg := DnscontrolFormulaFormula{
+		Description:  "Descripción de Dnscontrol",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

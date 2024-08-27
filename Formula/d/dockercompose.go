@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DockerCompose representa una fórmula en Go.
-type DockerCompose struct {
+// DockerComposeFormulaFormula representa una fórmula en Go.
+type DockerComposeFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DockerCompose struct {
 	Dependencies []string
 }
 
-func (pkg DockerCompose) Print() {
-	fmt.Printf("Name: DockerCompose\\n", "DockerCompose")
-	fmt.Printf("Description: DockerCompose\\n", pkg.Description)
-	fmt.Printf("Homepage: DockerCompose\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DockerComposeFormulaFormula) Print() {
+	fmt.Printf("Name: DockerCompose\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DockerComposeFormulaFormula
+	pkg := DockerComposeFormulaFormula{
+		Description:  "Descripción de DockerCompose",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

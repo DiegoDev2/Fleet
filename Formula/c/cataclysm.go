@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cataclysm representa una fórmula en Go.
-type Cataclysm struct {
+// CataclysmFormulaFormula representa una fórmula en Go.
+type CataclysmFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cataclysm struct {
 	Dependencies []string
 }
 
-func (pkg Cataclysm) Print() {
-	fmt.Printf("Name: Cataclysm\\n", "Cataclysm")
-	fmt.Printf("Description: Cataclysm\\n", pkg.Description)
-	fmt.Printf("Homepage: Cataclysm\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CataclysmFormulaFormula) Print() {
+	fmt.Printf("Name: Cataclysm\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CataclysmFormulaFormula
+	pkg := CataclysmFormulaFormula{
+		Description:  "Descripción de Cataclysm",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

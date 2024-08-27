@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Crunch representa una fórmula en Go.
-type Crunch struct {
+// CrunchFormulaFormula representa una fórmula en Go.
+type CrunchFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Crunch struct {
 	Dependencies []string
 }
 
-func (pkg Crunch) Print() {
-	fmt.Printf("Name: Crunch\\n", "Crunch")
-	fmt.Printf("Description: Crunch\\n", pkg.Description)
-	fmt.Printf("Homepage: Crunch\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CrunchFormulaFormula) Print() {
+	fmt.Printf("Name: Crunch\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CrunchFormulaFormula
+	pkg := CrunchFormulaFormula{
+		Description:  "Descripción de Crunch",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

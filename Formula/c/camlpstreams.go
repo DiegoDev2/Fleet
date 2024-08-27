@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CamlpStreams representa una fórmula en Go.
-type CamlpStreams struct {
+// CamlpStreamsFormulaFormula representa una fórmula en Go.
+type CamlpStreamsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CamlpStreams struct {
 	Dependencies []string
 }
 
-func (pkg CamlpStreams) Print() {
-	fmt.Printf("Name: CamlpStreams\\n", "CamlpStreams")
-	fmt.Printf("Description: CamlpStreams\\n", pkg.Description)
-	fmt.Printf("Homepage: CamlpStreams\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CamlpStreamsFormulaFormula) Print() {
+	fmt.Printf("Name: CamlpStreams\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CamlpStreamsFormulaFormula
+	pkg := CamlpStreamsFormulaFormula{
+		Description:  "Descripción de CamlpStreams",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

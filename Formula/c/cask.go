@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cask representa una fórmula en Go.
-type Cask struct {
+// CaskFormulaFormula representa una fórmula en Go.
+type CaskFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cask struct {
 	Dependencies []string
 }
 
-func (pkg Cask) Print() {
-	fmt.Printf("Name: Cask\\n", "Cask")
-	fmt.Printf("Description: Cask\\n", pkg.Description)
-	fmt.Printf("Homepage: Cask\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CaskFormulaFormula) Print() {
+	fmt.Printf("Name: Cask\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CaskFormulaFormula
+	pkg := CaskFormulaFormula{
+		Description:  "Descripción de Cask",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

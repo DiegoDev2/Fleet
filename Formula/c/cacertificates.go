@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CaCertificates representa una fórmula en Go.
-type CaCertificates struct {
+// CaCertificatesFormulaFormula representa una fórmula en Go.
+type CaCertificatesFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CaCertificates struct {
 	Dependencies []string
 }
 
-func (pkg CaCertificates) Print() {
-	fmt.Printf("Name: CaCertificates\\n", "CaCertificates")
-	fmt.Printf("Description: CaCertificates\\n", pkg.Description)
-	fmt.Printf("Homepage: CaCertificates\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CaCertificatesFormulaFormula) Print() {
+	fmt.Printf("Name: CaCertificates\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CaCertificatesFormulaFormula
+	pkg := CaCertificatesFormulaFormula{
+		Description:  "Descripción de CaCertificates",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dive representa una fórmula en Go.
-type Dive struct {
+// DiveFormulaFormula representa una fórmula en Go.
+type DiveFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dive struct {
 	Dependencies []string
 }
 
-func (pkg Dive) Print() {
-	fmt.Printf("Name: Dive\\n", "Dive")
-	fmt.Printf("Description: Dive\\n", pkg.Description)
-	fmt.Printf("Homepage: Dive\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DiveFormulaFormula) Print() {
+	fmt.Printf("Name: Dive\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DiveFormulaFormula
+	pkg := DiveFormulaFormula{
+		Description:  "Descripción de Dive",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

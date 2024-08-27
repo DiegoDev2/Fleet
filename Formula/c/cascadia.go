@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cascadia representa una fórmula en Go.
-type Cascadia struct {
+// CascadiaFormulaFormula representa una fórmula en Go.
+type CascadiaFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cascadia struct {
 	Dependencies []string
 }
 
-func (pkg Cascadia) Print() {
-	fmt.Printf("Name: Cascadia\\n", "Cascadia")
-	fmt.Printf("Description: Cascadia\\n", pkg.Description)
-	fmt.Printf("Homepage: Cascadia\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CascadiaFormulaFormula) Print() {
+	fmt.Printf("Name: Cascadia\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CascadiaFormulaFormula
+	pkg := CascadiaFormulaFormula{
+		Description:  "Descripción de Cascadia",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

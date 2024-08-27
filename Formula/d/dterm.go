@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dterm representa una fórmula en Go.
-type Dterm struct {
+// DtermFormulaFormula representa una fórmula en Go.
+type DtermFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dterm struct {
 	Dependencies []string
 }
 
-func (pkg Dterm) Print() {
-	fmt.Printf("Name: Dterm\\n", "Dterm")
-	fmt.Printf("Description: Dterm\\n", pkg.Description)
-	fmt.Printf("Homepage: Dterm\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DtermFormulaFormula) Print() {
+	fmt.Printf("Name: Dterm\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DtermFormulaFormula
+	pkg := DtermFormulaFormula{
+		Description:  "Descripción de Dterm",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

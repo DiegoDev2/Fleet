@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CloudflareCli4 representa una fórmula en Go.
-type CloudflareCli4 struct {
+// CloudflareCli4FormulaFormula representa una fórmula en Go.
+type CloudflareCli4FormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CloudflareCli4 struct {
 	Dependencies []string
 }
 
-func (pkg CloudflareCli4) Print() {
-	fmt.Printf("Name: CloudflareCli4\\n", "CloudflareCli4")
-	fmt.Printf("Description: CloudflareCli4\\n", pkg.Description)
-	fmt.Printf("Homepage: CloudflareCli4\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CloudflareCli4FormulaFormula) Print() {
+	fmt.Printf("Name: CloudflareCli4\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CloudflareCli4FormulaFormula
+	pkg := CloudflareCli4FormulaFormula{
+		Description:  "Descripción de CloudflareCli4",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

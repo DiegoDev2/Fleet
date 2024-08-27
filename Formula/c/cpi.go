@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cpi representa una fórmula en Go.
-type Cpi struct {
+// CpiFormulaFormula representa una fórmula en Go.
+type CpiFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cpi struct {
 	Dependencies []string
 }
 
-func (pkg Cpi) Print() {
-	fmt.Printf("Name: Cpi\\n", "Cpi")
-	fmt.Printf("Description: Cpi\\n", pkg.Description)
-	fmt.Printf("Homepage: Cpi\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CpiFormulaFormula) Print() {
+	fmt.Printf("Name: Cpi\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CpiFormulaFormula
+	pkg := CpiFormulaFormula{
+		Description:  "Descripción de Cpi",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

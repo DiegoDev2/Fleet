@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DeviceMapper representa una fórmula en Go.
-type DeviceMapper struct {
+// DeviceMapperFormulaFormula representa una fórmula en Go.
+type DeviceMapperFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DeviceMapper struct {
 	Dependencies []string
 }
 
-func (pkg DeviceMapper) Print() {
-	fmt.Printf("Name: DeviceMapper\\n", "DeviceMapper")
-	fmt.Printf("Description: DeviceMapper\\n", pkg.Description)
-	fmt.Printf("Homepage: DeviceMapper\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DeviceMapperFormulaFormula) Print() {
+	fmt.Printf("Name: DeviceMapper\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DeviceMapperFormulaFormula
+	pkg := DeviceMapperFormulaFormula{
+		Description:  "Descripción de DeviceMapper",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

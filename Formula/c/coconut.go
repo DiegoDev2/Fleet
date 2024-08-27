@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Coconut representa una fórmula en Go.
-type Coconut struct {
+// CoconutFormulaFormula representa una fórmula en Go.
+type CoconutFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Coconut struct {
 	Dependencies []string
 }
 
-func (pkg Coconut) Print() {
-	fmt.Printf("Name: Coconut\\n", "Coconut")
-	fmt.Printf("Description: Coconut\\n", pkg.Description)
-	fmt.Printf("Homepage: Coconut\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CoconutFormulaFormula) Print() {
+	fmt.Printf("Name: Coconut\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CoconutFormulaFormula
+	pkg := CoconutFormulaFormula{
+		Description:  "Descripción de Coconut",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

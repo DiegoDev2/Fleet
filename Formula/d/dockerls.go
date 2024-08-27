@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DockerLs representa una fórmula en Go.
-type DockerLs struct {
+// DockerLsFormulaFormula representa una fórmula en Go.
+type DockerLsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DockerLs struct {
 	Dependencies []string
 }
 
-func (pkg DockerLs) Print() {
-	fmt.Printf("Name: DockerLs\\n", "DockerLs")
-	fmt.Printf("Description: DockerLs\\n", pkg.Description)
-	fmt.Printf("Homepage: DockerLs\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DockerLsFormulaFormula) Print() {
+	fmt.Printf("Name: DockerLs\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DockerLsFormulaFormula
+	pkg := DockerLsFormulaFormula{
+		Description:  "Descripción de DockerLs",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

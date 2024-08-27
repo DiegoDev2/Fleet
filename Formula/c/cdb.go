@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cdb representa una fórmula en Go.
-type Cdb struct {
+// CdbFormulaFormula representa una fórmula en Go.
+type CdbFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cdb struct {
 	Dependencies []string
 }
 
-func (pkg Cdb) Print() {
-	fmt.Printf("Name: Cdb\\n", "Cdb")
-	fmt.Printf("Description: Cdb\\n", pkg.Description)
-	fmt.Printf("Homepage: Cdb\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CdbFormulaFormula) Print() {
+	fmt.Printf("Name: Cdb\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CdbFormulaFormula
+	pkg := CdbFormulaFormula{
+		Description:  "Descripción de Cdb",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

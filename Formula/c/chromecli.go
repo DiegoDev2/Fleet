@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ChromeCli representa una fórmula en Go.
-type ChromeCli struct {
+// ChromeCliFormulaFormula representa una fórmula en Go.
+type ChromeCliFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ChromeCli struct {
 	Dependencies []string
 }
 
-func (pkg ChromeCli) Print() {
-	fmt.Printf("Name: ChromeCli\\n", "ChromeCli")
-	fmt.Printf("Description: ChromeCli\\n", pkg.Description)
-	fmt.Printf("Homepage: ChromeCli\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ChromeCliFormulaFormula) Print() {
+	fmt.Printf("Name: ChromeCli\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ChromeCliFormulaFormula
+	pkg := ChromeCliFormulaFormula{
+		Description:  "Descripción de ChromeCli",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

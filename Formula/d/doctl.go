@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Doctl representa una fórmula en Go.
-type Doctl struct {
+// DoctlFormulaFormula representa una fórmula en Go.
+type DoctlFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Doctl struct {
 	Dependencies []string
 }
 
-func (pkg Doctl) Print() {
-	fmt.Printf("Name: Doctl\\n", "Doctl")
-	fmt.Printf("Description: Doctl\\n", pkg.Description)
-	fmt.Printf("Homepage: Doctl\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DoctlFormulaFormula) Print() {
+	fmt.Printf("Name: Doctl\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DoctlFormulaFormula
+	pkg := DoctlFormulaFormula{
+		Description:  "Descripción de Doctl",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

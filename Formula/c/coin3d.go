@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Coin3d representa una fórmula en Go.
-type Coin3d struct {
+// Coin3dFormulaFormula representa una fórmula en Go.
+type Coin3dFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Coin3d struct {
 	Dependencies []string
 }
 
-func (pkg Coin3d) Print() {
-	fmt.Printf("Name: Coin3d\\n", "Coin3d")
-	fmt.Printf("Description: Coin3d\\n", pkg.Description)
-	fmt.Printf("Homepage: Coin3d\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Coin3dFormulaFormula) Print() {
+	fmt.Printf("Name: Coin3d\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Coin3dFormulaFormula
+	pkg := Coin3dFormulaFormula{
+		Description:  "Descripción de Coin3d",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

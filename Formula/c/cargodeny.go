@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CargoDeny representa una fórmula en Go.
-type CargoDeny struct {
+// CargoDenyFormulaFormula representa una fórmula en Go.
+type CargoDenyFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CargoDeny struct {
 	Dependencies []string
 }
 
-func (pkg CargoDeny) Print() {
-	fmt.Printf("Name: CargoDeny\\n", "CargoDeny")
-	fmt.Printf("Description: CargoDeny\\n", pkg.Description)
-	fmt.Printf("Homepage: CargoDeny\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CargoDenyFormulaFormula) Print() {
+	fmt.Printf("Name: CargoDeny\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CargoDenyFormulaFormula
+	pkg := CargoDenyFormulaFormula{
+		Description:  "Descripción de CargoDeny",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

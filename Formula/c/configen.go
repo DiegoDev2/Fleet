@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Configen representa una fórmula en Go.
-type Configen struct {
+// ConfigenFormulaFormula representa una fórmula en Go.
+type ConfigenFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Configen struct {
 	Dependencies []string
 }
 
-func (pkg Configen) Print() {
-	fmt.Printf("Name: Configen\\n", "Configen")
-	fmt.Printf("Description: Configen\\n", pkg.Description)
-	fmt.Printf("Homepage: Configen\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ConfigenFormulaFormula) Print() {
+	fmt.Printf("Name: Configen\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ConfigenFormulaFormula
+	pkg := ConfigenFormulaFormula{
+		Description:  "Descripción de Configen",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

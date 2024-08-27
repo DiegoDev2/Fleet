@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dfc representa una fórmula en Go.
-type Dfc struct {
+// DfcFormulaFormula representa una fórmula en Go.
+type DfcFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dfc struct {
 	Dependencies []string
 }
 
-func (pkg Dfc) Print() {
-	fmt.Printf("Name: Dfc\\n", "Dfc")
-	fmt.Printf("Description: Dfc\\n", pkg.Description)
-	fmt.Printf("Homepage: Dfc\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DfcFormulaFormula) Print() {
+	fmt.Printf("Name: Dfc\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DfcFormulaFormula
+	pkg := DfcFormulaFormula{
+		Description:  "Descripción de Dfc",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

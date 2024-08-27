@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cppcms representa una fórmula en Go.
-type Cppcms struct {
+// CppcmsFormulaFormula representa una fórmula en Go.
+type CppcmsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cppcms struct {
 	Dependencies []string
 }
 
-func (pkg Cppcms) Print() {
-	fmt.Printf("Name: Cppcms\\n", "Cppcms")
-	fmt.Printf("Description: Cppcms\\n", pkg.Description)
-	fmt.Printf("Homepage: Cppcms\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CppcmsFormulaFormula) Print() {
+	fmt.Printf("Name: Cppcms\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CppcmsFormulaFormula
+	pkg := CppcmsFormulaFormula{
+		Description:  "Descripción de Cppcms",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

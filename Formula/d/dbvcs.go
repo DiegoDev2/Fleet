@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DbVcs representa una fórmula en Go.
-type DbVcs struct {
+// DbVcsFormulaFormula representa una fórmula en Go.
+type DbVcsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DbVcs struct {
 	Dependencies []string
 }
 
-func (pkg DbVcs) Print() {
-	fmt.Printf("Name: DbVcs\\n", "DbVcs")
-	fmt.Printf("Description: DbVcs\\n", pkg.Description)
-	fmt.Printf("Homepage: DbVcs\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DbVcsFormulaFormula) Print() {
+	fmt.Printf("Name: DbVcs\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DbVcsFormulaFormula
+	pkg := DbVcsFormulaFormula{
+		Description:  "Descripción de DbVcs",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

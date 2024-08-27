@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Chordii representa una fórmula en Go.
-type Chordii struct {
+// ChordiiFormulaFormula representa una fórmula en Go.
+type ChordiiFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Chordii struct {
 	Dependencies []string
 }
 
-func (pkg Chordii) Print() {
-	fmt.Printf("Name: Chordii\\n", "Chordii")
-	fmt.Printf("Description: Chordii\\n", pkg.Description)
-	fmt.Printf("Homepage: Chordii\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ChordiiFormulaFormula) Print() {
+	fmt.Printf("Name: Chordii\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ChordiiFormulaFormula
+	pkg := ChordiiFormulaFormula{
+		Description:  "Descripción de Chordii",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

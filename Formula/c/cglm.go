@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cglm representa una fórmula en Go.
-type Cglm struct {
+// CglmFormulaFormula representa una fórmula en Go.
+type CglmFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cglm struct {
 	Dependencies []string
 }
 
-func (pkg Cglm) Print() {
-	fmt.Printf("Name: Cglm\\n", "Cglm")
-	fmt.Printf("Description: Cglm\\n", pkg.Description)
-	fmt.Printf("Homepage: Cglm\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CglmFormulaFormula) Print() {
+	fmt.Printf("Name: Cglm\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CglmFormulaFormula
+	pkg := CglmFormulaFormula{
+		Description:  "Descripción de Cglm",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

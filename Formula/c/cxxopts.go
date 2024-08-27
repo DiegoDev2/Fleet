@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cxxopts representa una fórmula en Go.
-type Cxxopts struct {
+// CxxoptsFormulaFormula representa una fórmula en Go.
+type CxxoptsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cxxopts struct {
 	Dependencies []string
 }
 
-func (pkg Cxxopts) Print() {
-	fmt.Printf("Name: Cxxopts\\n", "Cxxopts")
-	fmt.Printf("Description: Cxxopts\\n", pkg.Description)
-	fmt.Printf("Homepage: Cxxopts\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CxxoptsFormulaFormula) Print() {
+	fmt.Printf("Name: Cxxopts\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CxxoptsFormulaFormula
+	pkg := CxxoptsFormulaFormula{
+		Description:  "Descripción de Cxxopts",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

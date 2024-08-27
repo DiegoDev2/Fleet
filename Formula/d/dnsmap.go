@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dnsmap representa una fórmula en Go.
-type Dnsmap struct {
+// DnsmapFormulaFormula representa una fórmula en Go.
+type DnsmapFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dnsmap struct {
 	Dependencies []string
 }
 
-func (pkg Dnsmap) Print() {
-	fmt.Printf("Name: Dnsmap\\n", "Dnsmap")
-	fmt.Printf("Description: Dnsmap\\n", pkg.Description)
-	fmt.Printf("Homepage: Dnsmap\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DnsmapFormulaFormula) Print() {
+	fmt.Printf("Name: Dnsmap\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DnsmapFormulaFormula
+	pkg := DnsmapFormulaFormula{
+		Description:  "Descripción de Dnsmap",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

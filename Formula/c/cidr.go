@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cidr representa una fórmula en Go.
-type Cidr struct {
+// CidrFormulaFormula representa una fórmula en Go.
+type CidrFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cidr struct {
 	Dependencies []string
 }
 
-func (pkg Cidr) Print() {
-	fmt.Printf("Name: Cidr\\n", "Cidr")
-	fmt.Printf("Description: Cidr\\n", pkg.Description)
-	fmt.Printf("Homepage: Cidr\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CidrFormulaFormula) Print() {
+	fmt.Printf("Name: Cidr\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CidrFormulaFormula
+	pkg := CidrFormulaFormula{
+		Description:  "Descripción de Cidr",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

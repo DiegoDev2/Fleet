@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DockerClean representa una fórmula en Go.
-type DockerClean struct {
+// DockerCleanFormulaFormula representa una fórmula en Go.
+type DockerCleanFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DockerClean struct {
 	Dependencies []string
 }
 
-func (pkg DockerClean) Print() {
-	fmt.Printf("Name: DockerClean\\n", "DockerClean")
-	fmt.Printf("Description: DockerClean\\n", pkg.Description)
-	fmt.Printf("Homepage: DockerClean\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DockerCleanFormulaFormula) Print() {
+	fmt.Printf("Name: DockerClean\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DockerCleanFormulaFormula
+	pkg := DockerCleanFormulaFormula{
+		Description:  "Descripción de DockerClean",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

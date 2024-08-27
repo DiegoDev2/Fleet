@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Crfsuite representa una fórmula en Go.
-type Crfsuite struct {
+// CrfsuiteFormulaFormula representa una fórmula en Go.
+type CrfsuiteFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Crfsuite struct {
 	Dependencies []string
 }
 
-func (pkg Crfsuite) Print() {
-	fmt.Printf("Name: Crfsuite\\n", "Crfsuite")
-	fmt.Printf("Description: Crfsuite\\n", pkg.Description)
-	fmt.Printf("Homepage: Crfsuite\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CrfsuiteFormulaFormula) Print() {
+	fmt.Printf("Name: Crfsuite\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CrfsuiteFormulaFormula
+	pkg := CrfsuiteFormulaFormula{
+		Description:  "Descripción de Crfsuite",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

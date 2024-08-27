@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DockerSquash representa una fórmula en Go.
-type DockerSquash struct {
+// DockerSquashFormulaFormula representa una fórmula en Go.
+type DockerSquashFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DockerSquash struct {
 	Dependencies []string
 }
 
-func (pkg DockerSquash) Print() {
-	fmt.Printf("Name: DockerSquash\\n", "DockerSquash")
-	fmt.Printf("Description: DockerSquash\\n", pkg.Description)
-	fmt.Printf("Homepage: DockerSquash\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DockerSquashFormulaFormula) Print() {
+	fmt.Printf("Name: DockerSquash\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DockerSquashFormulaFormula
+	pkg := DockerSquashFormulaFormula{
+		Description:  "Descripción de DockerSquash",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dropbear representa una fórmula en Go.
-type Dropbear struct {
+// DropbearFormulaFormula representa una fórmula en Go.
+type DropbearFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dropbear struct {
 	Dependencies []string
 }
 
-func (pkg Dropbear) Print() {
-	fmt.Printf("Name: Dropbear\\n", "Dropbear")
-	fmt.Printf("Description: Dropbear\\n", pkg.Description)
-	fmt.Printf("Homepage: Dropbear\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DropbearFormulaFormula) Print() {
+	fmt.Printf("Name: Dropbear\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DropbearFormulaFormula
+	pkg := DropbearFormulaFormula{
+		Description:  "Descripción de Dropbear",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

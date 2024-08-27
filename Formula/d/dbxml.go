@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dbxml representa una fórmula en Go.
-type Dbxml struct {
+// DbxmlFormulaFormula representa una fórmula en Go.
+type DbxmlFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dbxml struct {
 	Dependencies []string
 }
 
-func (pkg Dbxml) Print() {
-	fmt.Printf("Name: Dbxml\\n", "Dbxml")
-	fmt.Printf("Description: Dbxml\\n", pkg.Description)
-	fmt.Printf("Homepage: Dbxml\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DbxmlFormulaFormula) Print() {
+	fmt.Printf("Name: Dbxml\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DbxmlFormulaFormula
+	pkg := DbxmlFormulaFormula{
+		Description:  "Descripción de Dbxml",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

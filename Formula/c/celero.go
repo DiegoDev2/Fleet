@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Celero representa una fórmula en Go.
-type Celero struct {
+// CeleroFormulaFormula representa una fórmula en Go.
+type CeleroFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Celero struct {
 	Dependencies []string
 }
 
-func (pkg Celero) Print() {
-	fmt.Printf("Name: Celero\\n", "Celero")
-	fmt.Printf("Description: Celero\\n", pkg.Description)
-	fmt.Printf("Homepage: Celero\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CeleroFormulaFormula) Print() {
+	fmt.Printf("Name: Celero\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CeleroFormulaFormula
+	pkg := CeleroFormulaFormula{
+		Description:  "Descripción de Celero",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

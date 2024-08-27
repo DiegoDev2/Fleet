@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DotnetAT6 representa una fórmula en Go.
-type DotnetAT6 struct {
+// DotnetAT6FormulaFormula representa una fórmula en Go.
+type DotnetAT6FormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DotnetAT6 struct {
 	Dependencies []string
 }
 
-func (pkg DotnetAT6) Print() {
-	fmt.Printf("Name: DotnetAT6\\n", "DotnetAT6")
-	fmt.Printf("Description: DotnetAT6\\n", pkg.Description)
-	fmt.Printf("Homepage: DotnetAT6\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DotnetAT6FormulaFormula) Print() {
+	fmt.Printf("Name: DotnetAT6\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DotnetAT6FormulaFormula
+	pkg := DotnetAT6FormulaFormula{
+		Description:  "Descripción de DotnetAT6",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dwm representa una fórmula en Go.
-type Dwm struct {
+// DwmFormulaFormula representa una fórmula en Go.
+type DwmFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dwm struct {
 	Dependencies []string
 }
 
-func (pkg Dwm) Print() {
-	fmt.Printf("Name: Dwm\\n", "Dwm")
-	fmt.Printf("Description: Dwm\\n", pkg.Description)
-	fmt.Printf("Homepage: Dwm\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DwmFormulaFormula) Print() {
+	fmt.Printf("Name: Dwm\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DwmFormulaFormula
+	pkg := DwmFormulaFormula{
+		Description:  "Descripción de Dwm",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

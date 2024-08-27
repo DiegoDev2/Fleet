@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ChainBench representa una fórmula en Go.
-type ChainBench struct {
+// ChainBenchFormulaFormula representa una fórmula en Go.
+type ChainBenchFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ChainBench struct {
 	Dependencies []string
 }
 
-func (pkg ChainBench) Print() {
-	fmt.Printf("Name: ChainBench\\n", "ChainBench")
-	fmt.Printf("Description: ChainBench\\n", pkg.Description)
-	fmt.Printf("Homepage: ChainBench\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ChainBenchFormulaFormula) Print() {
+	fmt.Printf("Name: ChainBench\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ChainBenchFormulaFormula
+	pkg := ChainBenchFormulaFormula{
+		Description:  "Descripción de ChainBench",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

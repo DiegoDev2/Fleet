@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cvsync representa una fórmula en Go.
-type Cvsync struct {
+// CvsyncFormulaFormula representa una fórmula en Go.
+type CvsyncFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cvsync struct {
 	Dependencies []string
 }
 
-func (pkg Cvsync) Print() {
-	fmt.Printf("Name: Cvsync\\n", "Cvsync")
-	fmt.Printf("Description: Cvsync\\n", pkg.Description)
-	fmt.Printf("Homepage: Cvsync\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CvsyncFormulaFormula) Print() {
+	fmt.Printf("Name: Cvsync\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CvsyncFormulaFormula
+	pkg := CvsyncFormulaFormula{
+		Description:  "Descripción de Cvsync",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

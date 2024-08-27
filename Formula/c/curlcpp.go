@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Curlcpp representa una fórmula en Go.
-type Curlcpp struct {
+// CurlcppFormulaFormula representa una fórmula en Go.
+type CurlcppFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Curlcpp struct {
 	Dependencies []string
 }
 
-func (pkg Curlcpp) Print() {
-	fmt.Printf("Name: Curlcpp\\n", "Curlcpp")
-	fmt.Printf("Description: Curlcpp\\n", pkg.Description)
-	fmt.Printf("Homepage: Curlcpp\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CurlcppFormulaFormula) Print() {
+	fmt.Printf("Name: Curlcpp\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CurlcppFormulaFormula
+	pkg := CurlcppFormulaFormula{
+		Description:  "Descripción de Curlcpp",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

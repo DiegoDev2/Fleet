@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dcfldd representa una fórmula en Go.
-type Dcfldd struct {
+// DcflddFormulaFormula representa una fórmula en Go.
+type DcflddFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dcfldd struct {
 	Dependencies []string
 }
 
-func (pkg Dcfldd) Print() {
-	fmt.Printf("Name: Dcfldd\\n", "Dcfldd")
-	fmt.Printf("Description: Dcfldd\\n", pkg.Description)
-	fmt.Printf("Homepage: Dcfldd\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DcflddFormulaFormula) Print() {
+	fmt.Printf("Name: Dcfldd\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DcflddFormulaFormula
+	pkg := DcflddFormulaFormula{
+		Description:  "Descripción de Dcfldd",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

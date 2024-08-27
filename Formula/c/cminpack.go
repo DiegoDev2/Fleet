@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cminpack representa una fórmula en Go.
-type Cminpack struct {
+// CminpackFormulaFormula representa una fórmula en Go.
+type CminpackFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cminpack struct {
 	Dependencies []string
 }
 
-func (pkg Cminpack) Print() {
-	fmt.Printf("Name: Cminpack\\n", "Cminpack")
-	fmt.Printf("Description: Cminpack\\n", pkg.Description)
-	fmt.Printf("Homepage: Cminpack\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CminpackFormulaFormula) Print() {
+	fmt.Printf("Name: Cminpack\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CminpackFormulaFormula
+	pkg := CminpackFormulaFormula{
+		Description:  "Descripción de Cminpack",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

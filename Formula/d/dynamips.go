@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dynamips representa una fórmula en Go.
-type Dynamips struct {
+// DynamipsFormulaFormula representa una fórmula en Go.
+type DynamipsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dynamips struct {
 	Dependencies []string
 }
 
-func (pkg Dynamips) Print() {
-	fmt.Printf("Name: Dynamips\\n", "Dynamips")
-	fmt.Printf("Description: Dynamips\\n", pkg.Description)
-	fmt.Printf("Homepage: Dynamips\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DynamipsFormulaFormula) Print() {
+	fmt.Printf("Name: Dynamips\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DynamipsFormulaFormula
+	pkg := DynamipsFormulaFormula{
+		Description:  "Descripción de Dynamips",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

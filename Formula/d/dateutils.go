@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dateutils representa una fórmula en Go.
-type Dateutils struct {
+// DateutilsFormulaFormula representa una fórmula en Go.
+type DateutilsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dateutils struct {
 	Dependencies []string
 }
 
-func (pkg Dateutils) Print() {
-	fmt.Printf("Name: Dateutils\\n", "Dateutils")
-	fmt.Printf("Description: Dateutils\\n", pkg.Description)
-	fmt.Printf("Homepage: Dateutils\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DateutilsFormulaFormula) Print() {
+	fmt.Printf("Name: Dateutils\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DateutilsFormulaFormula
+	pkg := DateutilsFormulaFormula{
+		Description:  "Descripción de Dateutils",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

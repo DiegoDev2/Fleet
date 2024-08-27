@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DuaCli representa una fórmula en Go.
-type DuaCli struct {
+// DuaCliFormulaFormula representa una fórmula en Go.
+type DuaCliFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DuaCli struct {
 	Dependencies []string
 }
 
-func (pkg DuaCli) Print() {
-	fmt.Printf("Name: DuaCli\\n", "DuaCli")
-	fmt.Printf("Description: DuaCli\\n", pkg.Description)
-	fmt.Printf("Homepage: DuaCli\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DuaCliFormulaFormula) Print() {
+	fmt.Printf("Name: DuaCli\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DuaCliFormulaFormula
+	pkg := DuaCliFormulaFormula{
+		Description:  "Descripción de DuaCli",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

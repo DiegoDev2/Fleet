@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dps8m representa una fórmula en Go.
-type Dps8m struct {
+// Dps8mFormulaFormula representa una fórmula en Go.
+type Dps8mFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dps8m struct {
 	Dependencies []string
 }
 
-func (pkg Dps8m) Print() {
-	fmt.Printf("Name: Dps8m\\n", "Dps8m")
-	fmt.Printf("Description: Dps8m\\n", pkg.Description)
-	fmt.Printf("Homepage: Dps8m\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Dps8mFormulaFormula) Print() {
+	fmt.Printf("Name: Dps8m\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Dps8mFormulaFormula
+	pkg := Dps8mFormulaFormula{
+		Description:  "Descripción de Dps8m",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

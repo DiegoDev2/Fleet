@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Chadwick representa una fórmula en Go.
-type Chadwick struct {
+// ChadwickFormulaFormula representa una fórmula en Go.
+type ChadwickFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Chadwick struct {
 	Dependencies []string
 }
 
-func (pkg Chadwick) Print() {
-	fmt.Printf("Name: Chadwick\\n", "Chadwick")
-	fmt.Printf("Description: Chadwick\\n", pkg.Description)
-	fmt.Printf("Homepage: Chadwick\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ChadwickFormulaFormula) Print() {
+	fmt.Printf("Name: Chadwick\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ChadwickFormulaFormula
+	pkg := ChadwickFormulaFormula{
+		Description:  "Descripción de Chadwick",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

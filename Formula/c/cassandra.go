@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cassandra representa una fórmula en Go.
-type Cassandra struct {
+// CassandraFormulaFormula representa una fórmula en Go.
+type CassandraFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cassandra struct {
 	Dependencies []string
 }
 
-func (pkg Cassandra) Print() {
-	fmt.Printf("Name: Cassandra\\n", "Cassandra")
-	fmt.Printf("Description: Cassandra\\n", pkg.Description)
-	fmt.Printf("Homepage: Cassandra\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CassandraFormulaFormula) Print() {
+	fmt.Printf("Name: Cassandra\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CassandraFormulaFormula
+	pkg := CassandraFormulaFormula{
+		Description:  "Descripción de Cassandra",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

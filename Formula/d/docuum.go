@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Docuum representa una fórmula en Go.
-type Docuum struct {
+// DocuumFormulaFormula representa una fórmula en Go.
+type DocuumFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Docuum struct {
 	Dependencies []string
 }
 
-func (pkg Docuum) Print() {
-	fmt.Printf("Name: Docuum\\n", "Docuum")
-	fmt.Printf("Description: Docuum\\n", pkg.Description)
-	fmt.Printf("Homepage: Docuum\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DocuumFormulaFormula) Print() {
+	fmt.Printf("Name: Docuum\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DocuumFormulaFormula
+	pkg := DocuumFormulaFormula{
+		Description:  "Descripción de Docuum",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

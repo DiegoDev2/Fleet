@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CheckJsonschema representa una fórmula en Go.
-type CheckJsonschema struct {
+// CheckJsonschemaFormulaFormula representa una fórmula en Go.
+type CheckJsonschemaFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CheckJsonschema struct {
 	Dependencies []string
 }
 
-func (pkg CheckJsonschema) Print() {
-	fmt.Printf("Name: CheckJsonschema\\n", "CheckJsonschema")
-	fmt.Printf("Description: CheckJsonschema\\n", pkg.Description)
-	fmt.Printf("Homepage: CheckJsonschema\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CheckJsonschemaFormulaFormula) Print() {
+	fmt.Printf("Name: CheckJsonschema\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CheckJsonschemaFormulaFormula
+	pkg := CheckJsonschemaFormulaFormula{
+		Description:  "Descripción de CheckJsonschema",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

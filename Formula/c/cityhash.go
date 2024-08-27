@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cityhash representa una fórmula en Go.
-type Cityhash struct {
+// CityhashFormulaFormula representa una fórmula en Go.
+type CityhashFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cityhash struct {
 	Dependencies []string
 }
 
-func (pkg Cityhash) Print() {
-	fmt.Printf("Name: Cityhash\\n", "Cityhash")
-	fmt.Printf("Description: Cityhash\\n", pkg.Description)
-	fmt.Printf("Homepage: Cityhash\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CityhashFormulaFormula) Print() {
+	fmt.Printf("Name: Cityhash\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CityhashFormulaFormula
+	pkg := CityhashFormulaFormula{
+		Description:  "Descripción de Cityhash",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

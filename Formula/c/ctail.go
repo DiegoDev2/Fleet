@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Ctail representa una fórmula en Go.
-type Ctail struct {
+// CtailFormulaFormula representa una fórmula en Go.
+type CtailFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Ctail struct {
 	Dependencies []string
 }
 
-func (pkg Ctail) Print() {
-	fmt.Printf("Name: Ctail\\n", "Ctail")
-	fmt.Printf("Description: Ctail\\n", pkg.Description)
-	fmt.Printf("Homepage: Ctail\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CtailFormulaFormula) Print() {
+	fmt.Printf("Name: Ctail\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CtailFormulaFormula
+	pkg := CtailFormulaFormula{
+		Description:  "Descripción de Ctail",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

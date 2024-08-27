@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CoreLightning representa una fórmula en Go.
-type CoreLightning struct {
+// CoreLightningFormulaFormula representa una fórmula en Go.
+type CoreLightningFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CoreLightning struct {
 	Dependencies []string
 }
 
-func (pkg CoreLightning) Print() {
-	fmt.Printf("Name: CoreLightning\\n", "CoreLightning")
-	fmt.Printf("Description: CoreLightning\\n", pkg.Description)
-	fmt.Printf("Homepage: CoreLightning\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CoreLightningFormulaFormula) Print() {
+	fmt.Printf("Name: CoreLightning\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CoreLightningFormulaFormula
+	pkg := CoreLightningFormulaFormula{
+		Description:  "Descripción de CoreLightning",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

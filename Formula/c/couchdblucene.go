@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CouchdbLucene representa una fórmula en Go.
-type CouchdbLucene struct {
+// CouchdbLuceneFormulaFormula representa una fórmula en Go.
+type CouchdbLuceneFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CouchdbLucene struct {
 	Dependencies []string
 }
 
-func (pkg CouchdbLucene) Print() {
-	fmt.Printf("Name: CouchdbLucene\\n", "CouchdbLucene")
-	fmt.Printf("Description: CouchdbLucene\\n", pkg.Description)
-	fmt.Printf("Homepage: CouchdbLucene\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CouchdbLuceneFormulaFormula) Print() {
+	fmt.Printf("Name: CouchdbLucene\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CouchdbLuceneFormulaFormula
+	pkg := CouchdbLuceneFormulaFormula{
+		Description:  "Descripción de CouchdbLucene",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ChromeExport representa una fórmula en Go.
-type ChromeExport struct {
+// ChromeExportFormulaFormula representa una fórmula en Go.
+type ChromeExportFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ChromeExport struct {
 	Dependencies []string
 }
 
-func (pkg ChromeExport) Print() {
-	fmt.Printf("Name: ChromeExport\\n", "ChromeExport")
-	fmt.Printf("Description: ChromeExport\\n", pkg.Description)
-	fmt.Printf("Homepage: ChromeExport\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ChromeExportFormulaFormula) Print() {
+	fmt.Printf("Name: ChromeExport\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ChromeExportFormulaFormula
+	pkg := ChromeExportFormulaFormula{
+		Description:  "Descripción de ChromeExport",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Detach representa una fórmula en Go.
-type Detach struct {
+// DetachFormulaFormula representa una fórmula en Go.
+type DetachFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Detach struct {
 	Dependencies []string
 }
 
-func (pkg Detach) Print() {
-	fmt.Printf("Name: Detach\\n", "Detach")
-	fmt.Printf("Description: Detach\\n", pkg.Description)
-	fmt.Printf("Homepage: Detach\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DetachFormulaFormula) Print() {
+	fmt.Printf("Name: Detach\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DetachFormulaFormula
+	pkg := DetachFormulaFormula{
+		Description:  "Descripción de Detach",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

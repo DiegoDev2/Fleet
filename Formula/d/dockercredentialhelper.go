@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DockerCredentialHelper representa una fórmula en Go.
-type DockerCredentialHelper struct {
+// DockerCredentialHelperFormulaFormula representa una fórmula en Go.
+type DockerCredentialHelperFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DockerCredentialHelper struct {
 	Dependencies []string
 }
 
-func (pkg DockerCredentialHelper) Print() {
-	fmt.Printf("Name: DockerCredentialHelper\\n", "DockerCredentialHelper")
-	fmt.Printf("Description: DockerCredentialHelper\\n", pkg.Description)
-	fmt.Printf("Homepage: DockerCredentialHelper\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DockerCredentialHelperFormulaFormula) Print() {
+	fmt.Printf("Name: DockerCredentialHelper\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DockerCredentialHelperFormulaFormula
+	pkg := DockerCredentialHelperFormulaFormula{
+		Description:  "Descripción de DockerCredentialHelper",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cspice representa una fórmula en Go.
-type Cspice struct {
+// CspiceFormulaFormula representa una fórmula en Go.
+type CspiceFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cspice struct {
 	Dependencies []string
 }
 
-func (pkg Cspice) Print() {
-	fmt.Printf("Name: Cspice\\n", "Cspice")
-	fmt.Printf("Description: Cspice\\n", pkg.Description)
-	fmt.Printf("Homepage: Cspice\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CspiceFormulaFormula) Print() {
+	fmt.Printf("Name: Cspice\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CspiceFormulaFormula
+	pkg := CspiceFormulaFormula{
+		Description:  "Descripción de Cspice",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

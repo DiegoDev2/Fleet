@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Djvu2pdf representa una fórmula en Go.
-type Djvu2pdf struct {
+// Djvu2pdfFormulaFormula representa una fórmula en Go.
+type Djvu2pdfFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Djvu2pdf struct {
 	Dependencies []string
 }
 
-func (pkg Djvu2pdf) Print() {
-	fmt.Printf("Name: Djvu2pdf\\n", "Djvu2pdf")
-	fmt.Printf("Description: Djvu2pdf\\n", pkg.Description)
-	fmt.Printf("Homepage: Djvu2pdf\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Djvu2pdfFormulaFormula) Print() {
+	fmt.Printf("Name: Djvu2pdf\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Djvu2pdfFormulaFormula
+	pkg := Djvu2pdfFormulaFormula{
+		Description:  "Descripción de Djvu2pdf",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

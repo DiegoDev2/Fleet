@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dysk representa una fórmula en Go.
-type Dysk struct {
+// DyskFormulaFormula representa una fórmula en Go.
+type DyskFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dysk struct {
 	Dependencies []string
 }
 
-func (pkg Dysk) Print() {
-	fmt.Printf("Name: Dysk\\n", "Dysk")
-	fmt.Printf("Description: Dysk\\n", pkg.Description)
-	fmt.Printf("Homepage: Dysk\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DyskFormulaFormula) Print() {
+	fmt.Printf("Name: Dysk\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DyskFormulaFormula
+	pkg := DyskFormulaFormula{
+		Description:  "Descripción de Dysk",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

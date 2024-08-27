@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cookiecutter representa una fórmula en Go.
-type Cookiecutter struct {
+// CookiecutterFormulaFormula representa una fórmula en Go.
+type CookiecutterFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cookiecutter struct {
 	Dependencies []string
 }
 
-func (pkg Cookiecutter) Print() {
-	fmt.Printf("Name: Cookiecutter\\n", "Cookiecutter")
-	fmt.Printf("Description: Cookiecutter\\n", pkg.Description)
-	fmt.Printf("Homepage: Cookiecutter\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CookiecutterFormulaFormula) Print() {
+	fmt.Printf("Name: Cookiecutter\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CookiecutterFormulaFormula
+	pkg := CookiecutterFormulaFormula{
+		Description:  "Descripción de Cookiecutter",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

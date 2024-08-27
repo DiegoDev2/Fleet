@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ChalkCli representa una fórmula en Go.
-type ChalkCli struct {
+// ChalkCliFormulaFormula representa una fórmula en Go.
+type ChalkCliFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ChalkCli struct {
 	Dependencies []string
 }
 
-func (pkg ChalkCli) Print() {
-	fmt.Printf("Name: ChalkCli\\n", "ChalkCli")
-	fmt.Printf("Description: ChalkCli\\n", pkg.Description)
-	fmt.Printf("Homepage: ChalkCli\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ChalkCliFormulaFormula) Print() {
+	fmt.Printf("Name: ChalkCli\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ChalkCliFormulaFormula
+	pkg := ChalkCliFormulaFormula{
+		Description:  "Descripción de ChalkCli",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

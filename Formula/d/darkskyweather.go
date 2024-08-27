@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DarkskyWeather representa una fórmula en Go.
-type DarkskyWeather struct {
+// DarkskyWeatherFormulaFormula representa una fórmula en Go.
+type DarkskyWeatherFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DarkskyWeather struct {
 	Dependencies []string
 }
 
-func (pkg DarkskyWeather) Print() {
-	fmt.Printf("Name: DarkskyWeather\\n", "DarkskyWeather")
-	fmt.Printf("Description: DarkskyWeather\\n", pkg.Description)
-	fmt.Printf("Homepage: DarkskyWeather\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DarkskyWeatherFormulaFormula) Print() {
+	fmt.Printf("Name: DarkskyWeather\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DarkskyWeatherFormulaFormula
+	pkg := DarkskyWeatherFormulaFormula{
+		Description:  "Descripción de DarkskyWeather",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

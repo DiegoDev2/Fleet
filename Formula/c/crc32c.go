@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Crc32c representa una fórmula en Go.
-type Crc32c struct {
+// Crc32cFormulaFormula representa una fórmula en Go.
+type Crc32cFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Crc32c struct {
 	Dependencies []string
 }
 
-func (pkg Crc32c) Print() {
-	fmt.Printf("Name: Crc32c\\n", "Crc32c")
-	fmt.Printf("Description: Crc32c\\n", pkg.Description)
-	fmt.Printf("Homepage: Crc32c\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Crc32cFormulaFormula) Print() {
+	fmt.Printf("Name: Crc32c\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Crc32cFormulaFormula
+	pkg := Crc32cFormulaFormula{
+		Description:  "Descripción de Crc32c",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

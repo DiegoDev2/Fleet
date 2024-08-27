@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dhcpdump representa una fórmula en Go.
-type Dhcpdump struct {
+// DhcpdumpFormulaFormula representa una fórmula en Go.
+type DhcpdumpFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dhcpdump struct {
 	Dependencies []string
 }
 
-func (pkg Dhcpdump) Print() {
-	fmt.Printf("Name: Dhcpdump\\n", "Dhcpdump")
-	fmt.Printf("Description: Dhcpdump\\n", pkg.Description)
-	fmt.Printf("Homepage: Dhcpdump\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DhcpdumpFormulaFormula) Print() {
+	fmt.Printf("Name: Dhcpdump\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DhcpdumpFormulaFormula
+	pkg := DhcpdumpFormulaFormula{
+		Description:  "Descripción de Dhcpdump",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

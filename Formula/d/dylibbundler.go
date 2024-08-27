@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dylibbundler representa una fórmula en Go.
-type Dylibbundler struct {
+// DylibbundlerFormulaFormula representa una fórmula en Go.
+type DylibbundlerFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dylibbundler struct {
 	Dependencies []string
 }
 
-func (pkg Dylibbundler) Print() {
-	fmt.Printf("Name: Dylibbundler\\n", "Dylibbundler")
-	fmt.Printf("Description: Dylibbundler\\n", pkg.Description)
-	fmt.Printf("Homepage: Dylibbundler\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DylibbundlerFormulaFormula) Print() {
+	fmt.Printf("Name: Dylibbundler\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DylibbundlerFormulaFormula
+	pkg := DylibbundlerFormulaFormula{
+		Description:  "Descripción de Dylibbundler",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

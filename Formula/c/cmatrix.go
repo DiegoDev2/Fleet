@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cmatrix representa una fórmula en Go.
-type Cmatrix struct {
+// CmatrixFormulaFormula representa una fórmula en Go.
+type CmatrixFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cmatrix struct {
 	Dependencies []string
 }
 
-func (pkg Cmatrix) Print() {
-	fmt.Printf("Name: Cmatrix\\n", "Cmatrix")
-	fmt.Printf("Description: Cmatrix\\n", pkg.Description)
-	fmt.Printf("Homepage: Cmatrix\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CmatrixFormulaFormula) Print() {
+	fmt.Printf("Name: Cmatrix\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CmatrixFormulaFormula
+	pkg := CmatrixFormulaFormula{
+		Description:  "Descripción de Cmatrix",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
