@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Arkade representa una fórmula en Go.
-type Arkade struct {
+// ArkadeFormulaFormula representa una fórmula en Go.
+type ArkadeFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Arkade struct {
 	Dependencies []string
 }
 
-func (pkg Arkade) Print() {
-	fmt.Printf("Name: Arkade\\n", "Arkade")
-	fmt.Printf("Description: Arkade\\n", pkg.Description)
-	fmt.Printf("Homepage: Arkade\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ArkadeFormulaFormula) Print() {
+	fmt.Printf("Name: Arkade\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ArkadeFormulaFormula
+	pkg := ArkadeFormulaFormula{
+		Description:  "Descripción de Arkade",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

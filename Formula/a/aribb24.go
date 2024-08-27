@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Aribb24 representa una fórmula en Go.
-type Aribb24 struct {
+// Aribb24FormulaFormula representa una fórmula en Go.
+type Aribb24FormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Aribb24 struct {
 	Dependencies []string
 }
 
-func (pkg Aribb24) Print() {
-	fmt.Printf("Name: Aribb24\\n", "Aribb24")
-	fmt.Printf("Description: Aribb24\\n", pkg.Description)
-	fmt.Printf("Homepage: Aribb24\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Aribb24FormulaFormula) Print() {
+	fmt.Printf("Name: Aribb24\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Aribb24FormulaFormula
+	pkg := Aribb24FormulaFormula{
+		Description:  "Descripción de Aribb24",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

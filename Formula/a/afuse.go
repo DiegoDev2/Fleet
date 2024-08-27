@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Afuse representa una fórmula en Go.
-type Afuse struct {
+// AfuseFormulaFormula representa una fórmula en Go.
+type AfuseFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Afuse struct {
 	Dependencies []string
 }
 
-func (pkg Afuse) Print() {
-	fmt.Printf("Name: Afuse\\n", "Afuse")
-	fmt.Printf("Description: Afuse\\n", pkg.Description)
-	fmt.Printf("Homepage: Afuse\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AfuseFormulaFormula) Print() {
+	fmt.Printf("Name: Afuse\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AfuseFormulaFormula
+	pkg := AfuseFormulaFormula{
+		Description:  "Descripción de Afuse",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

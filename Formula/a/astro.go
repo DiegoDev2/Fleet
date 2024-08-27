@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Astro representa una fórmula en Go.
-type Astro struct {
+// AstroFormulaFormula representa una fórmula en Go.
+type AstroFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Astro struct {
 	Dependencies []string
 }
 
-func (pkg Astro) Print() {
-	fmt.Printf("Name: Astro\\n", "Astro")
-	fmt.Printf("Description: Astro\\n", pkg.Description)
-	fmt.Printf("Homepage: Astro\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AstroFormulaFormula) Print() {
+	fmt.Printf("Name: Astro\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AstroFormulaFormula
+	pkg := AstroFormulaFormula{
+		Description:  "Descripción de Astro",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// AwsKeychain representa una fórmula en Go.
-type AwsKeychain struct {
+// AwsKeychainFormulaFormula representa una fórmula en Go.
+type AwsKeychainFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type AwsKeychain struct {
 	Dependencies []string
 }
 
-func (pkg AwsKeychain) Print() {
-	fmt.Printf("Name: AwsKeychain\\n", "AwsKeychain")
-	fmt.Printf("Description: AwsKeychain\\n", pkg.Description)
-	fmt.Printf("Homepage: AwsKeychain\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AwsKeychainFormulaFormula) Print() {
+	fmt.Printf("Name: AwsKeychain\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AwsKeychainFormulaFormula
+	pkg := AwsKeychainFormulaFormula{
+		Description:  "Descripción de AwsKeychain",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

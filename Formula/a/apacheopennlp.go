@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ApacheOpennlp representa una fórmula en Go.
-type ApacheOpennlp struct {
+// ApacheOpennlpFormulaFormula representa una fórmula en Go.
+type ApacheOpennlpFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ApacheOpennlp struct {
 	Dependencies []string
 }
 
-func (pkg ApacheOpennlp) Print() {
-	fmt.Printf("Name: ApacheOpennlp\\n", "ApacheOpennlp")
-	fmt.Printf("Description: ApacheOpennlp\\n", pkg.Description)
-	fmt.Printf("Homepage: ApacheOpennlp\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ApacheOpennlpFormulaFormula) Print() {
+	fmt.Printf("Name: ApacheOpennlp\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ApacheOpennlpFormulaFormula
+	pkg := ApacheOpennlpFormulaFormula{
+		Description:  "Descripción de ApacheOpennlp",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

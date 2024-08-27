@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Adplug representa una fórmula en Go.
-type Adplug struct {
+// AdplugFormulaFormula representa una fórmula en Go.
+type AdplugFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Adplug struct {
 	Dependencies []string
 }
 
-func (pkg Adplug) Print() {
-	fmt.Printf("Name: Adplug\\n", "Adplug")
-	fmt.Printf("Description: Adplug\\n", pkg.Description)
-	fmt.Printf("Homepage: Adplug\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AdplugFormulaFormula) Print() {
+	fmt.Printf("Name: Adplug\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AdplugFormulaFormula
+	pkg := AdplugFormulaFormula{
+		Description:  "Descripción de Adplug",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

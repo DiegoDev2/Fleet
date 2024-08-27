@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Abcm2ps representa una fórmula en Go.
-type Abcm2ps struct {
+// Abcm2psFormulaFormula representa una fórmula en Go.
+type Abcm2psFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Abcm2ps struct {
 	Dependencies []string
 }
 
-func (pkg Abcm2ps) Print() {
-	fmt.Printf("Name: Abcm2ps\\n", "Abcm2ps")
-	fmt.Printf("Description: Abcm2ps\\n", pkg.Description)
-	fmt.Printf("Homepage: Abcm2ps\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Abcm2psFormulaFormula) Print() {
+	fmt.Printf("Name: Abcm2ps\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Abcm2psFormulaFormula
+	pkg := Abcm2psFormulaFormula{
+		Description:  "Descripción de Abcm2ps",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Atlas representa una fórmula en Go.
-type Atlas struct {
+// AtlasFormulaFormula representa una fórmula en Go.
+type AtlasFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Atlas struct {
 	Dependencies []string
 }
 
-func (pkg Atlas) Print() {
-	fmt.Printf("Name: Atlas\\n", "Atlas")
-	fmt.Printf("Description: Atlas\\n", pkg.Description)
-	fmt.Printf("Homepage: Atlas\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AtlasFormulaFormula) Print() {
+	fmt.Printf("Name: Atlas\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AtlasFormulaFormula
+	pkg := AtlasFormulaFormula{
+		Description:  "Descripción de Atlas",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

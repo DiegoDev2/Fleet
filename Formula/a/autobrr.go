@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Autobrr representa una fórmula en Go.
-type Autobrr struct {
+// AutobrrFormulaFormula representa una fórmula en Go.
+type AutobrrFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Autobrr struct {
 	Dependencies []string
 }
 
-func (pkg Autobrr) Print() {
-	fmt.Printf("Name: Autobrr\\n", "Autobrr")
-	fmt.Printf("Description: Autobrr\\n", pkg.Description)
-	fmt.Printf("Homepage: Autobrr\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AutobrrFormulaFormula) Print() {
+	fmt.Printf("Name: Autobrr\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AutobrrFormulaFormula
+	pkg := AutobrrFormulaFormula{
+		Description:  "Descripción de Autobrr",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

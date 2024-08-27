@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Asn1c representa una fórmula en Go.
-type Asn1c struct {
+// Asn1cFormulaFormula representa una fórmula en Go.
+type Asn1cFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Asn1c struct {
 	Dependencies []string
 }
 
-func (pkg Asn1c) Print() {
-	fmt.Printf("Name: Asn1c\\n", "Asn1c")
-	fmt.Printf("Description: Asn1c\\n", pkg.Description)
-	fmt.Printf("Homepage: Asn1c\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Asn1cFormulaFormula) Print() {
+	fmt.Printf("Name: Asn1c\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Asn1cFormulaFormula
+	pkg := Asn1cFormulaFormula{
+		Description:  "Descripción de Asn1c",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

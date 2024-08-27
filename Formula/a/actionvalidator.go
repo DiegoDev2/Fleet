@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ActionValidator representa una fórmula en Go.
-type ActionValidator struct {
+// ActionValidatorFormulaFormula representa una fórmula en Go.
+type ActionValidatorFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ActionValidator struct {
 	Dependencies []string
 }
 
-func (pkg ActionValidator) Print() {
-	fmt.Printf("Name: ActionValidator\\n", "ActionValidator")
-	fmt.Printf("Description: ActionValidator\\n", pkg.Description)
-	fmt.Printf("Homepage: ActionValidator\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ActionValidatorFormulaFormula) Print() {
+	fmt.Printf("Name: ActionValidator\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ActionValidatorFormulaFormula
+	pkg := ActionValidatorFormulaFormula{
+		Description:  "Descripción de ActionValidator",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

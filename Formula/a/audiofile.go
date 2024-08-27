@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Audiofile representa una fórmula en Go.
-type Audiofile struct {
+// AudiofileFormulaFormula representa una fórmula en Go.
+type AudiofileFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Audiofile struct {
 	Dependencies []string
 }
 
-func (pkg Audiofile) Print() {
-	fmt.Printf("Name: Audiofile\\n", "Audiofile")
-	fmt.Printf("Description: Audiofile\\n", pkg.Description)
-	fmt.Printf("Homepage: Audiofile\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AudiofileFormulaFormula) Print() {
+	fmt.Printf("Name: Audiofile\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AudiofileFormulaFormula
+	pkg := AudiofileFormulaFormula{
+		Description:  "Descripción de Audiofile",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

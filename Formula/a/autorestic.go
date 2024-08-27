@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Autorestic representa una fórmula en Go.
-type Autorestic struct {
+// AutoresticFormulaFormula representa una fórmula en Go.
+type AutoresticFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Autorestic struct {
 	Dependencies []string
 }
 
-func (pkg Autorestic) Print() {
-	fmt.Printf("Name: Autorestic\\n", "Autorestic")
-	fmt.Printf("Description: Autorestic\\n", pkg.Description)
-	fmt.Printf("Homepage: Autorestic\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AutoresticFormulaFormula) Print() {
+	fmt.Printf("Name: Autorestic\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AutoresticFormulaFormula
+	pkg := AutoresticFormulaFormula{
+		Description:  "Descripción de Autorestic",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

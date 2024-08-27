@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Alac representa una fórmula en Go.
-type Alac struct {
+// AlacFormulaFormula representa una fórmula en Go.
+type AlacFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Alac struct {
 	Dependencies []string
 }
 
-func (pkg Alac) Print() {
-	fmt.Printf("Name: Alac\\n", "Alac")
-	fmt.Printf("Description: Alac\\n", pkg.Description)
-	fmt.Printf("Homepage: Alac\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AlacFormulaFormula) Print() {
+	fmt.Printf("Name: Alac\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AlacFormulaFormula
+	pkg := AlacFormulaFormula{
+		Description:  "Descripción de Alac",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

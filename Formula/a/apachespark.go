@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ApacheSpark representa una fórmula en Go.
-type ApacheSpark struct {
+// ApacheSparkFormulaFormula representa una fórmula en Go.
+type ApacheSparkFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ApacheSpark struct {
 	Dependencies []string
 }
 
-func (pkg ApacheSpark) Print() {
-	fmt.Printf("Name: ApacheSpark\\n", "ApacheSpark")
-	fmt.Printf("Description: ApacheSpark\\n", pkg.Description)
-	fmt.Printf("Homepage: ApacheSpark\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ApacheSparkFormulaFormula) Print() {
+	fmt.Printf("Name: ApacheSpark\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ApacheSparkFormulaFormula
+	pkg := ApacheSparkFormulaFormula{
+		Description:  "Descripción de ApacheSpark",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

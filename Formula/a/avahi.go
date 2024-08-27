@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Avahi representa una fórmula en Go.
-type Avahi struct {
+// AvahiFormulaFormula representa una fórmula en Go.
+type AvahiFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Avahi struct {
 	Dependencies []string
 }
 
-func (pkg Avahi) Print() {
-	fmt.Printf("Name: Avahi\\n", "Avahi")
-	fmt.Printf("Description: Avahi\\n", pkg.Description)
-	fmt.Printf("Homepage: Avahi\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AvahiFormulaFormula) Print() {
+	fmt.Printf("Name: Avahi\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AvahiFormulaFormula
+	pkg := AvahiFormulaFormula{
+		Description:  "Descripción de Avahi",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

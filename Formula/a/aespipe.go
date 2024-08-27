@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Aespipe representa una fórmula en Go.
-type Aespipe struct {
+// AespipeFormulaFormula representa una fórmula en Go.
+type AespipeFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Aespipe struct {
 	Dependencies []string
 }
 
-func (pkg Aespipe) Print() {
-	fmt.Printf("Name: Aespipe\\n", "Aespipe")
-	fmt.Printf("Description: Aespipe\\n", pkg.Description)
-	fmt.Printf("Homepage: Aespipe\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AespipeFormulaFormula) Print() {
+	fmt.Printf("Name: Aespipe\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AespipeFormulaFormula
+	pkg := AespipeFormulaFormula{
+		Description:  "Descripción de Aespipe",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

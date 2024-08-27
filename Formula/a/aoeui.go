@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Aoeui representa una fórmula en Go.
-type Aoeui struct {
+// AoeuiFormulaFormula representa una fórmula en Go.
+type AoeuiFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Aoeui struct {
 	Dependencies []string
 }
 
-func (pkg Aoeui) Print() {
-	fmt.Printf("Name: Aoeui\\n", "Aoeui")
-	fmt.Printf("Description: Aoeui\\n", pkg.Description)
-	fmt.Printf("Homepage: Aoeui\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AoeuiFormulaFormula) Print() {
+	fmt.Printf("Name: Aoeui\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AoeuiFormulaFormula
+	pkg := AoeuiFormulaFormula{
+		Description:  "Descripción de Aoeui",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

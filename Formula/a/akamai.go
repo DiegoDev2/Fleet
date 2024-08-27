@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Akamai representa una fórmula en Go.
-type Akamai struct {
+// AkamaiFormulaFormula representa una fórmula en Go.
+type AkamaiFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Akamai struct {
 	Dependencies []string
 }
 
-func (pkg Akamai) Print() {
-	fmt.Printf("Name: Akamai\\n", "Akamai")
-	fmt.Printf("Description: Akamai\\n", pkg.Description)
-	fmt.Printf("Homepage: Akamai\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AkamaiFormulaFormula) Print() {
+	fmt.Printf("Name: Akamai\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AkamaiFormulaFormula
+	pkg := AkamaiFormulaFormula{
+		Description:  "Descripción de Akamai",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

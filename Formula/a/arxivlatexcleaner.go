@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ArxivLatexCleaner representa una fórmula en Go.
-type ArxivLatexCleaner struct {
+// ArxivLatexCleanerFormulaFormula representa una fórmula en Go.
+type ArxivLatexCleanerFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ArxivLatexCleaner struct {
 	Dependencies []string
 }
 
-func (pkg ArxivLatexCleaner) Print() {
-	fmt.Printf("Name: ArxivLatexCleaner\\n", "ArxivLatexCleaner")
-	fmt.Printf("Description: ArxivLatexCleaner\\n", pkg.Description)
-	fmt.Printf("Homepage: ArxivLatexCleaner\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ArxivLatexCleanerFormulaFormula) Print() {
+	fmt.Printf("Name: ArxivLatexCleaner\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ArxivLatexCleanerFormulaFormula
+	pkg := ArxivLatexCleanerFormulaFormula{
+		Description:  "Descripción de ArxivLatexCleaner",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

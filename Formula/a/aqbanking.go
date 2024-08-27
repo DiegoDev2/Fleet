@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Aqbanking representa una fórmula en Go.
-type Aqbanking struct {
+// AqbankingFormulaFormula representa una fórmula en Go.
+type AqbankingFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Aqbanking struct {
 	Dependencies []string
 }
 
-func (pkg Aqbanking) Print() {
-	fmt.Printf("Name: Aqbanking\\n", "Aqbanking")
-	fmt.Printf("Description: Aqbanking\\n", pkg.Description)
-	fmt.Printf("Homepage: Aqbanking\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AqbankingFormulaFormula) Print() {
+	fmt.Printf("Name: Aqbanking\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AqbankingFormulaFormula
+	pkg := AqbankingFormulaFormula{
+		Description:  "Descripción de Aqbanking",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

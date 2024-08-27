@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Aspectj representa una fórmula en Go.
-type Aspectj struct {
+// AspectjFormulaFormula representa una fórmula en Go.
+type AspectjFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Aspectj struct {
 	Dependencies []string
 }
 
-func (pkg Aspectj) Print() {
-	fmt.Printf("Name: Aspectj\\n", "Aspectj")
-	fmt.Printf("Description: Aspectj\\n", pkg.Description)
-	fmt.Printf("Homepage: Aspectj\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AspectjFormulaFormula) Print() {
+	fmt.Printf("Name: Aspectj\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AspectjFormulaFormula
+	pkg := AspectjFormulaFormula{
+		Description:  "Descripción de Aspectj",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

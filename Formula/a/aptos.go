@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Aptos representa una fórmula en Go.
-type Aptos struct {
+// AptosFormulaFormula representa una fórmula en Go.
+type AptosFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Aptos struct {
 	Dependencies []string
 }
 
-func (pkg Aptos) Print() {
-	fmt.Printf("Name: Aptos\\n", "Aptos")
-	fmt.Printf("Description: Aptos\\n", pkg.Description)
-	fmt.Printf("Homepage: Aptos\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AptosFormulaFormula) Print() {
+	fmt.Printf("Name: Aptos\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AptosFormulaFormula
+	pkg := AptosFormulaFormula{
+		Description:  "Descripción de Aptos",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

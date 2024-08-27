@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// AnsibleLint representa una fórmula en Go.
-type AnsibleLint struct {
+// AnsibleLintFormulaFormula representa una fórmula en Go.
+type AnsibleLintFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type AnsibleLint struct {
 	Dependencies []string
 }
 
-func (pkg AnsibleLint) Print() {
-	fmt.Printf("Name: AnsibleLint\\n", "AnsibleLint")
-	fmt.Printf("Description: AnsibleLint\\n", pkg.Description)
-	fmt.Printf("Homepage: AnsibleLint\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AnsibleLintFormulaFormula) Print() {
+	fmt.Printf("Name: AnsibleLint\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AnsibleLintFormulaFormula
+	pkg := AnsibleLintFormulaFormula{
+		Description:  "Descripción de AnsibleLint",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

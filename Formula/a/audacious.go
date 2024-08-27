@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Audacious representa una fórmula en Go.
-type Audacious struct {
+// AudaciousFormulaFormula representa una fórmula en Go.
+type AudaciousFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Audacious struct {
 	Dependencies []string
 }
 
-func (pkg Audacious) Print() {
-	fmt.Printf("Name: Audacious\\n", "Audacious")
-	fmt.Printf("Description: Audacious\\n", pkg.Description)
-	fmt.Printf("Homepage: Audacious\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AudaciousFormulaFormula) Print() {
+	fmt.Printf("Name: Audacious\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AudaciousFormulaFormula
+	pkg := AudaciousFormulaFormula{
+		Description:  "Descripción de Audacious",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

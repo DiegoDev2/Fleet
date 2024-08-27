@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Asciinema representa una fórmula en Go.
-type Asciinema struct {
+// AsciinemaFormulaFormula representa una fórmula en Go.
+type AsciinemaFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Asciinema struct {
 	Dependencies []string
 }
 
-func (pkg Asciinema) Print() {
-	fmt.Printf("Name: Asciinema\\n", "Asciinema")
-	fmt.Printf("Description: Asciinema\\n", pkg.Description)
-	fmt.Printf("Homepage: Asciinema\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AsciinemaFormulaFormula) Print() {
+	fmt.Printf("Name: Asciinema\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AsciinemaFormulaFormula
+	pkg := AsciinemaFormulaFormula{
+		Description:  "Descripción de Asciinema",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

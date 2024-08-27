@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Algernon representa una fórmula en Go.
-type Algernon struct {
+// AlgernonFormulaFormula representa una fórmula en Go.
+type AlgernonFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Algernon struct {
 	Dependencies []string
 }
 
-func (pkg Algernon) Print() {
-	fmt.Printf("Name: Algernon\\n", "Algernon")
-	fmt.Printf("Description: Algernon\\n", pkg.Description)
-	fmt.Printf("Homepage: Algernon\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AlgernonFormulaFormula) Print() {
+	fmt.Printf("Name: Algernon\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AlgernonFormulaFormula
+	pkg := AlgernonFormulaFormula{
+		Description:  "Descripción de Algernon",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

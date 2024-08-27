@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Authz0 representa una fórmula en Go.
-type Authz0 struct {
+// Authz0FormulaFormula representa una fórmula en Go.
+type Authz0FormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Authz0 struct {
 	Dependencies []string
 }
 
-func (pkg Authz0) Print() {
-	fmt.Printf("Name: Authz0\\n", "Authz0")
-	fmt.Printf("Description: Authz0\\n", pkg.Description)
-	fmt.Printf("Homepage: Authz0\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Authz0FormulaFormula) Print() {
+	fmt.Printf("Name: Authz0\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Authz0FormulaFormula
+	pkg := Authz0FormulaFormula{
+		Description:  "Descripción de Authz0",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

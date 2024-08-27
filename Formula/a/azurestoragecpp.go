@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// AzureStorageCpp representa una fórmula en Go.
-type AzureStorageCpp struct {
+// AzureStorageCppFormulaFormula representa una fórmula en Go.
+type AzureStorageCppFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type AzureStorageCpp struct {
 	Dependencies []string
 }
 
-func (pkg AzureStorageCpp) Print() {
-	fmt.Printf("Name: AzureStorageCpp\\n", "AzureStorageCpp")
-	fmt.Printf("Description: AzureStorageCpp\\n", pkg.Description)
-	fmt.Printf("Homepage: AzureStorageCpp\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AzureStorageCppFormulaFormula) Print() {
+	fmt.Printf("Name: AzureStorageCpp\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AzureStorageCppFormulaFormula
+	pkg := AzureStorageCppFormulaFormula{
+		Description:  "Descripción de AzureStorageCpp",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

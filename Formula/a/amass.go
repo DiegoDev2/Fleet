@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Amass representa una fórmula en Go.
-type Amass struct {
+// AmassFormulaFormula representa una fórmula en Go.
+type AmassFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Amass struct {
 	Dependencies []string
 }
 
-func (pkg Amass) Print() {
-	fmt.Printf("Name: Amass\\n", "Amass")
-	fmt.Printf("Description: Amass\\n", pkg.Description)
-	fmt.Printf("Homepage: Amass\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AmassFormulaFormula) Print() {
+	fmt.Printf("Name: Amass\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AmassFormulaFormula
+	pkg := AmassFormulaFormula{
+		Description:  "Descripción de Amass",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
