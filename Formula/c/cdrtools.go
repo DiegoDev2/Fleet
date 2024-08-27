@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cdrtools representa una fórmula en Go.
-type Cdrtools struct {
+// CdrtoolsFormulaFormula representa una fórmula en Go.
+type CdrtoolsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cdrtools struct {
 	Dependencies []string
 }
 
-func (pkg Cdrtools) Print() {
-	fmt.Printf("Name: Cdrtools\\n", "Cdrtools")
-	fmt.Printf("Description: Cdrtools\\n", pkg.Description)
-	fmt.Printf("Homepage: Cdrtools\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CdrtoolsFormulaFormula) Print() {
+	fmt.Printf("Name: Cdrtools\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CdrtoolsFormulaFormula
+	pkg := CdrtoolsFormulaFormula{
+		Description:  "Descripción de Cdrtools",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

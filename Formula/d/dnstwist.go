@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dnstwist representa una fórmula en Go.
-type Dnstwist struct {
+// DnstwistFormulaFormula representa una fórmula en Go.
+type DnstwistFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dnstwist struct {
 	Dependencies []string
 }
 
-func (pkg Dnstwist) Print() {
-	fmt.Printf("Name: Dnstwist\\n", "Dnstwist")
-	fmt.Printf("Description: Dnstwist\\n", pkg.Description)
-	fmt.Printf("Homepage: Dnstwist\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DnstwistFormulaFormula) Print() {
+	fmt.Printf("Name: Dnstwist\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DnstwistFormulaFormula
+	pkg := DnstwistFormulaFormula{
+		Description:  "Descripción de Dnstwist",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

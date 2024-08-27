@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cyme representa una fórmula en Go.
-type Cyme struct {
+// CymeFormulaFormula representa una fórmula en Go.
+type CymeFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cyme struct {
 	Dependencies []string
 }
 
-func (pkg Cyme) Print() {
-	fmt.Printf("Name: Cyme\\n", "Cyme")
-	fmt.Printf("Description: Cyme\\n", pkg.Description)
-	fmt.Printf("Homepage: Cyme\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CymeFormulaFormula) Print() {
+	fmt.Printf("Name: Cyme\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CymeFormulaFormula
+	pkg := CymeFormulaFormula{
+		Description:  "Descripción de Cyme",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

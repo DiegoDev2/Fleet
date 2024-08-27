@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CqlProxy representa una fórmula en Go.
-type CqlProxy struct {
+// CqlProxyFormulaFormula representa una fórmula en Go.
+type CqlProxyFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CqlProxy struct {
 	Dependencies []string
 }
 
-func (pkg CqlProxy) Print() {
-	fmt.Printf("Name: CqlProxy\\n", "CqlProxy")
-	fmt.Printf("Description: CqlProxy\\n", pkg.Description)
-	fmt.Printf("Homepage: CqlProxy\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CqlProxyFormulaFormula) Print() {
+	fmt.Printf("Name: CqlProxy\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CqlProxyFormulaFormula
+	pkg := CqlProxyFormulaFormula{
+		Description:  "Descripción de CqlProxy",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

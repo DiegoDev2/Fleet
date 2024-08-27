@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cppzmq representa una fórmula en Go.
-type Cppzmq struct {
+// CppzmqFormulaFormula representa una fórmula en Go.
+type CppzmqFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cppzmq struct {
 	Dependencies []string
 }
 
-func (pkg Cppzmq) Print() {
-	fmt.Printf("Name: Cppzmq\\n", "Cppzmq")
-	fmt.Printf("Description: Cppzmq\\n", pkg.Description)
-	fmt.Printf("Homepage: Cppzmq\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CppzmqFormulaFormula) Print() {
+	fmt.Printf("Name: Cppzmq\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CppzmqFormulaFormula
+	pkg := CppzmqFormulaFormula{
+		Description:  "Descripción de Cppzmq",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

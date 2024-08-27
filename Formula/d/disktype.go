@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Disktype representa una fórmula en Go.
-type Disktype struct {
+// DisktypeFormulaFormula representa una fórmula en Go.
+type DisktypeFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Disktype struct {
 	Dependencies []string
 }
 
-func (pkg Disktype) Print() {
-	fmt.Printf("Name: Disktype\\n", "Disktype")
-	fmt.Printf("Description: Disktype\\n", pkg.Description)
-	fmt.Printf("Homepage: Disktype\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DisktypeFormulaFormula) Print() {
+	fmt.Printf("Name: Disktype\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DisktypeFormulaFormula
+	pkg := DisktypeFormulaFormula{
+		Description:  "Descripción de Disktype",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

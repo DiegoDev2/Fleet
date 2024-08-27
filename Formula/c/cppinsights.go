@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cppinsights representa una fórmula en Go.
-type Cppinsights struct {
+// CppinsightsFormulaFormula representa una fórmula en Go.
+type CppinsightsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cppinsights struct {
 	Dependencies []string
 }
 
-func (pkg Cppinsights) Print() {
-	fmt.Printf("Name: Cppinsights\\n", "Cppinsights")
-	fmt.Printf("Description: Cppinsights\\n", pkg.Description)
-	fmt.Printf("Homepage: Cppinsights\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CppinsightsFormulaFormula) Print() {
+	fmt.Printf("Name: Cppinsights\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CppinsightsFormulaFormula
+	pkg := CppinsightsFormulaFormula{
+		Description:  "Descripción de Cppinsights",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Corsixth representa una fórmula en Go.
-type Corsixth struct {
+// CorsixthFormulaFormula representa una fórmula en Go.
+type CorsixthFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Corsixth struct {
 	Dependencies []string
 }
 
-func (pkg Corsixth) Print() {
-	fmt.Printf("Name: Corsixth\\n", "Corsixth")
-	fmt.Printf("Description: Corsixth\\n", pkg.Description)
-	fmt.Printf("Homepage: Corsixth\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CorsixthFormulaFormula) Print() {
+	fmt.Printf("Name: Corsixth\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CorsixthFormulaFormula
+	pkg := CorsixthFormulaFormula{
+		Description:  "Descripción de Corsixth",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

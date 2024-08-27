@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Distcc representa una fórmula en Go.
-type Distcc struct {
+// DistccFormulaFormula representa una fórmula en Go.
+type DistccFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Distcc struct {
 	Dependencies []string
 }
 
-func (pkg Distcc) Print() {
-	fmt.Printf("Name: Distcc\\n", "Distcc")
-	fmt.Printf("Description: Distcc\\n", pkg.Description)
-	fmt.Printf("Homepage: Distcc\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DistccFormulaFormula) Print() {
+	fmt.Printf("Name: Distcc\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DistccFormulaFormula
+	pkg := DistccFormulaFormula{
+		Description:  "Descripción de Distcc",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

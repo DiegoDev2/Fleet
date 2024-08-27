@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Coredns representa una fórmula en Go.
-type Coredns struct {
+// CorednsFormulaFormula representa una fórmula en Go.
+type CorednsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Coredns struct {
 	Dependencies []string
 }
 
-func (pkg Coredns) Print() {
-	fmt.Printf("Name: Coredns\\n", "Coredns")
-	fmt.Printf("Description: Coredns\\n", pkg.Description)
-	fmt.Printf("Homepage: Coredns\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CorednsFormulaFormula) Print() {
+	fmt.Printf("Name: Coredns\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CorednsFormulaFormula
+	pkg := CorednsFormulaFormula{
+		Description:  "Descripción de Coredns",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

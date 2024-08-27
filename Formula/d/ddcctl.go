@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Ddcctl representa una fórmula en Go.
-type Ddcctl struct {
+// DdcctlFormulaFormula representa una fórmula en Go.
+type DdcctlFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Ddcctl struct {
 	Dependencies []string
 }
 
-func (pkg Ddcctl) Print() {
-	fmt.Printf("Name: Ddcctl\\n", "Ddcctl")
-	fmt.Printf("Description: Ddcctl\\n", pkg.Description)
-	fmt.Printf("Homepage: Ddcctl\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DdcctlFormulaFormula) Print() {
+	fmt.Printf("Name: Ddcctl\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DdcctlFormulaFormula
+	pkg := DdcctlFormulaFormula{
+		Description:  "Descripción de Ddcctl",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

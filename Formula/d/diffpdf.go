@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DiffPdf representa una fórmula en Go.
-type DiffPdf struct {
+// DiffPdfFormulaFormula representa una fórmula en Go.
+type DiffPdfFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DiffPdf struct {
 	Dependencies []string
 }
 
-func (pkg DiffPdf) Print() {
-	fmt.Printf("Name: DiffPdf\\n", "DiffPdf")
-	fmt.Printf("Description: DiffPdf\\n", pkg.Description)
-	fmt.Printf("Homepage: DiffPdf\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DiffPdfFormulaFormula) Print() {
+	fmt.Printf("Name: DiffPdf\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DiffPdfFormulaFormula
+	pkg := DiffPdfFormulaFormula{
+		Description:  "Descripción de DiffPdf",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

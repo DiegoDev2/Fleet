@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DhallBash representa una fórmula en Go.
-type DhallBash struct {
+// DhallBashFormulaFormula representa una fórmula en Go.
+type DhallBashFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DhallBash struct {
 	Dependencies []string
 }
 
-func (pkg DhallBash) Print() {
-	fmt.Printf("Name: DhallBash\\n", "DhallBash")
-	fmt.Printf("Description: DhallBash\\n", pkg.Description)
-	fmt.Printf("Homepage: DhallBash\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DhallBashFormulaFormula) Print() {
+	fmt.Printf("Name: DhallBash\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DhallBashFormulaFormula
+	pkg := DhallBashFormulaFormula{
+		Description:  "Descripción de DhallBash",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cloog representa una fórmula en Go.
-type Cloog struct {
+// CloogFormulaFormula representa una fórmula en Go.
+type CloogFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cloog struct {
 	Dependencies []string
 }
 
-func (pkg Cloog) Print() {
-	fmt.Printf("Name: Cloog\\n", "Cloog")
-	fmt.Printf("Description: Cloog\\n", pkg.Description)
-	fmt.Printf("Homepage: Cloog\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CloogFormulaFormula) Print() {
+	fmt.Printf("Name: Cloog\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CloogFormulaFormula
+	pkg := CloogFormulaFormula{
+		Description:  "Descripción de Cloog",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

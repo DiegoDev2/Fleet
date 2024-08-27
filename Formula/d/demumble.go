@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Demumble representa una fórmula en Go.
-type Demumble struct {
+// DemumbleFormulaFormula representa una fórmula en Go.
+type DemumbleFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Demumble struct {
 	Dependencies []string
 }
 
-func (pkg Demumble) Print() {
-	fmt.Printf("Name: Demumble\\n", "Demumble")
-	fmt.Printf("Description: Demumble\\n", pkg.Description)
-	fmt.Printf("Homepage: Demumble\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DemumbleFormulaFormula) Print() {
+	fmt.Printf("Name: Demumble\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DemumbleFormulaFormula
+	pkg := DemumbleFormulaFormula{
+		Description:  "Descripción de Demumble",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

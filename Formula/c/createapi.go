@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CreateApi representa una fórmula en Go.
-type CreateApi struct {
+// CreateApiFormulaFormula representa una fórmula en Go.
+type CreateApiFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CreateApi struct {
 	Dependencies []string
 }
 
-func (pkg CreateApi) Print() {
-	fmt.Printf("Name: CreateApi\\n", "CreateApi")
-	fmt.Printf("Description: CreateApi\\n", pkg.Description)
-	fmt.Printf("Homepage: CreateApi\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CreateApiFormulaFormula) Print() {
+	fmt.Printf("Name: CreateApi\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CreateApiFormulaFormula
+	pkg := CreateApiFormulaFormula{
+		Description:  "Descripción de CreateApi",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

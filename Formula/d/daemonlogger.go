@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Daemonlogger representa una fórmula en Go.
-type Daemonlogger struct {
+// DaemonloggerFormulaFormula representa una fórmula en Go.
+type DaemonloggerFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Daemonlogger struct {
 	Dependencies []string
 }
 
-func (pkg Daemonlogger) Print() {
-	fmt.Printf("Name: Daemonlogger\\n", "Daemonlogger")
-	fmt.Printf("Description: Daemonlogger\\n", pkg.Description)
-	fmt.Printf("Homepage: Daemonlogger\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DaemonloggerFormulaFormula) Print() {
+	fmt.Printf("Name: Daemonlogger\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DaemonloggerFormulaFormula
+	pkg := DaemonloggerFormulaFormula{
+		Description:  "Descripción de Daemonlogger",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

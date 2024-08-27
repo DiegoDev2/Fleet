@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Duktape representa una fórmula en Go.
-type Duktape struct {
+// DuktapeFormulaFormula representa una fórmula en Go.
+type DuktapeFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Duktape struct {
 	Dependencies []string
 }
 
-func (pkg Duktape) Print() {
-	fmt.Printf("Name: Duktape\\n", "Duktape")
-	fmt.Printf("Description: Duktape\\n", pkg.Description)
-	fmt.Printf("Homepage: Duktape\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DuktapeFormulaFormula) Print() {
+	fmt.Printf("Name: Duktape\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DuktapeFormulaFormula
+	pkg := DuktapeFormulaFormula{
+		Description:  "Descripción de Duktape",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

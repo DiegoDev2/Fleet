@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dnsrobocert representa una fórmula en Go.
-type Dnsrobocert struct {
+// DnsrobocertFormulaFormula representa una fórmula en Go.
+type DnsrobocertFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dnsrobocert struct {
 	Dependencies []string
 }
 
-func (pkg Dnsrobocert) Print() {
-	fmt.Printf("Name: Dnsrobocert\\n", "Dnsrobocert")
-	fmt.Printf("Description: Dnsrobocert\\n", pkg.Description)
-	fmt.Printf("Homepage: Dnsrobocert\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DnsrobocertFormulaFormula) Print() {
+	fmt.Printf("Name: Dnsrobocert\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DnsrobocertFormulaFormula
+	pkg := DnsrobocertFormulaFormula{
+		Description:  "Descripción de Dnsrobocert",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

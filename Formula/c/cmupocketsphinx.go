@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CmuPocketsphinx representa una fórmula en Go.
-type CmuPocketsphinx struct {
+// CmuPocketsphinxFormulaFormula representa una fórmula en Go.
+type CmuPocketsphinxFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CmuPocketsphinx struct {
 	Dependencies []string
 }
 
-func (pkg CmuPocketsphinx) Print() {
-	fmt.Printf("Name: CmuPocketsphinx\\n", "CmuPocketsphinx")
-	fmt.Printf("Description: CmuPocketsphinx\\n", pkg.Description)
-	fmt.Printf("Homepage: CmuPocketsphinx\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CmuPocketsphinxFormulaFormula) Print() {
+	fmt.Printf("Name: CmuPocketsphinx\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CmuPocketsphinxFormulaFormula
+	pkg := CmuPocketsphinxFormulaFormula{
+		Description:  "Descripción de CmuPocketsphinx",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

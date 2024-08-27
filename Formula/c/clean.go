@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Clean representa una fórmula en Go.
-type Clean struct {
+// CleanFormulaFormula representa una fórmula en Go.
+type CleanFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Clean struct {
 	Dependencies []string
 }
 
-func (pkg Clean) Print() {
-	fmt.Printf("Name: Clean\\n", "Clean")
-	fmt.Printf("Description: Clean\\n", pkg.Description)
-	fmt.Printf("Homepage: Clean\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CleanFormulaFormula) Print() {
+	fmt.Printf("Name: Clean\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CleanFormulaFormula
+	pkg := CleanFormulaFormula{
+		Description:  "Descripción de Clean",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

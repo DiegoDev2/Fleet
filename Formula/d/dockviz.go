@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dockviz representa una fórmula en Go.
-type Dockviz struct {
+// DockvizFormulaFormula representa una fórmula en Go.
+type DockvizFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dockviz struct {
 	Dependencies []string
 }
 
-func (pkg Dockviz) Print() {
-	fmt.Printf("Name: Dockviz\\n", "Dockviz")
-	fmt.Printf("Description: Dockviz\\n", pkg.Description)
-	fmt.Printf("Homepage: Dockviz\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DockvizFormulaFormula) Print() {
+	fmt.Printf("Name: Dockviz\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DockvizFormulaFormula
+	pkg := DockvizFormulaFormula{
+		Description:  "Descripción de Dockviz",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

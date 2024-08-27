@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dos2unix representa una fórmula en Go.
-type Dos2unix struct {
+// Dos2unixFormulaFormula representa una fórmula en Go.
+type Dos2unixFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dos2unix struct {
 	Dependencies []string
 }
 
-func (pkg Dos2unix) Print() {
-	fmt.Printf("Name: Dos2unix\\n", "Dos2unix")
-	fmt.Printf("Description: Dos2unix\\n", pkg.Description)
-	fmt.Printf("Homepage: Dos2unix\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Dos2unixFormulaFormula) Print() {
+	fmt.Printf("Name: Dos2unix\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Dos2unixFormulaFormula
+	pkg := Dos2unixFormulaFormula{
+		Description:  "Descripción de Dos2unix",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

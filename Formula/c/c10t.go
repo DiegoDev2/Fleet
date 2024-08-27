@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// C10t representa una fórmula en Go.
-type C10t struct {
+// C10tFormulaFormula representa una fórmula en Go.
+type C10tFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type C10t struct {
 	Dependencies []string
 }
 
-func (pkg C10t) Print() {
-	fmt.Printf("Name: C10t\\n", "C10t")
-	fmt.Printf("Description: C10t\\n", pkg.Description)
-	fmt.Printf("Homepage: C10t\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg C10tFormulaFormula) Print() {
+	fmt.Printf("Name: C10t\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de C10tFormulaFormula
+	pkg := C10tFormulaFormula{
+		Description:  "Descripción de C10t",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

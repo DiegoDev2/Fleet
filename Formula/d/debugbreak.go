@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Debugbreak representa una fórmula en Go.
-type Debugbreak struct {
+// DebugbreakFormulaFormula representa una fórmula en Go.
+type DebugbreakFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Debugbreak struct {
 	Dependencies []string
 }
 
-func (pkg Debugbreak) Print() {
-	fmt.Printf("Name: Debugbreak\\n", "Debugbreak")
-	fmt.Printf("Description: Debugbreak\\n", pkg.Description)
-	fmt.Printf("Homepage: Debugbreak\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DebugbreakFormulaFormula) Print() {
+	fmt.Printf("Name: Debugbreak\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DebugbreakFormulaFormula
+	pkg := DebugbreakFormulaFormula{
+		Description:  "Descripción de Debugbreak",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

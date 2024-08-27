@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cloudpan189Go representa una fórmula en Go.
-type Cloudpan189Go struct {
+// Cloudpan189GoFormulaFormula representa una fórmula en Go.
+type Cloudpan189GoFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cloudpan189Go struct {
 	Dependencies []string
 }
 
-func (pkg Cloudpan189Go) Print() {
-	fmt.Printf("Name: Cloudpan189Go\\n", "Cloudpan189Go")
-	fmt.Printf("Description: Cloudpan189Go\\n", pkg.Description)
-	fmt.Printf("Homepage: Cloudpan189Go\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Cloudpan189GoFormulaFormula) Print() {
+	fmt.Printf("Name: Cloudpan189Go\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Cloudpan189GoFormulaFormula
+	pkg := Cloudpan189GoFormulaFormula{
+		Description:  "Descripción de Cloudpan189Go",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

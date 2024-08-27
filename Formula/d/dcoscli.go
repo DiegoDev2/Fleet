@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DcosCli representa una fórmula en Go.
-type DcosCli struct {
+// DcosCliFormulaFormula representa una fórmula en Go.
+type DcosCliFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DcosCli struct {
 	Dependencies []string
 }
 
-func (pkg DcosCli) Print() {
-	fmt.Printf("Name: DcosCli\\n", "DcosCli")
-	fmt.Printf("Description: DcosCli\\n", pkg.Description)
-	fmt.Printf("Homepage: DcosCli\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DcosCliFormulaFormula) Print() {
+	fmt.Printf("Name: DcosCli\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DcosCliFormulaFormula
+	pkg := DcosCliFormulaFormula{
+		Description:  "Descripción de DcosCli",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

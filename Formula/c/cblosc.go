@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CBlosc representa una fórmula en Go.
-type CBlosc struct {
+// CBloscFormulaFormula representa una fórmula en Go.
+type CBloscFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CBlosc struct {
 	Dependencies []string
 }
 
-func (pkg CBlosc) Print() {
-	fmt.Printf("Name: CBlosc\\n", "CBlosc")
-	fmt.Printf("Description: CBlosc\\n", pkg.Description)
-	fmt.Printf("Homepage: CBlosc\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CBloscFormulaFormula) Print() {
+	fmt.Printf("Name: CBlosc\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CBloscFormulaFormula
+	pkg := CBloscFormulaFormula{
+		Description:  "Descripción de CBlosc",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cairomm representa una fórmula en Go.
-type Cairomm struct {
+// CairommFormulaFormula representa una fórmula en Go.
+type CairommFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cairomm struct {
 	Dependencies []string
 }
 
-func (pkg Cairomm) Print() {
-	fmt.Printf("Name: Cairomm\\n", "Cairomm")
-	fmt.Printf("Description: Cairomm\\n", pkg.Description)
-	fmt.Printf("Homepage: Cairomm\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CairommFormulaFormula) Print() {
+	fmt.Printf("Name: Cairomm\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CairommFormulaFormula
+	pkg := CairommFormulaFormula{
+		Description:  "Descripción de Cairomm",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

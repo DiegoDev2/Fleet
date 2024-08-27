@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Calicoctl representa una fórmula en Go.
-type Calicoctl struct {
+// CalicoctlFormulaFormula representa una fórmula en Go.
+type CalicoctlFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Calicoctl struct {
 	Dependencies []string
 }
 
-func (pkg Calicoctl) Print() {
-	fmt.Printf("Name: Calicoctl\\n", "Calicoctl")
-	fmt.Printf("Description: Calicoctl\\n", pkg.Description)
-	fmt.Printf("Homepage: Calicoctl\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CalicoctlFormulaFormula) Print() {
+	fmt.Printf("Name: Calicoctl\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CalicoctlFormulaFormula
+	pkg := CalicoctlFormulaFormula{
+		Description:  "Descripción de Calicoctl",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cherrytree representa una fórmula en Go.
-type Cherrytree struct {
+// CherrytreeFormulaFormula representa una fórmula en Go.
+type CherrytreeFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cherrytree struct {
 	Dependencies []string
 }
 
-func (pkg Cherrytree) Print() {
-	fmt.Printf("Name: Cherrytree\\n", "Cherrytree")
-	fmt.Printf("Description: Cherrytree\\n", pkg.Description)
-	fmt.Printf("Homepage: Cherrytree\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CherrytreeFormulaFormula) Print() {
+	fmt.Printf("Name: Cherrytree\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CherrytreeFormulaFormula
+	pkg := CherrytreeFormulaFormula{
+		Description:  "Descripción de Cherrytree",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

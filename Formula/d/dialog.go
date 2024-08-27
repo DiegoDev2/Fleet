@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dialog representa una fórmula en Go.
-type Dialog struct {
+// DialogFormulaFormula representa una fórmula en Go.
+type DialogFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dialog struct {
 	Dependencies []string
 }
 
-func (pkg Dialog) Print() {
-	fmt.Printf("Name: Dialog\\n", "Dialog")
-	fmt.Printf("Description: Dialog\\n", pkg.Description)
-	fmt.Printf("Homepage: Dialog\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DialogFormulaFormula) Print() {
+	fmt.Printf("Name: Dialog\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DialogFormulaFormula
+	pkg := DialogFormulaFormula{
+		Description:  "Descripción de Dialog",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

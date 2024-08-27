@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cbmc representa una fórmula en Go.
-type Cbmc struct {
+// CbmcFormulaFormula representa una fórmula en Go.
+type CbmcFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cbmc struct {
 	Dependencies []string
 }
 
-func (pkg Cbmc) Print() {
-	fmt.Printf("Name: Cbmc\\n", "Cbmc")
-	fmt.Printf("Description: Cbmc\\n", pkg.Description)
-	fmt.Printf("Homepage: Cbmc\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CbmcFormulaFormula) Print() {
+	fmt.Printf("Name: Cbmc\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CbmcFormulaFormula
+	pkg := CbmcFormulaFormula{
+		Description:  "Descripción de Cbmc",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

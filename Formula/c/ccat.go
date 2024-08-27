@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Ccat representa una fórmula en Go.
-type Ccat struct {
+// CcatFormulaFormula representa una fórmula en Go.
+type CcatFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Ccat struct {
 	Dependencies []string
 }
 
-func (pkg Ccat) Print() {
-	fmt.Printf("Name: Ccat\\n", "Ccat")
-	fmt.Printf("Description: Ccat\\n", pkg.Description)
-	fmt.Printf("Homepage: Ccat\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CcatFormulaFormula) Print() {
+	fmt.Printf("Name: Ccat\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CcatFormulaFormula
+	pkg := CcatFormulaFormula{
+		Description:  "Descripción de Ccat",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

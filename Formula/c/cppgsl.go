@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CppGsl representa una fórmula en Go.
-type CppGsl struct {
+// CppGslFormulaFormula representa una fórmula en Go.
+type CppGslFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CppGsl struct {
 	Dependencies []string
 }
 
-func (pkg CppGsl) Print() {
-	fmt.Printf("Name: CppGsl\\n", "CppGsl")
-	fmt.Printf("Description: CppGsl\\n", pkg.Description)
-	fmt.Printf("Homepage: CppGsl\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CppGslFormulaFormula) Print() {
+	fmt.Printf("Name: CppGsl\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CppGslFormulaFormula
+	pkg := CppGslFormulaFormula{
+		Description:  "Descripción de CppGsl",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

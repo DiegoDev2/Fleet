@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Chrpath representa una fórmula en Go.
-type Chrpath struct {
+// ChrpathFormulaFormula representa una fórmula en Go.
+type ChrpathFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Chrpath struct {
 	Dependencies []string
 }
 
-func (pkg Chrpath) Print() {
-	fmt.Printf("Name: Chrpath\\n", "Chrpath")
-	fmt.Printf("Description: Chrpath\\n", pkg.Description)
-	fmt.Printf("Homepage: Chrpath\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ChrpathFormulaFormula) Print() {
+	fmt.Printf("Name: Chrpath\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ChrpathFormulaFormula
+	pkg := ChrpathFormulaFormula{
+		Description:  "Descripción de Chrpath",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

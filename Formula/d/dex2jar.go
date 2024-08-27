@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dex2jar representa una fórmula en Go.
-type Dex2jar struct {
+// Dex2jarFormulaFormula representa una fórmula en Go.
+type Dex2jarFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dex2jar struct {
 	Dependencies []string
 }
 
-func (pkg Dex2jar) Print() {
-	fmt.Printf("Name: Dex2jar\\n", "Dex2jar")
-	fmt.Printf("Description: Dex2jar\\n", pkg.Description)
-	fmt.Printf("Homepage: Dex2jar\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Dex2jarFormulaFormula) Print() {
+	fmt.Printf("Name: Dex2jar\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Dex2jarFormulaFormula
+	pkg := Dex2jarFormulaFormula{
+		Description:  "Descripción de Dex2jar",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

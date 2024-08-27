@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DesktopFileUtils representa una fórmula en Go.
-type DesktopFileUtils struct {
+// DesktopFileUtilsFormulaFormula representa una fórmula en Go.
+type DesktopFileUtilsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DesktopFileUtils struct {
 	Dependencies []string
 }
 
-func (pkg DesktopFileUtils) Print() {
-	fmt.Printf("Name: DesktopFileUtils\\n", "DesktopFileUtils")
-	fmt.Printf("Description: DesktopFileUtils\\n", pkg.Description)
-	fmt.Printf("Homepage: DesktopFileUtils\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DesktopFileUtilsFormulaFormula) Print() {
+	fmt.Printf("Name: DesktopFileUtils\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DesktopFileUtilsFormulaFormula
+	pkg := DesktopFileUtilsFormulaFormula{
+		Description:  "Descripción de DesktopFileUtils",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

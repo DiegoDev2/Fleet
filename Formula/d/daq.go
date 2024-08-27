@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Daq representa una fórmula en Go.
-type Daq struct {
+// DaqFormulaFormula representa una fórmula en Go.
+type DaqFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Daq struct {
 	Dependencies []string
 }
 
-func (pkg Daq) Print() {
-	fmt.Printf("Name: Daq\\n", "Daq")
-	fmt.Printf("Description: Daq\\n", pkg.Description)
-	fmt.Printf("Homepage: Daq\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DaqFormulaFormula) Print() {
+	fmt.Printf("Name: Daq\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DaqFormulaFormula
+	pkg := DaqFormulaFormula{
+		Description:  "Descripción de Daq",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

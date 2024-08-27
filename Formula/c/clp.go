@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Clp representa una fórmula en Go.
-type Clp struct {
+// ClpFormulaFormula representa una fórmula en Go.
+type ClpFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Clp struct {
 	Dependencies []string
 }
 
-func (pkg Clp) Print() {
-	fmt.Printf("Name: Clp\\n", "Clp")
-	fmt.Printf("Description: Clp\\n", pkg.Description)
-	fmt.Printf("Homepage: Clp\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ClpFormulaFormula) Print() {
+	fmt.Printf("Name: Clp\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ClpFormulaFormula
+	pkg := ClpFormulaFormula{
+		Description:  "Descripción de Clp",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

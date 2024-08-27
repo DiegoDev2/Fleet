@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cddlib representa una fórmula en Go.
-type Cddlib struct {
+// CddlibFormulaFormula representa una fórmula en Go.
+type CddlibFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cddlib struct {
 	Dependencies []string
 }
 
-func (pkg Cddlib) Print() {
-	fmt.Printf("Name: Cddlib\\n", "Cddlib")
-	fmt.Printf("Description: Cddlib\\n", pkg.Description)
-	fmt.Printf("Homepage: Cddlib\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CddlibFormulaFormula) Print() {
+	fmt.Printf("Name: Cddlib\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CddlibFormulaFormula
+	pkg := CddlibFormulaFormula{
+		Description:  "Descripción de Cddlib",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

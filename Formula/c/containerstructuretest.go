@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ContainerStructureTest representa una fórmula en Go.
-type ContainerStructureTest struct {
+// ContainerStructureTestFormulaFormula representa una fórmula en Go.
+type ContainerStructureTestFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ContainerStructureTest struct {
 	Dependencies []string
 }
 
-func (pkg ContainerStructureTest) Print() {
-	fmt.Printf("Name: ContainerStructureTest\\n", "ContainerStructureTest")
-	fmt.Printf("Description: ContainerStructureTest\\n", pkg.Description)
-	fmt.Printf("Homepage: ContainerStructureTest\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ContainerStructureTestFormulaFormula) Print() {
+	fmt.Printf("Name: ContainerStructureTest\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ContainerStructureTestFormulaFormula
+	pkg := ContainerStructureTestFormulaFormula{
+		Description:  "Descripción de ContainerStructureTest",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

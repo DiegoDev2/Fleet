@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cracklib representa una fórmula en Go.
-type Cracklib struct {
+// CracklibFormulaFormula representa una fórmula en Go.
+type CracklibFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cracklib struct {
 	Dependencies []string
 }
 
-func (pkg Cracklib) Print() {
-	fmt.Printf("Name: Cracklib\\n", "Cracklib")
-	fmt.Printf("Description: Cracklib\\n", pkg.Description)
-	fmt.Printf("Homepage: Cracklib\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CracklibFormulaFormula) Print() {
+	fmt.Printf("Name: Cracklib\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CracklibFormulaFormula
+	pkg := CracklibFormulaFormula{
+		Description:  "Descripción de Cracklib",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

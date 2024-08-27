@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Crow representa una fórmula en Go.
-type Crow struct {
+// CrowFormulaFormula representa una fórmula en Go.
+type CrowFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Crow struct {
 	Dependencies []string
 }
 
-func (pkg Crow) Print() {
-	fmt.Printf("Name: Crow\\n", "Crow")
-	fmt.Printf("Description: Crow\\n", pkg.Description)
-	fmt.Printf("Homepage: Crow\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CrowFormulaFormula) Print() {
+	fmt.Printf("Name: Crow\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CrowFormulaFormula
+	pkg := CrowFormulaFormula{
+		Description:  "Descripción de Crow",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

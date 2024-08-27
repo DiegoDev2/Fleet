@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Coccinelle representa una fórmula en Go.
-type Coccinelle struct {
+// CoccinelleFormulaFormula representa una fórmula en Go.
+type CoccinelleFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Coccinelle struct {
 	Dependencies []string
 }
 
-func (pkg Coccinelle) Print() {
-	fmt.Printf("Name: Coccinelle\\n", "Coccinelle")
-	fmt.Printf("Description: Coccinelle\\n", pkg.Description)
-	fmt.Printf("Homepage: Coccinelle\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CoccinelleFormulaFormula) Print() {
+	fmt.Printf("Name: Coccinelle\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CoccinelleFormulaFormula
+	pkg := CoccinelleFormulaFormula{
+		Description:  "Descripción de Coccinelle",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

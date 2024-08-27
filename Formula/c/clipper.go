@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Clipper representa una fórmula en Go.
-type Clipper struct {
+// ClipperFormulaFormula representa una fórmula en Go.
+type ClipperFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Clipper struct {
 	Dependencies []string
 }
 
-func (pkg Clipper) Print() {
-	fmt.Printf("Name: Clipper\\n", "Clipper")
-	fmt.Printf("Description: Clipper\\n", pkg.Description)
-	fmt.Printf("Homepage: Clipper\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ClipperFormulaFormula) Print() {
+	fmt.Printf("Name: Clipper\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ClipperFormulaFormula
+	pkg := ClipperFormulaFormula{
+		Description:  "Descripción de Clipper",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

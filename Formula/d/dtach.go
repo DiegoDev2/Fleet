@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dtach representa una fórmula en Go.
-type Dtach struct {
+// DtachFormulaFormula representa una fórmula en Go.
+type DtachFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dtach struct {
 	Dependencies []string
 }
 
-func (pkg Dtach) Print() {
-	fmt.Printf("Name: Dtach\\n", "Dtach")
-	fmt.Printf("Description: Dtach\\n", pkg.Description)
-	fmt.Printf("Homepage: Dtach\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DtachFormulaFormula) Print() {
+	fmt.Printf("Name: Dtach\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DtachFormulaFormula
+	pkg := DtachFormulaFormula{
+		Description:  "Descripción de Dtach",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

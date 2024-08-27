@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ChiselTunnel representa una fórmula en Go.
-type ChiselTunnel struct {
+// ChiselTunnelFormulaFormula representa una fórmula en Go.
+type ChiselTunnelFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ChiselTunnel struct {
 	Dependencies []string
 }
 
-func (pkg ChiselTunnel) Print() {
-	fmt.Printf("Name: ChiselTunnel\\n", "ChiselTunnel")
-	fmt.Printf("Description: ChiselTunnel\\n", pkg.Description)
-	fmt.Printf("Homepage: ChiselTunnel\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ChiselTunnelFormulaFormula) Print() {
+	fmt.Printf("Name: ChiselTunnel\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ChiselTunnelFormulaFormula
+	pkg := ChiselTunnelFormulaFormula{
+		Description:  "Descripción de ChiselTunnel",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

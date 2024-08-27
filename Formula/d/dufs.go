@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dufs representa una fórmula en Go.
-type Dufs struct {
+// DufsFormulaFormula representa una fórmula en Go.
+type DufsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dufs struct {
 	Dependencies []string
 }
 
-func (pkg Dufs) Print() {
-	fmt.Printf("Name: Dufs\\n", "Dufs")
-	fmt.Printf("Description: Dufs\\n", pkg.Description)
-	fmt.Printf("Homepage: Dufs\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DufsFormulaFormula) Print() {
+	fmt.Printf("Name: Dufs\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DufsFormulaFormula
+	pkg := DufsFormulaFormula{
+		Description:  "Descripción de Dufs",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

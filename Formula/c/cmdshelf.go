@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cmdshelf representa una fórmula en Go.
-type Cmdshelf struct {
+// CmdshelfFormulaFormula representa una fórmula en Go.
+type CmdshelfFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cmdshelf struct {
 	Dependencies []string
 }
 
-func (pkg Cmdshelf) Print() {
-	fmt.Printf("Name: Cmdshelf\\n", "Cmdshelf")
-	fmt.Printf("Description: Cmdshelf\\n", pkg.Description)
-	fmt.Printf("Homepage: Cmdshelf\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CmdshelfFormulaFormula) Print() {
+	fmt.Printf("Name: Cmdshelf\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CmdshelfFormulaFormula
+	pkg := CmdshelfFormulaFormula{
+		Description:  "Descripción de Cmdshelf",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

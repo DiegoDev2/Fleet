@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Convmv representa una fórmula en Go.
-type Convmv struct {
+// ConvmvFormulaFormula representa una fórmula en Go.
+type ConvmvFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Convmv struct {
 	Dependencies []string
 }
 
-func (pkg Convmv) Print() {
-	fmt.Printf("Name: Convmv\\n", "Convmv")
-	fmt.Printf("Description: Convmv\\n", pkg.Description)
-	fmt.Printf("Homepage: Convmv\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ConvmvFormulaFormula) Print() {
+	fmt.Printf("Name: Convmv\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ConvmvFormulaFormula
+	pkg := ConvmvFormulaFormula{
+		Description:  "Descripción de Convmv",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

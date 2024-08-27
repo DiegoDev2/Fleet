@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CmakeLanguageServer representa una fórmula en Go.
-type CmakeLanguageServer struct {
+// CmakeLanguageServerFormulaFormula representa una fórmula en Go.
+type CmakeLanguageServerFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CmakeLanguageServer struct {
 	Dependencies []string
 }
 
-func (pkg CmakeLanguageServer) Print() {
-	fmt.Printf("Name: CmakeLanguageServer\\n", "CmakeLanguageServer")
-	fmt.Printf("Description: CmakeLanguageServer\\n", pkg.Description)
-	fmt.Printf("Homepage: CmakeLanguageServer\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CmakeLanguageServerFormulaFormula) Print() {
+	fmt.Printf("Name: CmakeLanguageServer\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CmakeLanguageServerFormulaFormula
+	pkg := CmakeLanguageServerFormulaFormula{
+		Description:  "Descripción de CmakeLanguageServer",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

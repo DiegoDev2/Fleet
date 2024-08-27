@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Canfigger representa una fórmula en Go.
-type Canfigger struct {
+// CanfiggerFormulaFormula representa una fórmula en Go.
+type CanfiggerFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Canfigger struct {
 	Dependencies []string
 }
 
-func (pkg Canfigger) Print() {
-	fmt.Printf("Name: Canfigger\\n", "Canfigger")
-	fmt.Printf("Description: Canfigger\\n", pkg.Description)
-	fmt.Printf("Homepage: Canfigger\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CanfiggerFormulaFormula) Print() {
+	fmt.Printf("Name: Canfigger\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CanfiggerFormulaFormula
+	pkg := CanfiggerFormulaFormula{
+		Description:  "Descripción de Canfigger",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

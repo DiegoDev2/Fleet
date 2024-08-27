@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CrushTools representa una fórmula en Go.
-type CrushTools struct {
+// CrushToolsFormulaFormula representa una fórmula en Go.
+type CrushToolsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CrushTools struct {
 	Dependencies []string
 }
 
-func (pkg CrushTools) Print() {
-	fmt.Printf("Name: CrushTools\\n", "CrushTools")
-	fmt.Printf("Description: CrushTools\\n", pkg.Description)
-	fmt.Printf("Homepage: CrushTools\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CrushToolsFormulaFormula) Print() {
+	fmt.Printf("Name: CrushTools\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CrushToolsFormulaFormula
+	pkg := CrushToolsFormulaFormula{
+		Description:  "Descripción de CrushTools",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

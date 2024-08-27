@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CodaCli representa una fórmula en Go.
-type CodaCli struct {
+// CodaCliFormulaFormula representa una fórmula en Go.
+type CodaCliFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CodaCli struct {
 	Dependencies []string
 }
 
-func (pkg CodaCli) Print() {
-	fmt.Printf("Name: CodaCli\\n", "CodaCli")
-	fmt.Printf("Description: CodaCli\\n", pkg.Description)
-	fmt.Printf("Homepage: CodaCli\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CodaCliFormulaFormula) Print() {
+	fmt.Printf("Name: CodaCli\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CodaCliFormulaFormula
+	pkg := CodaCliFormulaFormula{
+		Description:  "Descripción de CodaCli",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

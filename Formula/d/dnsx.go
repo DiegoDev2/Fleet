@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dnsx representa una fórmula en Go.
-type Dnsx struct {
+// DnsxFormulaFormula representa una fórmula en Go.
+type DnsxFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dnsx struct {
 	Dependencies []string
 }
 
-func (pkg Dnsx) Print() {
-	fmt.Printf("Name: Dnsx\\n", "Dnsx")
-	fmt.Printf("Description: Dnsx\\n", pkg.Description)
-	fmt.Printf("Homepage: Dnsx\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DnsxFormulaFormula) Print() {
+	fmt.Printf("Name: Dnsx\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DnsxFormulaFormula
+	pkg := DnsxFormulaFormula{
+		Description:  "Descripción de Dnsx",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

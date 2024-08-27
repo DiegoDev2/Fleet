@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Diamond representa una fórmula en Go.
-type Diamond struct {
+// DiamondFormulaFormula representa una fórmula en Go.
+type DiamondFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Diamond struct {
 	Dependencies []string
 }
 
-func (pkg Diamond) Print() {
-	fmt.Printf("Name: Diamond\\n", "Diamond")
-	fmt.Printf("Description: Diamond\\n", pkg.Description)
-	fmt.Printf("Homepage: Diamond\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DiamondFormulaFormula) Print() {
+	fmt.Printf("Name: Diamond\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DiamondFormulaFormula
+	pkg := DiamondFormulaFormula{
+		Description:  "Descripción de Diamond",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

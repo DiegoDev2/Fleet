@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Camellia representa una fórmula en Go.
-type Camellia struct {
+// CamelliaFormulaFormula representa una fórmula en Go.
+type CamelliaFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Camellia struct {
 	Dependencies []string
 }
 
-func (pkg Camellia) Print() {
-	fmt.Printf("Name: Camellia\\n", "Camellia")
-	fmt.Printf("Description: Camellia\\n", pkg.Description)
-	fmt.Printf("Homepage: Camellia\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CamelliaFormulaFormula) Print() {
+	fmt.Printf("Name: Camellia\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CamelliaFormulaFormula
+	pkg := CamelliaFormulaFormula{
+		Description:  "Descripción de Camellia",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

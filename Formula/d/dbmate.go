@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dbmate representa una fórmula en Go.
-type Dbmate struct {
+// DbmateFormulaFormula representa una fórmula en Go.
+type DbmateFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dbmate struct {
 	Dependencies []string
 }
 
-func (pkg Dbmate) Print() {
-	fmt.Printf("Name: Dbmate\\n", "Dbmate")
-	fmt.Printf("Description: Dbmate\\n", pkg.Description)
-	fmt.Printf("Homepage: Dbmate\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DbmateFormulaFormula) Print() {
+	fmt.Printf("Name: Dbmate\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DbmateFormulaFormula
+	pkg := DbmateFormulaFormula{
+		Description:  "Descripción de Dbmate",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cf2tf representa una fórmula en Go.
-type Cf2tf struct {
+// Cf2tfFormulaFormula representa una fórmula en Go.
+type Cf2tfFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cf2tf struct {
 	Dependencies []string
 }
 
-func (pkg Cf2tf) Print() {
-	fmt.Printf("Name: Cf2tf\\n", "Cf2tf")
-	fmt.Printf("Description: Cf2tf\\n", pkg.Description)
-	fmt.Printf("Homepage: Cf2tf\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Cf2tfFormulaFormula) Print() {
+	fmt.Printf("Name: Cf2tf\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Cf2tfFormulaFormula
+	pkg := Cf2tfFormulaFormula{
+		Description:  "Descripción de Cf2tf",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

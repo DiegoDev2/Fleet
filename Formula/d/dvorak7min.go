@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dvorak7min representa una fórmula en Go.
-type Dvorak7min struct {
+// Dvorak7minFormulaFormula representa una fórmula en Go.
+type Dvorak7minFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dvorak7min struct {
 	Dependencies []string
 }
 
-func (pkg Dvorak7min) Print() {
-	fmt.Printf("Name: Dvorak7min\\n", "Dvorak7min")
-	fmt.Printf("Description: Dvorak7min\\n", pkg.Description)
-	fmt.Printf("Homepage: Dvorak7min\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Dvorak7minFormulaFormula) Print() {
+	fmt.Printf("Name: Dvorak7min\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Dvorak7minFormulaFormula
+	pkg := Dvorak7minFormulaFormula{
+		Description:  "Descripción de Dvorak7min",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

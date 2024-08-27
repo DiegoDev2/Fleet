@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Chezscheme representa una fórmula en Go.
-type Chezscheme struct {
+// ChezschemeFormulaFormula representa una fórmula en Go.
+type ChezschemeFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Chezscheme struct {
 	Dependencies []string
 }
 
-func (pkg Chezscheme) Print() {
-	fmt.Printf("Name: Chezscheme\\n", "Chezscheme")
-	fmt.Printf("Description: Chezscheme\\n", pkg.Description)
-	fmt.Printf("Homepage: Chezscheme\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ChezschemeFormulaFormula) Print() {
+	fmt.Printf("Name: Chezscheme\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ChezschemeFormulaFormula
+	pkg := ChezschemeFormulaFormula{
+		Description:  "Descripción de Chezscheme",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

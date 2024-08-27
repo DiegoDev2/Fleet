@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dcp representa una fórmula en Go.
-type Dcp struct {
+// DcpFormulaFormula representa una fórmula en Go.
+type DcpFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dcp struct {
 	Dependencies []string
 }
 
-func (pkg Dcp) Print() {
-	fmt.Printf("Name: Dcp\\n", "Dcp")
-	fmt.Printf("Description: Dcp\\n", pkg.Description)
-	fmt.Printf("Homepage: Dcp\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DcpFormulaFormula) Print() {
+	fmt.Printf("Name: Dcp\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DcpFormulaFormula
+	pkg := DcpFormulaFormula{
+		Description:  "Descripción de Dcp",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

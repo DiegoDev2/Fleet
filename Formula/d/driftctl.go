@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Driftctl representa una fórmula en Go.
-type Driftctl struct {
+// DriftctlFormulaFormula representa una fórmula en Go.
+type DriftctlFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Driftctl struct {
 	Dependencies []string
 }
 
-func (pkg Driftctl) Print() {
-	fmt.Printf("Name: Driftctl\\n", "Driftctl")
-	fmt.Printf("Description: Driftctl\\n", pkg.Description)
-	fmt.Printf("Homepage: Driftctl\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DriftctlFormulaFormula) Print() {
+	fmt.Printf("Name: Driftctl\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DriftctlFormulaFormula
+	pkg := DriftctlFormulaFormula{
+		Description:  "Descripción de Driftctl",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Drafter representa una fórmula en Go.
-type Drafter struct {
+// DrafterFormulaFormula representa una fórmula en Go.
+type DrafterFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Drafter struct {
 	Dependencies []string
 }
 
-func (pkg Drafter) Print() {
-	fmt.Printf("Name: Drafter\\n", "Drafter")
-	fmt.Printf("Description: Drafter\\n", pkg.Description)
-	fmt.Printf("Homepage: Drafter\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DrafterFormulaFormula) Print() {
+	fmt.Printf("Name: Drafter\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DrafterFormulaFormula
+	pkg := DrafterFormulaFormula{
+		Description:  "Descripción de Drafter",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

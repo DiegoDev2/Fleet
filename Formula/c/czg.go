@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Czg representa una fórmula en Go.
-type Czg struct {
+// CzgFormulaFormula representa una fórmula en Go.
+type CzgFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Czg struct {
 	Dependencies []string
 }
 
-func (pkg Czg) Print() {
-	fmt.Printf("Name: Czg\\n", "Czg")
-	fmt.Printf("Description: Czg\\n", pkg.Description)
-	fmt.Printf("Homepage: Czg\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CzgFormulaFormula) Print() {
+	fmt.Printf("Name: Czg\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CzgFormulaFormula
+	pkg := CzgFormulaFormula{
+		Description:  "Descripción de Czg",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

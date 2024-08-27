@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DockerSlim representa una fórmula en Go.
-type DockerSlim struct {
+// DockerSlimFormulaFormula representa una fórmula en Go.
+type DockerSlimFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DockerSlim struct {
 	Dependencies []string
 }
 
-func (pkg DockerSlim) Print() {
-	fmt.Printf("Name: DockerSlim\\n", "DockerSlim")
-	fmt.Printf("Description: DockerSlim\\n", pkg.Description)
-	fmt.Printf("Homepage: DockerSlim\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DockerSlimFormulaFormula) Print() {
+	fmt.Printf("Name: DockerSlim\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DockerSlimFormulaFormula
+	pkg := DockerSlimFormulaFormula{
+		Description:  "Descripción de DockerSlim",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

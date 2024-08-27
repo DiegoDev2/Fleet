@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dcled representa una fórmula en Go.
-type Dcled struct {
+// DcledFormulaFormula representa una fórmula en Go.
+type DcledFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dcled struct {
 	Dependencies []string
 }
 
-func (pkg Dcled) Print() {
-	fmt.Printf("Name: Dcled\\n", "Dcled")
-	fmt.Printf("Description: Dcled\\n", pkg.Description)
-	fmt.Printf("Homepage: Dcled\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DcledFormulaFormula) Print() {
+	fmt.Printf("Name: Dcled\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DcledFormulaFormula
+	pkg := DcledFormulaFormula{
+		Description:  "Descripción de Dcled",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

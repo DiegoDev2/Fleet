@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// CrunchyCli representa una fórmula en Go.
-type CrunchyCli struct {
+// CrunchyCliFormulaFormula representa una fórmula en Go.
+type CrunchyCliFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type CrunchyCli struct {
 	Dependencies []string
 }
 
-func (pkg CrunchyCli) Print() {
-	fmt.Printf("Name: CrunchyCli\\n", "CrunchyCli")
-	fmt.Printf("Description: CrunchyCli\\n", pkg.Description)
-	fmt.Printf("Homepage: CrunchyCli\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CrunchyCliFormulaFormula) Print() {
+	fmt.Printf("Name: CrunchyCli\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CrunchyCliFormulaFormula
+	pkg := CrunchyCliFormulaFormula{
+		Description:  "Descripción de CrunchyCli",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cayley representa una fórmula en Go.
-type Cayley struct {
+// CayleyFormulaFormula representa una fórmula en Go.
+type CayleyFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cayley struct {
 	Dependencies []string
 }
 
-func (pkg Cayley) Print() {
-	fmt.Printf("Name: Cayley\\n", "Cayley")
-	fmt.Printf("Description: Cayley\\n", pkg.Description)
-	fmt.Printf("Homepage: Cayley\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CayleyFormulaFormula) Print() {
+	fmt.Printf("Name: Cayley\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CayleyFormulaFormula
+	pkg := CayleyFormulaFormula{
+		Description:  "Descripción de Cayley",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

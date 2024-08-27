@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DoubleConversion representa una fórmula en Go.
-type DoubleConversion struct {
+// DoubleConversionFormulaFormula representa una fórmula en Go.
+type DoubleConversionFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DoubleConversion struct {
 	Dependencies []string
 }
 
-func (pkg DoubleConversion) Print() {
-	fmt.Printf("Name: DoubleConversion\\n", "DoubleConversion")
-	fmt.Printf("Description: DoubleConversion\\n", pkg.Description)
-	fmt.Printf("Homepage: DoubleConversion\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DoubleConversionFormulaFormula) Print() {
+	fmt.Printf("Name: DoubleConversion\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DoubleConversionFormulaFormula
+	pkg := DoubleConversionFormulaFormula{
+		Description:  "Descripción de DoubleConversion",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DjlServing representa una fórmula en Go.
-type DjlServing struct {
+// DjlServingFormulaFormula representa una fórmula en Go.
+type DjlServingFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DjlServing struct {
 	Dependencies []string
 }
 
-func (pkg DjlServing) Print() {
-	fmt.Printf("Name: DjlServing\\n", "DjlServing")
-	fmt.Printf("Description: DjlServing\\n", pkg.Description)
-	fmt.Printf("Homepage: DjlServing\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DjlServingFormulaFormula) Print() {
+	fmt.Printf("Name: DjlServing\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DjlServingFormulaFormula
+	pkg := DjlServingFormulaFormula{
+		Description:  "Descripción de DjlServing",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cfv representa una fórmula en Go.
-type Cfv struct {
+// CfvFormulaFormula representa una fórmula en Go.
+type CfvFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cfv struct {
 	Dependencies []string
 }
 
-func (pkg Cfv) Print() {
-	fmt.Printf("Name: Cfv\\n", "Cfv")
-	fmt.Printf("Description: Cfv\\n", pkg.Description)
-	fmt.Printf("Homepage: Cfv\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CfvFormulaFormula) Print() {
+	fmt.Printf("Name: Cfv\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CfvFormulaFormula
+	pkg := CfvFormulaFormula{
+		Description:  "Descripción de Cfv",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

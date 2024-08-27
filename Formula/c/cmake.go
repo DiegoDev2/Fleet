@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cmake representa una fórmula en Go.
-type Cmake struct {
+// CmakeFormulaFormula representa una fórmula en Go.
+type CmakeFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cmake struct {
 	Dependencies []string
 }
 
-func (pkg Cmake) Print() {
-	fmt.Printf("Name: Cmake\\n", "Cmake")
-	fmt.Printf("Description: Cmake\\n", pkg.Description)
-	fmt.Printf("Homepage: Cmake\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CmakeFormulaFormula) Print() {
+	fmt.Printf("Name: Cmake\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CmakeFormulaFormula
+	pkg := CmakeFormulaFormula{
+		Description:  "Descripción de Cmake",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cp2k representa una fórmula en Go.
-type Cp2k struct {
+// Cp2kFormulaFormula representa una fórmula en Go.
+type Cp2kFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cp2k struct {
 	Dependencies []string
 }
 
-func (pkg Cp2k) Print() {
-	fmt.Printf("Name: Cp2k\\n", "Cp2k")
-	fmt.Printf("Description: Cp2k\\n", pkg.Description)
-	fmt.Printf("Homepage: Cp2k\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Cp2kFormulaFormula) Print() {
+	fmt.Printf("Name: Cp2k\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Cp2kFormulaFormula
+	pkg := Cp2kFormulaFormula{
+		Description:  "Descripción de Cp2k",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

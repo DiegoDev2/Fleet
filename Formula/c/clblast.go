@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Clblast representa una fórmula en Go.
-type Clblast struct {
+// ClblastFormulaFormula representa una fórmula en Go.
+type ClblastFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Clblast struct {
 	Dependencies []string
 }
 
-func (pkg Clblast) Print() {
-	fmt.Printf("Name: Clblast\\n", "Clblast")
-	fmt.Printf("Description: Clblast\\n", pkg.Description)
-	fmt.Printf("Homepage: Clblast\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ClblastFormulaFormula) Print() {
+	fmt.Printf("Name: Clblast\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ClblastFormulaFormula
+	pkg := ClblastFormulaFormula{
+		Description:  "Descripción de Clblast",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

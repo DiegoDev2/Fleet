@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Clzip representa una fórmula en Go.
-type Clzip struct {
+// ClzipFormulaFormula representa una fórmula en Go.
+type ClzipFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Clzip struct {
 	Dependencies []string
 }
 
-func (pkg Clzip) Print() {
-	fmt.Printf("Name: Clzip\\n", "Clzip")
-	fmt.Printf("Description: Clzip\\n", pkg.Description)
-	fmt.Printf("Homepage: Clzip\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ClzipFormulaFormula) Print() {
+	fmt.Printf("Name: Clzip\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ClzipFormulaFormula
+	pkg := ClzipFormulaFormula{
+		Description:  "Descripción de Clzip",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

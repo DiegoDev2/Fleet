@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Composer representa una fórmula en Go.
-type Composer struct {
+// ComposerFormulaFormula representa una fórmula en Go.
+type ComposerFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Composer struct {
 	Dependencies []string
 }
 
-func (pkg Composer) Print() {
-	fmt.Printf("Name: Composer\\n", "Composer")
-	fmt.Printf("Description: Composer\\n", pkg.Description)
-	fmt.Printf("Homepage: Composer\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ComposerFormulaFormula) Print() {
+	fmt.Printf("Name: Composer\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ComposerFormulaFormula
+	pkg := ComposerFormulaFormula{
+		Description:  "Descripción de Composer",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

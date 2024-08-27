@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Darkice representa una fórmula en Go.
-type Darkice struct {
+// DarkiceFormulaFormula representa una fórmula en Go.
+type DarkiceFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Darkice struct {
 	Dependencies []string
 }
 
-func (pkg Darkice) Print() {
-	fmt.Printf("Name: Darkice\\n", "Darkice")
-	fmt.Printf("Description: Darkice\\n", pkg.Description)
-	fmt.Printf("Homepage: Darkice\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DarkiceFormulaFormula) Print() {
+	fmt.Printf("Name: Darkice\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DarkiceFormulaFormula
+	pkg := DarkiceFormulaFormula{
+		Description:  "Descripción de Darkice",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

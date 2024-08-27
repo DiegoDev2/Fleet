@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Click representa una fórmula en Go.
-type Click struct {
+// ClickFormulaFormula representa una fórmula en Go.
+type ClickFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Click struct {
 	Dependencies []string
 }
 
-func (pkg Click) Print() {
-	fmt.Printf("Name: Click\\n", "Click")
-	fmt.Printf("Description: Click\\n", pkg.Description)
-	fmt.Printf("Homepage: Click\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ClickFormulaFormula) Print() {
+	fmt.Printf("Name: Click\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ClickFormulaFormula
+	pkg := ClickFormulaFormula{
+		Description:  "Descripción de Click",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

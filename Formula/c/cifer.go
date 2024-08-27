@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cifer representa una fórmula en Go.
-type Cifer struct {
+// CiferFormulaFormula representa una fórmula en Go.
+type CiferFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cifer struct {
 	Dependencies []string
 }
 
-func (pkg Cifer) Print() {
-	fmt.Printf("Name: Cifer\\n", "Cifer")
-	fmt.Printf("Description: Cifer\\n", pkg.Description)
-	fmt.Printf("Homepage: Cifer\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CiferFormulaFormula) Print() {
+	fmt.Printf("Name: Cifer\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CiferFormulaFormula
+	pkg := CiferFormulaFormula{
+		Description:  "Descripción de Cifer",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

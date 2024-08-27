@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DockerGen representa una fórmula en Go.
-type DockerGen struct {
+// DockerGenFormulaFormula representa una fórmula en Go.
+type DockerGenFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DockerGen struct {
 	Dependencies []string
 }
 
-func (pkg DockerGen) Print() {
-	fmt.Printf("Name: DockerGen\\n", "DockerGen")
-	fmt.Printf("Description: DockerGen\\n", pkg.Description)
-	fmt.Printf("Homepage: DockerGen\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DockerGenFormulaFormula) Print() {
+	fmt.Printf("Name: DockerGen\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DockerGenFormulaFormula
+	pkg := DockerGenFormulaFormula{
+		Description:  "Descripción de DockerGen",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

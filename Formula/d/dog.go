@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dog representa una fórmula en Go.
-type Dog struct {
+// DogFormulaFormula representa una fórmula en Go.
+type DogFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dog struct {
 	Dependencies []string
 }
 
-func (pkg Dog) Print() {
-	fmt.Printf("Name: Dog\\n", "Dog")
-	fmt.Printf("Description: Dog\\n", pkg.Description)
-	fmt.Printf("Homepage: Dog\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DogFormulaFormula) Print() {
+	fmt.Printf("Name: Dog\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DogFormulaFormula
+	pkg := DogFormulaFormula{
+		Description:  "Descripción de Dog",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cycode representa una fórmula en Go.
-type Cycode struct {
+// CycodeFormulaFormula representa una fórmula en Go.
+type CycodeFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cycode struct {
 	Dependencies []string
 }
 
-func (pkg Cycode) Print() {
-	fmt.Printf("Name: Cycode\\n", "Cycode")
-	fmt.Printf("Description: Cycode\\n", pkg.Description)
-	fmt.Printf("Homepage: Cycode\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CycodeFormulaFormula) Print() {
+	fmt.Printf("Name: Cycode\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CycodeFormulaFormula
+	pkg := CycodeFormulaFormula{
+		Description:  "Descripción de Cycode",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

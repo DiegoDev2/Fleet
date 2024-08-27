@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ChainloopCli representa una fórmula en Go.
-type ChainloopCli struct {
+// ChainloopCliFormulaFormula representa una fórmula en Go.
+type ChainloopCliFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ChainloopCli struct {
 	Dependencies []string
 }
 
-func (pkg ChainloopCli) Print() {
-	fmt.Printf("Name: ChainloopCli\\n", "ChainloopCli")
-	fmt.Printf("Description: ChainloopCli\\n", pkg.Description)
-	fmt.Printf("Homepage: ChainloopCli\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ChainloopCliFormulaFormula) Print() {
+	fmt.Printf("Name: ChainloopCli\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ChainloopCliFormulaFormula
+	pkg := ChainloopCliFormulaFormula{
+		Description:  "Descripción de ChainloopCli",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

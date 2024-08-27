@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Copilot representa una fórmula en Go.
-type Copilot struct {
+// CopilotFormulaFormula representa una fórmula en Go.
+type CopilotFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Copilot struct {
 	Dependencies []string
 }
 
-func (pkg Copilot) Print() {
-	fmt.Printf("Name: Copilot\\n", "Copilot")
-	fmt.Printf("Description: Copilot\\n", pkg.Description)
-	fmt.Printf("Homepage: Copilot\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CopilotFormulaFormula) Print() {
+	fmt.Printf("Name: Copilot\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CopilotFormulaFormula
+	pkg := CopilotFormulaFormula{
+		Description:  "Descripción de Copilot",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dynet representa una fórmula en Go.
-type Dynet struct {
+// DynetFormulaFormula representa una fórmula en Go.
+type DynetFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dynet struct {
 	Dependencies []string
 }
 
-func (pkg Dynet) Print() {
-	fmt.Printf("Name: Dynet\\n", "Dynet")
-	fmt.Printf("Description: Dynet\\n", pkg.Description)
-	fmt.Printf("Homepage: Dynet\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DynetFormulaFormula) Print() {
+	fmt.Printf("Name: Dynet\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DynetFormulaFormula
+	pkg := DynetFormulaFormula{
+		Description:  "Descripción de Dynet",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dns2tcp representa una fórmula en Go.
-type Dns2tcp struct {
+// Dns2tcpFormulaFormula representa una fórmula en Go.
+type Dns2tcpFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dns2tcp struct {
 	Dependencies []string
 }
 
-func (pkg Dns2tcp) Print() {
-	fmt.Printf("Name: Dns2tcp\\n", "Dns2tcp")
-	fmt.Printf("Description: Dns2tcp\\n", pkg.Description)
-	fmt.Printf("Homepage: Dns2tcp\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Dns2tcpFormulaFormula) Print() {
+	fmt.Printf("Name: Dns2tcp\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Dns2tcpFormulaFormula
+	pkg := Dns2tcpFormulaFormula{
+		Description:  "Descripción de Dns2tcp",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

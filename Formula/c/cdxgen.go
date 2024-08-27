@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cdxgen representa una fórmula en Go.
-type Cdxgen struct {
+// CdxgenFormulaFormula representa una fórmula en Go.
+type CdxgenFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cdxgen struct {
 	Dependencies []string
 }
 
-func (pkg Cdxgen) Print() {
-	fmt.Printf("Name: Cdxgen\\n", "Cdxgen")
-	fmt.Printf("Description: Cdxgen\\n", pkg.Description)
-	fmt.Printf("Homepage: Cdxgen\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CdxgenFormulaFormula) Print() {
+	fmt.Printf("Name: Cdxgen\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CdxgenFormulaFormula
+	pkg := CdxgenFormulaFormula{
+		Description:  "Descripción de Cdxgen",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cloudprober representa una fórmula en Go.
-type Cloudprober struct {
+// CloudproberFormulaFormula representa una fórmula en Go.
+type CloudproberFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cloudprober struct {
 	Dependencies []string
 }
 
-func (pkg Cloudprober) Print() {
-	fmt.Printf("Name: Cloudprober\\n", "Cloudprober")
-	fmt.Printf("Description: Cloudprober\\n", pkg.Description)
-	fmt.Printf("Homepage: Cloudprober\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CloudproberFormulaFormula) Print() {
+	fmt.Printf("Name: Cloudprober\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CloudproberFormulaFormula
+	pkg := CloudproberFormulaFormula{
+		Description:  "Descripción de Cloudprober",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

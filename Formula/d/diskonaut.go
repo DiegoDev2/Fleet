@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Diskonaut representa una fórmula en Go.
-type Diskonaut struct {
+// DiskonautFormulaFormula representa una fórmula en Go.
+type DiskonautFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Diskonaut struct {
 	Dependencies []string
 }
 
-func (pkg Diskonaut) Print() {
-	fmt.Printf("Name: Diskonaut\\n", "Diskonaut")
-	fmt.Printf("Description: Diskonaut\\n", pkg.Description)
-	fmt.Printf("Homepage: Diskonaut\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DiskonautFormulaFormula) Print() {
+	fmt.Printf("Name: Diskonaut\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DiskonautFormulaFormula
+	pkg := DiskonautFormulaFormula{
+		Description:  "Descripción de Diskonaut",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

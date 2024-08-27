@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Calabash representa una fórmula en Go.
-type Calabash struct {
+// CalabashFormulaFormula representa una fórmula en Go.
+type CalabashFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Calabash struct {
 	Dependencies []string
 }
 
-func (pkg Calabash) Print() {
-	fmt.Printf("Name: Calabash\\n", "Calabash")
-	fmt.Printf("Description: Calabash\\n", pkg.Description)
-	fmt.Printf("Homepage: Calabash\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CalabashFormulaFormula) Print() {
+	fmt.Printf("Name: Calabash\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CalabashFormulaFormula
+	pkg := CalabashFormulaFormula{
+		Description:  "Descripción de Calabash",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

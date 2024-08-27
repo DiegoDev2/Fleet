@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Dwarfutils representa una fórmula en Go.
-type Dwarfutils struct {
+// DwarfutilsFormulaFormula representa una fórmula en Go.
+type DwarfutilsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Dwarfutils struct {
 	Dependencies []string
 }
 
-func (pkg Dwarfutils) Print() {
-	fmt.Printf("Name: Dwarfutils\\n", "Dwarfutils")
-	fmt.Printf("Description: Dwarfutils\\n", pkg.Description)
-	fmt.Printf("Homepage: Dwarfutils\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DwarfutilsFormulaFormula) Print() {
+	fmt.Printf("Name: Dwarfutils\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DwarfutilsFormulaFormula
+	pkg := DwarfutilsFormulaFormula{
+		Description:  "Descripción de Dwarfutils",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

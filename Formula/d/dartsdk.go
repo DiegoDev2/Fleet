@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// DartSdk representa una fórmula en Go.
-type DartSdk struct {
+// DartSdkFormulaFormula representa una fórmula en Go.
+type DartSdkFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type DartSdk struct {
 	Dependencies []string
 }
 
-func (pkg DartSdk) Print() {
-	fmt.Printf("Name: DartSdk\\n", "DartSdk")
-	fmt.Printf("Description: DartSdk\\n", pkg.Description)
-	fmt.Printf("Homepage: DartSdk\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg DartSdkFormulaFormula) Print() {
+	fmt.Printf("Name: DartSdk\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de DartSdkFormulaFormula
+	pkg := DartSdkFormulaFormula{
+		Description:  "Descripción de DartSdk",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

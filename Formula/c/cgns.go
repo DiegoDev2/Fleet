@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Cgns representa una fórmula en Go.
-type Cgns struct {
+// CgnsFormulaFormula representa una fórmula en Go.
+type CgnsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Cgns struct {
 	Dependencies []string
 }
 
-func (pkg Cgns) Print() {
-	fmt.Printf("Name: Cgns\\n", "Cgns")
-	fmt.Printf("Description: Cgns\\n", pkg.Description)
-	fmt.Printf("Homepage: Cgns\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg CgnsFormulaFormula) Print() {
+	fmt.Printf("Name: Cgns\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de CgnsFormulaFormula
+	pkg := CgnsFormulaFormula{
+		Description:  "Descripción de Cgns",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
