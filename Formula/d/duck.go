@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Diffutils representa una fórmula en Go.
-type Diffutils struct {
+// Duck representa una fórmula en Go.
+type Duck struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,10 +11,10 @@ type Diffutils struct {
 	Dependencies []string
 }
 
-func (pkg Diffutils) Print() {
-	fmt.Printf("Name: Diffutils\\n", "Diffutils")
-	fmt.Printf("Description: Diffutils\\n", pkg.Description)
-	fmt.Printf("Homepage: Diffutils\\n", pkg.Homepage)
+func (pkg Duck) Print() {
+	fmt.Printf("Name: Duck\\n", "Duck")
+	fmt.Printf("Description: Duck\\n", pkg.Description)
+	fmt.Printf("Homepage: Duck\\n", pkg.Homepage)
 	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
 	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
 	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
