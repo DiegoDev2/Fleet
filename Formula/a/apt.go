@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Apt representa una fórmula en Go.
-type Apt struct {
+// AptFormulaFormula representa una fórmula en Go.
+type AptFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Apt struct {
 	Dependencies []string
 }
 
-func (pkg Apt) Print() {
-	fmt.Printf("Name: Apt\\n", "Apt")
-	fmt.Printf("Description: Apt\\n", pkg.Description)
-	fmt.Printf("Homepage: Apt\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AptFormulaFormula) Print() {
+	fmt.Printf("Name: Apt\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AptFormulaFormula
+	pkg := AptFormulaFormula{
+		Description:  "Descripción de Apt",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

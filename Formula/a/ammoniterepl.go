@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// AmmoniteRepl representa una fórmula en Go.
-type AmmoniteRepl struct {
+// AmmoniteReplFormulaFormula representa una fórmula en Go.
+type AmmoniteReplFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type AmmoniteRepl struct {
 	Dependencies []string
 }
 
-func (pkg AmmoniteRepl) Print() {
-	fmt.Printf("Name: AmmoniteRepl\\n", "AmmoniteRepl")
-	fmt.Printf("Description: AmmoniteRepl\\n", pkg.Description)
-	fmt.Printf("Homepage: AmmoniteRepl\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AmmoniteReplFormulaFormula) Print() {
+	fmt.Printf("Name: AmmoniteRepl\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AmmoniteReplFormulaFormula
+	pkg := AmmoniteReplFormulaFormula{
+		Description:  "Descripción de AmmoniteRepl",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

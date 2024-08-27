@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// AwsSamCli representa una fórmula en Go.
-type AwsSamCli struct {
+// AwsSamCliFormulaFormula representa una fórmula en Go.
+type AwsSamCliFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type AwsSamCli struct {
 	Dependencies []string
 }
 
-func (pkg AwsSamCli) Print() {
-	fmt.Printf("Name: AwsSamCli\\n", "AwsSamCli")
-	fmt.Printf("Description: AwsSamCli\\n", pkg.Description)
-	fmt.Printf("Homepage: AwsSamCli\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AwsSamCliFormulaFormula) Print() {
+	fmt.Printf("Name: AwsSamCli\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AwsSamCliFormulaFormula
+	pkg := AwsSamCliFormulaFormula{
+		Description:  "Descripción de AwsSamCli",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

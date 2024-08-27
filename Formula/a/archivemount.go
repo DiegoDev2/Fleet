@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Archivemount representa una fórmula en Go.
-type Archivemount struct {
+// ArchivemountFormulaFormula representa una fórmula en Go.
+type ArchivemountFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Archivemount struct {
 	Dependencies []string
 }
 
-func (pkg Archivemount) Print() {
-	fmt.Printf("Name: Archivemount\\n", "Archivemount")
-	fmt.Printf("Description: Archivemount\\n", pkg.Description)
-	fmt.Printf("Homepage: Archivemount\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ArchivemountFormulaFormula) Print() {
+	fmt.Printf("Name: Archivemount\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ArchivemountFormulaFormula
+	pkg := ArchivemountFormulaFormula{
+		Description:  "Descripción de Archivemount",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

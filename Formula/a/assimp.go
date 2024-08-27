@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Assimp representa una fórmula en Go.
-type Assimp struct {
+// AssimpFormulaFormula representa una fórmula en Go.
+type AssimpFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Assimp struct {
 	Dependencies []string
 }
 
-func (pkg Assimp) Print() {
-	fmt.Printf("Name: Assimp\\n", "Assimp")
-	fmt.Printf("Description: Assimp\\n", pkg.Description)
-	fmt.Printf("Homepage: Assimp\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AssimpFormulaFormula) Print() {
+	fmt.Printf("Name: Assimp\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AssimpFormulaFormula
+	pkg := AssimpFormulaFormula{
+		Description:  "Descripción de Assimp",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

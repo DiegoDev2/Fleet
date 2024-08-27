@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// AlsaLib representa una fórmula en Go.
-type AlsaLib struct {
+// AlsaLibFormulaFormula representa una fórmula en Go.
+type AlsaLibFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type AlsaLib struct {
 	Dependencies []string
 }
 
-func (pkg AlsaLib) Print() {
-	fmt.Printf("Name: AlsaLib\\n", "AlsaLib")
-	fmt.Printf("Description: AlsaLib\\n", pkg.Description)
-	fmt.Printf("Homepage: AlsaLib\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AlsaLibFormulaFormula) Print() {
+	fmt.Printf("Name: AlsaLib\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AlsaLibFormulaFormula
+	pkg := AlsaLibFormulaFormula{
+		Description:  "Descripción de AlsaLib",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

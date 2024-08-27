@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// AnsibleAT8 representa una fórmula en Go.
-type AnsibleAT8 struct {
+// AnsibleAT8FormulaFormula representa una fórmula en Go.
+type AnsibleAT8FormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type AnsibleAT8 struct {
 	Dependencies []string
 }
 
-func (pkg AnsibleAT8) Print() {
-	fmt.Printf("Name: AnsibleAT8\\n", "AnsibleAT8")
-	fmt.Printf("Description: AnsibleAT8\\n", pkg.Description)
-	fmt.Printf("Homepage: AnsibleAT8\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AnsibleAT8FormulaFormula) Print() {
+	fmt.Printf("Name: AnsibleAT8\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AnsibleAT8FormulaFormula
+	pkg := AnsibleAT8FormulaFormula{
+		Description:  "Descripción de AnsibleAT8",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ApifyCli representa una fórmula en Go.
-type ApifyCli struct {
+// ApifyCliFormulaFormula representa una fórmula en Go.
+type ApifyCliFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ApifyCli struct {
 	Dependencies []string
 }
 
-func (pkg ApifyCli) Print() {
-	fmt.Printf("Name: ApifyCli\\n", "ApifyCli")
-	fmt.Printf("Description: ApifyCli\\n", pkg.Description)
-	fmt.Printf("Homepage: ApifyCli\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ApifyCliFormulaFormula) Print() {
+	fmt.Printf("Name: ApifyCli\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ApifyCliFormulaFormula
+	pkg := ApifyCliFormulaFormula{
+		Description:  "Descripción de ApifyCli",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

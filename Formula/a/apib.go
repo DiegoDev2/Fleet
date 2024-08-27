@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Apib representa una fórmula en Go.
-type Apib struct {
+// ApibFormulaFormula representa una fórmula en Go.
+type ApibFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Apib struct {
 	Dependencies []string
 }
 
-func (pkg Apib) Print() {
-	fmt.Printf("Name: Apib\\n", "Apib")
-	fmt.Printf("Description: Apib\\n", pkg.Description)
-	fmt.Printf("Homepage: Apib\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ApibFormulaFormula) Print() {
+	fmt.Printf("Name: Apib\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ApibFormulaFormula
+	pkg := ApibFormulaFormula{
+		Description:  "Descripción de Apib",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

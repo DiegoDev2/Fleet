@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ArmNoneEabiGcc representa una fórmula en Go.
-type ArmNoneEabiGcc struct {
+// ArmNoneEabiGccFormulaFormula representa una fórmula en Go.
+type ArmNoneEabiGccFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ArmNoneEabiGcc struct {
 	Dependencies []string
 }
 
-func (pkg ArmNoneEabiGcc) Print() {
-	fmt.Printf("Name: ArmNoneEabiGcc\\n", "ArmNoneEabiGcc")
-	fmt.Printf("Description: ArmNoneEabiGcc\\n", pkg.Description)
-	fmt.Printf("Homepage: ArmNoneEabiGcc\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ArmNoneEabiGccFormulaFormula) Print() {
+	fmt.Printf("Name: ArmNoneEabiGcc\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ArmNoneEabiGccFormulaFormula
+	pkg := ArmNoneEabiGccFormulaFormula{
+		Description:  "Descripción de ArmNoneEabiGcc",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

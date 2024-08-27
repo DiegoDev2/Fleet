@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Arpack representa una fórmula en Go.
-type Arpack struct {
+// ArpackFormulaFormula representa una fórmula en Go.
+type ArpackFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Arpack struct {
 	Dependencies []string
 }
 
-func (pkg Arpack) Print() {
-	fmt.Printf("Name: Arpack\\n", "Arpack")
-	fmt.Printf("Description: Arpack\\n", pkg.Description)
-	fmt.Printf("Homepage: Arpack\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ArpackFormulaFormula) Print() {
+	fmt.Printf("Name: Arpack\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ArpackFormulaFormula
+	pkg := ArpackFormulaFormula{
+		Description:  "Descripción de Arpack",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Assh representa una fórmula en Go.
-type Assh struct {
+// AsshFormulaFormula representa una fórmula en Go.
+type AsshFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Assh struct {
 	Dependencies []string
 }
 
-func (pkg Assh) Print() {
-	fmt.Printf("Name: Assh\\n", "Assh")
-	fmt.Printf("Description: Assh\\n", pkg.Description)
-	fmt.Printf("Homepage: Assh\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AsshFormulaFormula) Print() {
+	fmt.Printf("Name: Assh\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AsshFormulaFormula
+	pkg := AsshFormulaFormula{
+		Description:  "Descripción de Assh",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

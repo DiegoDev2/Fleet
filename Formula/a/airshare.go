@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Airshare representa una fórmula en Go.
-type Airshare struct {
+// AirshareFormulaFormula representa una fórmula en Go.
+type AirshareFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Airshare struct {
 	Dependencies []string
 }
 
-func (pkg Airshare) Print() {
-	fmt.Printf("Name: Airshare\\n", "Airshare")
-	fmt.Printf("Description: Airshare\\n", pkg.Description)
-	fmt.Printf("Homepage: Airshare\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AirshareFormulaFormula) Print() {
+	fmt.Printf("Name: Airshare\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AirshareFormulaFormula
+	pkg := AirshareFormulaFormula{
+		Description:  "Descripción de Airshare",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

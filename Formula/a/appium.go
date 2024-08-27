@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Appium representa una fórmula en Go.
-type Appium struct {
+// AppiumFormulaFormula representa una fórmula en Go.
+type AppiumFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Appium struct {
 	Dependencies []string
 }
 
-func (pkg Appium) Print() {
-	fmt.Printf("Name: Appium\\n", "Appium")
-	fmt.Printf("Description: Appium\\n", pkg.Description)
-	fmt.Printf("Homepage: Appium\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AppiumFormulaFormula) Print() {
+	fmt.Printf("Name: Appium\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AppiumFormulaFormula
+	pkg := AppiumFormulaFormula{
+		Description:  "Descripción de Appium",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

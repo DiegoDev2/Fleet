@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Asyncplusplus representa una fórmula en Go.
-type Asyncplusplus struct {
+// AsyncplusplusFormulaFormula representa una fórmula en Go.
+type AsyncplusplusFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Asyncplusplus struct {
 	Dependencies []string
 }
 
-func (pkg Asyncplusplus) Print() {
-	fmt.Printf("Name: Asyncplusplus\\n", "Asyncplusplus")
-	fmt.Printf("Description: Asyncplusplus\\n", pkg.Description)
-	fmt.Printf("Homepage: Asyncplusplus\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AsyncplusplusFormulaFormula) Print() {
+	fmt.Printf("Name: Asyncplusplus\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AsyncplusplusFormulaFormula
+	pkg := AsyncplusplusFormulaFormula{
+		Description:  "Descripción de Asyncplusplus",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

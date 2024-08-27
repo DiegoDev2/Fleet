@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Actionlint representa una fórmula en Go.
-type Actionlint struct {
+// ActionlintFormulaFormula representa una fórmula en Go.
+type ActionlintFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Actionlint struct {
 	Dependencies []string
 }
 
-func (pkg Actionlint) Print() {
-	fmt.Printf("Name: Actionlint\\n", "Actionlint")
-	fmt.Printf("Description: Actionlint\\n", pkg.Description)
-	fmt.Printf("Homepage: Actionlint\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ActionlintFormulaFormula) Print() {
+	fmt.Printf("Name: Actionlint\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ActionlintFormulaFormula
+	pkg := ActionlintFormulaFormula{
+		Description:  "Descripción de Actionlint",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

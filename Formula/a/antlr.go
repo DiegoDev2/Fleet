@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Antlr representa una fórmula en Go.
-type Antlr struct {
+// AntlrFormulaFormula representa una fórmula en Go.
+type AntlrFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Antlr struct {
 	Dependencies []string
 }
 
-func (pkg Antlr) Print() {
-	fmt.Printf("Name: Antlr\\n", "Antlr")
-	fmt.Printf("Description: Antlr\\n", pkg.Description)
-	fmt.Printf("Homepage: Antlr\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AntlrFormulaFormula) Print() {
+	fmt.Printf("Name: Antlr\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AntlrFormulaFormula
+	pkg := AntlrFormulaFormula{
+		Description:  "Descripción de Antlr",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

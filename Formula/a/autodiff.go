@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Autodiff representa una fórmula en Go.
-type Autodiff struct {
+// AutodiffFormulaFormula representa una fórmula en Go.
+type AutodiffFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Autodiff struct {
 	Dependencies []string
 }
 
-func (pkg Autodiff) Print() {
-	fmt.Printf("Name: Autodiff\\n", "Autodiff")
-	fmt.Printf("Description: Autodiff\\n", pkg.Description)
-	fmt.Printf("Homepage: Autodiff\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AutodiffFormulaFormula) Print() {
+	fmt.Printf("Name: Autodiff\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AutodiffFormulaFormula
+	pkg := AutodiffFormulaFormula{
+		Description:  "Descripción de Autodiff",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

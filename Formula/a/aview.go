@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Aview representa una fórmula en Go.
-type Aview struct {
+// AviewFormulaFormula representa una fórmula en Go.
+type AviewFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Aview struct {
 	Dependencies []string
 }
 
-func (pkg Aview) Print() {
-	fmt.Printf("Name: Aview\\n", "Aview")
-	fmt.Printf("Description: Aview\\n", pkg.Description)
-	fmt.Printf("Homepage: Aview\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AviewFormulaFormula) Print() {
+	fmt.Printf("Name: Aview\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AviewFormulaFormula
+	pkg := AviewFormulaFormula{
+		Description:  "Descripción de Aview",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

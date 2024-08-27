@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ArmLinuxGnueabihfBinutils representa una fórmula en Go.
-type ArmLinuxGnueabihfBinutils struct {
+// ArmLinuxGnueabihfBinutilsFormulaFormula representa una fórmula en Go.
+type ArmLinuxGnueabihfBinutilsFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ArmLinuxGnueabihfBinutils struct {
 	Dependencies []string
 }
 
-func (pkg ArmLinuxGnueabihfBinutils) Print() {
-	fmt.Printf("Name: ArmLinuxGnueabihfBinutils\\n", "ArmLinuxGnueabihfBinutils")
-	fmt.Printf("Description: ArmLinuxGnueabihfBinutils\\n", pkg.Description)
-	fmt.Printf("Homepage: ArmLinuxGnueabihfBinutils\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ArmLinuxGnueabihfBinutilsFormulaFormula) Print() {
+	fmt.Printf("Name: ArmLinuxGnueabihfBinutils\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ArmLinuxGnueabihfBinutilsFormulaFormula
+	pkg := ArmLinuxGnueabihfBinutilsFormulaFormula{
+		Description:  "Descripción de ArmLinuxGnueabihfBinutils",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

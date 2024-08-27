@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Antlr4CppRuntime representa una fórmula en Go.
-type Antlr4CppRuntime struct {
+// Antlr4CppRuntimeFormulaFormula representa una fórmula en Go.
+type Antlr4CppRuntimeFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Antlr4CppRuntime struct {
 	Dependencies []string
 }
 
-func (pkg Antlr4CppRuntime) Print() {
-	fmt.Printf("Name: Antlr4CppRuntime\\n", "Antlr4CppRuntime")
-	fmt.Printf("Description: Antlr4CppRuntime\\n", pkg.Description)
-	fmt.Printf("Homepage: Antlr4CppRuntime\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Antlr4CppRuntimeFormulaFormula) Print() {
+	fmt.Printf("Name: Antlr4CppRuntime\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Antlr4CppRuntimeFormulaFormula
+	pkg := Antlr4CppRuntimeFormulaFormula{
+		Description:  "Descripción de Antlr4CppRuntime",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

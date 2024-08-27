@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Akku representa una fórmula en Go.
-type Akku struct {
+// AkkuFormulaFormula representa una fórmula en Go.
+type AkkuFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Akku struct {
 	Dependencies []string
 }
 
-func (pkg Akku) Print() {
-	fmt.Printf("Name: Akku\\n", "Akku")
-	fmt.Printf("Description: Akku\\n", pkg.Description)
-	fmt.Printf("Homepage: Akku\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AkkuFormulaFormula) Print() {
+	fmt.Printf("Name: Akku\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AkkuFormulaFormula
+	pkg := AkkuFormulaFormula{
+		Description:  "Descripción de Akku",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

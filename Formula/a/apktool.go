@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Apktool representa una fórmula en Go.
-type Apktool struct {
+// ApktoolFormulaFormula representa una fórmula en Go.
+type ApktoolFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Apktool struct {
 	Dependencies []string
 }
 
-func (pkg Apktool) Print() {
-	fmt.Printf("Name: Apktool\\n", "Apktool")
-	fmt.Printf("Description: Apktool\\n", pkg.Description)
-	fmt.Printf("Homepage: Apktool\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ApktoolFormulaFormula) Print() {
+	fmt.Printf("Name: Apktool\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ApktoolFormulaFormula
+	pkg := ApktoolFormulaFormula{
+		Description:  "Descripción de Apktool",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

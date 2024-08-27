@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ApacheGeode representa una fórmula en Go.
-type ApacheGeode struct {
+// ApacheGeodeFormulaFormula representa una fórmula en Go.
+type ApacheGeodeFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ApacheGeode struct {
 	Dependencies []string
 }
 
-func (pkg ApacheGeode) Print() {
-	fmt.Printf("Name: ApacheGeode\\n", "ApacheGeode")
-	fmt.Printf("Description: ApacheGeode\\n", pkg.Description)
-	fmt.Printf("Homepage: ApacheGeode\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ApacheGeodeFormulaFormula) Print() {
+	fmt.Printf("Name: ApacheGeode\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ApacheGeodeFormulaFormula
+	pkg := ApacheGeodeFormulaFormula{
+		Description:  "Descripción de ApacheGeode",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

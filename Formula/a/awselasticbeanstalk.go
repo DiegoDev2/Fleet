@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// AwsElasticbeanstalk representa una fórmula en Go.
-type AwsElasticbeanstalk struct {
+// AwsElasticbeanstalkFormulaFormula representa una fórmula en Go.
+type AwsElasticbeanstalkFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type AwsElasticbeanstalk struct {
 	Dependencies []string
 }
 
-func (pkg AwsElasticbeanstalk) Print() {
-	fmt.Printf("Name: AwsElasticbeanstalk\\n", "AwsElasticbeanstalk")
-	fmt.Printf("Description: AwsElasticbeanstalk\\n", pkg.Description)
-	fmt.Printf("Homepage: AwsElasticbeanstalk\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AwsElasticbeanstalkFormulaFormula) Print() {
+	fmt.Printf("Name: AwsElasticbeanstalk\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AwsElasticbeanstalkFormulaFormula
+	pkg := AwsElasticbeanstalkFormulaFormula{
+		Description:  "Descripción de AwsElasticbeanstalk",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

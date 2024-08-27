@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Atlantis representa una fórmula en Go.
-type Atlantis struct {
+// AtlantisFormulaFormula representa una fórmula en Go.
+type AtlantisFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Atlantis struct {
 	Dependencies []string
 }
 
-func (pkg Atlantis) Print() {
-	fmt.Printf("Name: Atlantis\\n", "Atlantis")
-	fmt.Printf("Description: Atlantis\\n", pkg.Description)
-	fmt.Printf("Homepage: Atlantis\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AtlantisFormulaFormula) Print() {
+	fmt.Printf("Name: Atlantis\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AtlantisFormulaFormula
+	pkg := AtlantisFormulaFormula{
+		Description:  "Descripción de Atlantis",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

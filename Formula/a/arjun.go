@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Arjun representa una fórmula en Go.
-type Arjun struct {
+// ArjunFormulaFormula representa una fórmula en Go.
+type ArjunFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Arjun struct {
 	Dependencies []string
 }
 
-func (pkg Arjun) Print() {
-	fmt.Printf("Name: Arjun\\n", "Arjun")
-	fmt.Printf("Description: Arjun\\n", pkg.Description)
-	fmt.Printf("Homepage: Arjun\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ArjunFormulaFormula) Print() {
+	fmt.Printf("Name: Arjun\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ArjunFormulaFormula
+	pkg := ArjunFormulaFormula{
+		Description:  "Descripción de Arjun",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

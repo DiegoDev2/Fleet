@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Autocorrect representa una fórmula en Go.
-type Autocorrect struct {
+// AutocorrectFormulaFormula representa una fórmula en Go.
+type AutocorrectFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Autocorrect struct {
 	Dependencies []string
 }
 
-func (pkg Autocorrect) Print() {
-	fmt.Printf("Name: Autocorrect\\n", "Autocorrect")
-	fmt.Printf("Description: Autocorrect\\n", pkg.Description)
-	fmt.Printf("Homepage: Autocorrect\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AutocorrectFormulaFormula) Print() {
+	fmt.Printf("Name: Autocorrect\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AutocorrectFormulaFormula
+	pkg := AutocorrectFormulaFormula{
+		Description:  "Descripción de Autocorrect",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

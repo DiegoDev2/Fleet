@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Apcupsd representa una fórmula en Go.
-type Apcupsd struct {
+// ApcupsdFormulaFormula representa una fórmula en Go.
+type ApcupsdFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Apcupsd struct {
 	Dependencies []string
 }
 
-func (pkg Apcupsd) Print() {
-	fmt.Printf("Name: Apcupsd\\n", "Apcupsd")
-	fmt.Printf("Description: Apcupsd\\n", pkg.Description)
-	fmt.Printf("Homepage: Apcupsd\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ApcupsdFormulaFormula) Print() {
+	fmt.Printf("Name: Apcupsd\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ApcupsdFormulaFormula
+	pkg := ApcupsdFormulaFormula{
+		Description:  "Descripción de Apcupsd",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

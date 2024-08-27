@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// ActivemqCpp representa una fórmula en Go.
-type ActivemqCpp struct {
+// ActivemqCppFormulaFormula representa una fórmula en Go.
+type ActivemqCppFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type ActivemqCpp struct {
 	Dependencies []string
 }
 
-func (pkg ActivemqCpp) Print() {
-	fmt.Printf("Name: ActivemqCpp\\n", "ActivemqCpp")
-	fmt.Printf("Description: ActivemqCpp\\n", pkg.Description)
-	fmt.Printf("Homepage: ActivemqCpp\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg ActivemqCppFormulaFormula) Print() {
+	fmt.Printf("Name: ActivemqCpp\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de ActivemqCppFormulaFormula
+	pkg := ActivemqCppFormulaFormula{
+		Description:  "Descripción de ActivemqCpp",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

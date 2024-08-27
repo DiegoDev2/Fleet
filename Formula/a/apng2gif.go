@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Apng2gif representa una fórmula en Go.
-type Apng2gif struct {
+// Apng2gifFormulaFormula representa una fórmula en Go.
+type Apng2gifFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Apng2gif struct {
 	Dependencies []string
 }
 
-func (pkg Apng2gif) Print() {
-	fmt.Printf("Name: Apng2gif\\n", "Apng2gif")
-	fmt.Printf("Description: Apng2gif\\n", pkg.Description)
-	fmt.Printf("Homepage: Apng2gif\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Apng2gifFormulaFormula) Print() {
+	fmt.Printf("Name: Apng2gif\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Apng2gifFormulaFormula
+	pkg := Apng2gifFormulaFormula{
+		Description:  "Descripción de Apng2gif",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

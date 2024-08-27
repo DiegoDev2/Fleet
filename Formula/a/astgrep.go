@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// AstGrep representa una fórmula en Go.
-type AstGrep struct {
+// AstGrepFormulaFormula representa una fórmula en Go.
+type AstGrepFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type AstGrep struct {
 	Dependencies []string
 }
 
-func (pkg AstGrep) Print() {
-	fmt.Printf("Name: AstGrep\\n", "AstGrep")
-	fmt.Printf("Description: AstGrep\\n", pkg.Description)
-	fmt.Printf("Homepage: AstGrep\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AstGrepFormulaFormula) Print() {
+	fmt.Printf("Name: AstGrep\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AstGrepFormulaFormula
+	pkg := AstGrepFormulaFormula{
+		Description:  "Descripción de AstGrep",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

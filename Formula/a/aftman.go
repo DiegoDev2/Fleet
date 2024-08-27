@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Aftman representa una fórmula en Go.
-type Aftman struct {
+// AftmanFormulaFormula representa una fórmula en Go.
+type AftmanFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Aftman struct {
 	Dependencies []string
 }
 
-func (pkg Aftman) Print() {
-	fmt.Printf("Name: Aftman\\n", "Aftman")
-	fmt.Printf("Description: Aftman\\n", pkg.Description)
-	fmt.Printf("Homepage: Aftman\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AftmanFormulaFormula) Print() {
+	fmt.Printf("Name: Aftman\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AftmanFormulaFormula
+	pkg := AftmanFormulaFormula{
+		Description:  "Descripción de Aftman",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

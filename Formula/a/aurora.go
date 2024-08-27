@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Aurora representa una fórmula en Go.
-type Aurora struct {
+// AuroraFormulaFormula representa una fórmula en Go.
+type AuroraFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Aurora struct {
 	Dependencies []string
 }
 
-func (pkg Aurora) Print() {
-	fmt.Printf("Name: Aurora\\n", "Aurora")
-	fmt.Printf("Description: Aurora\\n", pkg.Description)
-	fmt.Printf("Homepage: Aurora\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg AuroraFormulaFormula) Print() {
+	fmt.Printf("Name: Aurora\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de AuroraFormulaFormula
+	pkg := AuroraFormulaFormula{
+		Description:  "Descripción de Aurora",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
