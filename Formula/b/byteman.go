@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Byteman representa una fórmula en Go.
-type Byteman struct {
+// BytemanFormulaFormula representa una fórmula en Go.
+type BytemanFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Byteman struct {
 	Dependencies []string
 }
 
-func (pkg Byteman) Print() {
-	fmt.Printf("Name: Byteman\\n", "Byteman")
-	fmt.Printf("Description: Byteman\\n", pkg.Description)
-	fmt.Printf("Homepage: Byteman\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BytemanFormulaFormula) Print() {
+	fmt.Printf("Name: Byteman\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BytemanFormulaFormula
+	pkg := BytemanFormulaFormula{
+		Description:  "Descripción de Byteman",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

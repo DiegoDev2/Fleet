@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Btop representa una fórmula en Go.
-type Btop struct {
+// BtopFormulaFormula representa una fórmula en Go.
+type BtopFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Btop struct {
 	Dependencies []string
 }
 
-func (pkg Btop) Print() {
-	fmt.Printf("Name: Btop\\n", "Btop")
-	fmt.Printf("Description: Btop\\n", pkg.Description)
-	fmt.Printf("Homepage: Btop\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BtopFormulaFormula) Print() {
+	fmt.Printf("Name: Btop\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BtopFormulaFormula
+	pkg := BtopFormulaFormula{
+		Description:  "Descripción de Btop",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

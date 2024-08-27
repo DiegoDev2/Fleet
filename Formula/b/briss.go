@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Briss representa una fórmula en Go.
-type Briss struct {
+// BrissFormulaFormula representa una fórmula en Go.
+type BrissFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Briss struct {
 	Dependencies []string
 }
 
-func (pkg Briss) Print() {
-	fmt.Printf("Name: Briss\\n", "Briss")
-	fmt.Printf("Description: Briss\\n", pkg.Description)
-	fmt.Printf("Homepage: Briss\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BrissFormulaFormula) Print() {
+	fmt.Printf("Name: Briss\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BrissFormulaFormula
+	pkg := BrissFormulaFormula{
+		Description:  "Descripción de Briss",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

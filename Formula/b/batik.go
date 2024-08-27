@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Batik representa una fórmula en Go.
-type Batik struct {
+// BatikFormulaFormula representa una fórmula en Go.
+type BatikFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Batik struct {
 	Dependencies []string
 }
 
-func (pkg Batik) Print() {
-	fmt.Printf("Name: Batik\\n", "Batik")
-	fmt.Printf("Description: Batik\\n", pkg.Description)
-	fmt.Printf("Homepage: Batik\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BatikFormulaFormula) Print() {
+	fmt.Printf("Name: Batik\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BatikFormulaFormula
+	pkg := BatikFormulaFormula{
+		Description:  "Descripción de Batik",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

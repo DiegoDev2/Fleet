@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Beakerlib representa una fórmula en Go.
-type Beakerlib struct {
+// BeakerlibFormulaFormula representa una fórmula en Go.
+type BeakerlibFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Beakerlib struct {
 	Dependencies []string
 }
 
-func (pkg Beakerlib) Print() {
-	fmt.Printf("Name: Beakerlib\\n", "Beakerlib")
-	fmt.Printf("Description: Beakerlib\\n", pkg.Description)
-	fmt.Printf("Homepage: Beakerlib\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BeakerlibFormulaFormula) Print() {
+	fmt.Printf("Name: Beakerlib\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BeakerlibFormulaFormula
+	pkg := BeakerlibFormulaFormula{
+		Description:  "Descripción de Beakerlib",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

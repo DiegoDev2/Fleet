@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bgpdump representa una fórmula en Go.
-type Bgpdump struct {
+// BgpdumpFormulaFormula representa una fórmula en Go.
+type BgpdumpFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bgpdump struct {
 	Dependencies []string
 }
 
-func (pkg Bgpdump) Print() {
-	fmt.Printf("Name: Bgpdump\\n", "Bgpdump")
-	fmt.Printf("Description: Bgpdump\\n", pkg.Description)
-	fmt.Printf("Homepage: Bgpdump\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BgpdumpFormulaFormula) Print() {
+	fmt.Printf("Name: Bgpdump\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BgpdumpFormulaFormula
+	pkg := BgpdumpFormulaFormula{
+		Description:  "Descripción de Bgpdump",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

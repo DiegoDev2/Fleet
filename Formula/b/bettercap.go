@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bettercap representa una fórmula en Go.
-type Bettercap struct {
+// BettercapFormulaFormula representa una fórmula en Go.
+type BettercapFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bettercap struct {
 	Dependencies []string
 }
 
-func (pkg Bettercap) Print() {
-	fmt.Printf("Name: Bettercap\\n", "Bettercap")
-	fmt.Printf("Description: Bettercap\\n", pkg.Description)
-	fmt.Printf("Homepage: Bettercap\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BettercapFormulaFormula) Print() {
+	fmt.Printf("Name: Bettercap\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BettercapFormulaFormula
+	pkg := BettercapFormulaFormula{
+		Description:  "Descripción de Bettercap",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

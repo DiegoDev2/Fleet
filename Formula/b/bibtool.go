@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// BibTool representa una fórmula en Go.
-type BibTool struct {
+// BibToolFormulaFormula representa una fórmula en Go.
+type BibToolFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type BibTool struct {
 	Dependencies []string
 }
 
-func (pkg BibTool) Print() {
-	fmt.Printf("Name: BibTool\\n", "BibTool")
-	fmt.Printf("Description: BibTool\\n", pkg.Description)
-	fmt.Printf("Homepage: BibTool\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BibToolFormulaFormula) Print() {
+	fmt.Printf("Name: BibTool\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BibToolFormulaFormula
+	pkg := BibToolFormulaFormula{
+		Description:  "Descripción de BibTool",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bumpversion representa una fórmula en Go.
-type Bumpversion struct {
+// BumpversionFormulaFormula representa una fórmula en Go.
+type BumpversionFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bumpversion struct {
 	Dependencies []string
 }
 
-func (pkg Bumpversion) Print() {
-	fmt.Printf("Name: Bumpversion\\n", "Bumpversion")
-	fmt.Printf("Description: Bumpversion\\n", pkg.Description)
-	fmt.Printf("Homepage: Bumpversion\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BumpversionFormulaFormula) Print() {
+	fmt.Printf("Name: Bumpversion\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BumpversionFormulaFormula
+	pkg := BumpversionFormulaFormula{
+		Description:  "Descripción de Bumpversion",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

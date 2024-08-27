@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bibtex2html representa una fórmula en Go.
-type Bibtex2html struct {
+// Bibtex2htmlFormulaFormula representa una fórmula en Go.
+type Bibtex2htmlFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bibtex2html struct {
 	Dependencies []string
 }
 
-func (pkg Bibtex2html) Print() {
-	fmt.Printf("Name: Bibtex2html\\n", "Bibtex2html")
-	fmt.Printf("Description: Bibtex2html\\n", pkg.Description)
-	fmt.Printf("Homepage: Bibtex2html\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg Bibtex2htmlFormulaFormula) Print() {
+	fmt.Printf("Name: Bibtex2html\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de Bibtex2htmlFormulaFormula
+	pkg := Bibtex2htmlFormulaFormula{
+		Description:  "Descripción de Bibtex2html",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Brev representa una fórmula en Go.
-type Brev struct {
+// BrevFormulaFormula representa una fórmula en Go.
+type BrevFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Brev struct {
 	Dependencies []string
 }
 
-func (pkg Brev) Print() {
-	fmt.Printf("Name: Brev\\n", "Brev")
-	fmt.Printf("Description: Brev\\n", pkg.Description)
-	fmt.Printf("Homepage: Brev\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BrevFormulaFormula) Print() {
+	fmt.Printf("Name: Brev\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BrevFormulaFormula
+	pkg := BrevFormulaFormula{
+		Description:  "Descripción de Brev",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

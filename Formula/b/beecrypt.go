@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Beecrypt representa una fórmula en Go.
-type Beecrypt struct {
+// BeecryptFormulaFormula representa una fórmula en Go.
+type BeecryptFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Beecrypt struct {
 	Dependencies []string
 }
 
-func (pkg Beecrypt) Print() {
-	fmt.Printf("Name: Beecrypt\\n", "Beecrypt")
-	fmt.Printf("Description: Beecrypt\\n", pkg.Description)
-	fmt.Printf("Homepage: Beecrypt\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BeecryptFormulaFormula) Print() {
+	fmt.Printf("Name: Beecrypt\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BeecryptFormulaFormula
+	pkg := BeecryptFormulaFormula{
+		Description:  "Descripción de Beecrypt",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

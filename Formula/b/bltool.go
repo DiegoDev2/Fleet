@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bltool representa una fórmula en Go.
-type Bltool struct {
+// BltoolFormulaFormula representa una fórmula en Go.
+type BltoolFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bltool struct {
 	Dependencies []string
 }
 
-func (pkg Bltool) Print() {
-	fmt.Printf("Name: Bltool\\n", "Bltool")
-	fmt.Printf("Description: Bltool\\n", pkg.Description)
-	fmt.Printf("Homepage: Bltool\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BltoolFormulaFormula) Print() {
+	fmt.Printf("Name: Bltool\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BltoolFormulaFormula
+	pkg := BltoolFormulaFormula{
+		Description:  "Descripción de Bltool",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

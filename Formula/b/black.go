@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Black representa una fórmula en Go.
-type Black struct {
+// BlackFormulaFormula representa una fórmula en Go.
+type BlackFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Black struct {
 	Dependencies []string
 }
 
-func (pkg Black) Print() {
-	fmt.Printf("Name: Black\\n", "Black")
-	fmt.Printf("Description: Black\\n", pkg.Description)
-	fmt.Printf("Homepage: Black\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BlackFormulaFormula) Print() {
+	fmt.Printf("Name: Black\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BlackFormulaFormula
+	pkg := BlackFormulaFormula{
+		Description:  "Descripción de Black",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

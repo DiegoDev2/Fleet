@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bdftopcf representa una fórmula en Go.
-type Bdftopcf struct {
+// BdftopcfFormulaFormula representa una fórmula en Go.
+type BdftopcfFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bdftopcf struct {
 	Dependencies []string
 }
 
-func (pkg Bdftopcf) Print() {
-	fmt.Printf("Name: Bdftopcf\\n", "Bdftopcf")
-	fmt.Printf("Description: Bdftopcf\\n", pkg.Description)
-	fmt.Printf("Homepage: Bdftopcf\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BdftopcfFormulaFormula) Print() {
+	fmt.Printf("Name: Bdftopcf\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BdftopcfFormulaFormula
+	pkg := BdftopcfFormulaFormula{
+		Description:  "Descripción de Bdftopcf",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bbot representa una fórmula en Go.
-type Bbot struct {
+// BbotFormulaFormula representa una fórmula en Go.
+type BbotFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bbot struct {
 	Dependencies []string
 }
 
-func (pkg Bbot) Print() {
-	fmt.Printf("Name: Bbot\\n", "Bbot")
-	fmt.Printf("Description: Bbot\\n", pkg.Description)
-	fmt.Printf("Homepage: Bbot\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BbotFormulaFormula) Print() {
+	fmt.Printf("Name: Bbot\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BbotFormulaFormula
+	pkg := BbotFormulaFormula{
+		Description:  "Descripción de Bbot",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bash representa una fórmula en Go.
-type Bash struct {
+// BashFormulaFormula representa una fórmula en Go.
+type BashFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bash struct {
 	Dependencies []string
 }
 
-func (pkg Bash) Print() {
-	fmt.Printf("Name: Bash\\n", "Bash")
-	fmt.Printf("Description: Bash\\n", pkg.Description)
-	fmt.Printf("Homepage: Bash\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BashFormulaFormula) Print() {
+	fmt.Printf("Name: Bash\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BashFormulaFormula
+	pkg := BashFormulaFormula{
+		Description:  "Descripción de Bash",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

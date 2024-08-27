@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bozohttpd representa una fórmula en Go.
-type Bozohttpd struct {
+// BozohttpdFormulaFormula representa una fórmula en Go.
+type BozohttpdFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bozohttpd struct {
 	Dependencies []string
 }
 
-func (pkg Bozohttpd) Print() {
-	fmt.Printf("Name: Bozohttpd\\n", "Bozohttpd")
-	fmt.Printf("Description: Bozohttpd\\n", pkg.Description)
-	fmt.Printf("Homepage: Bozohttpd\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BozohttpdFormulaFormula) Print() {
+	fmt.Printf("Name: Bozohttpd\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BozohttpdFormulaFormula
+	pkg := BozohttpdFormulaFormula{
+		Description:  "Descripción de Bozohttpd",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// BitGit representa una fórmula en Go.
-type BitGit struct {
+// BitGitFormulaFormula representa una fórmula en Go.
+type BitGitFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type BitGit struct {
 	Dependencies []string
 }
 
-func (pkg BitGit) Print() {
-	fmt.Printf("Name: BitGit\\n", "BitGit")
-	fmt.Printf("Description: BitGit\\n", pkg.Description)
-	fmt.Printf("Homepage: BitGit\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BitGitFormulaFormula) Print() {
+	fmt.Printf("Name: BitGit\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BitGitFormulaFormula
+	pkg := BitGitFormulaFormula{
+		Description:  "Descripción de BitGit",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

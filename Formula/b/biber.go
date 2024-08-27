@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Biber representa una fórmula en Go.
-type Biber struct {
+// BiberFormulaFormula representa una fórmula en Go.
+type BiberFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Biber struct {
 	Dependencies []string
 }
 
-func (pkg Biber) Print() {
-	fmt.Printf("Name: Biber\\n", "Biber")
-	fmt.Printf("Description: Biber\\n", pkg.Description)
-	fmt.Printf("Homepage: Biber\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BiberFormulaFormula) Print() {
+	fmt.Printf("Name: Biber\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BiberFormulaFormula
+	pkg := BiberFormulaFormula{
+		Description:  "Descripción de Biber",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

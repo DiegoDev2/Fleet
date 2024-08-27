@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Basex representa una fórmula en Go.
-type Basex struct {
+// BasexFormulaFormula representa una fórmula en Go.
+type BasexFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Basex struct {
 	Dependencies []string
 }
 
-func (pkg Basex) Print() {
-	fmt.Printf("Name: Basex\\n", "Basex")
-	fmt.Printf("Description: Basex\\n", pkg.Description)
-	fmt.Printf("Homepage: Basex\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BasexFormulaFormula) Print() {
+	fmt.Printf("Name: Basex\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BasexFormulaFormula
+	pkg := BasexFormulaFormula{
+		Description:  "Descripción de Basex",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

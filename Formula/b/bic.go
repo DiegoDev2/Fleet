@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bic representa una fórmula en Go.
-type Bic struct {
+// BicFormulaFormula representa una fórmula en Go.
+type BicFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bic struct {
 	Dependencies []string
 }
 
-func (pkg Bic) Print() {
-	fmt.Printf("Name: Bic\\n", "Bic")
-	fmt.Printf("Description: Bic\\n", pkg.Description)
-	fmt.Printf("Homepage: Bic\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BicFormulaFormula) Print() {
+	fmt.Printf("Name: Bic\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BicFormulaFormula
+	pkg := BicFormulaFormula{
+		Description:  "Descripción de Bic",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

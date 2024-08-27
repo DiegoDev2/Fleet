@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// BatExtras representa una fórmula en Go.
-type BatExtras struct {
+// BatExtrasFormulaFormula representa una fórmula en Go.
+type BatExtrasFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type BatExtras struct {
 	Dependencies []string
 }
 
-func (pkg BatExtras) Print() {
-	fmt.Printf("Name: BatExtras\\n", "BatExtras")
-	fmt.Printf("Description: BatExtras\\n", pkg.Description)
-	fmt.Printf("Homepage: BatExtras\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BatExtrasFormulaFormula) Print() {
+	fmt.Printf("Name: BatExtras\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BatExtrasFormulaFormula
+	pkg := BatExtrasFormulaFormula{
+		Description:  "Descripción de BatExtras",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

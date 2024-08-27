@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Burp representa una fórmula en Go.
-type Burp struct {
+// BurpFormulaFormula representa una fórmula en Go.
+type BurpFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Burp struct {
 	Dependencies []string
 }
 
-func (pkg Burp) Print() {
-	fmt.Printf("Name: Burp\\n", "Burp")
-	fmt.Printf("Description: Burp\\n", pkg.Description)
-	fmt.Printf("Homepage: Burp\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BurpFormulaFormula) Print() {
+	fmt.Printf("Name: Burp\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BurpFormulaFormula
+	pkg := BurpFormulaFormula{
+		Description:  "Descripción de Burp",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

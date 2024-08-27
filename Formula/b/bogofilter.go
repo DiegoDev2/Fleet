@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// Bogofilter representa una fórmula en Go.
-type Bogofilter struct {
+// BogofilterFormulaFormula representa una fórmula en Go.
+type BogofilterFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type Bogofilter struct {
 	Dependencies []string
 }
 
-func (pkg Bogofilter) Print() {
-	fmt.Printf("Name: Bogofilter\\n", "Bogofilter")
-	fmt.Printf("Description: Bogofilter\\n", pkg.Description)
-	fmt.Printf("Homepage: Bogofilter\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BogofilterFormulaFormula) Print() {
+	fmt.Printf("Name: Bogofilter\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BogofilterFormulaFormula
+	pkg := BogofilterFormulaFormula{
+		Description:  "Descripción de Bogofilter",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",

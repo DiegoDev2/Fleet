@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-// BrewCaskCompletion representa una fórmula en Go.
-type BrewCaskCompletion struct {
+// BrewCaskCompletionFormulaFormula representa una fórmula en Go.
+type BrewCaskCompletionFormulaFormula struct {
 	Description  string
 	Homepage     string
 	URL          string
@@ -11,19 +11,19 @@ type BrewCaskCompletion struct {
 	Dependencies []string
 }
 
-func (pkg BrewCaskCompletion) Print() {
-	fmt.Printf("Name: BrewCaskCompletion\\n", "BrewCaskCompletion")
-	fmt.Printf("Description: BrewCaskCompletion\\n", pkg.Description)
-	fmt.Printf("Homepage: BrewCaskCompletion\\n", pkg.Homepage)
-	fmt.Printf("URL: %!s(MISSING)\\n", pkg.URL)
-	fmt.Printf("Sha256: %!s(MISSING)\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %!v(MISSING)\\n", pkg.Dependencies)
+func (pkg BrewCaskCompletionFormulaFormula) Print() {
+	fmt.Printf("Name: BrewCaskCompletion\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %!s(MISSING)
-	pkg := %!s(MISSING){
-		Description:  "Descripción de %!s(MISSING)",
+	// Crear una instancia de BrewCaskCompletionFormulaFormula
+	pkg := BrewCaskCompletionFormulaFormula{
+		Description:  "Descripción de BrewCaskCompletion",
 		Homepage:     "https://example.com",
 		URL:          "https://example.com/example-1.0.0.tar.gz",
 		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
