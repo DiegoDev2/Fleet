@@ -7,7 +7,7 @@
 
   <!-- Replace with the actual URL of your logo -->
 
-**LattePkg** is a command-line interface (CLI) tool for managing packages with Homebrew on macOS. This tool allows you to install, uninstall, and upgrade packages easily and quickly.
+**LattePkg** is a command-line interface (CLI) tool for managing packages on macOS. This tool allows you to install, uninstall, and upgrade packages easily and quickly.
 
 ## Installation
 
@@ -33,8 +33,7 @@ latte uninstall <package_name>
 latte upgrade <package_name>
 latte search <search_term>
 ```
-## Acknowledgments
-We would like to express our gratitude to Homebrew for providing an excellent package management platform for macOS. Without Homebrew, **LattePkg** would not be possible.
+
 
 ## Contributions
 Contributions are welcome! If you find any issues or have suggestions, please open an issue or submit a pull request.
