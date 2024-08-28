@@ -3,17 +3,20 @@
 
 
 
-# LattePkg
+# LattePkg 🌸
 
   <!-- Replace with the actual URL of your logo -->
 
 **LattePkg** is a command-line interface (CLI) tool for managing packages on macOS. This tool allows you to install, uninstall, and upgrade packages easily and quickly.
 
-## Installation
+## Installation 📥
 
 We are still developing the tool, patience
 
-## Usage
+## And Windows and Linux? 🧪
+Don't worry, we will work on it to make it available.
+
+## Usage 📃
 
 **Latte** provides the following commands:
 
@@ -23,7 +26,7 @@ We are still developing the tool, patience
 - `version`: Shows the version of LattePkg.
 - `search [term]`: Searches for a package using Homebrew.
 
-### Examples
+### Examples 📌
 
 Install a package:
 
@@ -35,5 +38,5 @@ latte search <search_term>
 ```
 
 
-## Contributions
+## Contributions 📝
 Contributions are welcome! If you find any issues or have suggestions, please open an issue or submit a pull request.
