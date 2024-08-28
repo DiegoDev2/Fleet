@@ -36,26 +36,31 @@ func main() {
 
     pkg.Print()
 
-    // Instalar dependencias si no están instaladas
+    // Instalar dependencias
     for _, dep := range pkg.Dependencies {
-        if !isDependencyInstalled(dep) {
-            fmt.Printf("🛠️ Dependency %s not found. Installing...
-", dep)
+        if !isFormulaInstalled(dep) {
+            fmt.Printf("Installing dependency: %s\n", dep)
             cmd := exec.Command("brew", "install", dep)
             if err := cmd.Run(); err != nil {
                 log.Fatalf("Error installing dependency %s: %v", dep, err)
             }
         } else {
-            fmt.Printf("✅ Dependency %s is already installed.
-", dep)
+            fmt.Printf("Dependency %s is already installed.\n", dep)
         }
     }
 
+    fmt.Printf("Installing formula: %s\n", "mp3val")
     if err := pkg.Installmp3val(); err != nil {
         log.Fatalf("Error during installation: %v", err)
     }
 
     fmt.Println("Installation completed successfully.")
+}
+
+func isFormulaInstalled(name string) bool {
+    cmd := exec.Command("brew", "list", name)
+    err := cmd.Run()
+    return err == nil
 }
 
 func (pkg mp3valFormula) Installmp3val() error {
@@ -71,7 +76,7 @@ func (pkg mp3valFormula) Installmp3val() error {
     }
 
     sourceDir := "mp3val-0.1.8-src.tar"
-    cmd = exec.Command("sh", "-c", fmt.Sprintf("cd %s && PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --sysconfdir=/etc --with-lispdir=/usr/share/emacs/site-lisp --with-packager=Homebrew --with-packager-version=4.15.6 --with-packager-bug-reports=https://github.com/Homebrew/homebrew-core/issues && make install", sourceDir))
+    cmd = exec.Command("sh", "-c", fmt.Sprintf("cd %s && ./configure && make install", sourceDir))
     cmd.Stdout = log.Writer()
     cmd.Stderr = log.Writer()
 
@@ -80,10 +85,4 @@ func (pkg mp3valFormula) Installmp3val() error {
     }
 
     return nil
-}
-
-func isDependencyInstalled(dep string) bool {
-    cmd := exec.Command("brew", "list", dep)
-    output, err := cmd.CombinedOutput()
-    return err == nil && strings.TrimSpace(string(output)) != ""
 }
