@@ -1,71 +1,35 @@
 package main
 
-import (
-	"fmt"
-	"os"
-	"os/exec"
-)
+import "fmt"
 
-var gettext = &Formula{
-	Name:        "gettext",
-	Description: "GNU internationalization (i18n) and localization (l10n) library",
-	Homepage:    "https://www.gnu.org/software/gettext/",
-	URL:         "https://ftp.gnu.org/gnu/gettext/gettext-0.21.tar.gz",
-	Sha256:      "d20fcbb537e02dcf1383197ba05bd0734ef7bf5db06bdb241eb69b7d16b73192",
-	License:     "GPL-3.0",
-	Install: func() error {
-		fmt.Println("Downloading gettext...")
-		cmd := exec.Command("curl", "-LO", "https://ftp.gnu.org/gnu/gettext/gettext-0.21.tar.gz")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
+// GettextFormulaFormula representa una fórmula en Go.
+type GettextFormulaFormula struct {
+	Description  string
+	Homepage     string
+	URL          string
+	Sha256       string
+	Dependencies []string
+}
 
-		fmt.Println("Extracting gettext...")
-		cmd = exec.Command("tar", "-xzf", "gettext-0.21.tar.gz")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
-
-		fmt.Println("Configuring and installing gettext...")
-		cmd = exec.Command("./configure")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
-
-		cmd = exec.Command("make")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
-
-		cmd = exec.Command("sudo", "make", "install")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
-
-		return nil
-	},
-	Test: func() error {
-		fmt.Println("Testing gettext installation...")
-		cmd := exec.Command("gettext", "--version")
-		output, err := cmd.CombinedOutput()
-		if err != nil {
-			return err
-		}
-		fmt.Println(string(output))
-		return nil
-	},
+func (pkg GettextFormulaFormula) Print() {
+	fmt.Printf("Name: Gettext\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	if err := gettext.InstallPackage(); err != nil {
-		fmt.Println("Installation failed:", err)
-		os.Exit(1)
+	// Crear una instancia de GettextFormulaFormula
+	pkg := GettextFormulaFormula{
+		Description:  "Descripción de Gettext",
+		Homepage:     "https://example.com",
+		URL:          "https://example.com/example-1.0.0.tar.gz",
+		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+		Dependencies: []string{"dep1", "dep2"},
 	}
 
-	if err := gettext.TestPackage(); err != nil {
-		fmt.Println("Testing failed:", err)
-		os.Exit(1)
-	}
-
-	fmt.Println("gettext installed and tested successfully!")
+	// Imprimir la información de la fórmula
+	pkg.Print()
 }
