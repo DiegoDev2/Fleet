@@ -1,35 +1,76 @@
+
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "log"
+    "os/exec"
+)
 
-// WllvmFormulaFormula representa una fórmula en Go.
-type WllvmFormulaFormula struct {
-	Description  string
-	Homepage     string
-	URL          string
-	Sha256       string
-	Dependencies []string
+// wllvmFormula represents a formula in Go.
+type wllvmFormula struct {
+    Description  string
+    Homepage     string
+    URL          string
+    Sha256       string
+    Dependencies []string
 }
 
-func (pkg WllvmFormulaFormula) Print() {
-	fmt.Printf("Name: Wllvm\\n")
-	fmt.Printf("Description: %s\\n", pkg.Description)
-	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
-	fmt.Printf("URL: %s\\n", pkg.URL)
-	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
+func (pkg wllvmFormula) Print() {
+    fmt.Printf("Name: wllvm\n")
+    fmt.Printf("Description: %s\n", pkg.Description)
+    fmt.Printf("Homepage: %s\n", pkg.Homepage)
+    fmt.Printf("URL: %s\n", pkg.URL)
+    fmt.Printf("Sha256: %s\n", pkg.Sha256)
+    fmt.Printf("Dependencies: %v\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de WllvmFormulaFormula
-	pkg := WllvmFormulaFormula{
-		Description:  "Descripción de Wllvm",
-		Homepage:     "https://example.com",
-		URL:          "https://example.com/example-1.0.0.tar.gz",
-		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
-		Dependencies: []string{"dep1", "dep2"},
-	}
+    pkg := wllvmFormula{
+        Description:  "Toolkit for building whole-program LLVM bitcode files",
+        Homepage:     "https://pypi.org/project/wllvm/",
+        URL:          "https://files.pythonhosted.org/packages/4b/df/31d7519052bc21d0e9771e9a6540d6310bfb13bae7dacde060d8f647b8d3/wllvm-1.3.1.tar.gz",
+        Sha256:       "c466fd407dc9cef28b763df4376a41eef4dd76c3af22a8b7efcab96942837c0c",
+        Dependencies: []string{"llvm", "python@3.12"},
+    }
 
-	// Imprimir la información de la fórmula
-	pkg.Print()
+    pkg.Print()
+
+    // Instalar dependencias
+    for _, dep := range pkg.Dependencies {
+        cmd := exec.Command("brew", "install", dep)
+        if err := cmd.Run(); err != nil {
+            log.Fatalf("Error installing dependency %s: %v", dep, err)
+        }
+    }
+
+    if err := pkg.Installwllvm(); err != nil {
+        log.Fatalf("Error during installation: %v", err)
+    }
+
+    fmt.Println("Installation completed successfully.")
+}
+
+func (pkg wllvmFormula) Installwllvm() error {
+    cmd := exec.Command("curl", "-O", pkg.URL)
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to download: %v", err)
+    }
+
+    tarball := "wllvm-1.3.1.tar.gz"
+    cmd = exec.Command("tar", "-xf", tarball)
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to extract tarball: %v", err)
+    }
+
+    sourceDir := "wllvm-1.3.1.tar"
+    cmd = exec.Command("sh", "-c", fmt.Sprintf("cd %s && PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --sysconfdir=/etc --with-lispdir=/usr/share/emacs/site-lisp --with-packager=Homebrew --with-packager-version=4.15.6 --with-packager-bug-reports=https://github.com/Homebrew/homebrew-core/issues && make install", sourceDir))
+    cmd.Stdout = log.Writer()
+    cmd.Stderr = log.Writer()
+
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to configure and install: %v", err)
+    }
+
+    return nil
 }

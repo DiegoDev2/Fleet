@@ -1,35 +1,76 @@
+
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "log"
+    "os/exec"
+)
 
-// ConftestFormulaFormula representa una fórmula en Go.
-type ConftestFormulaFormula struct {
-	Description  string
-	Homepage     string
-	URL          string
-	Sha256       string
-	Dependencies []string
+// conftestFormula represents a formula in Go.
+type conftestFormula struct {
+    Description  string
+    Homepage     string
+    URL          string
+    Sha256       string
+    Dependencies []string
 }
 
-func (pkg ConftestFormulaFormula) Print() {
-	fmt.Printf("Name: Conftest\\n")
-	fmt.Printf("Description: %s\\n", pkg.Description)
-	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
-	fmt.Printf("URL: %s\\n", pkg.URL)
-	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
+func (pkg conftestFormula) Print() {
+    fmt.Printf("Name: conftest\n")
+    fmt.Printf("Description: %s\n", pkg.Description)
+    fmt.Printf("Homepage: %s\n", pkg.Homepage)
+    fmt.Printf("URL: %s\n", pkg.URL)
+    fmt.Printf("Sha256: %s\n", pkg.Sha256)
+    fmt.Printf("Dependencies: %v\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de ConftestFormulaFormula
-	pkg := ConftestFormulaFormula{
-		Description:  "Descripción de Conftest",
-		Homepage:     "https://example.com",
-		URL:          "https://example.com/example-1.0.0.tar.gz",
-		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
-		Dependencies: []string{"dep1", "dep2"},
-	}
+    pkg := conftestFormula{
+        Description:  "Test your configuration files using Open Policy Agent",
+        Homepage:     "https://www.conftest.dev/",
+        URL:          "https://github.com/open-policy-agent/conftest/archive/refs/tags/v0.55.0.tar.gz",
+        Sha256:       "830b78d108854083af7bd2d3983a2bcff3bef7cb66eda00f69a2665b2b05c6b0",
+        Dependencies: []string{"go"},
+    }
 
-	// Imprimir la información de la fórmula
-	pkg.Print()
+    pkg.Print()
+
+    // Instalar dependencias
+    for _, dep := range pkg.Dependencies {
+        cmd := exec.Command("brew", "install", dep)
+        if err := cmd.Run(); err != nil {
+            log.Fatalf("Error installing dependency %s: %v", dep, err)
+        }
+    }
+
+    if err := pkg.Installconftest(); err != nil {
+        log.Fatalf("Error during installation: %v", err)
+    }
+
+    fmt.Println("Installation completed successfully.")
+}
+
+func (pkg conftestFormula) Installconftest() error {
+    cmd := exec.Command("curl", "-O", pkg.URL)
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to download: %v", err)
+    }
+
+    tarball := "v0.55.0.tar.gz"
+    cmd = exec.Command("tar", "-xf", tarball)
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to extract tarball: %v", err)
+    }
+
+    sourceDir := "v0.55.0.tar"
+    cmd = exec.Command("sh", "-c", fmt.Sprintf("cd %s && PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --sysconfdir=/etc --with-lispdir=/usr/share/emacs/site-lisp --with-packager=Homebrew --with-packager-version=4.15.6 --with-packager-bug-reports=https://github.com/Homebrew/homebrew-core/issues && make install", sourceDir))
+    cmd.Stdout = log.Writer()
+    cmd.Stderr = log.Writer()
+
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to configure and install: %v", err)
+    }
+
+    return nil
 }

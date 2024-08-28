@@ -1,35 +1,76 @@
+
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "log"
+    "os/exec"
+)
 
-// SolanaFormulaFormula representa una fórmula en Go.
-type SolanaFormulaFormula struct {
-	Description  string
-	Homepage     string
-	URL          string
-	Sha256       string
-	Dependencies []string
+// solanaFormula represents a formula in Go.
+type solanaFormula struct {
+    Description  string
+    Homepage     string
+    URL          string
+    Sha256       string
+    Dependencies []string
 }
 
-func (pkg SolanaFormulaFormula) Print() {
-	fmt.Printf("Name: Solana\\n")
-	fmt.Printf("Description: %s\\n", pkg.Description)
-	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
-	fmt.Printf("URL: %s\\n", pkg.URL)
-	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
+func (pkg solanaFormula) Print() {
+    fmt.Printf("Name: solana\n")
+    fmt.Printf("Description: %s\n", pkg.Description)
+    fmt.Printf("Homepage: %s\n", pkg.Homepage)
+    fmt.Printf("URL: %s\n", pkg.URL)
+    fmt.Printf("Sha256: %s\n", pkg.Sha256)
+    fmt.Printf("Dependencies: %v\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de SolanaFormulaFormula
-	pkg := SolanaFormulaFormula{
-		Description:  "Descripción de Solana",
-		Homepage:     "https://example.com",
-		URL:          "https://example.com/example-1.0.0.tar.gz",
-		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
-		Dependencies: []string{"dep1", "dep2"},
-	}
+    pkg := solanaFormula{
+        Description:  "Web-Scale Blockchain for decentralized apps and marketplaces",
+        Homepage:     "https://solana.com",
+        URL:          "https://github.com/solana-labs/solana/archive/refs/tags/v1.18.20.tar.gz",
+        Sha256:       "890c16d789fd565c7b869cc0cab9ad7b18b12f279f99a2c8fdb14a2ded4e6499",
+        Dependencies: []string{"protobuf", "rust", "openssl@3", "pkg-config", "systemd"},
+    }
 
-	// Imprimir la información de la fórmula
-	pkg.Print()
+    pkg.Print()
+
+    // Instalar dependencias
+    for _, dep := range pkg.Dependencies {
+        cmd := exec.Command("brew", "install", dep)
+        if err := cmd.Run(); err != nil {
+            log.Fatalf("Error installing dependency %s: %v", dep, err)
+        }
+    }
+
+    if err := pkg.Installsolana(); err != nil {
+        log.Fatalf("Error during installation: %v", err)
+    }
+
+    fmt.Println("Installation completed successfully.")
+}
+
+func (pkg solanaFormula) Installsolana() error {
+    cmd := exec.Command("curl", "-O", pkg.URL)
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to download: %v", err)
+    }
+
+    tarball := "v1.18.20.tar.gz"
+    cmd = exec.Command("tar", "-xf", tarball)
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to extract tarball: %v", err)
+    }
+
+    sourceDir := "v1.18.20.tar"
+    cmd = exec.Command("sh", "-c", fmt.Sprintf("cd %s && PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --sysconfdir=/etc --with-lispdir=/usr/share/emacs/site-lisp --with-packager=Homebrew --with-packager-version=4.15.6 --with-packager-bug-reports=https://github.com/Homebrew/homebrew-core/issues && make install", sourceDir))
+    cmd.Stdout = log.Writer()
+    cmd.Stderr = log.Writer()
+
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to configure and install: %v", err)
+    }
+
+    return nil
 }

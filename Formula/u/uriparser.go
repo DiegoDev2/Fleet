@@ -1,35 +1,76 @@
+
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "log"
+    "os/exec"
+)
 
-// UriparserFormulaFormula representa una fórmula en Go.
-type UriparserFormulaFormula struct {
-	Description  string
-	Homepage     string
-	URL          string
-	Sha256       string
-	Dependencies []string
+// uriparserFormula represents a formula in Go.
+type uriparserFormula struct {
+    Description  string
+    Homepage     string
+    URL          string
+    Sha256       string
+    Dependencies []string
 }
 
-func (pkg UriparserFormulaFormula) Print() {
-	fmt.Printf("Name: Uriparser\\n")
-	fmt.Printf("Description: %s\\n", pkg.Description)
-	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
-	fmt.Printf("URL: %s\\n", pkg.URL)
-	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
+func (pkg uriparserFormula) Print() {
+    fmt.Printf("Name: uriparser\n")
+    fmt.Printf("Description: %s\n", pkg.Description)
+    fmt.Printf("Homepage: %s\n", pkg.Homepage)
+    fmt.Printf("URL: %s\n", pkg.URL)
+    fmt.Printf("Sha256: %s\n", pkg.Sha256)
+    fmt.Printf("Dependencies: %v\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de UriparserFormulaFormula
-	pkg := UriparserFormulaFormula{
-		Description:  "Descripción de Uriparser",
-		Homepage:     "https://example.com",
-		URL:          "https://example.com/example-1.0.0.tar.gz",
-		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
-		Dependencies: []string{"dep1", "dep2"},
-	}
+    pkg := uriparserFormula{
+        Description:  "URI parsing library (strictly RFC 3986 compliant)",
+        Homepage:     "https://uriparser.github.io/",
+        URL:          "https://github.com/uriparser/uriparser/releases/download/uriparser-0.9.8/uriparser-0.9.8.tar.bz2",
+        Sha256:       "690d05924e1dcfe664e3e0891326fa6c19aa61c178d1cff63a361013cad4b001",
+        Dependencies: []string{"cmake"},
+    }
 
-	// Imprimir la información de la fórmula
-	pkg.Print()
+    pkg.Print()
+
+    // Instalar dependencias
+    for _, dep := range pkg.Dependencies {
+        cmd := exec.Command("brew", "install", dep)
+        if err := cmd.Run(); err != nil {
+            log.Fatalf("Error installing dependency %s: %v", dep, err)
+        }
+    }
+
+    if err := pkg.Installuriparser(); err != nil {
+        log.Fatalf("Error during installation: %v", err)
+    }
+
+    fmt.Println("Installation completed successfully.")
+}
+
+func (pkg uriparserFormula) Installuriparser() error {
+    cmd := exec.Command("curl", "-O", pkg.URL)
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to download: %v", err)
+    }
+
+    tarball := "uriparser-0.9.8.tar.bz2"
+    cmd = exec.Command("tar", "-xf", tarball)
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to extract tarball: %v", err)
+    }
+
+    sourceDir := "uriparser-0.9.8.tar"
+    cmd = exec.Command("sh", "-c", fmt.Sprintf("cd %s && PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --sysconfdir=/etc --with-lispdir=/usr/share/emacs/site-lisp --with-packager=Homebrew --with-packager-version=4.15.6 --with-packager-bug-reports=https://github.com/Homebrew/homebrew-core/issues && make install", sourceDir))
+    cmd.Stdout = log.Writer()
+    cmd.Stderr = log.Writer()
+
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to configure and install: %v", err)
+    }
+
+    return nil
 }

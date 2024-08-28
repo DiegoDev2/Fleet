@@ -1,35 +1,76 @@
+
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "log"
+    "os/exec"
+)
 
-// YdcvFormulaFormula representa una fórmula en Go.
-type YdcvFormulaFormula struct {
-	Description  string
-	Homepage     string
-	URL          string
-	Sha256       string
-	Dependencies []string
+// ydcvFormula represents a formula in Go.
+type ydcvFormula struct {
+    Description  string
+    Homepage     string
+    URL          string
+    Sha256       string
+    Dependencies []string
 }
 
-func (pkg YdcvFormulaFormula) Print() {
-	fmt.Printf("Name: Ydcv\\n")
-	fmt.Printf("Description: %s\\n", pkg.Description)
-	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
-	fmt.Printf("URL: %s\\n", pkg.URL)
-	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
+func (pkg ydcvFormula) Print() {
+    fmt.Printf("Name: ydcv\n")
+    fmt.Printf("Description: %s\n", pkg.Description)
+    fmt.Printf("Homepage: %s\n", pkg.Homepage)
+    fmt.Printf("URL: %s\n", pkg.URL)
+    fmt.Printf("Sha256: %s\n", pkg.Sha256)
+    fmt.Printf("Dependencies: %v\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de YdcvFormulaFormula
-	pkg := YdcvFormulaFormula{
-		Description:  "Descripción de Ydcv",
-		Homepage:     "https://example.com",
-		URL:          "https://example.com/example-1.0.0.tar.gz",
-		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
-		Dependencies: []string{"dep1", "dep2"},
-	}
+    pkg := ydcvFormula{
+        Description:  "YouDao Console Version",
+        Homepage:     "https://github.com/felixonmars/ydcv",
+        URL:          "https://files.pythonhosted.org/packages/1f/29/17124ebfdea8d810774977474a8652018c04c4a6db1ca413189f7e5b9d52/ydcv-0.7.tar.gz",
+        Sha256:       "52f466e847bf7841d0108b5bdb3e034ea2412d9d8d354088d270c088e784482e",
+        Dependencies: []string{"python@3.11"},
+    }
 
-	// Imprimir la información de la fórmula
-	pkg.Print()
+    pkg.Print()
+
+    // Instalar dependencias
+    for _, dep := range pkg.Dependencies {
+        cmd := exec.Command("brew", "install", dep)
+        if err := cmd.Run(); err != nil {
+            log.Fatalf("Error installing dependency %s: %v", dep, err)
+        }
+    }
+
+    if err := pkg.Installydcv(); err != nil {
+        log.Fatalf("Error during installation: %v", err)
+    }
+
+    fmt.Println("Installation completed successfully.")
+}
+
+func (pkg ydcvFormula) Installydcv() error {
+    cmd := exec.Command("curl", "-O", pkg.URL)
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to download: %v", err)
+    }
+
+    tarball := "ydcv-0.7.tar.gz"
+    cmd = exec.Command("tar", "-xf", tarball)
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to extract tarball: %v", err)
+    }
+
+    sourceDir := "ydcv-0.7.tar"
+    cmd = exec.Command("sh", "-c", fmt.Sprintf("cd %s && PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --sysconfdir=/etc --with-lispdir=/usr/share/emacs/site-lisp --with-packager=Homebrew --with-packager-version=4.15.6 --with-packager-bug-reports=https://github.com/Homebrew/homebrew-core/issues && make install", sourceDir))
+    cmd.Stdout = log.Writer()
+    cmd.Stderr = log.Writer()
+
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to configure and install: %v", err)
+    }
+
+    return nil
 }

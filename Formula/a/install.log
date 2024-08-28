@@ -1,0 +1,79 @@
+Warning: pkg-config 0.29.2_3 is already installed and up-to-date.
+To reinstall 0.29.2_3, run:
+  brew reinstall pkg-config
+Warning: You are using macOS 10.15.
+We (and Apple) do not provide support for this old version.
+It is expected behaviour that some formulae will fail to build in this old version.
+It is expected behaviour that Homebrew will be buggy and slow.
+Do not create any issues about this on Homebrew's GitHub repositories.
+Do not create any issues even if you think this message is unrelated.
+Any opened issues will be immediately closed without response.
+Do not ask for help from Homebrew or its maintainers on social media.
+You may ask for help in Homebrew's discussions but are unlikely to receive a response.
+Try to figure out the problem yourself and submit a fix as a pull request.
+We will review it but may or may not accept it.
+
+==> Fetching dependencies for bdw-gc: libatomic_ops
+==> Fetching libatomic_ops
+==> Downloading https://raw.githubusercontent.com/Homebrew/homebrew-core/0efb907ad60d236c29635a2faa6213311335d080/Formula/lib/libatomic_ops.rb
+==> Downloading https://github.com/ivmai/libatomic_ops/releases/download/v7.8.2/libatomic_ops-7.8.2.tar.gz
+==> Downloading from https://objects.githubusercontent.com/github-production-release-asset-2e65be/2103225/6ade4d7e-3eaa-41fb-aace-451fbb922316?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20240828%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240828T213610Z&X-Amz-Expires=300&X-Amz-Signature=3f9b6c63d5842d4bf59ad4dc08fa18e7c3a3e351870fef35bab63238c468afc0&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=2103225&response-content-disposition=attachment%3B%20filename%3Dlibatomic_ops-7.8.2.tar.gz&response-content-type=application%2Foctet-stream
+==> Fetching bdw-gc
+==> Downloading https://raw.githubusercontent.com/Homebrew/homebrew-core/0efb907ad60d236c29635a2faa6213311335d080/Formula/b/bdw-gc.rb
+==> Downloading https://github.com/ivmai/bdwgc/releases/download/v8.2.6/gc-8.2.6.tar.gz
+==> Downloading from https://objects.githubusercontent.com/github-production-release-asset-2e65be/2109456/4e9e94c6-02b8-4195-b5b1-8f27875c39dd?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20240828%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240828T213612Z&X-Amz-Expires=300&X-Amz-Signature=1d3b4e2f6cebad948d3d85511014ebb6465a319a09180b417a9483d7b15c23e8&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=2109456&response-content-disposition=attachment%3B%20filename%3Dgc-8.2.6.tar.gz&response-content-type=application%2Foctet-stream
+==> Installing dependencies for bdw-gc: libatomic_ops
+==> Installing bdw-gc dependency: libatomic_ops
+[34m==>[0m [1m./configure[0m
+[34m==>[0m [1mmake[0m
+[34m==>[0m [1mmake check[0m
+[34m==>[0m [1mmake install[0m
+🍺  /usr/local/Cellar/libatomic_ops/7.8.2: 88 files, 815.9KB, built in 30 seconds
+==> Installing bdw-gc
+[34m==>[0m [1m./configure --enable-cplusplus --enable-static --enable-large-config[0m
+[34m==>[0m [1mmake[0m
+[34m==>[0m [1mmake check[0m
+[34m==>[0m [1mmake install[0m
+🍺  /usr/local/Cellar/bdw-gc/8.2.6: 74 files, 1.7MB, built in 1 minute 6 seconds
+==> Running `brew cleanup bdw-gc`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+Warning: You are using macOS 10.15.
+We (and Apple) do not provide support for this old version.
+It is expected behaviour that some formulae will fail to build in this old version.
+It is expected behaviour that Homebrew will be buggy and slow.
+Do not create any issues about this on Homebrew's GitHub repositories.
+Do not create any issues even if you think this message is unrelated.
+Any opened issues will be immediately closed without response.
+Do not ask for help from Homebrew or its maintainers on social media.
+You may ask for help in Homebrew's discussions but are unlikely to receive a response.
+Try to figure out the problem yourself and submit a fix as a pull request.
+We will review it but may or may not accept it.
+
+==> Fetching dependencies for libpaper: gettext, berkeley-db@5, gdbm, perl and help2man
+==> Fetching gettext
+==> Downloading https://raw.githubusercontent.com/Homebrew/homebrew-core/0efb907ad60d236c29635a2faa6213311335d080/Formula/g/gettext.rb
+==> Downloading https://ftp.gnu.org/gnu/gettext/gettext-0.22.5.tar.gz
+Already downloaded: /Users/diegodev/Library/Caches/Homebrew/downloads/74ef4006a4a9118e1cb8e35bd4747a9a03313c8d346096f8752279beb57bf2d6--gettext-0.22.5.tar.gz
+==> Fetching berkeley-db@5
+==> Downloading https://ghcr.io/v2/homebrew/core/berkeley-db/5/manifests/5.3.28_1
+==> Downloading https://ghcr.io/v2/homebrew/core/berkeley-db/5/blobs/sha256:944b439dd5dcb02c5219b307d6ed739b9808a4eced27f6605a977e550e47c8bd
+==> Fetching gdbm
+==> Downloading https://raw.githubusercontent.com/Homebrew/homebrew-core/0efb907ad60d236c29635a2faa6213311335d080/Formula/g/gdbm.rb
+==> Downloading https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff
+==> Downloading https://ftp.gnu.org/gnu/gdbm/gdbm-1.24.tar.gz
+==> Fetching perl
+==> Downloading https://raw.githubusercontent.com/Homebrew/homebrew-core/0efb907ad60d236c29635a2faa6213311335d080/Formula/p/perl.rb
+==> Downloading https://www.cpan.org/src/5.0/perl-5.38.2.tar.xz
+==> Fetching help2man
+==> Downloading https://raw.githubusercontent.com/Homebrew/homebrew-core/0efb907ad60d236c29635a2faa6213311335d080/Formula/h/help2man.rb
+==> Downloading https://cpan.metacpan.org/authors/id/P/PV/PVANDRY/gettext-1.07.tar.gz
+==> Downloading https://ftp.gnu.org/gnu/help2man/help2man-1.49.3.tar.xz
+==> Fetching libpaper
+==> Downloading https://raw.githubusercontent.com/Homebrew/homebrew-core/0efb907ad60d236c29635a2faa6213311335d080/Formula/lib/libpaper.rb
+==> Downloading https://github.com/rrthomas/libpaper/releases/download/v2.2.5/libpaper-2.2.5.tar.gz
+==> Downloading from https://objects.githubusercontent.com/github-production-release-asset-2e65be/13846580/bdacb906-d388-46f2-a6e8-cf5eb4e4af4f?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20240828%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240828T213815Z&X-Amz-Expires=300&X-Amz-Signature=fb0d59aafa726b14178f40ae09fb7c7e11833a6dcabde16873a3cd7db2dbdf63&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=13846580&response-content-disposition=attachment%3B%20filename%3Dlibpaper-2.2.5.tar.gz&response-content-type=application%2Foctet-stream
+==> Installing dependencies for libpaper: gettext, berkeley-db@5, gdbm, perl and help2man
+==> Installing libpaper dependency: gettext
+[34m==>[0m [1m./configure --disable-silent-rules --with-included-glib --with-included-libc[0m
+Error: Forked child process failed: pid 3672 exit 1

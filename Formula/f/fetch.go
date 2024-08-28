@@ -1,109 +1,76 @@
+
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"os"
-	"regexp"
-	"strings"
+    "fmt"
+    "log"
+    "os/exec"
 )
 
-const (
-	rubyFilesDir = "/Users/diegodev/LattePkg/Formula/f/formulas" // Ruta donde están los archivos Ruby
-	goFilesDir   = "GoStructs"                                   // Directorio donde se guardarán los archivos .go
-)
-
-// Estructura base para una fórmula en Go
-const goStructTemplate = `package main
-
-import "fmt"
-
-// %[1]sFormula representa una fórmula en Go.
-type %[1]sFormula struct {
-	Description  string
-	Homepage     string
-	URL          string
-	Sha256       string
-	Dependencies []string
+// fetchFormula represents a formula in Go.
+type fetchFormula struct {
+    Description  string
+    Homepage     string
+    URL          string
+    Sha256       string
+    Dependencies []string
 }
 
-func (pkg %[1]sFormula) Print() {
-	fmt.Printf("Name: %[2]s\\n")
-	fmt.Printf("Description: %%s\\n", pkg.Description)
-	fmt.Printf("Homepage: %%s\\n", pkg.Homepage)
-	fmt.Printf("URL: %%s\\n", pkg.URL)
-	fmt.Printf("Sha256: %%s\\n", pkg.Sha256)
-	fmt.Printf("Dependencies: %%v\\n", pkg.Dependencies)
+func (pkg fetchFormula) Print() {
+    fmt.Printf("Name: fetch\n")
+    fmt.Printf("Description: %s\n", pkg.Description)
+    fmt.Printf("Homepage: %s\n", pkg.Homepage)
+    fmt.Printf("URL: %s\n", pkg.URL)
+    fmt.Printf("Sha256: %s\n", pkg.Sha256)
+    fmt.Printf("Dependencies: %v\n", pkg.Dependencies)
 }
 
 func main() {
-	// Crear una instancia de %[1]sFormula
-	pkg := %[1]sFormula{
-		Description:  "Descripción de %[2]s",
-		Homepage:     "https://example.com",
-		URL:          "https://example.com/example-1.0.0.tar.gz",
-		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
-		Dependencies: []string{"dep1", "dep2"},
-	}
+    pkg := fetchFormula{
+        Description:  "Download assets from a commit, branch, or tag of GitHub repositories",
+        Homepage:     "https://www.gruntwork.io/",
+        URL:          "https://github.com/gruntwork-io/fetch/archive/refs/tags/v0.4.6.tar.gz",
+        Sha256:       "cafdf23803549e1f8742cebf2e02c01be5f7918e39dd1688a548e652de46d7ce",
+        Dependencies: []string{"go"},
+    }
 
-	// Imprimir la información de la fórmula
-	pkg.Print()
-}
-`
+    pkg.Print()
 
-// Extrae el nombre de la fórmula de un archivo Ruby
-func extractFormulaName(content string) string {
-	re := regexp.MustCompile(`class\s+(\w+)\s+<\s+Formula`)
-	matches := re.FindStringSubmatch(content)
-	if len(matches) > 1 {
-		return matches[1]
-	}
-	return ""
-}
+    // Instalar dependencias
+    for _, dep := range pkg.Dependencies {
+        cmd := exec.Command("brew", "install", dep)
+        if err := cmd.Run(); err != nil {
+            log.Fatalf("Error installing dependency %s: %v", dep, err)
+        }
+    }
 
-// Genera un archivo Go con una estructura para la fórmula
-func generateGoFile(name string) error {
-	structName := name + "Formula"
-	content := fmt.Sprintf(goStructTemplate, structName, name)
+    if err := pkg.Installfetch(); err != nil {
+        log.Fatalf("Error during installation: %v", err)
+    }
 
-	// Crear el directorio de destino si no existe
-	if err := os.MkdirAll(goFilesDir, os.ModePerm); err != nil {
-		return err
-	}
-
-	filePath := fmt.Sprintf("%s/%s.go", goFilesDir, strings.ToLower(name))
-	return ioutil.WriteFile(filePath, []byte(content), 0644)
+    fmt.Println("Installation completed successfully.")
 }
 
-func main() {
-	files, err := ioutil.ReadDir(rubyFilesDir)
-	if err != nil {
-		fmt.Println("Error al leer el directorio:", err)
-		return
-	}
+func (pkg fetchFormula) Installfetch() error {
+    cmd := exec.Command("curl", "-O", pkg.URL)
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to download: %v", err)
+    }
 
-	for _, file := range files {
-		if file.IsDir() || !strings.HasSuffix(file.Name(), ".rb") {
-			continue
-		}
+    tarball := "v0.4.6.tar.gz"
+    cmd = exec.Command("tar", "-xf", tarball)
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to extract tarball: %v", err)
+    }
 
-		filePath := fmt.Sprintf("%s/%s", rubyFilesDir, file.Name())
-		content, err := ioutil.ReadFile(filePath)
-		if err != nil {
-			fmt.Println("Error al leer el archivo:", err)
-			continue
-		}
+    sourceDir := "v0.4.6.tar"
+    cmd = exec.Command("sh", "-c", fmt.Sprintf("cd %s && PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --sysconfdir=/etc --with-lispdir=/usr/share/emacs/site-lisp --with-packager=Homebrew --with-packager-version=4.15.6 --with-packager-bug-reports=https://github.com/Homebrew/homebrew-core/issues && make install", sourceDir))
+    cmd.Stdout = log.Writer()
+    cmd.Stderr = log.Writer()
 
-		name := extractFormulaName(string(content))
-		if name != "" {
-			fmt.Printf("Generando archivo Go para: %s\n", name)
-			if err := generateGoFile(name); err != nil {
-				fmt.Printf("Error al generar el archivo Go para %s: %v\n", name, err)
-			}
-		} else {
-			fmt.Printf("No se pudo extraer el nombre de la fórmula de %s\n", file.Name())
-		}
-	}
+    if err := cmd.Run(); err != nil {
+        return fmt.Errorf("failed to configure and install: %v", err)
+    }
 
-	fmt.Println("Generación de archivos Go completada.")
+    return nil
 }
