@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	rubyFilesDir = "/Users/diegodev/LattePkg/Formula/a/formulas" // Ruta donde están los archivos Ruby
+	rubyFilesDir = "/Users/diegodev/LattePkg/Formula/b/formulas" // Ruta donde están los archivos Ruby
 	goFilesDir   = "GoStructs"                                   // Directorio donde se guardarán los archivos .go
 )
 

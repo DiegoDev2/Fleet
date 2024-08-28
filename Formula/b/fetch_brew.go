@@ -9,8 +9,8 @@ import (
 )
 
 const (
-	githubAPIURL = "https://api.github.com/repos/Homebrew/homebrew-core/contents/Formula/d"
-	rawURLBase   = "https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/d/"
+	githubAPIURL = "https://api.github.com/repos/Homebrew/homebrew-core/contents/Formula/b"
+	rawURLBase   = "https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/b/"
 	downloadDir  = "formulas"
 )
 
