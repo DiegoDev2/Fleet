@@ -1,71 +1,35 @@
 package main
 
-import (
-	"fmt"
-	"os"
-	"os/exec"
-)
+import "fmt"
 
-var gmp = &Formula{
-	Name:        "gmp",
-	Description: "GNU Multiple Precision Arithmetic Library",
-	Homepage:    "https://gmplib.org/",
-	URL:         "https://gmplib.org/download/gmp/gmp-6.2.1.tar.xz",
-	Sha256:      "59d12f9b76815fc4d9cf0128c3b6a4d02c85f1cf2a8b0736e0806a8a22f1658f",
-	License:     "LGPL-3.1",
-	Install: func() error {
-		fmt.Println("Downloading gmp...")
-		cmd := exec.Command("curl", "-LO", "https://gmplib.org/download/gmp/gmp-6.2.1.tar.xz")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
+// GmpFormulaFormula representa una fórmula en Go.
+type GmpFormulaFormula struct {
+	Description  string
+	Homepage     string
+	URL          string
+	Sha256       string
+	Dependencies []string
+}
 
-		fmt.Println("Extracting gmp...")
-		cmd = exec.Command("tar", "-xJf", "gmp-6.2.1.tar.xz")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
-
-		fmt.Println("Configuring and installing gmp...")
-		cmd = exec.Command("cd", "gmp-6.2.1", "&&", "./configure")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
-
-		cmd = exec.Command("make")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
-
-		cmd = exec.Command("sudo", "make", "install")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
-
-		return nil
-	},
-	Test: func() error {
-		fmt.Println("Testing gmp installation...")
-		cmd := exec.Command("gmp", "--version")
-		output, err := cmd.CombinedOutput()
-		if err != nil {
-			return err
-		}
-		fmt.Println(string(output))
-		return nil
-	},
+func (pkg GmpFormulaFormula) Print() {
+	fmt.Printf("Name: Gmp\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	if err := gmp.InstallPackage(); err != nil {
-		fmt.Println("Installation failed:", err)
-		os.Exit(1)
+	// Crear una instancia de GmpFormulaFormula
+	pkg := GmpFormulaFormula{
+		Description:  "Descripción de Gmp",
+		Homepage:     "https://example.com",
+		URL:          "https://example.com/example-1.0.0.tar.gz",
+		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+		Dependencies: []string{"dep1", "dep2"},
 	}
 
-	if err := gmp.TestPackage(); err != nil {
-		fmt.Println("Testing failed:", err)
-		os.Exit(1)
-	}
-
-	fmt.Println("gmp installed and tested successfully!")
+	// Imprimir la información de la fórmula
+	pkg.Print()
 }

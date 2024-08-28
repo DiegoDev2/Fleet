@@ -1,71 +1,35 @@
 package main
 
-import (
-	"fmt"
-	"os"
-	"os/exec"
-)
+import "fmt"
 
-var glibc = &Formula{
-	Name:        "glibc",
-	Description: "GNU C Library",
-	Homepage:    "https://www.gnu.org/software/libc/",
-	URL:         "https://ftp.gnu.org/gnu/libc/glibc-2.33.tar.gz",
-	Sha256:      "3b6d2f9f9b8c5e3f7d7f9f91b1c4623c07f2632d748706a0a9477a68b4a22d70",
-	License:     "LGPL-2.1",
-	Install: func() error {
-		fmt.Println("Downloading glibc...")
-		cmd := exec.Command("curl", "-LO", "https://ftp.gnu.org/gnu/libc/glibc-2.33.tar.gz")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
+// GlibcFormulaFormula representa una fórmula en Go.
+type GlibcFormulaFormula struct {
+	Description  string
+	Homepage     string
+	URL          string
+	Sha256       string
+	Dependencies []string
+}
 
-		fmt.Println("Extracting glibc...")
-		cmd = exec.Command("tar", "-xzf", "glibc-2.33.tar.gz")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
-
-		fmt.Println("Configuring and installing glibc...")
-		cmd = exec.Command("./configure")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
-
-		cmd = exec.Command("make")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
-
-		cmd = exec.Command("sudo", "make", "install")
-		if err := cmd.Run(); err != nil {
-			return err
-		}
-
-		return nil
-	},
-	Test: func() error {
-		fmt.Println("Testing glibc installation...")
-		cmd := exec.Command("ldd", "--version")
-		output, err := cmd.CombinedOutput()
-		if err != nil {
-			return err
-		}
-		fmt.Println(string(output))
-		return nil
-	},
+func (pkg GlibcFormulaFormula) Print() {
+	fmt.Printf("Name: Glibc\\n")
+	fmt.Printf("Description: %s\\n", pkg.Description)
+	fmt.Printf("Homepage: %s\\n", pkg.Homepage)
+	fmt.Printf("URL: %s\\n", pkg.URL)
+	fmt.Printf("Sha256: %s\\n", pkg.Sha256)
+	fmt.Printf("Dependencies: %v\\n", pkg.Dependencies)
 }
 
 func main() {
-	if err := glibc.InstallPackage(); err != nil {
-		fmt.Println("Installation failed:", err)
-		os.Exit(1)
+	// Crear una instancia de GlibcFormulaFormula
+	pkg := GlibcFormulaFormula{
+		Description:  "Descripción de Glibc",
+		Homepage:     "https://example.com",
+		URL:          "https://example.com/example-1.0.0.tar.gz",
+		Sha256:       "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+		Dependencies: []string{"dep1", "dep2"},
 	}
 
-	if err := glibc.TestPackage(); err != nil {
-		fmt.Println("Testing failed:", err)
-		os.Exit(1)
-	}
-
-	fmt.Println("glibc installed and tested successfully!")
+	// Imprimir la información de la fórmula
+	pkg.Print()
 }
