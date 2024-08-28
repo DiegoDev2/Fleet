@@ -36,11 +36,18 @@ func main() {
 
     pkg.Print()
 
-    // Instalar dependencias
+    // Instalar dependencias si no están instaladas
     for _, dep := range pkg.Dependencies {
-        cmd := exec.Command("brew", "install", dep)
-        if err := cmd.Run(); err != nil {
-            log.Fatalf("Error installing dependency %s: %v", dep, err)
+        if !isDependencyInstalled(dep) {
+            fmt.Printf("🛠️ Dependency %s not found. Installing...
+", dep)
+            cmd := exec.Command("brew", "install", dep)
+            if err := cmd.Run(); err != nil {
+                log.Fatalf("Error installing dependency %s: %v", dep, err)
+            }
+        } else {
+            fmt.Printf("✅ Dependency %s is already installed.
+", dep)
         }
     }
 
@@ -73,4 +80,10 @@ func (pkg nats-streaming-serverFormula) Installnats-streaming-server() error {
     }
 
     return nil
+}
+
+func isDependencyInstalled(dep string) bool {
+    cmd := exec.Command("brew", "list", dep)
+    output, err := cmd.CombinedOutput()
+    return err == nil && strings.TrimSpace(string(output)) != ""
 }
