@@ -1,4 +1,4 @@
-module turn
+module LattePkg
 
 go 1.23
 
