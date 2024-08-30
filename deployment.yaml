@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lattepkg-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: lattepkg
+  template:
+    metadata:
+      labels:
+        app: lattepkg
+    spec:
+      containers:
+      - name: lattepkg
+        image: diegodev1/lattepkg-formulas:cli
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "250m"
+            memory: "256Mi"
