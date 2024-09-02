@@ -3,14 +3,15 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"github.com/gookit/color"
-	"github.com/spf13/cobra"
 	"io"
 	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strings"
+
+	"github.com/gookit/color"
+	"github.com/spf13/cobra"
 )
 
 var messages = map[string]string{
@@ -25,34 +26,6 @@ var messages = map[string]string{
 	"checkUpdate":        "Checking for updates...",
 	"updateAvailable":    "Update available! Downloading the latest version...",
 	"updateNotAvailable": "No updates available. You're using the latest version.",
-	"packageURL":         "Enter the package URL:",
-	"packageType":        "What type of package is this? (zip/git/binary/tar.gz/other):",
-	"formula":            "Here is a formula template you can use:",
-	"formulaExample": `package main
-
-import (
-	"fmt"
-	"net/http"
-	"os"
-	"path/filepath"
-)
-
-// Replace this URL with the actual URL of your package
-const packageURL = "REPLACE_WITH_PACKAGE_URL"
-
-// PackageType defines the type of package (zip/git/binary/tar.gz/other)
-const packageType = "REPLACE_WITH_PACKAGE_TYPE"
-
-func main() {
-	// Add your installation logic here
-	fmt.Println("Installing package from", packageURL)
-}
-
-func downloadPackage() error {
-	// Add your download logic here
-	return nil
-}
-`,
 }
 
 func main() {
