@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"io"
 	"net/http"
@@ -80,7 +79,7 @@ func Command() {
 		},
 		&cobra.Command{
 			Use:   "upload [package]",
-			Short: "Upload your package",
+			Short: "upload your package",
 			Args:  cobra.ExactArgs(1),
 			Run: func(cmd *cobra.Command, args []string) {
 				uploadPackage(args[0])
@@ -121,7 +120,7 @@ func Install(pkg string) {
 		return
 	}
 
-	cmd := exec.Command("go", "run", formulaPath)
+	cmd := exec.Command("brew", "install", formulaPath)
 	color.Green.Println(messages["installing"] + " " + pkg + "...")
 	output, err := executeCommand(cmd)
 	if err != nil {
@@ -140,7 +139,7 @@ func Uninstall(pkg string) {
 		return
 	}
 
-	cmd := exec.Command("go", "run", formulaPath, "uninstall")
+	cmd := exec.Command("brew", "uninstall", formulaPath)
 	color.Green.Println(messages["uninstalling"] + " " + pkg + "...")
 	output, err := executeCommand(cmd)
 	if err != nil {
@@ -159,7 +158,7 @@ func Update(pkg string) {
 		return
 	}
 
-	cmd := exec.Command("go", "run", formulaPath, "upgrade")
+	cmd := exec.Command("brew", "upgrade", formulaPath)
 	color.Green.Println(messages["upgrading"] + " " + pkg + "...")
 	output, err := executeCommand(cmd)
 	if err != nil {
@@ -178,8 +177,8 @@ func version() {
 }
 
 func Search(search string) {
-	cmd := exec.Command("go", "run", "LattePkg/Formulas/"+string(search[0])+"/"+search+"/"+search+".go")
-	color.Green.Println("Search", search, "....")
+	cmd := exec.Command("brew", "search", search)
+	color.Green.Println("Searching", search, "....")
 	output, err := cmd.CombinedOutput()
 	if err != nil {
 		color.Red.Println("Error:", err)
@@ -189,8 +188,9 @@ func Search(search string) {
 }
 
 func downloadFormula(pkg string) (string, error) {
-	baseURL := "https://raw.githubusercontent.com/CodeDiego15/LattePkg/main/Formula"
-	formulaURL := fmt.Sprintf("%s/%s/%s.go", baseURL, string(pkg[0]), pkg)
+	firstLetter := strings.ToLower(string(pkg[0]))
+	baseURL := fmt.Sprintf("https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/%s", firstLetter)
+	formulaURL := fmt.Sprintf("%s/%s.rb", baseURL, strings.ToLower(pkg))
 	color.Green.Println("Downloading", formulaURL, "...")
 
 	resp, err := http.Get(formulaURL)
@@ -203,12 +203,12 @@ func downloadFormula(pkg string) (string, error) {
 		return "", fmt.Errorf("failed to download formula: status code %d", resp.StatusCode)
 	}
 
-	formulaDir := filepath.Join("LattePkg", "Formulas", string(pkg[0]), pkg)
+	formulaDir := filepath.Join("LattePkg", "Formulas", firstLetter, strings.ToLower(pkg))
 	if err := os.MkdirAll(formulaDir, 0755); err != nil {
 		return "", fmt.Errorf("failed to create directories: %v", err)
 	}
 
-	formulaPath := filepath.Join(formulaDir, fmt.Sprintf("%s.go", pkg))
+	formulaPath := filepath.Join(formulaDir, fmt.Sprintf("%s.rb", strings.ToLower(pkg)))
 	out, err := os.Create(formulaPath)
 	if err != nil {
 		return "", fmt.Errorf("failed to create formula file: %v", err)
@@ -232,31 +232,48 @@ func getOrDownloadFormula(pkg string) (string, error) {
 }
 
 func getFormulaPath(pkg string) string {
-	return filepath.Join("LattePkg", "Formulas", string(pkg[0]), pkg, pkg+".go")
+	firstLetter := strings.ToLower(string(pkg[0]))
+	return filepath.Join("LattePkg", "Formulas", firstLetter, strings.ToLower(pkg), strings.ToLower(pkg)+".rb")
 }
 
-func uploadPackage(pkg string) {
-	fmt.Print(messages["packageURL"] + " ")
-	url, _ := bufio.NewReader(os.Stdin).ReadString('\n')
-	url = strings.TrimSpace(url)
+func uploadPackage(form string) {
+	type Form struct {
+		Link     string
+		HomePage string
+		ShaKey   string
+		Dep      string
+	}
 
-	fmt.Print(messages["packageType"] + " ")
-	packageType, _ := bufio.NewReader(os.Stdin).ReadString('\n')
-	packageType = strings.TrimSpace(packageType)
+	var tool Form
 
-	color.Green.Println(messages["formula"])
-	color.Green.Println(messages["formulaExample"])
+	for {
+		fmt.Println("Ingrese el link de descarga de su herramienta:")
+		_, err := fmt.Scan(&tool.Link)
+		if err != nil {
+			fmt.Println("Error al leer el link:", err)
+			continue
+		}
 
-	color.Cyan.Println("Modify the formula by replacing the placeholders:")
-	color.Cyan.Println("- `REPLACE_WITH_PACKAGE_URL` with the actual package URL")
-	color.Cyan.Println("- `REPLACE_WITH_PACKAGE_TYPE` with the type of package (zip/git/binary/tar.gz/other)")
+		fmt.Println("Ingrese la página principal de su herramienta:")
+		_, err = fmt.Scan(&tool.HomePage)
+		if err != nil {
+			fmt.Println("Error al leer la página principal:", err)
+			continue
+		}
 
-	color.Green.Println("Example formula with placeholders replaced:")
-	formula := strings.Replace(messages["formulaExample"], "REPLACE_WITH_PACKAGE_URL", url, 1)
-	formula = strings.Replace(formula, "REPLACE_WITH_PACKAGE_TYPE", packageType, 1)
-	color.Green.Println(formula)
+		fmt.Println("Ingrese la clave SHA:")
+		_, err = fmt.Scan(&tool.ShaKey)
+		if err != nil {
+			fmt.Println("Error al leer la clave SHA:", err)
+			continue
+		}
 
-	// Agregar lógica para manejar el paquete proporcionado
-	fmt.Printf("Uploading package: %s\n", pkg)
-	// Implementa la lógica para subir el paquete aquí
+		fmt.Println("Ingrese las dependencias (separadas por comas):")
+		_, err = fmt.Scan(&tool.Dep)
+		if err != nil {
+			fmt.Println("Error al leer las dependencias:", err)
+			continue
+		}
+		break
+	}
 }
