@@ -1,0 +1,213 @@
+package main
+
+// Gstreamer - Development framework for multimedia applications
+// Homepage: https://gstreamer.freedesktop.org/
+
+import (
+	"fmt"
+	
+	"os/exec"
+)
+
+func installGstreamer() {
+	// Método 1: Descargar y extraer .tar.gz
+	gstreamer_tar_url := "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.24.7/gstreamer-1.24.7.tar.bz2"
+	gstreamer_cmd_tar := exec.Command("curl", "-L", gstreamer_tar_url, "-o", "package.tar.gz")
+	err := gstreamer_cmd_tar.Run()
+	if err != nil {
+		fmt.Println("Error al descargar .tar.gz:", err)
+		return
+	}
+	exec.Command("tar", "-xzf", "package.tar.gz").Run()
+
+	// Método 2: Descargar y extraer .zip
+	gstreamer_zip_url := "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.24.7/gstreamer-1.24.7.tar.bz2"
+	gstreamer_cmd_zip := exec.Command("curl", "-L", gstreamer_zip_url, "-o", "package.zip")
+	err = gstreamer_cmd_zip.Run()
+	if err != nil {
+		fmt.Println("Error al descargar .zip:", err)
+		return
+	}
+	exec.Command("unzip", "package.zip").Run()
+
+	// Método 3: Descargar binario precompilado
+	gstreamer_bin_url := "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.24.7/gstreamer-1.24.7.tar.bz2"
+	gstreamer_cmd_bin := exec.Command("curl", "-L", gstreamer_bin_url, "-o", "binary.bin")
+	err = gstreamer_cmd_bin.Run()
+	if err != nil {
+		fmt.Println("Error al descargar binario:", err)
+		return
+	}
+	exec.Command("chmod", "+x", "binary.bin").Run()
+	exec.Command("./binary.bin").Run()
+
+	// Método 4: Descargar y compilar desde código fuente
+	gstreamer_src_url := "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.24.7/gstreamer-1.24.7.tar.bz2"
+	gstreamer_cmd_src := exec.Command("curl", "-L", gstreamer_src_url, "-o", "source.tar.gz")
+	err = gstreamer_cmd_src.Run()
+	if err != nil {
+		fmt.Println("Error al descargar código fuente:", err)
+		return
+	}
+	exec.Command("tar", "-xzf", "source.tar.gz").Run()
+	exec.Command("make").Run()
+
+	// Método 5: Ejecutar binario directo
+	gstreamer_cmd_direct := exec.Command("./binary")
+	err = gstreamer_cmd_direct.Run()
+	if err != nil {
+		fmt.Println("Error al ejecutar binario:", err)
+		return
+	}
+	// Instalar dependencias
+	fmt.Println("Instalando dependencia: bison")
+	exec.Command("latte", "install", "bison").Run()
+	fmt.Println("Instalando dependencia: cargo-c")
+	exec.Command("latte", "install", "cargo-c").Run()
+	fmt.Println("Instalando dependencia: gettext")
+	exec.Command("latte", "install", "gettext").Run()
+	fmt.Println("Instalando dependencia: gobject-introspection")
+	exec.Command("latte", "install", "gobject-introspection").Run()
+	fmt.Println("Instalando dependencia: meson")
+	exec.Command("latte", "install", "meson").Run()
+	fmt.Println("Instalando dependencia: nasm")
+	exec.Command("latte", "install", "nasm").Run()
+	fmt.Println("Instalando dependencia: ninja")
+	exec.Command("latte", "install", "ninja").Run()
+	fmt.Println("Instalando dependencia: pkg-config")
+	exec.Command("latte", "install", "pkg-config").Run()
+	fmt.Println("Instalando dependencia: rust")
+	exec.Command("latte", "install", "rust").Run()
+	fmt.Println("Instalando dependencia: aom")
+	exec.Command("latte", "install", "aom").Run()
+	fmt.Println("Instalando dependencia: cairo")
+	exec.Command("latte", "install", "cairo").Run()
+	fmt.Println("Instalando dependencia: dav1d")
+	exec.Command("latte", "install", "dav1d").Run()
+	fmt.Println("Instalando dependencia: faac")
+	exec.Command("latte", "install", "faac").Run()
+	fmt.Println("Instalando dependencia: faad2")
+	exec.Command("latte", "install", "faad2").Run()
+	fmt.Println("Instalando dependencia: fdk-aac")
+	exec.Command("latte", "install", "fdk-aac").Run()
+	fmt.Println("Instalando dependencia: ffmpeg")
+	exec.Command("latte", "install", "ffmpeg").Run()
+	fmt.Println("Instalando dependencia: flac")
+	exec.Command("latte", "install", "flac").Run()
+	fmt.Println("Instalando dependencia: gdk-pixbuf")
+	exec.Command("latte", "install", "gdk-pixbuf").Run()
+	fmt.Println("Instalando dependencia: glib")
+	exec.Command("latte", "install", "glib").Run()
+	fmt.Println("Instalando dependencia: graphene")
+	exec.Command("latte", "install", "graphene").Run()
+	fmt.Println("Instalando dependencia: gtk+3")
+	exec.Command("latte", "install", "gtk+3").Run()
+	fmt.Println("Instalando dependencia: gtk4")
+	exec.Command("latte", "install", "gtk4").Run()
+	fmt.Println("Instalando dependencia: imath")
+	exec.Command("latte", "install", "imath").Run()
+	fmt.Println("Instalando dependencia: jpeg-turbo")
+	exec.Command("latte", "install", "jpeg-turbo").Run()
+	fmt.Println("Instalando dependencia: json-glib")
+	exec.Command("latte", "install", "json-glib").Run()
+	fmt.Println("Instalando dependencia: lame")
+	exec.Command("latte", "install", "lame").Run()
+	fmt.Println("Instalando dependencia: libass")
+	exec.Command("latte", "install", "libass").Run()
+	fmt.Println("Instalando dependencia: libogg")
+	exec.Command("latte", "install", "libogg").Run()
+	fmt.Println("Instalando dependencia: libpng")
+	exec.Command("latte", "install", "libpng").Run()
+	fmt.Println("Instalando dependencia: libshout")
+	exec.Command("latte", "install", "libshout").Run()
+	fmt.Println("Instalando dependencia: libsndfile")
+	exec.Command("latte", "install", "libsndfile").Run()
+	fmt.Println("Instalando dependencia: libsodium")
+	exec.Command("latte", "install", "libsodium").Run()
+	fmt.Println("Instalando dependencia: libsoup")
+	exec.Command("latte", "install", "libsoup").Run()
+	fmt.Println("Instalando dependencia: libusrsctp")
+	exec.Command("latte", "install", "libusrsctp").Run()
+	fmt.Println("Instalando dependencia: libvorbis")
+	exec.Command("latte", "install", "libvorbis").Run()
+	fmt.Println("Instalando dependencia: libvpx")
+	exec.Command("latte", "install", "libvpx").Run()
+	fmt.Println("Instalando dependencia: libx11")
+	exec.Command("latte", "install", "libx11").Run()
+	fmt.Println("Instalando dependencia: libxcb")
+	exec.Command("latte", "install", "libxcb").Run()
+	fmt.Println("Instalando dependencia: libxext")
+	exec.Command("latte", "install", "libxext").Run()
+	fmt.Println("Instalando dependencia: libxfixes")
+	exec.Command("latte", "install", "libxfixes").Run()
+	fmt.Println("Instalando dependencia: libxi")
+	exec.Command("latte", "install", "libxi").Run()
+	fmt.Println("Instalando dependencia: libxtst")
+	exec.Command("latte", "install", "libxtst").Run()
+	fmt.Println("Instalando dependencia: little-cms2")
+	exec.Command("latte", "install", "little-cms2").Run()
+	fmt.Println("Instalando dependencia: mpg123")
+	exec.Command("latte", "install", "mpg123").Run()
+	fmt.Println("Instalando dependencia: nettle")
+	exec.Command("latte", "install", "nettle").Run()
+	fmt.Println("Instalando dependencia: opencore-amr")
+	exec.Command("latte", "install", "opencore-amr").Run()
+	fmt.Println("Instalando dependencia: openexr")
+	exec.Command("latte", "install", "openexr").Run()
+	fmt.Println("Instalando dependencia: openjpeg")
+	exec.Command("latte", "install", "openjpeg").Run()
+	fmt.Println("Instalando dependencia: openssl@3")
+	exec.Command("latte", "install", "openssl@3").Run()
+	fmt.Println("Instalando dependencia: opus")
+	exec.Command("latte", "install", "opus").Run()
+	fmt.Println("Instalando dependencia: orc")
+	exec.Command("latte", "install", "orc").Run()
+	fmt.Println("Instalando dependencia: pango")
+	exec.Command("latte", "install", "pango").Run()
+	fmt.Println("Instalando dependencia: pygobject3")
+	exec.Command("latte", "install", "pygobject3").Run()
+	fmt.Println("Instalando dependencia: python@3.12")
+	exec.Command("latte", "install", "python@3.12").Run()
+	fmt.Println("Instalando dependencia: rtmpdump")
+	exec.Command("latte", "install", "rtmpdump").Run()
+	fmt.Println("Instalando dependencia: speex")
+	exec.Command("latte", "install", "speex").Run()
+	fmt.Println("Instalando dependencia: srt")
+	exec.Command("latte", "install", "srt").Run()
+	fmt.Println("Instalando dependencia: srtp")
+	exec.Command("latte", "install", "srtp").Run()
+	fmt.Println("Instalando dependencia: svt-av1")
+	exec.Command("latte", "install", "svt-av1").Run()
+	fmt.Println("Instalando dependencia: taglib")
+	exec.Command("latte", "install", "taglib").Run()
+	fmt.Println("Instalando dependencia: theora")
+	exec.Command("latte", "install", "theora").Run()
+	fmt.Println("Instalando dependencia: webp")
+	exec.Command("latte", "install", "webp").Run()
+	fmt.Println("Instalando dependencia: x264")
+	exec.Command("latte", "install", "x264").Run()
+	fmt.Println("Instalando dependencia: x265")
+	exec.Command("latte", "install", "x265").Run()
+	fmt.Println("Instalando dependencia: gettext")
+	exec.Command("latte", "install", "gettext").Run()
+	fmt.Println("Instalando dependencia: harfbuzz")
+	exec.Command("latte", "install", "harfbuzz").Run()
+	fmt.Println("Instalando dependencia: musepack")
+	exec.Command("latte", "install", "musepack").Run()
+	fmt.Println("Instalando dependencia: alsa-lib")
+	exec.Command("latte", "install", "alsa-lib").Run()
+	fmt.Println("Instalando dependencia: libdrm")
+	exec.Command("latte", "install", "libdrm").Run()
+	fmt.Println("Instalando dependencia: libva")
+	exec.Command("latte", "install", "libva").Run()
+	fmt.Println("Instalando dependencia: libxdamage")
+	exec.Command("latte", "install", "libxdamage").Run()
+	fmt.Println("Instalando dependencia: libxv")
+	exec.Command("latte", "install", "libxv").Run()
+	fmt.Println("Instalando dependencia: mesa")
+	exec.Command("latte", "install", "mesa").Run()
+	fmt.Println("Instalando dependencia: pulseaudio")
+	exec.Command("latte", "install", "pulseaudio").Run()
+	fmt.Println("Instalando dependencia: wayland")
+	exec.Command("latte", "install", "wayland").Run()
+}

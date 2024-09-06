@@ -123,8 +123,7 @@ def write_go_formula(formula_data, dest_path):
             go_file.write(f'\t// Instalar dependencias\n')
             for dep in formula_data["dependencies"]:
                 go_file.write(f'\tfmt.Println("Instalando dependencia: {dep}")\n')
-                go_file.write(f'exec.Command("latte", "install", "{dep}")\n')
-               
+                go_file.write(f'\texec.Command("latte", "install", "{dep}").Run()\n')
 
         go_file.write(f'}}\n')
 

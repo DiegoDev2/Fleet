@@ -1,0 +1,69 @@
+package main
+
+// Libxext - X.Org: Library for common extensions to the X11 protocol
+// Homepage: https://www.x.org/
+
+import (
+	"fmt"
+	
+	"os/exec"
+)
+
+func installLibxext() {
+	// Método 1: Descargar y extraer .tar.gz
+	libxext_tar_url := "https://www.x.org/archive/individual/lib/libXext-1.3.6.tar.gz"
+	libxext_cmd_tar := exec.Command("curl", "-L", libxext_tar_url, "-o", "package.tar.gz")
+	err := libxext_cmd_tar.Run()
+	if err != nil {
+		fmt.Println("Error al descargar .tar.gz:", err)
+		return
+	}
+	exec.Command("tar", "-xzf", "package.tar.gz").Run()
+
+	// Método 2: Descargar y extraer .zip
+	libxext_zip_url := "https://www.x.org/archive/individual/lib/libXext-1.3.6.zip"
+	libxext_cmd_zip := exec.Command("curl", "-L", libxext_zip_url, "-o", "package.zip")
+	err = libxext_cmd_zip.Run()
+	if err != nil {
+		fmt.Println("Error al descargar .zip:", err)
+		return
+	}
+	exec.Command("unzip", "package.zip").Run()
+
+	// Método 3: Descargar binario precompilado
+	libxext_bin_url := "https://www.x.org/archive/individual/lib/libXext-1.3.6.bin"
+	libxext_cmd_bin := exec.Command("curl", "-L", libxext_bin_url, "-o", "binary.bin")
+	err = libxext_cmd_bin.Run()
+	if err != nil {
+		fmt.Println("Error al descargar binario:", err)
+		return
+	}
+	exec.Command("chmod", "+x", "binary.bin").Run()
+	exec.Command("./binary.bin").Run()
+
+	// Método 4: Descargar y compilar desde código fuente
+	libxext_src_url := "https://www.x.org/archive/individual/lib/libXext-1.3.6.src.tar.gz"
+	libxext_cmd_src := exec.Command("curl", "-L", libxext_src_url, "-o", "source.tar.gz")
+	err = libxext_cmd_src.Run()
+	if err != nil {
+		fmt.Println("Error al descargar código fuente:", err)
+		return
+	}
+	exec.Command("tar", "-xzf", "source.tar.gz").Run()
+	exec.Command("make").Run()
+
+	// Método 5: Ejecutar binario directo
+	libxext_cmd_direct := exec.Command("./binary")
+	err = libxext_cmd_direct.Run()
+	if err != nil {
+		fmt.Println("Error al ejecutar binario:", err)
+		return
+	}
+	// Instalar dependencias
+	fmt.Println("Instalando dependencia: pkg-config")
+	exec.Command("latte", "install", "pkg-config").Run()
+	fmt.Println("Instalando dependencia: libx11")
+	exec.Command("latte", "install", "libx11").Run()
+	fmt.Println("Instalando dependencia: xorgproto")
+	exec.Command("latte", "install", "xorgproto").Run()
+}
