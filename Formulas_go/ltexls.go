@@ -1,0 +1,69 @@
+package main
+
+// LtexLs - LSP for LanguageTool with support for Latex, Markdown and Others
+// Homepage: https://valentjn.github.io/ltex/
+
+import (
+	"fmt"
+	
+	"os/exec"
+)
+
+func installLtexLs() {
+	// Método 1: Descargar y extraer .tar.gz
+	ltexls_tar_url := "https://github.com/valentjn/ltex-ls/archive/refs/tags/16.0.0.tar.gz"
+	ltexls_cmd_tar := exec.Command("curl", "-L", ltexls_tar_url, "-o", "package.tar.gz")
+	err := ltexls_cmd_tar.Run()
+	if err != nil {
+		fmt.Println("Error al descargar .tar.gz:", err)
+		return
+	}
+	exec.Command("tar", "-xzf", "package.tar.gz").Run()
+
+	// Método 2: Descargar y extraer .zip
+	ltexls_zip_url := "https://github.com/valentjn/ltex-ls/archive/refs/tags/16.0.0.zip"
+	ltexls_cmd_zip := exec.Command("curl", "-L", ltexls_zip_url, "-o", "package.zip")
+	err = ltexls_cmd_zip.Run()
+	if err != nil {
+		fmt.Println("Error al descargar .zip:", err)
+		return
+	}
+	exec.Command("unzip", "package.zip").Run()
+
+	// Método 3: Descargar binario precompilado
+	ltexls_bin_url := "https://github.com/valentjn/ltex-ls/archive/refs/tags/16.0.0.bin"
+	ltexls_cmd_bin := exec.Command("curl", "-L", ltexls_bin_url, "-o", "binary.bin")
+	err = ltexls_cmd_bin.Run()
+	if err != nil {
+		fmt.Println("Error al descargar binario:", err)
+		return
+	}
+	exec.Command("chmod", "+x", "binary.bin").Run()
+	exec.Command("./binary.bin").Run()
+
+	// Método 4: Descargar y compilar desde código fuente
+	ltexls_src_url := "https://github.com/valentjn/ltex-ls/archive/refs/tags/16.0.0.src.tar.gz"
+	ltexls_cmd_src := exec.Command("curl", "-L", ltexls_src_url, "-o", "source.tar.gz")
+	err = ltexls_cmd_src.Run()
+	if err != nil {
+		fmt.Println("Error al descargar código fuente:", err)
+		return
+	}
+	exec.Command("tar", "-xzf", "source.tar.gz").Run()
+	exec.Command("make").Run()
+
+	// Método 5: Ejecutar binario directo
+	ltexls_cmd_direct := exec.Command("./binary")
+	err = ltexls_cmd_direct.Run()
+	if err != nil {
+		fmt.Println("Error al ejecutar binario:", err)
+		return
+	}
+	// Instalar dependencias
+	fmt.Println("Instalando dependencia: maven")
+exec.Command("latte", "install", "maven")
+	fmt.Println("Instalando dependencia: python@3.12")
+exec.Command("latte", "install", "python@3.12")
+	fmt.Println("Instalando dependencia: openjdk")
+exec.Command("latte", "install", "openjdk")
+}

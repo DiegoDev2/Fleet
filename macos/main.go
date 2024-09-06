@@ -38,7 +38,7 @@ func Command() {
 			Short: "Install a package",
 			Args:  cobra.ExactArgs(1),
 			Run: func(cmd *cobra.Command, args []string) {
-				install(args[(1)])
+
 			},
 		},
 		&cobra.Command{

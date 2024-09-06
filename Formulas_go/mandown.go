@@ -1,0 +1,67 @@
+package main
+
+// Mandown - Man-page inspired Markdown viewer
+// Homepage: https://github.com/Titor8115/mandown
+
+import (
+	"fmt"
+	
+	"os/exec"
+)
+
+func installMandown() {
+	// Método 1: Descargar y extraer .tar.gz
+	mandown_tar_url := "https://github.com/Titor8115/mandown/archive/refs/tags/v1.0.4.tar.gz"
+	mandown_cmd_tar := exec.Command("curl", "-L", mandown_tar_url, "-o", "package.tar.gz")
+	err := mandown_cmd_tar.Run()
+	if err != nil {
+		fmt.Println("Error al descargar .tar.gz:", err)
+		return
+	}
+	exec.Command("tar", "-xzf", "package.tar.gz").Run()
+
+	// Método 2: Descargar y extraer .zip
+	mandown_zip_url := "https://github.com/Titor8115/mandown/archive/refs/tags/v1.0.4.zip"
+	mandown_cmd_zip := exec.Command("curl", "-L", mandown_zip_url, "-o", "package.zip")
+	err = mandown_cmd_zip.Run()
+	if err != nil {
+		fmt.Println("Error al descargar .zip:", err)
+		return
+	}
+	exec.Command("unzip", "package.zip").Run()
+
+	// Método 3: Descargar binario precompilado
+	mandown_bin_url := "https://github.com/Titor8115/mandown/archive/refs/tags/v1.0.4.bin"
+	mandown_cmd_bin := exec.Command("curl", "-L", mandown_bin_url, "-o", "binary.bin")
+	err = mandown_cmd_bin.Run()
+	if err != nil {
+		fmt.Println("Error al descargar binario:", err)
+		return
+	}
+	exec.Command("chmod", "+x", "binary.bin").Run()
+	exec.Command("./binary.bin").Run()
+
+	// Método 4: Descargar y compilar desde código fuente
+	mandown_src_url := "https://github.com/Titor8115/mandown/archive/refs/tags/v1.0.4.src.tar.gz"
+	mandown_cmd_src := exec.Command("curl", "-L", mandown_src_url, "-o", "source.tar.gz")
+	err = mandown_cmd_src.Run()
+	if err != nil {
+		fmt.Println("Error al descargar código fuente:", err)
+		return
+	}
+	exec.Command("tar", "-xzf", "source.tar.gz").Run()
+	exec.Command("make").Run()
+
+	// Método 5: Ejecutar binario directo
+	mandown_cmd_direct := exec.Command("./binary")
+	err = mandown_cmd_direct.Run()
+	if err != nil {
+		fmt.Println("Error al ejecutar binario:", err)
+		return
+	}
+	// Instalar dependencias
+	fmt.Println("Instalando dependencia: pkg-config")
+exec.Command("latte", "install", "pkg-config")
+	fmt.Println("Instalando dependencia: libconfig")
+exec.Command("latte", "install", "libconfig")
+}
