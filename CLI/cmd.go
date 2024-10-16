@@ -1,4 +1,4 @@
-package main
+package cli
 
 import (
 	"github.com/spf13/cobra"
@@ -15,7 +15,7 @@ func Command() *cobra.Command {
 			Short: "Install a package",
 			Args:  cobra.ExactArgs(1),
 			Run: func(cmd *cobra.Command, args []string) {
-				install(args[0])
+				Install(args[0])
 			},
 		},
 		&cobra.Command{
