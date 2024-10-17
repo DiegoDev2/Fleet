@@ -16,19 +16,27 @@ package handlers
 
 import (
 	lib "LattePkg/lib"
-	"fmt"
+
+	"github.com/fatih/color"
+)
+
+var (
+	boldGreen = color.New(color.FgGreen, color.Bold)
+	redBold   = color.New(color.FgRed, color.Bold)
+	green     = color.New(color.FgGreen)
+	yellow    = color.New(color.FgYellow)
 )
 
 func Install(pkg string) {
-	fmt.Println("Installing " + pkg)
+	boldGreen.Println("Instalando " + pkg + " 📥")
 
 	installFunc, exists := lib.GetTool(pkg)
 	if !exists {
-		fmt.Printf("Error: El paquete %s no es reconocido.\n", pkg)
+		redBold.Printf("Error: El paquete %s no es reconocido.\n", pkg)
 		return
 	}
 
 	installFunc()
 
-	fmt.Println("Instalación completada.")
+	boldGreen.Println("Instalación completada.")
 }

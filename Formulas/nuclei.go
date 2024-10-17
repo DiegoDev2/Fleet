@@ -12,35 +12,32 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package lib
+package formulas
 
-import "LattePkg/formulas"
+import (
+	"fmt"
+	"os"
+	"os/exec"
+	"runtime"
+)
 
-type Tool struct {
-	Name    string
-	Install func()
-}
-
-var tools = []Tool{
-	{
-		Name:    "awscli",
-		Install: formulas.InstallAws,
-	},
-	{
-		Name:    "nmap",
-		Install: formulas.InstallNmap,
-	},
-	{
-		Name:    "nuclei",
-		Install: formulas.InstallNuclei,
-	},
-}
-
-func GetTool(name string) (func(), bool) {
-	for _, tool := range tools {
-		if tool.Name == name {
-			return tool.Install, true
-		}
+func InstallNuclei() {
+	switch runtime.GOOS {
+	case "darwin":
+		installNucleiMac()
+	default:
+		fmt.Println("Este script solo está preparado para macOS (darwin).")
 	}
-	return nil, false
+}
+
+func installNucleiMac() {
+	cmd := exec.Command("go", "install", "github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest")
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	if err := cmd.Run(); err != nil {
+		fmt.Println("Error instalando nuclei:", err)
+		return
+	}
+
+	fmt.Println("Nuclei instalado correctamente.")
 }
