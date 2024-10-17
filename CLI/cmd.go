@@ -51,7 +51,6 @@ func Command() *cobra.Command {
 			Args:  cobra.ExactArgs(1),
 			Run: func(cmd *cobra.Command, args []string) {
 				fmt.Println("Upgrading " + args[0])
-				// Aquí va la lógica para actualizar
 			},
 		},
 		&cobra.Command{
@@ -66,7 +65,7 @@ func Command() *cobra.Command {
 			Short: "Search the package",
 			Run: func(cmd *cobra.Command, args []string) {
 				fmt.Println("Buscando el paquete: " + args[0])
-				
+
 			},
 		},
 	)

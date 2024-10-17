@@ -12,23 +12,31 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package handlers
+package lib
 
-import (
-	lib "LattePkg/lib"
-	"fmt"
-)
+import "LattePkg/formulas"
 
-func Install(pkg string) {
-	fmt.Println("Installing " + pkg)
+type Tool struct {
+	Name    string
+	Install func()
+}
 
-	installFunc, exists := lib.GetTool(pkg)
-	if !exists {
-		fmt.Printf("Error: El paquete %s no es reconocido.\n", pkg)
-		return
+var tools = []Tool{
+	{
+		Name:    "awscli",
+		Install: formulas.InstallAws,
+	},
+	{
+		Name:    "nmap",
+		Install: formulas.InstallNmap,
+	},
+}
+
+func GetTool(name string) (func(), bool) {
+	for _, tool := range tools {
+		if tool.Name == name {
+			return tool.Install, true
+		}
 	}
-
-	installFunc()
-
-	fmt.Println("Instalación completada.")
+	return nil, false
 }
