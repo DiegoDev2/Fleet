@@ -1,21 +1,23 @@
-# Security Policy
+# Fleet
 
-## Supported Versions
+## Security Policy
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+At Fleet, we prioritize the security and privacy of our users and their data. If you have discovered a security vulnerability in any of our services or software, we encourage you to report it as soon as possible.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+### Reporting a Vulnerability
 
-## Reporting a Vulnerability
+- **How to Report:**
+  Please report vulnerabilities in Discussions
+  - A detailed description of the vulnerability.
+  - Steps to reproduce the vulnerability (if applicable).
+  - Any supporting documentation, screenshots, or code snippets that can help us identify the issue.
 
-Use this section to tell people how to report a vulnerability.
+- **Our Response:**
+  1. We will acknowledge your report within **48 hours**.
+  2. We will begin investigating the issue immediately and provide you with updates on the status of our investigation.
+  3. If the issue is confirmed, we will work diligently to resolve the vulnerability, typically within **14 days**, depending on the severity.
+  4. We may reach out to you for further details or clarification.
+  5. Once the vulnerability is fixed, we will notify you and give you credit for the discovery if desired.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+- **Responsible Disclosure:**
+  We ask that you **do not disclose
