@@ -52,7 +52,7 @@ func Command() *cobra.Command {
 			Short: "Search the package",
 			Run: func(cmd *cobra.Command, args []string) {
 				fmt.Println("Buscando el paquete: " + args[0])
-				// Aquí va la lógica de búsqueda
+				
 			},
 		},
 	)
