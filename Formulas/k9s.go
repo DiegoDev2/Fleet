@@ -47,8 +47,7 @@ func installK9sMac() {
 		return
 	}
 
-	fmt.Println("Compilando k9s...")
-	color.Yellow("Esto puede tardar un rato...")
+	color.Magenta("Compilando k9s...")
 	build := exec.Command("go", "build", "-o", "k9s", "./cmd")
 	build.Stdout = os.Stdout
 	build.Stderr = os.Stderr
@@ -62,4 +61,5 @@ func installK9sMac() {
 		fmt.Println("Error moviendo el binario k9s:", err)
 		return
 	}
+
 }

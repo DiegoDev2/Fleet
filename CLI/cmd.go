@@ -42,7 +42,7 @@ func Command() *cobra.Command {
 			Short: "Uninstall a package",
 			Args:  cobra.ExactArgs(1),
 			Run: func(cmd *cobra.Command, args []string) {
-				fmt.Println("Uninstalling " + args[0])
+				handlers.Uninstall(args[0])
 			},
 		},
 		&cobra.Command{
