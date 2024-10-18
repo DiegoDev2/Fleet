@@ -38,5 +38,5 @@ func Install(pkg string) {
 
 	installFunc()
 
-	boldGreen.Println("Instalación completada.")
+	boldGreen.Println(pkg + " instalado correctamente 🎉")
 }

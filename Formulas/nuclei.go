@@ -38,6 +38,4 @@ func installNucleiMac() {
 		fmt.Println("Error instalando nuclei:", err)
 		return
 	}
-
-	fmt.Println("Nuclei instalado correctamente.")
 }
