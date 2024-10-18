@@ -21,14 +21,16 @@ import (
 )
 
 var (
-	boldGreen = color.New(color.FgGreen, color.Bold)
-	redBold   = color.New(color.FgRed, color.Bold)
-	green     = color.New(color.FgGreen)
-	yellow    = color.New(color.FgYellow)
+	boldGreen    = color.New(color.FgGreen, color.Bold)
+	redBold      = color.New(color.FgRed, color.Bold)
+	green        = color.New(color.FgGreen)
+	yellow       = color.New(color.FgYellow)
+	yellowItalic = color.New(color.FgYellow, color.BgBlack, color.Italic)
 )
 
 func Install(pkg string) {
 	boldGreen.Println("Instalando " + pkg + " 📥")
+	yellowItalic.Println("Esto puede tardar un rato... 😴")
 
 	installFunc, exists := lib.GetTool(pkg)
 	if !exists {
