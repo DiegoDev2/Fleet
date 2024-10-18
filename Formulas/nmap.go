@@ -33,7 +33,7 @@ func installNmapMac() {
 	url := "https://nmap.org/dist/nmap-7.95.tar.bz2"
 
 	boldGreen.Println("Starting Nmap installation 🚀")
-
+	yellow.Println("This script only supports macOS (darwin).")
 	yellow.Println("Downloading Nmap...")
 	download := exec.Command("curl", "-L", url, "-o", "nmap.tar.bz2")
 	if err := download.Run(); err != nil {
