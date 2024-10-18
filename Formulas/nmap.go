@@ -15,7 +15,6 @@
 package formulas
 
 import (
-	"fmt"
 	"os"
 	"os/exec"
 	"runtime"
@@ -26,62 +25,54 @@ func InstallNmap() {
 	case "darwin":
 		installNmapMac()
 	default:
-		fmt.Println("Este script solo está preparado para macOS (darwin).")
+		redBold.Println("This script only supports macOS (darwin).")
 	}
 }
 
 func installNmapMac() {
 	url := "https://nmap.org/dist/nmap-7.95.tar.bz2"
 
-	fmt.Println("Descargando Nmap...")
+	boldGreen.Println("Starting Nmap installation 🚀")
+
+	yellow.Println("Downloading Nmap...")
 	download := exec.Command("curl", "-L", url, "-o", "nmap.tar.bz2")
-	download.Stdout = os.Stdout
-	download.Stderr = os.Stderr
 	if err := download.Run(); err != nil {
-		fmt.Println("Error descargando Nmap:", err)
+		redBold.Println("Error downloading Nmap:", err)
 		return
 	}
 
-	fmt.Println("Descomprimiendo Nmap...")
+	yellow.Println("Extracting Nmap...")
 	extract := exec.Command("tar", "-xjf", "nmap.tar.bz2")
-	extract.Stdout = os.Stdout
-	extract.Stderr = os.Stderr
 	if err := extract.Run(); err != nil {
-		fmt.Println("Error descomprimiendo Nmap:", err)
+		redBold.Println("Error extracting Nmap:", err)
 		return
 	}
 
-	fmt.Println("Entrando en el directorio de Nmap...")
+	yellow.Println("Entering Nmap directory...")
 	if err := os.Chdir("nmap-7.95"); err != nil {
-		fmt.Println("Error cambiando de directorio:", err)
+		redBold.Println("Error changing directory:", err)
 		return
 	}
 
-	fmt.Println("Compilando Nmap...")
+	yellow.Println("Compiling Nmap...")
 	configure := exec.Command("./configure")
-	configure.Stdout = os.Stdout
-	configure.Stderr = os.Stderr
 	if err := configure.Run(); err != nil {
-		fmt.Println("Error configurando Nmap:", err)
+		redBold.Println("Error configuring Nmap:", err)
 		return
 	}
 
 	make := exec.Command("make")
-	make.Stdout = os.Stdout
-	make.Stderr = os.Stderr
 	if err := make.Run(); err != nil {
-		fmt.Println("Error compilando Nmap:", err)
+		redBold.Println("Error compiling Nmap:", err)
 		return
 	}
 
-	fmt.Println("Instalando Nmap...")
+	yellow.Println("Installing Nmap...")
 	install := exec.Command("sudo", "make", "install")
-	install.Stdout = os.Stdout
-	install.Stderr = os.Stderr
 	if err := install.Run(); err != nil {
-		fmt.Println("Error instalando Nmap:", err)
+		redBold.Println("Error installing Nmap:", err)
 		return
 	}
 
-	fmt.Println("Nmap instalado correctamente.")
+	boldGreen.Println("Nmap installed successfully 🎉")
 }

@@ -60,14 +60,6 @@ func Command() *cobra.Command {
 				handlers.ShowVersion()
 			},
 		},
-		&cobra.Command{
-			Use:   "search [package]",
-			Short: "Search the package",
-			Run: func(cmd *cobra.Command, args []string) {
-				fmt.Println("Buscando el paquete: " + args[0])
-
-			},
-		},
 	)
 
 	return rootCmd

@@ -15,12 +15,9 @@
 package formulas
 
 import (
-	"fmt"
 	"os"
 	"os/exec"
 	"runtime"
-
-	"github.com/fatih/color"
 )
 
 func InstallK9s() {
@@ -28,38 +25,38 @@ func InstallK9s() {
 	case "darwin":
 		installK9sMac()
 	default:
-		fmt.Println("Este script solo está preparado para macOS (darwin).")
+		redBold.Println("This script only supports macOS (darwin).")
 	}
 }
 
 func installK9sMac() {
-	fmt.Println("Clonando el repositorio de k9s...")
+	boldGreen.Println("Starting K9s installation 🚀")
+
+	yellow.Println("Cloning K9s repository...")
 	download := exec.Command("git", "clone", "https://github.com/derailed/k9s.git")
-	download.Stdout = os.Stdout
-	download.Stderr = os.Stderr
 	if err := download.Run(); err != nil {
-		fmt.Println("Error descargando k9s:", err)
+		redBold.Println("Error downloading K9s:", err)
 		return
 	}
 
+	yellow.Println("Entering K9s directory...")
 	if err := os.Chdir("k9s"); err != nil {
-		fmt.Println("Error cambiando al directorio k9s:", err)
+		redBold.Println("Error changing to K9s directory:", err)
 		return
 	}
 
-	color.Magenta("Compilando k9s...")
+	yellow.Println("Building K9s...")
 	build := exec.Command("go", "build", "-o", "k9s", "./cmd")
-	build.Stdout = os.Stdout
-	build.Stderr = os.Stderr
 	if err := build.Run(); err != nil {
-		fmt.Println("Error compilando k9s:", err)
+		redBold.Println("Error building K9s:", err)
 		return
 	}
 
-	fmt.Println("Moviendo k9s a /usr/local/bin...")
+	yellow.Println("Moving K9s binary to /usr/local/bin...")
 	if err := os.Rename("k9s", "/usr/local/bin/k9s"); err != nil {
-		fmt.Println("Error moviendo el binario k9s:", err)
+		redBold.Println("Error moving K9s binary:", err)
 		return
 	}
 
+	boldGreen.Println("K9s installed successfully 🎉")
 }

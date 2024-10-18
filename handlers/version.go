@@ -14,10 +14,6 @@
 
 package handlers
 
-import (
-	"fmt"
-)
-
 func ShowVersion() {
-	fmt.Println("Fleet version 1.0.0")
+	yellow.Println("Fleet version 1.0.0")
 }

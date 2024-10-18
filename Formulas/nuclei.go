@@ -15,10 +15,16 @@
 package formulas
 
 import (
-	"fmt"
-	"os"
 	"os/exec"
 	"runtime"
+
+	"github.com/fatih/color"
+)
+
+var (
+	boldGreen = color.New(color.FgGreen, color.Bold)
+	redBold   = color.New(color.FgRed, color.Bold)
+	yellow    = color.New(color.FgYellow)
 )
 
 func InstallNuclei() {
@@ -26,16 +32,20 @@ func InstallNuclei() {
 	case "darwin":
 		installNucleiMac()
 	default:
-		fmt.Println("Este script solo está preparado para macOS (darwin).")
+		redBold.Println("This script only supports macOS (darwin).")
 	}
 }
 
 func installNucleiMac() {
+	boldGreen.Println("Starting Nuclei installation 🚀")
+
+	yellow.Println("Downloading Nuclei...")
+
 	cmd := exec.Command("go", "install", "github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest")
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
 	if err := cmd.Run(); err != nil {
-		fmt.Println("Error instalando nuclei:", err)
+		redBold.Println("Error installing Nuclei:", err)
 		return
 	}
+
+	boldGreen.Println("Nuclei installed successfully 🎉")
 }

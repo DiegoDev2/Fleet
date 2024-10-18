@@ -29,7 +29,6 @@ var (
 )
 
 func Install(pkg string) {
-	boldGreen.Println("Instalando " + pkg + " 📥")
 	yellowItalic.Println("Esto puede tardar un rato... 😴")
 
 	installFunc, exists := lib.GetTool(pkg)
@@ -39,6 +38,4 @@ func Install(pkg string) {
 	}
 
 	installFunc()
-
-	boldGreen.Println(pkg + " instalado correctamente 🎉")
 }
