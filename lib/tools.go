@@ -46,6 +46,14 @@ var tools = []Tool{
 		Name:    "go",
 		Install: formulas.InstallGo,
 	},
+	{
+		Name:    "aircrack-ng",
+		Install: formulas.InstallAircrackNg,
+	},
+	{
+		Name:    "node",
+		Install: formulas.InstallNode,
+	},
 }
 
 func GetTool(name string) (func(), bool) {
