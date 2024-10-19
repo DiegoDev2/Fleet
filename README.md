@@ -6,8 +6,8 @@
 **Fleet** is a package manager built with Go, designed to install, manage, and configure different tools in a simple and efficient way. It allows you to pull and install tools directly from repositories.
 
 ### Other Readme
-![Español](https://github.com/DiegoDev2/Fleet/blob/main/READMEes.md)
-![Русский](https://github.com/DiegoDev2/Fleet/blob/main/READMEru.md)
+![🇪🇸Español](https://github.com/DiegoDev2/Fleet/blob/main/READMEes.md)
+![🇷🇺Русский](https://github.com/DiegoDev2/Fleet/blob/main/READMEru.md)
 ### Features
 
 - Lightweight and efficient tool installation.
@@ -19,7 +19,7 @@
 1. Clone the repository:
 
 ```bash
-   git clone https://github.com/yourusername/fleet
+   git clone https://github.com/DiegoDev2/Fleet
    cd fleet
    go build -o fleet
    sudo mv fleet /usr/local/bin
@@ -39,7 +39,7 @@ fleet install nmap
 ```
 ### Adding New Tools
 
-- Open `libs/tools.go` and add the new tool to the list of available tools.
+- Open `lib/tools.go` and add the new tool to the list of available tools.
 
 - Create a formula for the tool in the `formulas/` directory.
 
