@@ -39,7 +39,7 @@ fleet install nmap
 ```
 ### Adding New Tools
 
-- Open `libs/tools.go` and add the new tool to the list of available tools.
+- Open `lib/tools.go` and add the new tool to the list of available tools.
 
 - Create a formula for the tool in the `formulas/` directory.
 
