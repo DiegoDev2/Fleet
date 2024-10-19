@@ -14,48 +14,6 @@
 
 package lib
 
-import "LattePkg/formulas"
-
-type Tool struct {
-	Name    string
-	Install func()
-}
-
-var tools = []Tool{
-	{
-		Name:    "awscli",
-		Install: formulas.InstallAws,
-	},
-	{
-		Name:    "nmap",
-		Install: formulas.InstallNmap,
-	},
-	{
-		Name:    "nuclei",
-		Install: formulas.InstallNuclei,
-	},
-	{
-		Name:    "k9s",
-		Install: formulas.InstallK9s,
-	},
-	{
-		Name:    "git",
-		Install: formulas.InstallGit,
-	},
-	{
-		Name:    "go",
-		Install: formulas.InstallGo,
-	},
-	{
-		Name:    "aircrack-ng",
-		Install: formulas.InstallAircrackNg,
-	},
-	{
-		Name:    "node",
-		Install: formulas.InstallNode,
-	},
-}
-
 func GetTool(name string) (func(), bool) {
 	for _, tool := range tools {
 		if tool.Name == name {

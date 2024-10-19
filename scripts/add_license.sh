@@ -15,7 +15,7 @@ LICENSE="// Copyright (C) 2024 Fleet Inc.
 // limitations under the License."
 
 # Recorrer carpetas específicas: CLI, Formulas, handlers
-for file in $(find ./cli ./formulas ./handlers -name "*.go"); do
+for file in $(find ./cli ./formulas ./handlers ./lib -name "*.go"); do
     if ! grep -q "Copyright (C) 2024 Fleet Inc." "$file"; then
         echo -e "$LICENSE\n\n$(cat $file)" > $file
         echo "Licencia añadida a $file"
