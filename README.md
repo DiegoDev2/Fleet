@@ -19,7 +19,7 @@
 1. Clone the repository:
 
 ```bash
-   git clone https://github.com/yourusername/fleet
+   git clone https://github.com/DiegoDev2/Fleet
    cd fleet
    go build -o fleet
    sudo mv fleet /usr/local/bin
