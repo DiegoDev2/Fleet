@@ -38,6 +38,10 @@ var tools = []Tool{
 		Name:    "k9s",
 		Install: formulas.InstallK9s,
 	},
+	{
+		Name:    "git",
+		Install: formulas.InstallGit,
+	},
 }
 
 func GetTool(name string) (func(), bool) {
