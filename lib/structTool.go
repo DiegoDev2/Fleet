@@ -54,4 +54,12 @@ var tools = []Tool{
 		Name:    "node",
 		Install: formulas.InstallNode,
 	},
+	{
+		Name:    "docker",
+		Install: formulas.InstallDocker,
+	},
+	{
+		Name:    "python3",
+		Install: formulas.InstallPython3,
+	},
 }

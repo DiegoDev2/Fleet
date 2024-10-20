@@ -14,27 +14,39 @@
 
 package handlers
 
-import (
-	lib "LattePkg/lib"
+type Tool struct {
+	Name string
+}
 
-	"github.com/fatih/color"
-)
-
-var (
-	boldGreen    = color.New(color.FgGreen, color.Bold)
-	redBold      = color.New(color.FgRed, color.Bold)
-	green        = color.New(color.FgGreen)
-	yellow       = color.New(color.FgYellow)
-	yellowItalic = color.New(color.FgYellow, color.BgBlack, color.Italic)
-)
-
-func Install(pkg string) {
-	yellowItalic.Println("Esto puede tardar un rato... 😴")
-	installFunc, exists := lib.GetTool(pkg)
-	if !exists {
-		redBold.Printf("Error: El paquete %s no es reconocido.\n", pkg)
-		return
-	}
-
-	installFunc()
+var tools = []Tool{
+	{
+		Name: "awscli",
+	},
+	{
+		Name: "nmap",
+	},
+	{
+		Name: "nuclei",
+	},
+	{
+		Name: "k9s",
+	},
+	{
+		Name: "git",
+	},
+	{
+		Name: "go",
+	},
+	{
+		Name: "aircrack-ng",
+	},
+	{
+		Name: "node",
+	},
+	{
+		Name: "docker",
+	},
+	{
+		Name: "python3",
+	},
 }

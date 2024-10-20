@@ -16,7 +16,6 @@ package cli
 
 import (
 	"LattePkg/handlers"
-	"fmt"
 
 	"github.com/spf13/cobra"
 )
@@ -46,11 +45,10 @@ func Command() *cobra.Command {
 			},
 		},
 		&cobra.Command{
-			Use:   "upgrade [package]",
-			Short: "Upgrade a package",
-			Args:  cobra.ExactArgs(1),
+			Use:   "list",
+			Short: "list all available packages",
 			Run: func(cmd *cobra.Command, args []string) {
-				fmt.Println("Upgrading " + args[0])
+				handlers.List()
 			},
 		},
 		&cobra.Command{
