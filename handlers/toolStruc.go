@@ -49,4 +49,13 @@ var tools = []Tool{
 	{
 		Name: "python3",
 	},
+	{
+		Name: "python2",
+	},
+	{
+		Name: "kubectl",
+	},
+	{
+		Name: "rust",
+	},
 }

@@ -62,4 +62,16 @@ var tools = []Tool{
 		Name:    "python3",
 		Install: formulas.InstallPython3,
 	},
+	{
+		Name:    "python2",
+		Install: formulas.InstallPython2,
+	},
+	{
+		Name:    "kubectl",
+		Install: formulas.InstallKubectl,
+	},
+	{
+		Name:    "rust",
+		Install: formulas.InstallCargo,
+	},
 }

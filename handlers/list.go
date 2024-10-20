@@ -14,10 +14,12 @@
 
 package handlers
 
+import "github.com/fatih/color"
+
 func List() {
 
 	for _, tool := range tools {
-		yellow.Println(tool.Name)
+		color.Yellow(tool.Name)
 	}
 
 }
