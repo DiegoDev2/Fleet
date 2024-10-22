@@ -74,4 +74,12 @@ var tools = []Tool{
 		Name:    "rust",
 		Install: formulas.InstallCargo,
 	},
+	{
+		Name:    "java21",
+		Install: formulas.InstallJava21,
+	},
+	{
+		Name:    "dotnet",
+		Install: formulas.InstallDotnet,
+	},
 }

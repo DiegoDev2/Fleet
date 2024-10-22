@@ -58,4 +58,10 @@ var tools = []Tool{
 	{
 		Name: "rust",
 	},
+	{
+		Name: "dotnet",
+	},
+	{
+		Name: "java21",
+	},
 }
