@@ -36,7 +36,7 @@ Por ejemplo, para instalar nmap:
 fleet install nmap
 ```
 ### Añadir Nuevas Herramientas
-- Abre `libs/tools.go` y añade la nueva herramienta a la lista de herramientas disponibles.
+- Abre `lib/tools.go` y añade la nueva herramienta a la lista de herramientas disponibles.
 
 - Crea una fórmula para la herramienta en el    directorio `formulas/`.
 
