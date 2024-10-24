@@ -17,6 +17,7 @@ package formulas
 import (
 	"os/exec"
 	"runtime"
+
 )
 
 func InstallCargo() {
