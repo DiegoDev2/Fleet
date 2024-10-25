@@ -14,7 +14,7 @@
 
 package main
 
-import cli "LattePkg/CLI"
+import cli "LattePkg/cli"
 
 func main() {
 	cli.Command().Execute()

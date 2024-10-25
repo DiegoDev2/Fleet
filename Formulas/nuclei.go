@@ -41,7 +41,7 @@ func installNucleiMac() {
 
 	yellow.Println("Downloading Nuclei...")
 
-	cmd := exec.Command("go", "install", "github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest")
+	cmd := exec.Command("go", "get", "github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest")
 	if err := cmd.Run(); err != nil {
 		redBold.Println("Error installing Nuclei:", err)
 		return

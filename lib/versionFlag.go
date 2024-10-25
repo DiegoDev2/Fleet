@@ -12,7 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package formulas
+package lib
 
-
-
+func versionFlag(toolName string) string {
+	for _, tool := range tools {
+		if tool.Name == toolName {
+			return tool.Version
+		}
+	}
+	return versionFlag(toolName)
+}

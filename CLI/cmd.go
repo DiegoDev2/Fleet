@@ -16,6 +16,7 @@ package cli
 
 import (
 	"LattePkg/handlers"
+	"LattePkg/handlers/list"
 
 	"github.com/spf13/cobra"
 )
@@ -26,7 +27,6 @@ func Command() *cobra.Command {
 		Short: "A package manager modern",
 	}
 
-	// Añadir comandos
 	rootCmd.AddCommand(
 		&cobra.Command{
 			Use:   "install [package]",
@@ -48,7 +48,7 @@ func Command() *cobra.Command {
 			Use:   "list",
 			Short: "list all available packages",
 			Run: func(cmd *cobra.Command, args []string) {
-				handlers.List()
+				list.List()
 			},
 		},
 		&cobra.Command{
@@ -56,6 +56,14 @@ func Command() *cobra.Command {
 			Short: "Show the version of Fleet",
 			Run: func(cmd *cobra.Command, args []string) {
 				handlers.ShowVersion()
+			},
+		},
+		&cobra.Command{
+			Use:   "update [package]",
+			Short: "Update a package",
+			Args:  cobra.ExactArgs(1),
+			Run: func(cmd *cobra.Command, args []string) {
+				// handlers.Update(args[0])
 			},
 		},
 	)
