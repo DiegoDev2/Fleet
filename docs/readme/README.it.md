@@ -1,4 +1,4 @@
-![Logo](https://github.com/DiegoDev2/Fleet/blob/main/Fleet(5).png?raw=true)
+![Logo](./docs/assets/logo.png)
 
 # Fleet
 
