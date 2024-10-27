@@ -9,6 +9,7 @@
 
 [Spanish](./docs/readme/README.es.md)  
 [Russian](./docs/readme/README.ru.md)
+[Italian](./docs/readme/README.it.md)
 
 ### Features
 
