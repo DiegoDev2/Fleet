@@ -6,8 +6,10 @@
 **Fleet** is a package manager built with Go, designed to install, manage, and configure different tools in a simple and efficient way. It allows you to pull and install tools directly from repositories.
 
 ### Other Readme
-![🇪🇸Español](https://github.com/DiegoDev2/Fleet/blob/main/READMEes.md)
-![🇷🇺Русский](https://github.com/DiegoDev2/Fleet/blob/main/READMEru.md)
+
+[Spanish](./docs/readme/README.es.md)  
+[Russian](./docs/readme/README.ru.md)
+
 ### Features
 
 - Lightweight and efficient tool installation.
