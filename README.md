@@ -49,6 +49,8 @@ fleet install nmap
 ### Contributing
 
 We welcome contributions to improve Fleet. Feel free to submit a pull request or open an issue if you find a bug or have a suggestion.
+Please DO NOT USE EXTERNAL PACKAGE MANAGER, SUCH AS HOMEBREW AMONG OTHERS.
+
 ### License
 
 Fleet is licensed under the Apache 2.0 License. See the LICENSE file for more details. 
