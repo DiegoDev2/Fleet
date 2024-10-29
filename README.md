@@ -55,4 +55,5 @@ We welcome contributions to improve Fleet. Feel free to submit a pull request or
 
 Fleet is licensed under the Apache 2.0 License. See the LICENSE file for more details. 
 
-![banner-fleet2](https://github.com/user-attachments/assets/52fa663c-be28-4224-9080-4942deac7dae)
+![FleetBanner](https://github.com/user-attachments/assets/e5f1e2db-1155-4950-b6f9-2040a73b5553)
+
