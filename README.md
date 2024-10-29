@@ -1,5 +1,5 @@
 
-![Logo](./docs/assets/logo.png)
+![Logo](./docs/assets/Logo.png)
 
 
 # Fleet
