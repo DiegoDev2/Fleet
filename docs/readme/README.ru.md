@@ -1,5 +1,5 @@
 
-![Logo](.assets/Logo.png)
+![Logo](./Logo.png)
 
 ## Fleet
 
@@ -47,3 +47,5 @@ fleet install nmap
 Лицензия
 
 Fleet лицензируется по лицензии Apache 2.0. Подробности можно найти в файле `LICENSE`. 
+![imagen](https://github.com/user-attachments/assets/4a8ee1ac-b5b7-4363-8066-49c2aac3d61c)
+
