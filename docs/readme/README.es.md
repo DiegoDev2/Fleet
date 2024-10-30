@@ -1,5 +1,5 @@
 
-![Logo](./docs/assets/logo.png)
+![Logo](./Logo.png)
 
 ## Fleet
 
@@ -48,3 +48,6 @@ Agradecemos contribuciones para mejorar Fleet. Si encuentras un error o tienes u
 Licencia
 
 Fleet está licenciado bajo la licencia Apache 2.0. Consulta el archivo `LICENSE` para más detalles. 
+
+![imagen](https://github.com/user-attachments/assets/48411519-e46f-4bef-a786-6f49ec94b255)
+
