@@ -38,7 +38,7 @@ fleet install nmap
 
 ### Aggiungere Nuovi Strumenti
 
-- Apri `lib/tools.go` e aggiungi il nuovo strumento all'elenco degli strumenti disponibili.
+- Apri `lib/structTool.go`,`lib/toolStruc.go` e aggiungi il nuovo strumento all'elenco degli strumenti disponibili.
 - Crea una formula per lo strumento nella directory `formulas/`.
 - Utilizza il comando install per aggiungerlo al tuo sistema.
 
