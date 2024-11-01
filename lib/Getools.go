@@ -13,7 +13,6 @@
 // limitations under the License.
 
 package lib
-
 func GetTool(name string) (func(), bool) {
 	for _, tool := range tools {
 		if tool.Name == name {

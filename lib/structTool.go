@@ -19,7 +19,6 @@ import "LattePkg/formulas"
 type Tool struct {
 	Name    string
 	Install func()
-	// estas versiones son por defecto, se actualizar de igual manera.
 	Version string
 }
 
@@ -104,4 +103,9 @@ var tools = []Tool{
 		Install: formulas.InstallBazel,
 		Version: "7.0.0",
 	},
+  {
+    Name: "bat",
+    Install: formulas.InstallBat,
+    Version: "0.24.0",
+  },
 }

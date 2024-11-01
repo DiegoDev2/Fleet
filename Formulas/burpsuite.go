@@ -14,5 +14,21 @@
 
 package formulas
 
+import (
+  "runtime"
+  "os/exec"
+)
 
+func InstallBurpSuite(){
+  switch runtime.GOARCH{
+  case "arm64":
+    InstallBurpSuiteMac("https://portswigger.net/burp/releases/community/latest")
+  case "amd64":
+    InstallBurpSuiteMac("https://portswigger.net/burp/releases/community/latest")
+  }
+}
 
+func InstallBurpSuiteMac(url string){
+  download := exec.Command("curl", "-L", url)
+  download.Run()
+}

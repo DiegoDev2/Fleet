@@ -14,5 +14,26 @@
 
 package formulas
 
+import (
+	"fmt"
+	"os/exec"
+	"runtime"
+)
 
 
+func InstallBat(){
+
+ switch runtime.GOOS {
+  case "darwin":
+    installBazelMac()
+  default:
+    fmt.Println("OS No Support")
+ }
+ 
+}
+
+func InstallBatMac(){
+  url := "https://github.com/sharkdp/bat/releases/download/v0.24.0/bat-v0.24.0-x86_64-apple-darwin.tar.gz"
+  download := exec.Command("curl", "-L", url, "-o", "bat.tar.gz")
+  download.Run()
+ }
