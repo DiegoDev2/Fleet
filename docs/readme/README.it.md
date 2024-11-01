@@ -1,4 +1,4 @@
-![Logo](./docs/assets/logo.png)
+![Logo](./Logo.png)
 
 # Fleet
 
@@ -38,7 +38,7 @@ fleet install nmap
 
 ### Aggiungere Nuovi Strumenti
 
-- Apri `lib/tools.go` e aggiungi il nuovo strumento all'elenco degli strumenti disponibili.
+- Apri `lib/structTool.go`,`lib/toolStruc.go` e aggiungi il nuovo strumento all'elenco degli strumenti disponibili.
 - Crea una formula per lo strumento nella directory `formulas/`.
 - Utilizza il comando install per aggiungerlo al tuo sistema.
 
@@ -50,3 +50,6 @@ Apprezziamo i contributi per migliorare Fleet. Se trovi un errore o hai un sugge
 ### Licenza
 
 Fleet è concesso in licenza sotto la licenza Apache 2.0. Consulta il file LICENSE per ulteriori dettagli.
+
+![imagen](https://github.com/user-attachments/assets/30584687-bafe-415e-978d-dc568337c75d)
+

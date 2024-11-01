@@ -1,5 +1,5 @@
 
-![Logo](./docs/assets/logo.png)
+![Logo](./Logo.png)
 
 ## Fleet
 
@@ -35,7 +35,7 @@ fleet install nmap
 ```
 ### Добавление новых инструментов
 
-- Откройте файл `lib/tools.go` и добавьте новый инструмент в список доступных инструментов.
+- Откройте файл `lib/structTool.go`,`lib/toolStruc.go` и добавьте новый инструмент в список доступных инструментов.
 
 - Создайте формулу для инструмента в директории `formulas/`.
 
@@ -47,3 +47,5 @@ fleet install nmap
 Лицензия
 
 Fleet лицензируется по лицензии Apache 2.0. Подробности можно найти в файле `LICENSE`. 
+![imagen](https://github.com/user-attachments/assets/4a8ee1ac-b5b7-4363-8066-49c2aac3d61c)
+
