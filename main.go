@@ -14,7 +14,7 @@
 
 package main
 
-import cli "LattePkg/cli"
+import cli "fleet/cli"
 
 func main() {
 	cli.Command().Execute()
