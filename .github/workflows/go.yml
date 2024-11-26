@@ -23,7 +23,7 @@ jobs:
         run: go version
 
       - name: Install dependencies
-        run: go get -v -t -d ./...
+        run:  go get -v -t ./...
 
       - name: Install golangci-lint
         run: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
