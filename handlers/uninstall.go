@@ -21,9 +21,9 @@ import (
 func Uninstall(pkg string) {
 	p := "/usr/local/bin/" + pkg
 	if err := os.Remove(p); err != nil {
-		redBold.Println("Error eliminando el binario:", err)
+		redBold.Println("Error deleting the binary:", err)
 		return
 	}
 
-	boldGreen.Println(pkg + " Eliminado correctamente. 🎉")
+	boldGreen.Println(pkg + " Successfully removed. 🎉")
 }

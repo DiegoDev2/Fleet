@@ -11,14 +11,17 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+//
+// package formulas
+
 
 package lib
 
-func versionFlag(toolName string) string {
+func VersionFlag(toolName string) string { // Exportada
 	for _, tool := range tools {
 		if tool.Name == toolName {
 			return tool.Version
 		}
 	}
-	return versionFlag(toolName)
+	return "" // Evitar el bucle infinito anterior
 }

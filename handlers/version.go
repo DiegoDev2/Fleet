@@ -15,5 +15,5 @@
 package handlers
 
 func ShowVersion() {
-	yellow.Println("Fleet version 1.0.0")
+	yellow.Println("Fleet Version 1.1.3")
 }

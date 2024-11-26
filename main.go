@@ -14,9 +14,10 @@
 
 package main
 
-import cli "fleet/cli"
+import "fleet/cli"
 
 func main() {
-	cli.Command().Execute()
-
+	if err := cli.Command().Execute(); err != nil {
+		panic(err)
+	}
 }

@@ -15,8 +15,11 @@
 package cli
 
 import (
+	"fleet/ai"
 	"fleet/handlers"
 	"fleet/handlers/list"
+	"fmt"
+
 	"github.com/spf13/cobra"
 )
 
@@ -58,15 +61,15 @@ func Command() *cobra.Command {
 			},
 		},
 		&cobra.Command{
-			Use:   "update [package]",
-			Short: "Update a package",
+			Use:   "ai [question]",
+			Short: "AI assistant",
 			Args:  cobra.ExactArgs(1),
 			Run: func(cmd *cobra.Command, args []string) {
-				// handlers.Update(args[0])
+				result := ai.ResponseAi(args[0])
+				fmt.Println(result)
 			},
 		},
 	)
 
 	return rootCmd
 }
-

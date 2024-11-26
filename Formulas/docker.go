@@ -51,7 +51,10 @@ func installDockerMac(url string) {
 	install := exec.Command("sudo", "/Volumes/Docker/Docker.app/Contents/MacOS/install")
 	if err := install.Run(); err != nil {
 		redBold.Println("Error installing Docker:", err)
-		exec.Command("hdiutil", "detach", "/Volumes/Docker").Run() // Desmontar en caso de error
+		if err := exec.Command("sudo", "rm", "-rf", "/Volumes/Docker").Run(); err != nil {
+			redBold.Println("Error cleaning up the disk image:", err)
+			return
+		}
 		return
 	}
 
