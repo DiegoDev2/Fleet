@@ -14,7 +14,7 @@
 
 package lib
 
-import "LattePkg/formulas"
+import "fleet/formulas"
 
 type Tool struct {
 	Name    string
@@ -103,9 +103,9 @@ var tools = []Tool{
 		Install: formulas.InstallBazel,
 		Version: "7.0.0",
 	},
-  {
-    Name: "bat",
-    Install: formulas.InstallBat,
-    Version: "0.24.0",
-  },
+	{
+		Name:    "bat",
+		Install: formulas.InstallBat,
+		Version: "0.24.0",
+	},
 }

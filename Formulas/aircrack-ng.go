@@ -94,7 +94,6 @@ func downloadFile(filepath string, url string) error {
 	return err
 }
 
-
 func unzip(src string, dest string) error {
 	r, err := zip.OpenReader(src)
 	if err != nil {
@@ -105,7 +104,9 @@ func unzip(src string, dest string) error {
 	for _, f := range r.File {
 		fPath := filepath.Join(dest, f.Name)
 		if f.FileInfo().IsDir() {
-			os.MkdirAll(fPath, os.ModePerm)
+			if err := os.MkdirAll(fPath, os.ModePerm); err != nil {
+				return err
+			}
 			continue
 		}
 
@@ -140,4 +141,3 @@ func runCommand(name string, args ...string) error {
 	cmd.Stderr = os.Stderr
 	return cmd.Run()
 }
-

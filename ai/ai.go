@@ -1,12 +1,10 @@
 package ai
 
-
-// This functionality is not available yet, it is not ready and it has bugs
 import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"strings"
 	"text/tabwriter"
@@ -15,7 +13,7 @@ import (
 
 type Message struct {
 	Content   string `json:"content"`
-  ID        string `json:"id"`
+	ID        string `json:"id"`
 	Role      string `json:"role"`
 	CreatedAt string `json:"createdAt"`
 }
@@ -64,7 +62,7 @@ func wrapText(text string, width int) string {
 	return buf.String()
 }
 
-func ResponseAi(question string) {
+func ResponseAi(question string) error {
 	url := "https://www.blackbox.ai/api/chat"
 
 	messages := []Message{
@@ -88,32 +86,28 @@ func ResponseAi(question string) {
 
 	jsonData, err := json.Marshal(requestBody)
 	if err != nil {
-		fmt.Println("Error converting to JSON:", err)
-		return
+		return fmt.Errorf("error converting to JSON: %w", err)
 	}
 
 	resp, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
 	if err != nil {
-		fmt.Println("Error making request:", err)
-		return
+		return fmt.Errorf("error making request: %w", err)
 	}
 	defer resp.Body.Close()
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body) // Reemplazado ioutil.ReadAll con io.ReadAll
 	if err != nil {
-		fmt.Println("Error reading response:", err)
-		return
+		return fmt.Errorf("error reading response: %w", err)
 	}
 
 	responseStr := string(body)
-
 	parts := strings.Split(responseStr, "$@$")
 	if len(parts) > 2 {
 		responseStr = parts[2]
-	} else {
-		responseStr = responseStr
 	}
 
-	typingAnimation(wrapText(responseStr, 20), 13*time.Millisecond)
-}
+	fmt.Println("\nAI is typing...")
+	typingAnimation(wrapText(responseStr, 60), 30*time.Millisecond)
 
+	return nil
+}
