@@ -11,12 +11,18 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+//
+// package formulas
+
 
 package formulas
 
 import (
+	"fmt"
+	"os"
 	"os/exec"
 	"runtime"
+	"sync"
 )
 
 func InstallBazel() {
@@ -29,32 +35,65 @@ func InstallBazel() {
 }
 
 func installBazelMac() {
+	var wg sync.WaitGroup
+	errCh := make(chan error, 4)
+
 	boldGreen.Println("Starting Bazel installation 🚀")
-	yellow.Println("Downloading Bazel...")
 
-	download := exec.Command("curl", "-fLO", "https://github.com/bazelbuild/bazel/releases/download/5.0.0/bazel-5.0.0-installer-darwin-x86_64.sh")
-	if err := download.Run(); err != nil {
-		redBold.Println("Error downloading Bazel:", err)
-		return
-	}
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		yellow.Println("Downloading Bazel...")
 
-	yellow.Println("Setting execute permissions for Bazel installer...")
-	chmod := exec.Command("chmod", "+x", "bazel-5.0.0-installer-darwin-x86_64.sh")
-	if err := chmod.Run(); err != nil {
-		redBold.Println("Error setting permissions for Bazel installer:", err)
-		return
-	}
+		download := exec.Command("curl", "-fLO", "https://github.com/bazelbuild/bazel/releases/download/5.0.0/bazel-5.0.0-installer-darwin-x86_64.sh")
+		if err := download.Run(); err != nil {
+			errCh <- fmt.Errorf("error downloading Bazel: %w", err)
+			return
+		}
+		yellow.Println("Download completed.")
+	}()
 
-	yellow.Println("Installing Bazel...")
-	install := exec.Command("bash", "bazel-5.0.0-installer-darwin-x86_64.sh")
-	if err := install.Run(); err != nil {
-		redBold.Println("Error installing Bazel:", err)
-		return
-	}
-	yellow.Println("Deleting Bazel installer...")
-	delete := exec.Command("rm", "bazel-5.0.0-installer-darwin-x86_64.sh")
-	if err := delete.Run(); err != nil {
-		redBold.Println("Error deleting Bazel installer:", err)
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		yellow.Println("Setting execute permissions for Bazel installer...")
+
+		if _, err := os.Stat("bazel-5.0.0-installer-darwin-x86_64.sh"); os.IsNotExist(err) {
+			errCh <- fmt.Errorf("Bazel installer file not found: %w", err)
+			return
+		}
+
+		chmod := exec.Command("chmod", "+x", "bazel-5.0.0-installer-darwin-x86_64.sh")
+		if err := chmod.Run(); err != nil {
+			errCh <- fmt.Errorf("error setting permissions for Bazel installer: %w", err)
+			return
+		}
+		yellow.Println("Permissions set.")
+	}()
+
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		yellow.Println("Installing Bazel...")
+
+		if _, err := os.Stat("bazel-5.0.0-installer-darwin-x86_64.sh"); os.IsNotExist(err) {
+			errCh <- fmt.Errorf("Bazel installer file not found: %w", err)
+			return
+		}
+
+		install := exec.Command("bash", "bazel-5.0.0-installer-darwin-x86_64.sh")
+		if err := install.Run(); err != nil {
+			errCh <- fmt.Errorf("error installing Bazel: %w", err)
+			return
+		}
+		yellow.Println("Installation completed.")
+	}()
+
+	wg.Wait()
+	close(errCh)
+
+	for err := range errCh {
+		redBold.Println(err)
 		return
 	}
 
