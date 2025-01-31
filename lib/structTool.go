@@ -14,7 +14,9 @@
 
 package lib
 
-import "fleet/formulas"
+import (
+	"fleet/formulas"
+)
 
 type Tool struct {
 	Name    string

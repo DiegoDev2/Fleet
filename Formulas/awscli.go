@@ -18,6 +18,7 @@ import (
 	"os"
 	"os/exec"
 	"runtime"
+	"sync"
 )
 
 func InstallAws() {
@@ -50,11 +51,17 @@ func installAwsMac() {
 
 	boldGreen.Println("AWS CLI installed successfully 🎉")
 
-	yellow.Println("Cleaning up...")
-	if err := os.Remove("AWSCLIV2.pkg"); err != nil {
-		redBold.Println("Error removing installer package:", err)
-		return
-	}
+	var wg sync.WaitGroup
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		yellow.Println("Cleaning up...")
+		if err := os.Remove("AWSCLIV2.pkg"); err != nil {
+			redBold.Println("Error removing installer package:", err)
+			return
+		}
+		boldGreen.Println("Cleanup completed.")
+	}()
 
-	boldGreen.Println("Cleanup completed.")
+	wg.Wait()
 }

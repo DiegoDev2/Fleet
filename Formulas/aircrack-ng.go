@@ -23,6 +23,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"runtime"
+	"sync"
 )
 
 func InstallAircrackNg() {
@@ -37,22 +38,39 @@ func InstallAircrackNg() {
 func installAircrackNgMac() {
 	fmt.Println("Starting Aircrack-ng installation 🚀")
 
-	zipURL := "https://github.com/aircrack-ng/aircrack-ng/archive/refs/heads/master.zip"
-	zipFile := "aircrack-ng.zip"
+	var wg sync.WaitGroup
+	errChan := make(chan error, 1)
 
-	if err := downloadFile(zipFile, zipURL); err != nil {
-		fmt.Printf("Error downloading aircrack-ng: %v\n", err)
-		return
-	}
-	defer os.Remove(zipFile)
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		zipURL := "https://github.com/aircrack-ng/aircrack-ng/archive/refs/heads/master.zip"
+		zipFile := "aircrack-ng.zip"
 
-	if err := unzip(zipFile, "aircrack-ng"); err != nil {
-		fmt.Printf("Error extracting aircrack-ng: %v\n", err)
-		return
-	}
+		if err := downloadFile(zipFile, zipURL); err != nil {
+			errChan <- fmt.Errorf("error downloading aircrack-ng: %v", err)
+			return
+		}
+		defer os.Remove(zipFile)
 
-	if err := os.Chdir("aircrack-ng/aircrack-ng-master"); err != nil {
-		fmt.Printf("Error changing to aircrack-ng directory: %v\n", err)
+		if err := unzip(zipFile, "aircrack-ng"); err != nil {
+			errChan <- fmt.Errorf("error extracting aircrack-ng: %v", err)
+			return
+		}
+
+		if err := os.Chdir("aircrack-ng/aircrack-ng-master"); err != nil {
+			errChan <- fmt.Errorf("error changing to aircrack-ng directory: %v", err)
+			return
+		}
+	}()
+
+	go func() {
+		wg.Wait()
+		close(errChan)
+	}()
+
+	if err := <-errChan; err != nil {
+		fmt.Println(err)
 		return
 	}
 
