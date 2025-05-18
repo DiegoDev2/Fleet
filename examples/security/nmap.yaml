@@ -1,0 +1,68 @@
+name: nmap  
+version: 7.93  
+description: "tool sec. for network exploration and security auditing"  
+homepage: "https://nmap.org"  
+license: "GPL-2.0"  
+categories:  
+  - security  
+  - network  
+platforms:  
+  darwin:  
+    architecture:  
+      amd64:  
+        url: "https://nmap.org/dist/nmap-7.93-mac.dmg"  
+        type: "dmg"  
+        checksum: "sha256:abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890"  
+        install_steps:  
+          - mount: "nmap-7.93-mac.dmg"  
+          - copy: "/Volumes/Nmap 7.93/nmap-7.93.mpkg"  
+            to: "/tmp/"  
+          - execute: "sudo installer -pkg /tmp/nmap-7.93.mpkg -target /"  
+          - unmount: "/Volumes/Nmap 7.93"  
+      arm64:  
+        url: "https://nmap.org/dist/nmap-7.93-mac-arm64.dmg"  
+        type: "dmg"  
+        checksum: "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"  
+        install_steps:  
+          - mount: "nmap-7.93-mac-arm64.dmg"  
+          - copy: "/Volumes/Nmap 7.93/nmap-7.93.mpkg"  
+            to: "/tmp/"  
+          - execute: "sudo installer -pkg /tmp/nmap-7.93.mpkg -target /"  
+          - unmount: "/Volumes/Nmap 7.93"  
+  linux:  
+    package_managers:  
+      apt:  
+        package: "nmap"  
+      yum:  
+        package: "nmap"  
+    fallback:  
+      url: "https://nmap.org/dist/nmap-7.93.tar.bz2"  
+      type: "source"  
+      checksum: "sha256:1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"  
+      dependencies:  
+        build:  
+          - "gcc"  
+          - "make"  
+        runtime:  
+          - "libpcap"  
+      build_steps:  
+        - "tar -xjf nmap-7.93.tar.bz2"  
+        - "cd nmap-7.93"  
+        - "./configure"  
+        - "make"  
+        - "sudo make install"  
+  windows:  
+    architecture:  
+      amd64:  
+        url: "https://nmap.org/dist/nmap-7.93-setup.exe"  
+        type: "exe"  
+        checksum: "sha256:fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210"  
+        install_steps:  
+          - execute: "nmap-7.93-setup.exe /S"  
+dependencies:  
+  - name: "openssl"  
+    version: ">=1.1.1"  
+  - name: "libpcap"  
+    version: ">=1.9.0"  
+post_install:  
+  - "nmap --version"
