@@ -1,5 +1,7 @@
 package manifest
 
+import "gopkg.in/yaml.v3"
+
 // Manifest representa la definición de una herramienta
 type Manifest struct {
 	Name         string              `yaml:"name" json:"name"`
@@ -11,6 +13,10 @@ type Manifest struct {
 	Platforms    map[string]Platform `yaml:"platforms" json:"platforms"`
 	Dependencies []Dependency        `yaml:"dependencies" json:"dependencies"`
 	PostInstall  []string            `yaml:"post_install" json:"post_install"`
+}
+
+func (m *Manifest) ToYAML(manifest *Manifest) (any, any) {
+	panic("unimplemented")
 }
 
 // Platform representa detalles de instalación específicos de la plataforma
@@ -61,4 +67,8 @@ type FallbackDependencies struct {
 type Dependency struct {
 	Name    string `yaml:"name" json:"name"`
 	Version string `yaml:"version" json:"version"`
+}
+
+func ToYAML(m *Manifest) ([]byte, error) {
+	return yaml.Marshal(m)
 }

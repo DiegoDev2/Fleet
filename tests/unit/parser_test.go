@@ -44,12 +44,10 @@ post_install:
 	err := os.WriteFile(manifestPath, []byte(manifestContent), 0644)
 	assert.NoError(t, err)
 
-	// Probar ParseFile
 	m, err := manifest.ParseFile(manifestPath)
 	assert.NoError(t, err)
 	assert.NotNil(t, m)
 
-	// Verificar que los datos se parsearon correctamente
 	assert.Equal(t, "test-tool", m.Name)
 	assert.Equal(t, "1.0.0", m.Version)
 	assert.Equal(t, "A test tool", m.Description)
@@ -58,32 +56,27 @@ post_install:
 	assert.Contains(t, m.Categories, "test")
 	assert.Contains(t, m.Categories, "example")
 
-	// Verificar plataformas
 	assert.Contains(t, m.Platforms, "darwin")
 	darwinPlatform := m.Platforms["darwin"]
 
-	// Verificar arquitecturas
 	assert.Contains(t, darwinPlatform.Architecture, "amd64")
 	amd64Arch := darwinPlatform.Architecture["amd64"]
 	assert.Equal(t, "https://example.com/test-1.0.0-darwin-amd64.tar.gz", amd64Arch.URL)
 	assert.Equal(t, "tar.gz", amd64Arch.Type)
 
-	// Verificar pasos de instalación
 	assert.Len(t, amd64Arch.InstallSteps, 2)
 	assert.Equal(t, "tar -xzf test-1.0.0-darwin-amd64.tar.gz", amd64Arch.InstallSteps[0].Execute)
 
-	// Verificar dependencias
 	assert.Len(t, m.Dependencies, 1)
 	assert.Equal(t, "dependency1", m.Dependencies[0].Name)
 	assert.Equal(t, ">=2.0.0", m.Dependencies[0].Version)
 
-	// Verificar post-install
 	assert.Len(t, m.PostInstall, 1)
 	assert.Equal(t, "test --version", m.PostInstall[0])
 }
 
 func TestParseDirectory(t *testing.T) {
-	// Crear un directorio temporal con múltiples manifiestos
+
 	tempDir := t.TempDir()
 
 	// Crear primer manifiesto
@@ -104,7 +97,6 @@ platforms:
 	err := os.WriteFile(manifest1Path, []byte(manifest1Content), 0644)
 	assert.NoError(t, err)
 
-	// Crear segundo manifiesto
 	manifest2Path := filepath.Join(tempDir, "tool2.yaml")
 	manifest2Content := `  
 name: tool2  
@@ -122,16 +114,13 @@ platforms:
 	err = os.WriteFile(manifest2Path, []byte(manifest2Content), 0644)
 	assert.NoError(t, err)
 
-	// Probar ParseDirectory
 	manifests, err := manifest.ParseDirectory(tempDir)
 	assert.NoError(t, err)
 	assert.Len(t, manifests, 2)
 
-	// Verificar que ambos manifiestos se cargaron correctamente
 	assert.Contains(t, manifests, "tool1")
 	assert.Contains(t, manifests, "tool2")
 
-	// Verificar contenido de los manifiestos
 	assert.Equal(t, "1.0.0", manifests["tool1"].Version)
 	assert.Equal(t, "2.0.0", manifests["tool2"].Version)
 }

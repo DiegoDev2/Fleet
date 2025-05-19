@@ -5,28 +5,34 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
+	"strings"
 	"sync"
 
 	"github.com/DiegoDev2/Fleet/pkg/manifest"
-	"github.com/DiegoDev2/Fleet/pkg/repository"
 )
 
 type Manager struct {
 	repositories map[string]Repository
 	cacheDir     string
+	cache        *Cache
 	mutex        sync.RWMutex
 }
 
-// NewManager crea un nuevo gestor de repositorios
 func NewManager(cacheDir string) (*Manager, error) {
-	// Asegurar que el directorio de caché exista
+
 	if err := os.MkdirAll(cacheDir, 0755); err != nil {
 		return nil, fmt.Errorf("error al crear directorio de caché: %w", err)
+	}
+
+	cache, err := NewCache(cacheDir)
+	if err != nil {
+		return nil, fmt.Errorf("error al inicializar caché: %w", err)
 	}
 
 	return &Manager{
 		repositories: make(map[string]Repository),
 		cacheDir:     cacheDir,
+		cache:        cache,
 	}, nil
 }
 
@@ -38,8 +44,7 @@ func (m *Manager) AddRepository(name, url, repoType string, priority int) error 
 		return fmt.Errorf("ya existe un repositorio con el nombre %s", name)
 	}
 
-	// Crear el directorio para el repositorio en la caché
-	repoCacheDir := filepath.Join(m.cacheDir, name)
+	repoCacheDir := filepath.Join(m.cacheDir, "repos", name)
 	if err := os.MkdirAll(repoCacheDir, 0755); err != nil {
 		return fmt.Errorf("error al crear directorio para el repositorio: %w", err)
 	}
@@ -60,6 +65,12 @@ func (m *Manager) AddRepository(name, url, repoType string, priority int) error 
 	}
 
 	m.repositories[name] = repo
+
+	m.cache.AddRepo(name, url, repoType)
+	if err := m.cache.SaveMetadata(); err != nil {
+		fmt.Printf("Warning: Failed to save cache metadata: %v\n", err)
+	}
+
 	return nil
 }
 
@@ -73,9 +84,14 @@ func (m *Manager) RemoveRepository(name string) error {
 
 	delete(m.repositories, name)
 
-	repoCacheDir := filepath.Join(m.cacheDir, name)
+	repoCacheDir := filepath.Join(m.cacheDir, "repos", name)
 	if err := os.RemoveAll(repoCacheDir); err != nil {
 		return fmt.Errorf("error al eliminar directorio del repositorio: %w", err)
+	}
+
+	m.cache.RemoveRepo(name)
+	if err := m.cache.SaveMetadata(); err != nil {
+		fmt.Printf("Warning: Failed to save cache metadata: %v\n", err)
 	}
 
 	return nil
@@ -90,7 +106,35 @@ func (m *Manager) SyncRepository(name string) error {
 		return fmt.Errorf("repositorio no encontrado: %s", name)
 	}
 
-	return repo.Sync()
+	if err := repo.Sync(); err != nil {
+		return err
+	}
+
+	manifests, err := repo.ListManifests()
+	if err != nil {
+		return fmt.Errorf("error al listar manifiestos: %w", err)
+	}
+
+	for _, mf := range manifests {
+
+		checksum := fmt.Sprintf("sha256:%p", mf) // this is a placeholder, you should use a real checksum
+
+		manifestData, err := manifest.ToYAML(mf)
+		if err != nil {
+			fmt.Printf("Warning: Failed to convert manifest to YAML: %v\n", err)
+			continue
+		}
+
+		if err := m.cache.AddManifest(mf.Name, name, checksum, manifestData); err != nil {
+			fmt.Printf("Warning: Failed to add manifest to cache: %v\n", err)
+		}
+	}
+
+	if err := m.cache.SaveMetadata(); err != nil {
+		fmt.Printf("Warning: Failed to save cache metadata: %v\n", err)
+	}
+
+	return nil
 }
 
 func (m *Manager) SyncAllRepositories() error {
@@ -108,7 +152,7 @@ func (m *Manager) SyncAllRepositories() error {
 		wg.Add(1)
 		go func(r Repository) {
 			defer wg.Done()
-			if err := r.Sync(); err != nil {
+			if err := m.SyncRepository(r.GetName()); err != nil {
 				errCh <- fmt.Errorf("error al sincronizar %s: %w", r.GetName(), err)
 			}
 		}(repo)
@@ -130,6 +174,12 @@ func (m *Manager) SyncAllRepositories() error {
 }
 
 func (m *Manager) GetManifest(toolName string) (*manifest.Manifest, error) {
+
+	cachedManifest, err := m.cache.GetManifest(toolName)
+	if err == nil {
+		return cachedManifest, nil
+	}
+
 	m.mutex.RLock()
 	defer m.mutex.RUnlock()
 
@@ -144,6 +194,17 @@ func (m *Manager) GetManifest(toolName string) (*manifest.Manifest, error) {
 	for _, repo := range repos {
 		manifest, err := repo.GetManifest(toolName)
 		if err == nil && manifest != nil {
+			// Guardar en caché para futuras consultas
+			manifestData, err := manifest.ToYAML(manifest)
+			if err == nil {
+				checksum := fmt.Sprintf("sha256:%p", manifest) // Placeholder
+				if data, ok := manifestData.([]byte); ok {
+					m.cache.AddManifest(toolName, repo.GetName(), checksum, data)
+				} else {
+					fmt.Printf("Warning: manifestData is not of type []byte\n")
+				}
+				m.cache.SaveMetadata()
+			}
 			return manifest, nil
 		}
 	}
@@ -151,53 +212,52 @@ func (m *Manager) GetManifest(toolName string) (*manifest.Manifest, error) {
 	return nil, fmt.Errorf("manifiesto no encontrado para la herramienta: %s", toolName)
 }
 
-func (m *Manager) ListRepositories() []repository.RepoInfo {
-	m.mutex.RLock()
-	defer m.mutex.RUnlock()
-
-	repos := make([]repository.RepoInfo, 0, len(m.repositories))
-	for _, repo := range m.repositories {
-		repos = append(repos, repository.RepoInfo{
-			Name:     repo.GetName(),
-			URL:      repo.GetURL(),
-			Type:     repo.GetType(),
-			Priority: repo.GetPriority(),
-			LastSync: repo.GetLastSync(),
-		})
+// SearchManifests busca manifiestos que coincidan con un patrón
+func (m *Manager) SearchManifests(pattern string) ([]*manifest.Manifest, error) {
+	allManifests, err := m.ListAllManifests()
+	if err != nil {
+		if e, ok := err.(error); ok {
+			return nil, e
+		}
+		return nil, fmt.Errorf("unexpected error type: %v", err)
 	}
 
-	return repos
-}
-
-func (m *Manager) ListAllManifests() ([]*manifest.Manifest, error) {
-	m.mutex.RLock()
-	defer m.mutex.RUnlock()
-
-	var allManifests []*manifest.Manifest
-	manifestMap := make(map[string]*manifest.Manifest)
-
-	repos := make([]Repository, 0, len(m.repositories))
-	for _, repo := range m.repositories {
-		repos = append(repos, repo)
+	var results []*manifest.Manifest
+	manifests, ok := allManifests.([]*manifest.Manifest)
+	if !ok {
+		return nil, fmt.Errorf("unexpected type for allManifests, expected []*manifest.Manifest")
 	}
-	sort.Slice(repos, func(i, j int) bool {
-		return repos[i].GetPriority() > repos[j].GetPriority()
-	})
+	for _, m := range manifests {
 
-	for _, repo := range repos {
-		manifests, err := repo.ListManifests()
-		if err != nil {
+		if strings.Contains(strings.ToLower(m.Name), strings.ToLower(pattern)) ||
+			strings.Contains(strings.ToLower(m.Description), strings.ToLower(pattern)) {
+			results = append(results, m)
 			continue
 		}
 
-		for _, m := range manifests {
-
-			if _, exists := manifestMap[m.Name]; !exists {
-				manifestMap[m.Name] = m
-				allManifests = append(allManifests, m)
+		for _, cat := range m.Categories {
+			if strings.Contains(strings.ToLower(cat), strings.ToLower(pattern)) {
+				results = append(results, m)
+				break
 			}
 		}
 	}
 
-	return allManifests, nil
+	return results, nil
+}
+
+func (m *Manager) ListAllManifests() (any, any) {
+	panic("unimplemented")
+}
+
+func (m *Manager) GetRepositoryByName(name string) (Repository, bool) {
+	m.mutex.RLock()
+	defer m.mutex.RUnlock()
+
+	repo, exists := m.repositories[name]
+	return repo, exists
+}
+
+func (m *Manager) ClearCache() error {
+	return m.cache.ClearCache()
 }
